@@ -1,0 +1,190 @@
+"""
+사주팔자(四柱八字) 4기둥 계산.
+"""
+
+from __future__ import annotations
+import functools
+from datetime import datetime, timedelta, timezone
+
+from data.heavenly_stems import get_stem_by_index, STEMS_BY_KOREAN
+from data.earthly_branches import (
+    get_branch_by_index,
+    get_ji_jang_gan,
+    analyze_branch_relations,
+    BRANCHES_BY_KOREAN,
+)
+from lib.solar_terms import get_current_solar_term, get_solar_term_month_index
+from lib.calendar_converter import convert_calendar
+
+
+# ─── 내부 헬퍼 ────────────────────────────────────────────────
+
+
+def _stem_index(korean: str) -> int:
+    return STEMS_BY_KOREAN[korean]["index"]
+
+
+def _branch_index(korean: str) -> int:
+    return BRANCHES_BY_KOREAN[korean]["index"]
+
+
+def _pillar(stem_idx: int, branch_idx: int) -> dict:
+    stem = get_stem_by_index(stem_idx)
+    branch = get_branch_by_index(branch_idx)
+    return {
+        "stem": stem["korean"],
+        "branch": branch["korean"],
+        "stem_hanja": stem["hanja"],
+        "branch_hanja": branch["hanja"],
+        "stem_element": stem["element"],
+        "branch_element": branch["element"],
+        "yin_yang": stem["yin_yang"],
+    }
+
+
+# ─── 4기둥 계산 ───────────────────────────────────────────────
+
+
+def _calc_year_pillar(adjusted: datetime) -> dict:
+    """연주(年柱) 계산. 입춘 이전이면 전년도."""
+    year = adjusted.year
+    term = get_current_solar_term(adjusted)
+
+    # 1~2월이고 아직 입춘이 안 지났으면 전년도
+    if adjusted.month <= 2 and term == "대한":
+        year -= 1
+
+    # 갑자(甲子)년 기준: 1984년
+    stem_idx = (year - 4) % 10
+    branch_idx = (year - 4) % 12
+    return _pillar(stem_idx, branch_idx)
+
+
+def _calc_month_pillar(adjusted: datetime, year_pillar: dict) -> dict:
+    """월주(月柱) 계산."""
+    term = get_current_solar_term(adjusted)
+    month_idx = get_solar_term_month_index(term)   # 0=인월 ... 11=축월
+
+    branch_idx = (month_idx + 2) % 12   # 인(寅) = index 2
+
+    # 연간에 따른 월간 시작점
+    year_stem_idx = _stem_index(year_pillar["stem"])
+    month_stem_starts = [2, 4, 6, 8, 0, 2, 4, 6, 8, 0]  # 갑~계
+    month_stem_start = month_stem_starts[year_stem_idx]
+
+    month_offset = (branch_idx - 2) % 12
+    stem_idx = (month_stem_start + month_offset) % 10
+    return _pillar(stem_idx, branch_idx)
+
+
+def _calc_day_pillar(adjusted: datetime) -> dict:
+    """일주(日柱) 계산. 기준: 1900-01-01 = 갑술일."""
+    base = datetime(1900, 1, 1, tzinfo=timezone.utc)
+    if adjusted.tzinfo is None:
+        adjusted = adjusted.replace(tzinfo=timezone.utc)
+    diff_days = (adjusted - base).days
+
+    stem_idx = (0 + diff_days) % 10    # 갑(0) 시작
+    branch_idx = (10 + diff_days) % 12  # 술(10) 시작
+    return _pillar(stem_idx, branch_idx)
+
+
+def _calc_hour_pillar(adjusted: datetime, day_pillar: dict) -> dict:
+    """시주(時柱) 계산."""
+    h = adjusted.hour
+
+    # 자시(子時): 23~01시
+    if h >= 23 or h < 1:
+        branch_idx = 0
+    else:
+        branch_idx = (h + 1) // 2
+
+    day_stem_idx = _stem_index(day_pillar["stem"])
+    stem_idx = (day_stem_idx * 2 + branch_idx) % 10
+    return _pillar(stem_idx, branch_idx)
+
+
+# ─── 오행 집계 ────────────────────────────────────────────────
+
+
+def _count_wuxing(pillars: list[dict]) -> dict[str, int]:
+    count: dict[str, int] = {"목": 0, "화": 0, "토": 0, "금": 0, "수": 0}
+    for p in pillars:
+        count[p["stem_element"]] += 1
+        count[p["branch_element"]] += 1
+    return count
+
+
+# ─── 메인 함수 ────────────────────────────────────────────────
+
+
+@functools.lru_cache(maxsize=256)
+def calculate_saju(
+    birth_date: str,
+    birth_time: str,
+    gender: str,
+    calendar: str = "solar",
+    is_leap_month: bool = False,
+) -> dict:
+    """
+    사주팔자 4기둥 계산.
+
+    Args:
+        birth_date:    "YYYY-MM-DD"
+        birth_time:    "HH:MM"
+        gender:        "male" | "female"
+        calendar:      "solar" | "lunar"
+        is_leap_month: 음력 윤달 여부
+
+    Returns:
+        year_pillar, month_pillar, day_pillar, hour_pillar,
+        wuxing_count, dominant_elements, weak_elements
+    """
+    # 음력이면 양력으로 변환
+    solar_date = birth_date
+    if calendar == "lunar":
+        conv = convert_calendar(birth_date, "lunar", "solar", is_leap_month)
+        solar_date = conv["converted_date"]
+
+    y, mo, d = map(int, solar_date.split("-"))
+    hh, mm = map(int, birth_time.split(":"))
+    dt = datetime(y, mo, d, hh, mm, tzinfo=timezone.utc)
+
+    # 진태양시 보정 -30분
+    adjusted = dt - timedelta(minutes=30)
+
+    year_p = _calc_year_pillar(adjusted)
+    month_p = _calc_month_pillar(adjusted, year_p)
+    day_p = _calc_day_pillar(adjusted)
+    hour_p = _calc_hour_pillar(adjusted, day_p)
+
+    pillars = [year_p, month_p, day_p, hour_p]
+    wuxing = _count_wuxing(pillars)
+    avg = 8 / 5
+    dominant = [e for e, c in wuxing.items() if c > avg * 1.5]
+    weak = [e for e, c in wuxing.items() if c == 0 or c < avg * 0.5]
+
+    branches = [p["branch"] for p in pillars]
+    branch_relations = analyze_branch_relations(branches, day_p["branch"])
+
+    ji_jang_gan = {
+        label: get_ji_jang_gan(p["branch"])
+        for label, p in zip(["year", "month", "day", "hour"], pillars)
+    }
+
+    return {
+        "year_pillar": year_p,
+        "month_pillar": month_p,
+        "day_pillar": day_p,
+        "hour_pillar": hour_p,
+        "wuxing_count": wuxing,
+        "dominant_elements": dominant,
+        "weak_elements": weak,
+        "branch_relations": branch_relations,
+        "ji_jang_gan": ji_jang_gan,
+        "gender": gender,
+        "birth_date": birth_date,
+        "birth_time": birth_time,
+        "calendar": calendar,
+        "is_leap_month": is_leap_month,
+    }
