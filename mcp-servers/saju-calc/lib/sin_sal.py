@@ -76,46 +76,117 @@ SIN_SAL_INFO: dict[str, dict] = {
 # ─── 체커 함수 ──────────────────────────────────────────────────
 # 각 체커: (saju, branch_set) → dict | None
 
-def _check_group(branch_set: set[str], groups: list[tuple[set[str], str]]) -> bool:
-    return any(group & branch_set and sal in branch_set for group, sal in groups)
+def _find_group(
+    branch_set: set[str], groups: list[tuple[set[str], str]]
+) -> tuple[set[str], str] | None:
+    """삼합 그룹 중 조건 충족하는 첫 번째 항목 반환."""
+    for group, sal in groups:
+        if group & branch_set and sal in branch_set:
+            return group, sal
+    return None
 
 
 SinSalChecker = Callable[[dict, set[str]], dict | None]
 
 def _cheon_eul(saju: dict, bs: set[str]) -> dict | None:
-    return dict(SIN_SAL_INFO["천을귀인"]) if any(
-        b in bs for b in _CHEON_EUL_TABLE.get(saju["day_pillar"]["stem"], [])
-    ) else None
+    stem = saju["day_pillar"]["stem"]
+    matched = [b for b in _CHEON_EUL_TABLE.get(stem, []) if b in bs]
+    if not matched:
+        return None
+    r = dict(SIN_SAL_INFO["천을귀인"])
+    r["reason"] = {"trigger": "day_stem", "day_stem": stem, "matched_branches": matched}
+    return r
 
 def _do_hwa(saju: dict, bs: set[str]) -> dict | None:
-    return dict(SIN_SAL_INFO["도화살"]) if _check_group(bs, _DO_HWA_GROUPS) else None
+    m = _find_group(bs, _DO_HWA_GROUPS)
+    if m is None:
+        return None
+    group, sal = m
+    r = dict(SIN_SAL_INFO["도화살"])
+    r["reason"] = {
+        "trigger": "branch_group",
+        "group_branches": sorted(group & bs, key=lambda x: _BRANCH_ORDER.index(x)),
+        "도화지": sal,
+    }
+    return r
 
 def _yeok_ma(saju: dict, bs: set[str]) -> dict | None:
-    return dict(SIN_SAL_INFO["역마살"]) if _check_group(bs, _YEOK_MA_GROUPS) else None
+    m = _find_group(bs, _YEOK_MA_GROUPS)
+    if m is None:
+        return None
+    group, sal = m
+    r = dict(SIN_SAL_INFO["역마살"])
+    r["reason"] = {
+        "trigger": "branch_group",
+        "group_branches": sorted(group & bs, key=lambda x: _BRANCH_ORDER.index(x)),
+        "역마지": sal,
+    }
+    return r
 
 def _hwa_gae(saju: dict, bs: set[str]) -> dict | None:
-    return dict(SIN_SAL_INFO["화개살"]) if _check_group(bs, _HWA_GAE_GROUPS) else None
+    m = _find_group(bs, _HWA_GAE_GROUPS)
+    if m is None:
+        return None
+    group, sal = m
+    r = dict(SIN_SAL_INFO["화개살"])
+    r["reason"] = {
+        "trigger": "branch_group",
+        "group_branches": sorted(group & bs, key=lambda x: _BRANCH_ORDER.index(x)),
+        "화개지": sal,
+    }
+    return r
 
 def _gong_mang(saju: dict, bs: set[str]) -> dict | None:
-    return dict(SIN_SAL_INFO["공망"]) if any(
-        b in bs for b in GONG_MANG_TABLE.get(saju["day_pillar"]["branch"], [])
-    ) else None
+    day_branch = saju["day_pillar"]["branch"]
+    gong_branches = GONG_MANG_TABLE.get(day_branch, [])
+    matched = [b for b in gong_branches if b in bs]
+    if not matched:
+        return None
+    r = dict(SIN_SAL_INFO["공망"])
+    r["reason"] = {
+        "trigger": "day_branch",
+        "day_branch": day_branch,
+        "gong_branches": gong_branches,
+        "matched_branches": matched,
+    }
+    return r
 
 def _won_jin(saju: dict, bs: set[str]) -> dict | None:
-    return dict(SIN_SAL_INFO["원진살"]) if any(
-        a in bs and b in bs for a, b in _CHUNG_PAIRS
-    ) else None
+    for a, b in _CHUNG_PAIRS:
+        if a in bs and b in bs:
+            r = dict(SIN_SAL_INFO["원진살"])
+            r["reason"] = {"trigger": "branch_pair", "pair": [a, b]}
+            return r
+    return None
 
 def _gwi_mun(saju: dict, bs: set[str]) -> dict | None:
-    return dict(SIN_SAL_INFO["귀문관살"]) if len(_GWI_MUN_BRANCHES & bs) >= 2 else None
+    found = _GWI_MUN_BRANCHES & bs
+    if len(found) < 2:
+        return None
+    r = dict(SIN_SAL_INFO["귀문관살"])
+    r["reason"] = {
+        "trigger": "branch_count",
+        "matched_branches": sorted(found, key=lambda x: _BRANCH_ORDER.index(x)),
+        "required_count": 2,
+    }
+    return r
 
 def _yang_in(saju: dict, bs: set[str]) -> dict | None:
-    yang_in = _YANG_IN_TABLE.get(saju["day_pillar"]["stem"])
-    return dict(SIN_SAL_INFO["양인살"]) if yang_in and yang_in in bs else None
+    stem = saju["day_pillar"]["stem"]
+    yang_in = _YANG_IN_TABLE.get(stem)
+    if not yang_in or yang_in not in bs:
+        return None
+    r = dict(SIN_SAL_INFO["양인살"])
+    r["reason"] = {"trigger": "day_stem", "day_stem": stem, "yang_in_branch": yang_in}
+    return r
 
 def _baek_ho(saju: dict, bs: set[str]) -> dict | None:
     p = saju["day_pillar"]
-    return dict(SIN_SAL_INFO["백호대살"]) if (p["stem"], p["branch"]) in _BAEK_HO_PAIRS else None
+    if (p["stem"], p["branch"]) not in _BAEK_HO_PAIRS:
+        return None
+    r = dict(SIN_SAL_INFO["백호대살"])
+    r["reason"] = {"trigger": "day_pillar", "day_stem": p["stem"], "day_branch": p["branch"]}
+    return r
 
 def _sam_jae(saju: dict, bs: set[str]) -> dict | None:
     year_branch = saju["year_pillar"]["branch"]
@@ -123,10 +194,17 @@ def _sam_jae(saju: dict, bs: set[str]) -> dict | None:
     for group, branches in _SAM_JAE_TABLE:
         if year_branch in group and current_branch in branches:
             idx = branches.index(current_branch)
+            status = ["들삼재", "묵삼재", "날삼재"][idx]
             return {
                 "name": "삼재", "type": "warning",
                 "desc": "3년 주기 액운 구간",
-                "status": ["들삼재", "묵삼재", "날삼재"][idx],
+                "status": status,
+                "reason": {
+                    "trigger": "year_branch_cycle",
+                    "birth_year_branch": year_branch,
+                    "current_year_branch": current_branch,
+                    "status": status,
+                },
             }
     return None
 

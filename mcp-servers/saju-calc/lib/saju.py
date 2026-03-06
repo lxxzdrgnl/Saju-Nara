@@ -13,6 +13,7 @@ from data.earthly_branches import (
     analyze_branch_relations,
     BRANCHES_BY_KOREAN,
 )
+from data.timezone_history import get_solar_correction_minutes
 from lib.solar_terms import get_current_solar_term, get_solar_term_month_index
 from lib.calendar_converter import convert_calendar
 
@@ -150,8 +151,10 @@ def calculate_saju(
     hh, mm = map(int, birth_time.split(":"))
     dt = datetime(y, mo, d, hh, mm, tzinfo=timezone.utc)
 
-    # 진태양시 보정 -30분
-    adjusted = dt - timedelta(minutes=30)
+    # 진태양시 보정 (한국 표준시 역사 기반, 서울 경도 126.97° 기준)
+    dt_naive = datetime(y, mo, d, hh, mm)
+    correction = get_solar_correction_minutes(dt_naive)
+    adjusted = dt + timedelta(minutes=correction)
 
     year_p = _calc_year_pillar(adjusted)
     month_p = _calc_month_pillar(adjusted, year_p)

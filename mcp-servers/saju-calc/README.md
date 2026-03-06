@@ -11,6 +11,7 @@
 - **계산만, 해석 없음**: 숫자·간지·구조만 반환. 해석 문장은 `saju-rag`가 담당
 - **ephem 기반 절기**: 실시간 천문 계산으로 모든 연도 지원
 - **korean-lunar-calendar**: 패키지 기반 음양력 변환
+- **진태양시 보정**: 한국 실제 경도(127.5°) 기준 -32분 적용
 
 ---
 
@@ -18,34 +19,33 @@
 
 ```
 saju-calc/
-├── main.py                  # FastMCP 서버 진입점
-├── pyproject.toml           # uv 의존성 관리
+├── main.py                    # FastMCP 서버 진입점
+├── pyproject.toml             # uv 의존성 관리
 ├── Dockerfile
 ├── data/
-│   ├── heavenly_stems.py    # 천간 10개
-│   ├── earthly_branches.py  # 지지 12개 + 지장간 + 삼합/삼형/육해/충/합
-│   └── wuxing.py            # 오행 상생/상극
+│   ├── heavenly_stems.py      # 천간 10개
+│   ├── earthly_branches.py    # 지지 12개 + 지장간 + 삼합/삼형/육해/충/합
+│   └── wuxing.py              # 오행 상생/상극
 ├── lib/
-│   ├── solar_terms.py       # ephem 24절기 계산
-│   ├── calendar_converter.py
-│   ├── saju.py              # 4기둥 계산
-│   ├── ten_gods.py
-│   ├── sin_sal.py
-│   ├── day_master_strength.py
-│   ├── gyeok_guk.py
-│   ├── yong_sin.py
-│   ├── dae_un.py
-│   ├── se_un.py              # 세운·월운·시운 통합
-│   ├── compatibility.py
-│   ├── jakmeong.py
-│   └── validation.py
-└── tools/                   # MCP tool 핸들러
+│   ├── solar_terms.py         # ephem 24절기 계산
+│   ├── calendar_converter.py  # 음양력 변환
+│   ├── saju.py                # 4기둥 계산
+│   ├── ten_gods.py            # 십성
+│   ├── twelve_wun.py          # 12운성
+│   ├── sin_sal.py             # 신살 10종 (Strategy+Registry 패턴)
+│   ├── day_master_strength.py # 일간 강약
+│   ├── gyeok_guk.py           # 격국 13종
+│   ├── yong_sin.py            # 용신
+│   ├── dae_un.py              # 대운
+│   ├── se_un.py               # 세운·월운·시운 통합
+│   ├── compatibility.py       # 궁합
+│   └── validation.py          # 입력 검증
+└── tools/                     # MCP tool 핸들러
     ├── calculate_saju.py
     ├── convert_calendar.py
     ├── get_dae_un.py
     ├── get_un_flow.py
-    ├── check_compatibility.py
-    └── analyze_name.py
+    └── check_compatibility.py
 ```
 
 ---
@@ -95,15 +95,14 @@ docker compose up saju-calc
 
 ### 진태양시 보정
 ```
-실제 사주 계산 시각 = 입력 시각 - 30분
-(한국 KST는 UTC+9이나 실제 천문시와 약 30분 차이)
+실제 사주 계산 시각 = 입력 시각 - 32분
+(한국 실제 경도 127.5° 기준. 타 만세력과 결과 차이가 있을 수 있음)
 ```
 
 ### 대운 시작 나이 (만세력 공식)
 ```
 3일 = 1년 (12개월)
 1일 = 4개월
-1시진(2시간) = 10일 = 40개월
 → 절기까지의 일수 × 4 = 대운 시작 개월수
 ```
 
@@ -133,23 +132,76 @@ docker compose up saju-calc
 
 // 출력
 {
-  "year_pillar":  { "stem": "신", "branch": "사", "stem_element": "금", "branch_element": "화", "yin_yang": "음", "stem_ten_god": "정인",  "branch_ten_god": "편재" },
-  "month_pillar": { "stem": "병", "branch": "신", "stem_element": "화", "branch_element": "금", "yin_yang": "양", "stem_ten_god": "편재",  "branch_ten_god": "편인" },
-  "day_pillar":   { "stem": "임", "branch": "자", "stem_element": "수", "branch_element": "수", "yin_yang": "양", "stem_ten_god": "비견",  "branch_ten_god": "겁재" },
-  "hour_pillar":  { "stem": "을", "branch": "사", "stem_element": "목", "branch_element": "화", "yin_yang": "음", "stem_ten_god": "상관",  "branch_ten_god": "편재" },
+  "year_pillar":  { "stem": "신", "branch": "사", "stem_hanja": "辛", "branch_hanja": "巳", "stem_element": "금", "branch_element": "화", "yin_yang": "음", "stem_ten_god": "정인",  "branch_ten_god": "편재", "twelve_wun": "사"   },
+  "month_pillar": { "stem": "병", "branch": "신", "stem_hanja": "丙", "branch_hanja": "申", "stem_element": "화", "branch_element": "금", "yin_yang": "양", "stem_ten_god": "편재",  "branch_ten_god": "편인", "twelve_wun": "병"   },
+  "day_pillar":   { "stem": "임", "branch": "자", "stem_hanja": "壬", "branch_hanja": "子", "stem_element": "수", "branch_element": "수", "yin_yang": "양", "stem_ten_god": "비견",  "branch_ten_god": "겁재", "twelve_wun": "제왕" },
+  "hour_pillar":  { "stem": "을", "branch": "사", "stem_hanja": "乙", "branch_hanja": "巳", "stem_element": "목", "branch_element": "화", "yin_yang": "음", "stem_ten_god": "상관",  "branch_ten_god": "편재", "twelve_wun": "목욕" },
   "wuxing_count": { "목": 1, "화": 3, "토": 0, "금": 2, "수": 2 },
   "dominant_elements": ["화"],
   "weak_elements": ["토"],
+  "yin_yang_ratio": { "yang": 50.0, "yin": 50.0 },
+  "ten_gods_distribution": {
+    "비견": 0.0, "겁재": 0.5, "식신": 0.0, "상관": 1.0,
+    "편재": 2.0, "정재": 0.0, "편관": 0.0, "정관": 0.0,
+    "편인": 0.5, "정인": 1.0
+  },
+  "branch_relations": {
+    "sam_hap": null,
+    "yuk_hap": [{ "pair": ["사", "신"], "element": "수" }],
+    "chung": [],
+    "sam_hyeong": [],
+    "yuk_hae": [],
+    "gong_mang": []
+  },
+  "ji_jang_gan": {
+    "year":  ["병", "무", "경"],
+    "month": ["경", "임", "무"],
+    "day":   ["계"],
+    "hour":  ["병", "무", "경"]
+  },
   "sin_sals": [
-    { "name": "천을귀인", "type": "lucky",   "desc": "인복이 많고 위기에서 귀인의 도움을 받음" },
-    { "name": "귀문관살", "type": "unlucky", "desc": "예민한 직관력과 창의적 영감, 신경과민 주의" },
-    { "name": "양인살",   "type": "unlucky", "desc": "강한 추진력과 승부욕, 다혈질적 기질" }
+    {
+      "name": "천을귀인", "type": "lucky", "priority": "medium",
+      "desc": "인복이 많고 위기에서 귀인의 도움을 받음",
+      "reason": { "trigger": "day_stem", "day_stem": "임", "matched_branches": ["사"] }
+    },
+    {
+      "name": "귀문관살", "type": "unlucky", "priority": "high",
+      "desc": "예민한 직관력과 창의적 영감, 신경과민 주의",
+      "reason": { "trigger": "branch_count", "matched_branches": ["사", "신"], "required_count": 2 }
+    },
+    {
+      "name": "양인살", "type": "unlucky", "priority": "high",
+      "desc": "강한 추진력과 승부욕, 다혈질적 기질",
+      "reason": { "trigger": "day_stem", "day_stem": "임", "yang_in_branch": "자" }
+    }
   ],
-  "day_master_strength": { "level": "very_strong", "score": 85, "analysis": "월령을 득하여 강함. 비겁 없음. 인성 소량" },
-  "gyeok_guk": { "name": "편재격", "hanja": "偏財格", "description": "사교적이고 사업 수완이 뛰어난 활동형" },
-  "yong_sin": { "primary": "목", "secondary": "화", "xi_sin": ["목", "화"], "ji_sin": ["수", "금"] },
+  "day_master_strength": {
+    "level": "very_strong", "score": 85,
+    "analysis": "월령을 득하여 강함. 비겁 없음. 인성 소량",
+    "wol_ryeong": "strong"
+  },
+  "gyeok_guk": {
+    "type": "pyeon_jae", "name": "편재격", "hanja": "偏財格",
+    "description": "사교적이고 사업 수완이 뛰어난 활동형"
+  },
+  "yong_sin": {
+    "primary": "목", "secondary": "화",
+    "xi_sin": ["목", "화"], "ji_sin": ["수", "금"],
+    "reasoning": "일간(수)이 강하므로 설기하는 목(식상)·화(재성)을 용신으로 삼음"
+  },
   "dae_un_start_age": 4,
-  "current_dae_un": { "start_age": 24, "end_age": 33, "stem": "계", "branch": "사", "stem_ten_god": "겁재", "branch_ten_god": "편재" }
+  "current_dae_un": {
+    "start_age": 24, "end_age": 33,
+    "stem": "계", "branch": "사",
+    "stem_element": "수", "branch_element": "화",
+    "stem_ten_god": "겁재", "branch_ten_god": "편재"
+  },
+  "meta": {
+    "time_correction_minutes": -32,
+    "applied_time": "2001-08-17T10:28",
+    "timezone_note": "UTC+9:00 기준 -32분 보정"
+  }
 }
 ```
 
@@ -172,63 +224,38 @@ docker compose up saju-calc
 ]
 ```
 
-### `analyze_name`
-
-```json
-// 입력
-{ "name": "이용재", "birth_date": "2001-08-17", "birth_time": "11:00", "gender": "male" }
-
-// 출력
-{
-  "name": "이용재",
-  "characters": [
-    { "char": "이", "consonant": "ㅇ", "element": "토" },
-    { "char": "용", "consonant": "ㅇ", "element": "토" },
-    { "char": "재", "consonant": "ㅈ", "element": "금" }
-  ],
-  "element_distribution": { "목": 0, "화": 0, "토": 2, "금": 1, "수": 0 },
-  "yong_sin_match_score": 0,
-  "yong_sin": "목",
-  "missing_yong_sin": true
-}
-```
-
 ---
 
-## 제공 Tools (6개)
+## 제공 Tools (5개)
 
 ### 1. `calculate_saju`
 사주팔자 전체 계산
 
-```json
-// 입력
-{
-  "birth_date": "2001-08-17",
-  "birth_time": "11:00",
-  "gender": "male",
-  "calendar": "solar",      // "solar" | "lunar"
-  "is_leap_month": false
-}
+| 파라미터 | 타입 | 설명 |
+|---|---|---|
+| `birth_date` | string | 생년월일 `YYYY-MM-DD` |
+| `birth_time` | string | 출생 시각 `HH:MM` |
+| `gender` | string | `male` \| `female` |
+| `calendar` | string | `solar` \| `lunar` (기본값: solar) |
+| `is_leap_month` | boolean | 음력 윤달 여부 (기본값: false) |
 
-// 출력
-{
-  "year_pillar":  { "stem": "신", "branch": "사", "stem_element": "금", "branch_element": "화", "yin_yang": "음" },
-  "month_pillar": { "stem": "병", "branch": "신", "stem_element": "화", "branch_element": "금", "yin_yang": "양" },
-  "day_pillar":   { "stem": "임", "branch": "자", "stem_element": "수", "branch_element": "수", "yin_yang": "양" },
-  "hour_pillar":  { "stem": "을", "branch": "사", "stem_element": "목", "branch_element": "화", "yin_yang": "음" },
-  "wuxing_count": { "목": 1, "화": 3, "토": 0, "금": 2, "수": 2 },
-  "dominant_elements": ["화"],
-  "weak_elements": ["토"],
-  "ten_gods": ["편인", "편재", "비견", "식신"],
-  "ten_gods_distribution": { "편재": 1.0, "편인": 0.8, ... },
-  "sin_sals": ["cheon_eul_gwi_in", "gwi_mun_gwan_sal"],
-  "branch_relations": { "sam_hap": null, "sam_hyeong": [], "yuk_hae": [] },
-  "ji_jang_gan": { "year": {...}, "month": {...}, "day": {...}, "hour": {...} },
-  "day_master_strength": { "level": "very_strong", "score": 85 },
-  "gyeok_guk": { "type": "pyeon_jae", "name": "편재격", "hanja": "偏財格" },
-  "yong_sin": { "primary": "목", "secondary": "화", "xi_sin": ["목", "화"], "ji_sin": ["수", "금"] }
-}
-```
+**반환 필드:**
+
+| 필드 | 설명 |
+|---|---|
+| `year/month/day/hour_pillar` | 각 기둥 (stem, branch, 십성, 12운성 포함) |
+| `wuxing_count` | 오행 개수 |
+| `dominant_elements` / `weak_elements` | 강한/약한 오행 |
+| `yin_yang_ratio` | 음양 비율 `{yang: 50.0, yin: 50.0}` |
+| `sin_sals` | 신살 10종 `{name, type, priority, desc, reason}` — `reason`은 트리거 데이터 구조체 |
+| `branch_relations` | 합·충·형·파·해 관계 |
+| `ji_jang_gan` | 지장간 |
+| `day_master_strength` | 일간 강약 `{level, score, analysis}` |
+| `gyeok_guk` | 격국 |
+| `yong_sin` | 용신 `{primary, secondary, xi_sin, ji_sin}` |
+| `dae_un_start_age` | 대운 시작 나이 |
+| `current_dae_un` | 현재 대운 (십성 포함) |
+| `meta` | 시간 보정 기준 명시 |
 
 ---
 
@@ -238,7 +265,6 @@ docker compose up saju-calc
 ```json
 // 입력
 { "date": "2001-08-17", "from_calendar": "solar", "to_calendar": "lunar" }
-
 // 출력
 { "original_date": "2001-08-17", "converted_date": "2001-06-28", "is_leap_month": false, "solar_term": "입추" }
 ```
@@ -250,38 +276,20 @@ docker compose up saju-calc
 
 ```json
 // 입력
-{ "birth_date": "2001-08-17", "birth_time": "11:00", "gender": "male", "calendar": "solar", "count": 8 }
-
-// 출력
-[
-  { "start_age": 3, "end_age": 12, "stem": "정", "branch": "유", "stem_element": "화", "branch_element": "금" },
-  { "start_age": 13, "end_age": 22, "stem": "무", "branch": "술", ... },
-  ...
-]
+{ "birth_date": "2001-08-17", "birth_time": "11:00", "gender": "male", "count": 8 }
+// 출력: [{start_age, end_age, stem, branch, stem_element, branch_element}, ...]
 ```
 
 ---
 
 ### 4. `get_un_flow`
-세운(년) / 월운(월) / 시운(시진) 간지 계산
+세운(년) / 월운(월) / 시운 간지 + 일간 관계
 
 ```json
 // 입력
-{
-  "birth_date": "2001-08-17", "birth_time": "11:00",
-  "gender": "male", "calendar": "solar",
-  "flow_type": "year",   // "year" | "month" | "hour"
-  "target": "2025"       // year:"YYYY", month:"YYYY-MM", hour:"HH"
-}
-
+{ "birth_date": "2001-08-17", "birth_time": "11:00", "gender": "male", "flow_type": "year", "target": "2026" }
 // 출력
-{
-  "stem": "을", "branch": "사",
-  "stem_element": "목", "branch_element": "화",
-  "ganji_name": "을사년",
-  "interaction_with_day_master": "목생화: 일간을 설기하는 기운",
-  "interaction_with_yong_sin": "목: 용신과 동일한 오행"
-}
+{ "stem": "병", "branch": "오", "ganji_name": "병오년", "interaction_with_day_master": "...", "interaction_with_yong_sin": "..." }
 ```
 
 ---
@@ -295,39 +303,6 @@ docker compose up saju-calc
   "person1": { "birth_date": "2001-08-17", "birth_time": "11:00", "gender": "male" },
   "person2": { "birth_date": "1993-07-22", "birth_time": "09:00", "gender": "female" }
 }
-
 // 출력
-{
-  "total_score": 73,
-  "day_pillar_score": 75,
-  "element_harmony_score": 68,
-  "branch_relation_score": 80,
-  "ten_gods_score": 65,
-  "complement_elements": ["목"],
-  "conflict_branches": ["자-오"]
-}
-```
-
----
-
-### 6. `analyze_name`
-이름 오행 분석 및 용신 적합도
-
-```json
-// 입력
-{ "name": "이용재", "birth_date": "2001-08-17", "birth_time": "11:00", "gender": "male" }
-
-// 출력
-{
-  "name": "이용재",
-  "characters": [
-    { "char": "이", "consonant": "ㅇ", "element": "토" },
-    { "char": "용", "consonant": "ㅇ", "element": "토" },
-    { "char": "재", "consonant": "ㅈ", "element": "금" }
-  ],
-  "element_distribution": { "목": 0, "화": 0, "토": 2, "금": 1, "수": 0 },
-  "yong_sin_match_score": 0,
-  "yong_sin": "목",
-  "missing_yong_sin": true
-}
+{ "total_score": 73, "day_pillar_score": 75, "element_harmony_score": 68, ... }
 ```

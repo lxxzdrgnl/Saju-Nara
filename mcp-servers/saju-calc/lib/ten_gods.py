@@ -79,6 +79,14 @@ def calculate_ten_gods_distribution(saju: dict) -> dict[str, float]:
     return dist
 
 
+def get_branch_ten_god(day_stem: str, branch: str) -> str:
+    """지지의 정기(대표 천간) 기준 십성 반환."""
+    rep = _BRANCH_TO_STEM.get(branch)
+    if rep is None:
+        return ""
+    return calculate_ten_god(day_stem, rep)
+
+
 def get_ten_god_category(ten_god: str) -> str:
     cats = {
         "비견": "비겁", "겁재": "비겁",
