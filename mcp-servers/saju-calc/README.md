@@ -120,6 +120,8 @@ docker compose up saju-calc
 
 ## 예제 — 이용재 (양력 2001-08-17 오전 11시, 남성)
 
+### `calculate_saju`
+
 ```json
 // 입력
 {
@@ -131,17 +133,63 @@ docker compose up saju-calc
 
 // 출력
 {
-  "year_pillar":  { "stem": "신", "branch": "사", "stem_element": "금", "branch_element": "화", "yin_yang": "음" },
-  "month_pillar": { "stem": "병", "branch": "신", "stem_element": "화", "branch_element": "금", "yin_yang": "양" },
-  "day_pillar":   { "stem": "임", "branch": "자", "stem_element": "수", "branch_element": "수", "yin_yang": "양" },
-  "hour_pillar":  { "stem": "을", "branch": "사", "stem_element": "목", "branch_element": "화", "yin_yang": "음" },
+  "year_pillar":  { "stem": "신", "branch": "사", "stem_element": "금", "branch_element": "화", "yin_yang": "음", "stem_ten_god": "정인",  "branch_ten_god": "편재" },
+  "month_pillar": { "stem": "병", "branch": "신", "stem_element": "화", "branch_element": "금", "yin_yang": "양", "stem_ten_god": "편재",  "branch_ten_god": "편인" },
+  "day_pillar":   { "stem": "임", "branch": "자", "stem_element": "수", "branch_element": "수", "yin_yang": "양", "stem_ten_god": "비견",  "branch_ten_god": "겁재" },
+  "hour_pillar":  { "stem": "을", "branch": "사", "stem_element": "목", "branch_element": "화", "yin_yang": "음", "stem_ten_god": "상관",  "branch_ten_god": "편재" },
   "wuxing_count": { "목": 1, "화": 3, "토": 0, "금": 2, "수": 2 },
   "dominant_elements": ["화"],
   "weak_elements": ["토"],
-  "sin_sals": ["cheon_eul_gwi_in", "gwi_mun_gwan_sal"],
-  "day_master_strength": { "level": "very_strong", "score": 85 },
-  "gyeok_guk": { "name": "편재격", "hanja": "偏財格" },
-  "yong_sin": { "primary": "목", "secondary": "화" }
+  "sin_sals": [
+    { "name": "천을귀인", "type": "lucky",   "desc": "인복이 많고 위기에서 귀인의 도움을 받음" },
+    { "name": "귀문관살", "type": "unlucky", "desc": "예민한 직관력과 창의적 영감, 신경과민 주의" },
+    { "name": "양인살",   "type": "unlucky", "desc": "강한 추진력과 승부욕, 다혈질적 기질" }
+  ],
+  "day_master_strength": { "level": "very_strong", "score": 85, "analysis": "월령을 득하여 강함. 비겁 없음. 인성 소량" },
+  "gyeok_guk": { "name": "편재격", "hanja": "偏財格", "description": "사교적이고 사업 수완이 뛰어난 활동형" },
+  "yong_sin": { "primary": "목", "secondary": "화", "xi_sin": ["목", "화"], "ji_sin": ["수", "금"] },
+  "dae_un_start_age": 4,
+  "current_dae_un": { "start_age": 24, "end_age": 33, "stem": "계", "branch": "사", "stem_ten_god": "겁재", "branch_ten_god": "편재" }
+}
+```
+
+### `get_dae_un`
+
+```json
+// 입력
+{ "birth_date": "2001-08-17", "birth_time": "11:00", "gender": "male", "count": 8 }
+
+// 출력
+[
+  { "start_age":  4, "end_age": 13, "stem": "을", "branch": "미", "stem_element": "목", "branch_element": "토" },
+  { "start_age": 14, "end_age": 23, "stem": "갑", "branch": "오", "stem_element": "목", "branch_element": "화" },
+  { "start_age": 24, "end_age": 33, "stem": "계", "branch": "사", "stem_element": "수", "branch_element": "화" },
+  { "start_age": 34, "end_age": 43, "stem": "임", "branch": "진", "stem_element": "수", "branch_element": "토" },
+  { "start_age": 44, "end_age": 53, "stem": "신", "branch": "묘", "stem_element": "금", "branch_element": "목" },
+  { "start_age": 54, "end_age": 63, "stem": "경", "branch": "인", "stem_element": "금", "branch_element": "목" },
+  { "start_age": 64, "end_age": 73, "stem": "기", "branch": "축", "stem_element": "토", "branch_element": "토" },
+  { "start_age": 74, "end_age": 83, "stem": "무", "branch": "자", "stem_element": "토", "branch_element": "수" }
+]
+```
+
+### `analyze_name`
+
+```json
+// 입력
+{ "name": "이용재", "birth_date": "2001-08-17", "birth_time": "11:00", "gender": "male" }
+
+// 출력
+{
+  "name": "이용재",
+  "characters": [
+    { "char": "이", "consonant": "ㅇ", "element": "토" },
+    { "char": "용", "consonant": "ㅇ", "element": "토" },
+    { "char": "재", "consonant": "ㅈ", "element": "금" }
+  ],
+  "element_distribution": { "목": 0, "화": 0, "토": 2, "금": 1, "수": 0 },
+  "yong_sin_match_score": 0,
+  "yong_sin": "목",
+  "missing_yong_sin": true
 }
 ```
 

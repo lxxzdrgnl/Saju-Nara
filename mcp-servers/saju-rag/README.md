@@ -40,7 +40,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv sync --group dev
 
 # MCP Inspector로 개발 테스트
-uv run fastmcp dev main.py
+DANGEROUSLY_OMIT_AUTH=true uv run fastmcp dev inspector main.py
 ```
 
 ### Docker
