@@ -1,0 +1,78 @@
+# =========================
+# Python (Backend / MCP)
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+*.cover
+coverage.xml
+
+# =========================
+# Node / Frontend
+# =========================
+node_modules/
+.nuxt/
+.output/
+dist/
+.cache/
+*.local
+
+# =========================
+# Environment & Secrets
+# =========================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# =========================
+# Database
+# =========================
+*.db
+*.sqlite3
+chroma_db/
+chromadb/
+postgres_data/
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# IDE & OS
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# MCP
+# =========================
+.mcp_cache/
+mcp_inspector/
