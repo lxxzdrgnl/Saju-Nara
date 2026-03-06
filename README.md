@@ -172,7 +172,9 @@ cd mcp-servers/saju-calc
 uv sync --group dev
 
 # MCP Inspector로 개발 테스트
-uv run fastmcp dev main.py
+DANGEROUSLY_OMIT_AUTH=true uv run fastmcp dev inspector main.py
+# → http://localhost:6274 접속 후 아래 설정으로 Connect
+#   Transport : STDIO / Command : uv / Arguments : run python main.py
 
 # 단위 테스트
 uv run pytest tests/
