@@ -13,17 +13,19 @@
 이 프로젝트는 **Model Context Protocol(MCP)**을 사용하여 로직과 데이터를 철저히 분리한 3-Tier 에이전트 아키텍처를 따릅니다.
 
 ### Layer 1: Frontend (Vue.js 3 / Nuxt.js)
-- **역할**: 사용자 입력 수신 및 AI가 생성한 동적 UI 렌더링.
+- **역할**: 사용자 입력 수신 및 완성된 리포트를 탭 UI로 렌더링.
+- **UX 원칙**: 탭 클릭 시 추가 API 호출 없음. 이미 완성된 데이터를 즉시 전환 (일반 웹사이트처럼).
 - **핵심 컴포넌트**:
   - **Dynamic Input Form**: 사주 계산에 필요한 정보(생년월일시, 음양력) 및 고민 내용 수집.
-  - **Headline Tab/Accordion**: AI Planner가 생성한 10개의 결론형 문장을 탭 버튼으로 구현.
-  - **Streaming Content Viewer**: 선택된 탭의 상세 내용을 실시간으로 타닥타닥(Streaming) 보여주는 뷰어.
+  - **Loading State**: 리포트 생성 중 로딩 표시.
+  - **Headline Tab UI**: AI가 생성한 10개의 결론형 탭. 클릭 시 이미 완성된 내용으로 즉시 전환.
 
 ### Layer 2: Backend (FastAPI - AI Agent Brain)
 - **역할**: 전체 워크플로우 제어 및 AI 에이전트 오케스트레이션.
+- **처리 방식**: 10개 탭의 헤드라인과 상세 내용을 **한 번에 모두 생성**하여 완성된 JSON 반환.
 - **에이전트 구성**:
-  - **Planner Agent**: Saju-Calc MCP의 결과와 사용자 고민을 결합해 10개의 인사이트 헤드라인 기획.
-  - **Writer Agent**: 사용자가 탭을 클릭할 때마다 Saju-RAG MCP에서 지식을 꺼내와 상세 리포트 집필.
+  - **Planner Agent**: Saju-Calc MCP 결과 + 고민 → 10개 헤드라인 기획.
+  - **Writer Agent**: Saju-RAG MCP에서 지식 조회 → 10개 탭 상세 내용 일괄 집필.
 - **기술**: LangGraph 또는 LangChain을 활용한 에이전트 제어.
 
 ### Layer 3: MCP Servers (Tools & Data)
@@ -54,7 +56,10 @@ AI가 근거 있는 답변을 하기 위해 **Vector DB(ChromaDB)**에 저장될
 3. **기획 단계**: AI가 10개의 헤드라인 생성.
    - 탭 1: 본인의 강한 주관이 상사의 권위와 충돌하는 형국입니다.
    - 탭 2: 올해는 역마의 기운이 강해 이직을 하기에 최적의 타이밍...
-4. **생성 단계**: 사용자가 탭 클릭 시, Saju-RAG MCP에서 관련 명리 데이터를 가져와 상세 솔루션 생성.
+4. **일괄 생성 단계**: Writer Agent가 Saju-RAG MCP에서 지식을 조회하여 **10개 탭 내용을 모두 한 번에 생성**.
+5. **표시 단계**: 완성된 전체 리포트를 Frontend로 반환 → 사용자는 일반 웹사이트처럼 탭을 즉시 클릭해 전환.
+
+> **UX 원칙**: 탭 클릭은 단순 뷰 전환. 추가 API 호출 없음. 실시간 스트리밍 불필요.
 
 ---
 
