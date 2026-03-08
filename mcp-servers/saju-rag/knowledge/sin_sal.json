@@ -1,155 +1,268 @@
 [
   {
     "id": "ss_cheoneuol",
-    "name": "천을귀인", "hanja": "天乙貴人", "type": "lucky", "priority": "medium",
-    "core": "위기에서 귀인(도움을 주는 인물)이 나타나 구해주는 기운. 인복(人福)이 많고 사람을 통한 기회가 많다.",
-    "positive": "어려울수록 도움의 손길이 등장한다. 사람과의 인연에서 행운이 온다.",
-    "caution": "귀인의 도움에 과도하게 의존하면 자생력이 약해진다.",
-    "modern": "면접관, 투자자, 멘토가 특별히 눈여겨보는 사람. 네트워킹에서 유독 좋은 인연을 만난다.",
-    "semantic_context": "어려운 순간마다 어디선가 도움의 손이 뻗어오는 기운입니다. 인복이 많고 사람을 통해 기회가 열립니다. 혼자가 아닌 함께하는 관계 속에서 행운이 찾아오며, 위기일수록 귀인이 나타나 돌파구를 만들어줍니다. 타고난 사회적 매력과 신뢰감으로 주변의 지원을 자연스럽게 끌어당깁니다.",
+    "name": "천을귀인",
+    "hanja": "天乙貴人",
+    "type": "lucky",
+    "priority": 70,
+    "embedding_context": "천을귀인은 위기 상황에서 조력자가 나타나는 대표적인 길신으로, 인복과 사회적 신뢰가 높아 사람을 통해 기회와 행운이 열리는 기운이다.",
+    "engine_tags": ["lucky_star", "people_support", "crisis_rescue", "social_magnetism", "intuitive_trust_builder"],
+    "interpretation_tags": ["mentor_luck", "investor_attraction", "networking_premium", "first_impression_advantage", "divine_help_in_crisis"],
     "pillar_nuance": {
-      "year": "어린 시절부터 어른의 보호와 지원을 받아온 환경. 조상 복과 부모의 음덕.",
-      "month": "사회생활에서 상사나 선배의 각별한 지원을 받음. 직업적 귀인이 나타날 가능성.",
-      "day": "배우자가 귀인 역할. 결혼 후 전반적 운이 상승하는 패턴.",
-      "hour": "자녀나 후배로부터 도움받는 기운. 노년에도 주변의 지지를 받는다."
+      "year": {"traits": ["ancestral_protection", "early_support_environment"], "hint": "조상 음덕, 부모 지원"},
+      "month": {"traits": ["career_mentorship", "senior_guidance"], "hint": "직장 귀인, 상사 지원"},
+      "day": {"traits": ["supportive_spouse", "marriage_fortune_rise"], "hint": "배우자 귀인 역할"},
+      "hour": {"traits": ["junior_support", "late_life_assistance"], "hint": "후배·자녀 지지"}
+    },
+    "vulnerability": {
+      "traits": ["over_dependence_on_others", "complacency_risk"],
+      "care_level": "low"
     },
     "consulting_tip": "당신은 사람에게 복이 있습니다. 혼자 해결하려 발버둥치기보다, 먼저 손을 내밀어 보세요. 당신을 기꺼이 도우려는 사람이 반드시 있습니다.",
-    "tags": ["귀인", "인복", "행운", "도움", "네트워킹"]
+    "activation_rule": {
+      "method": "day_master_to_branch",
+      "description": "일간에 따라 특정 지지가 천을귀인이 됨. 사주 4기둥 어디서든 해당 지지가 있으면 성립.",
+      "mapping": {
+        "갑": ["축", "미"], "을": ["자", "신"],
+        "병": ["해", "유"], "정": ["해", "유"],
+        "무": ["축", "미"], "기": ["자", "신"],
+        "경": ["축", "미"], "신": ["인", "오"],
+        "임": ["묘", "사"], "계": ["묘", "사"]
+      }
+    },
+    "interpretation_scope": "sinsal_reference_only"
   },
   {
     "id": "ss_gwimun",
-    "name": "귀문관살", "hanja": "鬼門關殺", "type": "unlucky", "priority": "high",
-    "core": "귀신의 문. 예민한 직관력과 신비로운 영감을 주지만 신경과민, 불안, 강박적 사고의 위험도 있다.",
-    "positive": "초감각적 직관, 예술적 영감, 창의적 발상. 심리 상담, 예술, 명상 분야에서 남다른 통찰력.",
-    "caution": "지나친 예민함으로 신경질환, 불면, 공황 위험.",
-    "modern": "심리 치료사, 예술가, 명상 지도자로 활용 가능한 기운.",
-    "semantic_context": "예민한 직관력과 천재성, 동시에 신경과민과 집착의 에너지를 의미합니다. 정신적인 몰입도가 강해 창의적 분야에서 두각을 나타내지만, 스트레스 상황에서 감정 기복이 심해질 수 있는 양면성을 가집니다. 남들이 감지하지 못하는 미묘한 감정과 분위기를 읽는 능력이 탁월하며, 이 예민함이 때로는 자신을 갉아먹는 도구가 되기도 합니다.",
+    "name": "귀문관살",
+    "hanja": "鬼門關殺",
+    "type": "unlucky",
+    "priority": 75,
+    "embedding_context": "귀문관살은 초감각적 직관과 예술적 영감을 부여하지만, 신경과민·불안·강박적 사고의 위험이 공존하는 양면성을 지닌 살이다.",
+    "engine_tags": ["hypersensitive_intuition", "paranormal_perception", "obsessive_focus", "creative_genius_risk", "dual_edge_energy"],
+    "interpretation_tags": ["therapist_intuition", "artist_sensitivity", "pattern_recognition", "deep_focus_ability", "anxiety_gifted"],
     "pillar_nuance": {
-      "year": "어린 시절의 예민함 또는 조상 대대로 이어져 온 직관적 영감. 유년기의 감수성이 특별히 강했다.",
-      "month": "사회생활에서의 독특한 아이디어와 완벽주의적 업무 스타일. 직장에서 예민하게 반응하거나 강박적 완성도를 추구.",
-      "day": "배우자와의 관계에서 결벽증적이거나 예민한 감정 대립 주의. 서로의 감정선이 예민하게 맞닿아 있다.",
-      "hour": "내면의 깊은 예술적 영감 또는 노년의 정신적 추구. 자녀가 예민하거나 창의적인 기질."
+      "year": {"traits": ["childhood_hypersensitivity", "inherited_intuition"], "hint": "유년기 예민함, 조상 직관 계승"},
+      "month": {"traits": ["perfectionism_at_work", "unique_work_approach"], "hint": "직장 내 완벽주의, 독특한 업무 스타일"},
+      "day": {"traits": ["emotional_tension_with_spouse", "sensitivity_in_relationship"], "hint": "배우자와 감정선 예민하게 맞닿음"},
+      "hour": {"traits": ["deep_artistic_drive", "sensitive_children"], "hint": "내면 창의, 예민한 자녀 기질"}
+    },
+    "vulnerability": {
+      "traits": ["anxiety_disorder_risk", "insomnia_risk", "emotional_burnout", "social_withdrawal"],
+      "care_level": "high"
     },
     "consulting_tip": "이 예민함을 '병'이 아닌 '안테나'로 쓰세요. 남들이 보지 못하는 것을 보는 능력을 창작이나 연구로 승화시키는 것이 개운의 핵심입니다. 정기적인 감각 해방(운동, 자연, 명상)이 이 기운의 파괴력을 창조력으로 바꿉니다.",
-    "tags": ["영감", "예민", "집착", "천재성", "신경과민"]
+    "activation_rule": {
+      "method": "branch_pair",
+      "description": "사주 내 지지 중 귀문관살 조합이 있을 때 성립. 일지 기준으로 다른 기둥의 지지와 쌍을 이루면 발현.",
+      "mapping": {
+        "자": ["유"], "축": ["오"], "인": ["미"], "묘": ["신"],
+        "진": ["해"], "사": ["술"], "오": ["축"], "미": ["인"],
+        "신": ["묘"], "유": ["자"], "술": ["사"], "해": ["진"]
+      }
+    },
+    "interpretation_scope": "sinsal_reference_only"
   },
   {
     "id": "ss_yangin",
-    "name": "양인살", "hanja": "羊刃殺", "type": "unlucky", "priority": "high",
-    "core": "양날의 검. 강한 추진력과 승부욕, 다혈질적 기질. 에너지가 너무 강해 자신과 주변을 베는 날카로움.",
-    "positive": "강인한 의지력, 압박에서도 꺾이지 않는 근성. 극한 직업이나 경쟁 상황에서 두드러진다.",
-    "caution": "충동적 분노, 사고 위험, 주변 사람 상처.",
-    "modern": "파이터, 기업가, 트레이더, 응급의학 분야. 분노를 에너지로 전환하는 훈련이 핵심.",
-    "semantic_context": "칼날처럼 날카롭고 불처럼 뜨거운 에너지입니다. 누가 건드리면 바로 반응하는 빠른 반사 신경과 강한 승부욕이 특징입니다. 이 기운은 전쟁터에서는 영웅을 만들고, 일상에서는 마찰을 만듭니다. 어디에 쓰느냐에 따라 최고의 무기가 되거나 스스로를 다치게 하는 칼이 됩니다.",
+    "name": "양인살",
+    "hanja": "羊刃殺",
+    "type": "unlucky",
+    "priority": 80,
+    "embedding_context": "양인살은 양날의 검처럼 강한 추진력과 승부욕을 부여하지만, 충동적 분노와 사고 위험을 동반하는 강렬한 기운이다. 양일간에만 성립하며 일지에 있을 때 가장 강하게 발현된다.",
+    "engine_tags": ["explosive_drive", "fighting_spirit", "impulsive_aggression", "extreme_resilience", "yang_stem_only"],
+    "interpretation_tags": ["competitive_edge", "warrior_spirit", "high_intensity_performer", "crisis_responder", "anger_management_needed"],
     "pillar_nuance": {
-      "year": "어린 시절부터 강한 기질로 자신과 주변 환경과 충돌. 어릴 때부터 남달리 강렬한 에너지.",
-      "month": "직장이나 사회에서 경쟁이 치열하고 갈등이 생기기 쉬운 환경. 상사와 마찰 주의.",
-      "day": "일간 양인살 — 에너지가 가장 강렬하게 발현. 배우자와 기 싸움 주의.",
-      "hour": "노년에도 투지가 꺾이지 않음. 자녀가 강한 기질을 이어받을 가능성."
+      "year": {"traits": ["intense_childhood_energy", "early_confrontations"], "hint": "어릴 때부터 강한 기질, 환경과 충돌"},
+      "month": {"traits": ["workplace_conflict_risk", "competitive_environment"], "hint": "직장 경쟁 치열, 상사 마찰 주의"},
+      "day": {"traits": ["maximum_intensity", "spousal_energy_clash"], "hint": "가장 강하게 발현, 배우자 기 싸움 주의"},
+      "hour": {"traits": ["lifelong_fighting_spirit", "strong_willed_children"], "hint": "노년까지 투지, 강한 자녀 기질"}
+    },
+    "vulnerability": {
+      "traits": ["impulsive_anger", "accident_risk", "relationship_damage_by_intensity"],
+      "care_level": "high"
     },
     "consulting_tip": "당신의 이 강렬한 에너지는 방향을 잘 잡으면 누구도 막을 수 없는 원동력이 됩니다. 분노가 올라올 때 잠깐 멈추는 연습, 그 한 호흡이 당신의 에너지를 파괴에서 창조로 바꿉니다.",
-    "tags": ["추진력", "다혈질", "승부욕", "날카로움", "충동적"]
+    "activation_rule": {
+      "method": "day_master_to_branch",
+      "description": "양일간(甲丙戊庚壬) 기준으로 특정 지지가 양인살. 음일간에는 양인살 성립 안 됨. 일지에 해당 지지가 있을 때 가장 강하게 발현.",
+      "mapping": {
+        "갑": ["묘"], "병": ["오"], "무": ["오"], "경": ["유"], "임": ["자"]
+      }
+    },
+    "interpretation_scope": "sinsal_reference_only"
   },
   {
     "id": "ss_yeokma",
-    "name": "역마살", "hanja": "驛馬殺", "type": "neutral", "priority": "medium",
-    "core": "끊임없이 움직이고 변화를 추구하는 기운. 한 곳에 정착하기보다 이동과 변화 속에서 에너지를 얻는다.",
-    "positive": "해외 진출, 이직, 이사 등 변화에서 기회가 온다. 여행, 무역, 외교, 운송 관련 업종에 유리.",
-    "caution": "정착하지 못하면 에너지가 낭비된다. 충동적 이동·이직은 역효과.",
-    "modern": "해외 취업, 글로벌 기업, 디지털 노마드에 최적화된 기운.",
-    "semantic_context": "가만히 있으면 답답하고 움직여야 살아있음을 느끼는 기운입니다. 새로운 환경, 새로운 사람, 새로운 도전에서 에너지를 충전합니다. 해외, 이직, 이사, 여행이라는 키워드에 자연스럽게 이끌리며 변화 자체를 두려워하지 않습니다. 정착이 아닌 순환이 이 사람의 성장 방식입니다.",
+    "name": "역마살",
+    "hanja": "驛馬殺",
+    "type": "neutral",
+    "priority": 55,
+    "embedding_context": "역마살은 끊임없는 이동과 변화 속에서 에너지를 얻는 기운으로, 해외·이직·이사 등 환경 변화에서 기회가 열리는 특성을 지닌다.",
+    "engine_tags": ["constant_movement", "change_seeker", "opportunity_in_transition", "restless_energy", "mobility_driven"],
+    "interpretation_tags": ["digital_nomad_energy", "global_opportunity", "career_mobility", "travel_as_growth", "relocation_luck"],
     "pillar_nuance": {
-      "year": "어린 시절 이사나 이동이 잦았던 환경. 해외 연을 일찍 맺을 가능성.",
-      "month": "직업 자체가 이동과 변화를 요구. 해외 출장, 이직, 프리랜서 형태.",
-      "day": "배우자와 함께 이동·이주가 많거나, 원거리 연애·결혼.",
-      "hour": "노년에도 활발한 이동. 자녀가 해외에 나가거나 멀리 있을 가능성."
+      "year": {"traits": ["frequent_childhood_relocation", "early_overseas_connection"], "hint": "어린 시절 이사 잦음, 해외 연 이름"},
+      "month": {"traits": ["mobile_career", "frequent_job_change"], "hint": "이동형 직업, 해외 출장·이직"},
+      "day": {"traits": ["long_distance_relationship", "mobile_partnership"], "hint": "원거리 연애·결혼, 배우자와 이주 많음"},
+      "hour": {"traits": ["active_late_life", "children_abroad"], "hint": "노년에도 활동적, 자녀 해외 진출"}
+    },
+    "vulnerability": {
+      "traits": ["inability_to_settle", "wasted_energy_in_impulsive_moves", "shallow_roots"],
+      "care_level": "medium"
     },
     "consulting_tip": "당신의 에너지는 움직일 때 빛납니다. 한 곳에 억지로 정착하려는 스트레스보다, 당신에게 맞는 이동의 리듬을 찾아 전략적으로 활용하세요.",
-    "tags": ["이동", "변화", "해외", "여행", "역동적"]
+    "activation_rule": {
+      "method": "birth_branch_group",
+      "description": "연지 또는 일지가 속한 삼합 국(局)을 기준으로 역마살 지지 결정.",
+      "mapping": {"신자진": "인", "사유축": "해", "인오술": "신", "해묘미": "사"}
+    },
+    "interpretation_scope": "sinsal_reference_only"
   },
   {
     "id": "ss_dohwa",
-    "name": "도화살", "hanja": "桃花殺", "type": "neutral", "priority": "medium",
-    "core": "복숭아꽃처럼 매력적인 기운. 이성에게 인기가 많고 예술적 감수성이 뛰어나다.",
-    "positive": "타고난 끼와 매력으로 대중의 사랑을 받는다. 연예, 예술, 서비스업에서 천부적 재능 발휘.",
-    "caution": "이성 문제, 구설수, 색정(色情)으로 이어질 수 있다.",
-    "modern": "SNS 인플루언서, 유튜버, 연예인에 유리. 매력을 전략적으로 활용하면 큰 자산.",
-    "semantic_context": "자연스럽게 시선을 끌고 주변 사람들을 편하고 기분 좋게 만드는 타고난 매력을 가진 기운입니다. 굳이 노력하지 않아도 이성에게 인기가 많고, 예술적 감수성과 미적 감각이 뛰어납니다. 이 매력이 활짝 피어나면 많은 사람의 사랑을 받지만, 잘못 쓰면 이성 문제와 구설수의 씨앗이 됩니다.",
+    "name": "도화살",
+    "hanja": "桃花殺",
+    "type": "neutral",
+    "priority": 55,
+    "embedding_context": "도화살은 복숭아꽃처럼 자연스러운 매력으로 이성과 대중의 시선을 끄는 기운으로, 예술적 감수성과 끼가 뛰어나지만 이성 문제와 구설수에 주의가 필요하다.",
+    "engine_tags": ["natural_magnetism", "aesthetic_sensitivity", "popularity_energy", "romantic_allure", "audience_pull"],
+    "interpretation_tags": ["influencer_magnetism", "performer_charisma", "brand_appeal", "social_media_presence", "romantic_entanglement_risk"],
     "pillar_nuance": {
-      "year": "어린 시절부터 눈에 띄는 매력. 주변의 총애를 받으며 자람.",
-      "month": "직업에서 매력이 경쟁력. 서비스, 예술, 대인 관계 업종에서 두각.",
-      "day": "배우자와의 관계에서 매력적인 유혹이 오갈 수 있음. 이성 문제 특히 주의.",
-      "hour": "노년까지 이어지는 매력. 자녀가 예술적이거나 인기 있는 기질."
+      "year": {"traits": ["naturally_charming_child", "early_popularity"], "hint": "어릴 때부터 눈에 띄는 매력, 총애받음"},
+      "month": {"traits": ["charm_as_career_asset", "service_industry_talent"], "hint": "직업에서 매력이 경쟁력"},
+      "day": {"traits": ["romantic_tension_with_spouse", "extramarital_risk"], "hint": "이성 문제 특히 주의, 배우자 유혹 오갈 수 있음"},
+      "hour": {"traits": ["lasting_charm", "artistic_children"], "hint": "노년까지 매력, 예술적 자녀 기질"}
+    },
+    "vulnerability": {
+      "traits": ["romantic_entanglement_risk", "reputation_damage", "distraction_from_goals"],
+      "care_level": "medium"
     },
     "consulting_tip": "당신의 매력은 타고난 재산입니다. 이 에너지를 이성에 소비하기보다 예술이나 대중과의 소통으로 승화시킬 때 최대의 빛을 발합니다.",
-    "tags": ["매력", "인기", "예술", "이성", "끼"]
+    "activation_rule": {
+      "method": "birth_branch_group",
+      "description": "연지 또는 일지가 속한 삼합 국(局)을 기준으로 도화살 지지 결정.",
+      "mapping": {"신자진": "유", "사유축": "오", "인오술": "묘", "해묘미": "자"}
+    },
+    "interpretation_scope": "sinsal_reference_only"
   },
   {
     "id": "ss_hwagae",
-    "name": "화개살", "hanja": "華蓋殺", "type": "neutral", "priority": "low",
-    "core": "예술·종교·철학적 감수성이 뛰어나고 혼자 있는 시간을 즐기는 기운. 고독한 천재 타입.",
-    "positive": "창작 활동, 명상, 종교적 성취에서 큰 만족. 예술가, 수행자, 연구자로서 탁월.",
-    "caution": "고독과 고립의 경계를 구별해야 한다. 지나치면 세상과의 단절.",
-    "modern": "유튜버 중 사색·철학·명상 채널, 작가, 독립 연구자. 혼자 깊게 파고드는 콘텐츠 크리에이터에 유리.",
-    "semantic_context": "혼자만의 시간 속에서 깊어지는 예술적·철학적 감수성의 기운입니다. 군중 속에서도 본질적으로 고독하며, 그 고독 속에서 남들이 도달하지 못한 깊이를 만들어냅니다. 종교, 명상, 예술, 학문에서 탁월한 집중력을 발휘하며 세상의 소음을 차단하고 내면의 목소리에 귀 기울입니다.",
+    "name": "화개살",
+    "hanja": "華蓋殺",
+    "type": "neutral",
+    "priority": 40,
+    "embedding_context": "화개살은 예술·종교·철학적 감수성이 뛰어나고 고독 속에서 깊이를 만들어내는 기운으로, 혼자만의 시간에서 남다른 창의와 통찰이 꽃피운다.",
+    "engine_tags": ["solitary_genius", "spiritual_depth", "creative_isolation", "philosophical_tendency", "introspective_energy"],
+    "interpretation_tags": ["deep_content_creator", "independent_researcher", "spiritual_influencer", "solo_artist_energy", "monk_mode_strength"],
     "pillar_nuance": {
-      "year": "어린 시절부터 혼자 있기를 좋아하거나 독특한 내면 세계. 예술적 환경에서 자람.",
-      "month": "직업에서 독자적인 창작이나 연구 활동. 혼자 일하는 환경이 어울린다.",
-      "day": "내면의 깊이가 있지만 혼자 있고 싶어하는 성향이 관계에 영향.",
-      "hour": "노년에 종교나 철학에 심취. 자녀가 예술적이거나 사색적인 기질."
+      "year": {"traits": ["solitary_childhood", "early_artistic_environment"], "hint": "어릴 때 혼자 있기 좋아함, 예술적 환경"},
+      "month": {"traits": ["independent_work_style", "solo_creative_role"], "hint": "독자적 창작·연구, 혼자 일하는 환경"},
+      "day": {"traits": ["inner_depth_affects_relationship", "need_for_alone_time"], "hint": "혼자 있고 싶어하는 성향이 관계에 영향"},
+      "hour": {"traits": ["late_life_spirituality", "philosophical_children"], "hint": "노년에 종교·철학 심취, 사색적 자녀"}
+    },
+    "vulnerability": {
+      "traits": ["social_isolation_risk", "difficulty_in_collaboration", "world_disconnection"],
+      "care_level": "medium"
     },
     "consulting_tip": "고독을 두려워하지 마세요. 당신의 가장 빛나는 순간은 혼자 깊이 몰입할 때 탄생합니다. 세상과 거리를 두는 그 시간이 당신의 작품이자 지혜입니다.",
-    "tags": ["예술", "고독", "철학", "종교", "창작", "몰입"]
+    "activation_rule": {
+      "method": "birth_branch_group",
+      "description": "연지 또는 일지가 속한 삼합 국(局)을 기준으로 화개살 지지 결정.",
+      "mapping": {"신자진": "진", "사유축": "축", "인오술": "술", "해묘미": "미"}
+    },
+    "interpretation_scope": "sinsal_reference_only"
   },
   {
     "id": "ss_baekho",
-    "name": "백호대살", "hanja": "白虎大殺", "type": "unlucky", "priority": "high",
-    "core": "흰 호랑이의 기운. 급작스러운 사고·변화·수술의 기운. 강력한 에너지지만 통제하지 않으면 파괴적.",
-    "positive": "강렬한 생명력과 회복력. 위기에서 오히려 강해지는 불굴의 기운.",
-    "caution": "수술, 사고, 갑작스러운 이별 등 급변의 위험. 안전에 주의하고 정기 건강검진 권장.",
-    "modern": "스턴트맨, 외과의사, 소방관, 군인처럼 위험을 다루는 직업에서 오히려 강점.",
-    "semantic_context": "호랑이처럼 강렬하고 예측 불가능한 변화의 에너지입니다. 갑작스러운 사고나 수술, 충격적인 이별이나 이직처럼 인생의 급격한 전환이 동반될 수 있습니다. 하지만 이 기운의 본질은 '파괴 후 재생'입니다. 큰 변화를 겪을수록 더 강한 사람으로 거듭나는 불굴의 회복력이 이 살의 이면입니다.",
+    "name": "백호대살",
+    "hanja": "白虎大殺",
+    "type": "unlucky",
+    "priority": 85,
+    "embedding_context": "백호대살은 갑작스러운 사고·수술·급격한 인생 전환을 의미하는 강력한 흉살이지만, 그 본질은 파괴 후 더 강하게 재생하는 불굴의 생명력이기도 하다.",
+    "engine_tags": ["sudden_crisis_energy", "extreme_vitality", "violent_change", "death_and_rebirth", "specific_ilju_only"],
+    "interpretation_tags": ["extreme_life_change", "surgery_and_recovery", "phoenix_energy", "danger_to_strength", "radical_transformation"],
     "pillar_nuance": {
-      "year": "어린 시절에 충격적인 사건 또는 조상 계보에서의 급변.",
-      "month": "직장이나 사회에서 갑작스러운 변화와 전환점. 이직이나 사업 변화가 급격.",
-      "day": "일주 백호대살 — 신체적 에너지가 매우 강하나 건강 사고 주의. 배우자와의 관계에서 급격한 변화.",
-      "hour": "노년의 갑작스러운 변화 또는 자녀와 관련된 급변."
+      "year": {"traits": ["childhood_trauma_or_shock", "ancestral_sudden_change"], "hint": "어린 시절 충격적 사건, 조상 급변"},
+      "month": {"traits": ["sudden_career_disruption", "rapid_industry_change"], "hint": "직장·사업에서 갑작스러운 전환"},
+      "day": {"traits": ["strong_physical_energy", "health_accident_risk"], "hint": "신체 에너지 강하나 건강 사고 주의"},
+      "hour": {"traits": ["late_life_sudden_change", "intense_children"], "hint": "노년 급변, 자녀 관련 급격한 변화"}
+    },
+    "vulnerability": {
+      "traits": ["accident_risk", "surgery_risk", "sudden_loss", "recklessness"],
+      "care_level": "high"
     },
     "consulting_tip": "당신은 변화 앞에서 무너지지 않는 사람입니다. 크게 흔들릴수록 더 강해지는 것이 당신의 본질입니다. 단, 그 강인함이 무모함이 되지 않도록 안전을 챙기는 지혜를 더하세요.",
-    "tags": ["사고", "급변", "강렬", "수술", "회복력", "재생"]
+    "activation_rule": {
+      "method": "specific_day_pillar",
+      "description": "특정 일주에서 백호대살 성립. 일주 외에도 년·월·시주의 간지 조합으로 확장 적용 가능.",
+      "mapping": {
+        "일주_목록": ["갑진", "을미", "병술", "정축", "무진", "기축", "경진", "신미", "임술", "계축"]
+      }
+    },
+    "interpretation_scope": "sinsal_reference_only"
   },
   {
     "id": "ss_gongmang",
-    "name": "공망", "hanja": "空亡", "type": "unlucky", "priority": "medium",
-    "core": "해당 기둥의 기운이 허(虛)하여 해당 분야가 약해지는 현상. '없는 것'이 아니라 '채우기 어려운 것'.",
-    "positive": "공망이 있는 분야에서 오히려 욕심을 내려놓으면 자유로워진다. 물질보다 정신적 가치에서 만족.",
-    "caution": "공망 기둥이 뜻하는 분야에서 결핍감 경험.",
-    "modern": "공망을 인정하고 해당 분야에서 기대치를 조정하는 것이 현명.",
-    "semantic_context": "인생에서 특정 영역이 아무리 노력해도 채워지지 않는 허전함을 느끼게 하는 기운입니다. 그러나 이 비어있음이 반드시 불행은 아닙니다. 비어있기에 오히려 그 영역에서 욕심 없이 자유롭게 살 수 있고, 물질보다 정신적 충만함을 찾게 됩니다. 공망의 위치가 어디냐에 따라 삶의 어느 챕터가 허하게 느껴지는지가 달라집니다.",
+    "name": "공망",
+    "hanja": "空亡",
+    "type": "unlucky",
+    "priority": 60,
+    "embedding_context": "공망은 일주가 속한 갑자순(甲子旬)에서 빠진 두 지지로, 해당 지지가 있는 기둥이 뜻하는 삶의 영역에서 결핍감이나 허함이 나타나는 기운이다. 내려놓으면 오히려 자유로워진다.",
+    "engine_tags": ["void_in_specific_pillar", "emptiness_sensation", "detachment_from_material", "spiritual_freedom", "area_specific_deficiency"],
+    "interpretation_tags": ["letting_go_philosophy", "non_attachment", "spiritual_over_material", "expectation_management", "acceptance_strength"],
     "pillar_nuance": {
-      "year": "조상·부모 덕이 약하거나 유년 환경의 결핍. 어린 시절 뿌리의 허전함.",
-      "month": "직업·사회적 영역에서 아무리 노력해도 채워지지 않는 허함. 직장 생활의 공허감.",
-      "day": "배우자와의 관계에서 정서적 결핍. 아무리 함께해도 외로운 느낌.",
-      "hour": "자녀 인연이 약하거나 노년의 고독. 미래에 대한 허전함."
+      "year": {"traits": ["weak_ancestral_connection", "early_environmental_lack"], "hint": "조상 덕 약함, 유년기 결핍감"},
+      "month": {"traits": ["career_void_sensation", "unfulfilling_work_despite_effort"], "hint": "직장에서 채워지지 않는 허함"},
+      "day": {"traits": ["emotional_void_in_marriage", "loneliness_within_relationship"], "hint": "함께해도 외로운 느낌, 정서적 결핍"},
+      "hour": {"traits": ["weak_child_connection", "late_life_solitude"], "hint": "자녀 인연 약함, 노년 고독"}
+    },
+    "vulnerability": {
+      "traits": ["chronic_incompleteness_feeling", "over_compensation_in_void_area"],
+      "care_level": "medium"
     },
     "consulting_tip": "공망의 영역에서 완벽함을 추구하는 것은 밑 빠진 독에 물 붓기입니다. 대신 그 비어있음을 인정하고, 당신이 풍요로운 다른 영역에 에너지를 집중하세요. 비어있는 곳이 있어 다른 곳이 더 빛납니다.",
-    "tags": ["결핍", "허", "공허", "조정", "수용"]
+    "activation_rule": {
+      "method": "day_gapja_to_kongmang",
+      "description": "일주가 속한 갑자순(甲子旬)에서 빠진 두 지지가 공망. 해당 지지가 있는 기둥 위치(년/월/일/시)에 따라 공망 영역 결정.",
+      "mapping": {
+        "갑자순(갑자~계유)": ["술", "해"],
+        "갑술순(갑술~계미)": ["신", "유"],
+        "갑신순(갑신~계사)": ["오", "미"],
+        "갑오순(갑오~계묘)": ["진", "사"],
+        "갑진순(갑진~계축)": ["인", "묘"],
+        "갑인순(갑인~계해)": ["자", "축"]
+      }
+    },
+    "interpretation_scope": "sinsal_reference_only"
   },
   {
     "id": "ss_goekang",
-    "name": "괴강살", "hanja": "魁罡殺", "type": "unlucky", "priority": "high",
-    "core": "하늘의 으뜸 강한 기운. 지극히 강하고 순수하며 타협이 없는 기질. 정상과 극단 사이를 오가는 에너지.",
-    "positive": "뛰어난 문장력과 총명함, 강한 카리스마. 한 번 몰입하면 최고의 결과를 만들어내는 집중력.",
-    "caution": "지나친 강직함으로 대인 관계 마찰. 배우자 궁에서 발현 시 부부 갈등 주의.",
-    "modern": "작가, 법조인, 군인, 검사, 예술가. 탁월한 역량이 필요한 전문직에서 특히 빛난다.",
-    "semantic_context": "하늘의 왕별(魁)이 뿜어내는 가장 강렬하고 순수한 기운입니다. 庚辰, 庚戌, 壬辰, 壬戌 네 일주에만 적용되는 강력한 살로, 탁월한 문장력·총명함·카리스마를 부여하지만 동시에 굴복을 모르는 강직함으로 세상과 마찰을 일으킬 수 있습니다. 이 기운은 극단적 성패를 만들어내는 에너지입니다. 최고가 되거나 최악이 되거나 — 중간이 없는 사람입니다.",
+    "name": "괴강살",
+    "hanja": "魁罡殺",
+    "type": "unlucky",
+    "priority": 80,
+    "embedding_context": "괴강살은 庚辰·庚戌·壬辰·壬戌 네 일주에만 성립하는 강력한 살로, 탁월한 문장력·총명함·카리스마를 부여하지만 타협 없는 강직함으로 극단적 성패를 만들어내는 기운이다.",
+    "engine_tags": ["peak_intensity_excellence", "uncompromising_purity", "polarized_outcomes", "supreme_dominance", "four_ilju_only"],
+    "interpretation_tags": ["excellence_or_failure_no_middle", "literary_genius", "commanding_authority", "perfectionist_power", "all_or_nothing_energy"],
     "pillar_nuance": {
-      "year": "조상 중에 강한 인물이 있거나 유년기부터 두각을 나타내는 기질. 이른 나이에 두드러진 능력 발휘.",
-      "month": "사회에서 강한 카리스마로 인정받지만 조직 내 마찰도 잦은 환경. 완벽주의적 업무 스타일.",
-      "day": "일주 괴강살 — 배우자 궁에 위치하여 부부관계에서 강한 기싸움과 갈등 주의. 독립심이 강해 맞춤형 파트너 필요.",
-      "hour": "노년까지 굴복하지 않는 강한 의지. 자녀가 강한 기질과 성취욕을 가질 가능성."
+      "year": {"traits": ["early_exceptional_ability", "strong_ancestor_energy"], "hint": "이른 나이에 두각, 강한 조상 기운"},
+      "month": {"traits": ["charisma_in_workplace", "perfectionist_work_style"], "hint": "직장 내 강한 카리스마, 완벽주의"},
+      "day": {"traits": ["marital_power_struggle", "independence_affects_relationship"], "hint": "배우자와 기싸움, 독립심 강해 파트너 선택 중요"},
+      "hour": {"traits": ["lifelong_indomitable_will", "strong_achievement_driven_children"], "hint": "노년까지 불굴, 성취욕 강한 자녀"}
+    },
+    "vulnerability": {
+      "traits": ["relationship_damage_from_rigidity", "extreme_failure_risk", "no_middle_ground"],
+      "care_level": "high"
     },
     "consulting_tip": "당신의 강함은 다듬으면 세상에서 빛나는 무기가 됩니다. 굴복하지 않는 것과 유연하지 않은 것은 다릅니다. 타협의 여지를 한 줄기라도 만들면 당신의 탁월함이 세상과 연결됩니다.",
-    "tags": ["강직함", "카리스마", "총명", "극단", "문장력", "완벽주의"]
+    "activation_rule": {
+      "method": "specific_ilju",
+      "description": "4개 일주에만 괴강살 성립. 일주가 아닌 다른 기둥에는 적용하지 않음.",
+      "mapping": {
+        "일주_목록": ["경진", "경술", "임진", "임술"]
+      }
+    },
+    "interpretation_scope": "sinsal_reference_only"
   }
 ]

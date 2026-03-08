@@ -1,273 +1,483 @@
 [
   {
     "id": "tg_bigyeon",
-    "name": "비견", "hanja": "比肩", "category": "비겁", "yin_yang": "same",
-    "personality": "자존심이 강하고 독립적이며 경쟁심이 뛰어나다. 남에게 의존하기 싫어하고 자신의 방식대로 밀고 나가는 추진력이 있다. 고집스럽지만 의리 있고, 동료와의 유대가 깊다.",
-    "career": "자영업, 프리랜서, 스포츠, 경쟁이 필요한 분야에 적합. 조직보다는 독립적 환경에서 빛난다.",
-    "relationship": "대등한 관계를 선호. 지배하거나 지배받는 것을 싫어함. 연애에서 자존심 충돌이 잦을 수 있다.",
-    "excess_warning": "비견 과다는 고집불통, 대인관계 마찰, 재물 분산. 협력보다 경쟁 심리가 앞선다.",
-    "void_meaning": "비견이 없으면 협력자 부족, 외로운 승부. 독자적으로 모든 것을 해결해야 하는 구조. 단, 재물 빼앗길 위험도 없다.",
-    "semantic_context": "남에게 지기 싫어하고 독립심이 강한 사람. 경쟁을 즐기고 자기 방식을 고집하는 기운. 혼자서도 잘하지만 함께할 때 마찰이 생기기 쉬운 에너지. '왜 내 방식대로 안 되냐'는 답답함을 자주 느끼는 유형.",
+    "name": "비견",
+    "hanja": "比肩",
+    "category": "비겁",
+    "yin_yang": "same",
+    "embedding_context": "비견은 일간과 같은 오행·음양의 십성으로, 경쟁심과 자존심이 강하고 독립적으로 자신의 방식을 고집하는 에너지다. 혼자서도 잘하지만 함께할 때 마찰이 생기기 쉽다.",
+    "core_nature": "나만의 방식으로 세상과 맞서는 불굴의 자존심 — 독립과 경쟁이 삶의 방식인 십성",
+    "behavior_vector": ["self_reliance", "competitive_drive", "peer_solidarity", "stubborn_independence"],
+    "life_patterns": {
+      "career": ["independent_business", "self_directed_path", "solo_excellence"],
+      "relationship": ["equal_partner_demand", "territory_sensitive", "peer_competition_pattern"],
+      "wealth": ["scattered_by_rivalry", "earned_through_self"]
+    },
+    "decision_style": {
+      "approach": "self_reliant_judgment",
+      "strength": "decisive_independence",
+      "blind_spot": "rejects_external_input"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["inflexibility", "constant_competition_mindset", "wealth_dispersion"],
+        "risk": "고집, 대인 마찰, 재물 분산"
+      },
+      "void": {
+        "traits": ["lack_of_collaborators", "lonely_battle", "reduced_rivalry_shield"],
+        "risk": "협력자 부재, 고독한 싸움. 단, 재물 빼앗길 위험 감소"
+      }
+    },
     "pillar_nuance": {
-      "year": "조상 대에서부터 이어온 독립적 기질. 어린 시절 경쟁적 환경이 자존심을 키웠다.",
-      "month": "사회생활에서 경쟁심과 주도권 다툼이 많다. 직장 내 경쟁자나 동료와의 갈등 주의.",
-      "day": "배우자와 대등한 관계를 원함. 결혼 후에도 자기 영역을 침범당하면 크게 반응한다.",
-      "hour": "노년까지 지지 않으려는 기질. 자녀나 후배에게도 경쟁심이 발동될 수 있다."
+      "year": {"traits": ["inherited_independence", "competitive_childhood_environment"], "hint": "조상 독립 기질, 경쟁적 어린 시절"},
+      "month": {"traits": ["workplace_competition", "colleague_conflict_risk"], "hint": "직장 내 경쟁·동료 갈등"},
+      "day": {"traits": ["equal_partnership_demand", "territory_sensitivity_in_marriage"], "hint": "배우자와 대등 관계 요구, 자기 영역 침범 반응"},
+      "hour": {"traits": ["competitive_even_with_juniors", "lifelong_fighting_spirit"], "hint": "후배에게도 경쟁심, 노년까지 지지 않으려는 기질"}
     },
     "interactions": {
-      "식상": "비견이 식상으로 이어지면 경쟁심이 창의력으로 발현됨",
-      "재성": "비견이 재성을 극하면 군겁쟁재(群劫爭財) 위험 — 재물을 함께 나눠야 하는 상황",
-      "관성": "관성이 비견을 제어하면 경쟁심이 규율로 잡힌다",
-      "인성": "인성이 비견을 생하면 배움이 자존심의 연료가 된다"
+      "식상": {"effect": "경쟁심이 창의력·표현력으로 승화", "pattern": "positive_outlet"},
+      "재성": {"effect": "군겁쟁재(群劫爭財) — 재물 분산·경쟁", "pattern": "gun_gyeop_jaeng_jae"},
+      "관성": {"effect": "관성이 비견을 제어 — 경쟁심이 규율로 잡힘", "pattern": "controlled_drive"},
+      "인성": {"effect": "인성이 비견을 생 — 배움이 자존심의 연료", "pattern": "knowledge_fuels_pride"}
     },
     "consulting_points": {
       "empathy_trigger": "혼자서 다 해결하려는 강한 독립심 때문에 오히려 외롭거나 지치지 않으신가요?",
       "solution_speech": "당신의 독립심은 분명 강점입니다. 하지만 진정한 강자는 도움을 요청할 줄도 압니다. 경쟁이 아닌 협력의 영역을 하나씩 넓혀가 보세요.",
       "tab_headline": "경쟁 속에서도 흔들리지 않는 당신의 자존심에 대하여"
     },
-    "tags": ["비겁", "독립", "경쟁", "자존심"]
+    "engine_tags": ["same_element_same_polarity", "peer_mirror", "rival_activation", "bigyeop_driver"],
+    "interpretation_tags": ["solo_entrepreneur", "competitive_identity", "self_made_path", "independence_seeker"]
   },
   {
     "id": "tg_geobjae",
-    "name": "겁재", "hanja": "劫財", "category": "비겁", "yin_yang": "opposite",
-    "personality": "비견보다 더 적극적이고 공격적인 에너지. 승부욕과 야망이 강하며 상황 판단이 빠르다. 카리스마가 있고 리더십이 강하지만 충동적 결정이 문제가 될 수 있다.",
-    "career": "사업가, 세일즈, 투자, 격투기 등 승부의 세계. 빠른 판단력이 필요한 분야.",
-    "relationship": "열정적이지만 소유욕이 강해 갈등 유발. 상대를 압도하려는 경향.",
-    "excess_warning": "겁재 과다는 재물 손실, 배우자 인연 어려움, 충동적 사고. 군겁쟁재(群劫爭財) 패턴으로 이어질 수 있다.",
-    "void_meaning": "겁재가 없으면 주변의 도움이 적고 혼자 싸우는 구조. 그러나 재물을 빼앗길 위험도 줄어든다.",
-    "semantic_context": "욕망과 야망이 강하고 이기고 싶어하는 기운. 뭐든 더 크게 하고 싶고, 남보다 앞서고 싶다. 충동적으로 결정하고 나서 후회하는 경험이 반복되는 유형. 하지만 그 에너지 자체는 엄청난 원동력이 된다.",
+    "name": "겁재",
+    "hanja": "劫財",
+    "category": "비겁",
+    "yin_yang": "opposite",
+    "embedding_context": "겁재는 일간과 같은 오행이지만 음양이 다른 십성으로, 비견보다 더 공격적이고 야망이 강하며 빠른 판단력과 카리스마를 지닌다. 충동적 결정이 재물 손실로 이어질 수 있다.",
+    "core_nature": "승부에서 절대 물러서지 않는 야망 — 충동과 카리스마가 뒤섞인 가장 날카로운 십성",
+    "behavior_vector": ["aggressive_ambition", "fast_risk_taking", "charismatic_leadership", "impulsive_action"],
+    "life_patterns": {
+      "career": ["high_stakes_leadership", "sales_or_trading", "startup_hustle"],
+      "relationship": ["dominant_power_dynamic", "financial_tension_with_partner", "intense_attraction"],
+      "wealth": ["boom_bust_cycle", "high_risk_high_reward"]
+    },
+    "decision_style": {
+      "approach": "gut_instinct_first",
+      "strength": "rapid_decisive_action",
+      "blind_spot": "ignores_downside_risk"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["financial_instability", "impulsive_decisions", "spouse_friction"],
+        "risk": "재물 손실, 배우자 인연 어려움, 충동적 사고"
+      },
+      "void": {
+        "traits": ["lack_of_support_network", "solo_battle", "reduced_wealth_theft_risk"],
+        "risk": "주변 도움 적음, 혼자 싸우는 구조. 재물 빼앗길 위험 감소"
+      }
+    },
     "pillar_nuance": {
-      "year": "집안 분위기가 경쟁적이었거나 어린 시절 자원이 부족했던 환경.",
-      "month": "직장에서 동료와의 경쟁이 치열하고 재물 관련 갈등이 잦을 수 있다.",
-      "day": "배우자와 재물이나 주도권을 두고 갈등. 배우자의 재물을 가져가는 형태로 나타날 수 있다.",
-      "hour": "자녀와의 재물 갈등 가능성. 노년에 충동적 결정 주의."
+      "year": {"traits": ["competitive_family_environment", "early_resource_scarcity"], "hint": "경쟁적 가풍, 어린 시절 자원 부족"},
+      "month": {"traits": ["intense_workplace_rivalry", "financial_conflict_with_colleagues"], "hint": "직장 경쟁 치열, 재물 관련 갈등"},
+      "day": {"traits": ["spousal_financial_tension", "dominant_power_dynamic"], "hint": "배우자와 재물·주도권 갈등"},
+      "hour": {"traits": ["financial_conflict_with_children", "late_life_impulsivity_risk"], "hint": "자녀 재물 갈등, 노년 충동 결정 주의"}
     },
     "interactions": {
-      "재성": "겁재가 재성을 극하면 재물 분산 및 손실 위험",
-      "관성": "관성이 겁재를 제어하면 충동성이 규율로 잡힘",
-      "식상": "겁재에서 식상으로 이어지면 야망이 창의적 결과물로 전환"
+      "재성": {"effect": "겁재가 재성을 극 — 재물 분산·손실 위험", "pattern": "gun_gyeop_jaeng_jae"},
+      "관성": {"effect": "관성이 겁재를 제어 — 충동성이 규율로 잡힘", "pattern": "controlled_impulse"},
+      "식상": {"effect": "겁재에서 식상으로 — 야망이 창의적 결과물로 전환", "pattern": "ambition_to_output"}
     },
     "consulting_points": {
       "empathy_trigger": "이기고 싶은 마음이 너무 강해서, 때로는 그 욕심이 소중한 것들을 밀어낸 적 있지 않으신가요?",
       "solution_speech": "당신의 강한 에너지는 제대로 방향을 잡으면 누구도 따라올 수 없는 원동력이 됩니다. 충동보다 전략이 당신을 더 강하게 만듭니다.",
       "tab_headline": "당신의 야망이 당신을 도울 때와 방해할 때"
     },
-    "tags": ["비겁", "승부욕", "카리스마", "충동"]
+    "engine_tags": ["same_element_opposite_polarity", "rival_aggressor", "resource_competitor", "impulse_activator"],
+    "interpretation_tags": ["high_stakes_investor", "street_fighter_energy", "charismatic_leader", "fast_decision_maker"]
   },
   {
     "id": "tg_sigshin",
-    "name": "식신", "hanja": "食神", "category": "식상", "yin_yang": "same",
-    "personality": "낙천적이고 창의적이며 감성이 풍부하다. 먹고 즐기는 것을 좋아하고 예술적 감각이 뛰어나다. 여유로운 분위기를 만들고 주변을 편하게 해준다.",
-    "career": "요리, 예술, 교육, 복지, 창작 계열. 사람을 돌보는 직업에도 적합.",
-    "relationship": "다정하고 배려심이 깊음. 집착보다는 여유로운 연애 스타일.",
-    "excess_warning": "식신 과다는 게으름, 현실 도피, 계획 부재. 지나친 낙관으로 준비 부족.",
-    "void_meaning": "식신이 없으면 표현력 부족, 감정을 드러내기 어려움. 예술적 끼가 억압된 느낌.",
-    "semantic_context": "편안하고 즐거운 것을 좋아하는 기운. 재능과 끼가 있고 맛있는 음식, 좋은 취미, 예술적 표현에서 행복을 찾는 유형. 억압보다 자유로운 환경에서 꽃을 피운다. '먹고 즐기는 게 뭐가 나빠?' 라는 철학이 있다.",
+    "name": "식신",
+    "hanja": "食神",
+    "category": "식상",
+    "yin_yang": "same",
+    "embedding_context": "식신은 일간이 생하는 오행 중 같은 음양의 십성으로, 낙천적이고 창의적이며 예술적 감각이 뛰어나다. 재능이 자연스럽게 결실로 이어지는 행복한 구조를 지닌다.",
+    "core_nature": "재능이 기쁨이 되고 기쁨이 풍요가 되는 순환 — 가장 행복한 에너지의 십성",
+    "behavior_vector": ["creative_expression", "optimistic_enjoyment", "nurturing_generosity", "talent_monetization"],
+    "life_patterns": {
+      "career": ["creative_professional", "content_creator", "talent_based_income"],
+      "relationship": ["warm_generous_partner", "home_comfort_focus", "nurturing_dynamic"],
+      "wealth": ["talent_to_income_pipeline", "steady_creative_earnings"]
+    },
+    "decision_style": {
+      "approach": "intuitive_feel_based",
+      "strength": "trusts_natural_flow",
+      "blind_spot": "avoids_difficult_tradeoffs"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["laziness", "escapism", "lack_of_planning", "over_optimism"],
+        "risk": "게으름, 현실 도피, 지나친 낙관으로 준비 부족"
+      },
+      "void": {
+        "traits": ["suppressed_expression", "difficulty_showing_emotions", "artistic_frustration"],
+        "risk": "표현력 부족, 감정 드러내기 어려움, 예술적 끼 억압"
+      }
+    },
     "pillar_nuance": {
-      "year": "어린 시절부터 풍요롭고 여유로운 환경. 예술적 감수성이 일찍 개발됨.",
-      "month": "직업에서 창의력과 표현력을 발휘. 식신생재(食神生財)가 되면 재능이 수입으로 연결.",
-      "day": "일상에서 즐거움과 여유를 중시. 가정에서 풍요로운 분위기를 만든다.",
-      "hour": "노년을 편안하게 즐기는 복. 자녀나 후배에게 베푸는 기운."
+      "year": {"traits": ["abundant_childhood", "early_artistic_development"], "hint": "풍요로운 어린 시절, 예술적 감수성 일찍 개발"},
+      "month": {"traits": ["creative_career", "talent_to_income_pipeline"], "hint": "식신생재 — 재능이 수입으로 연결"},
+      "day": {"traits": ["joy_focused_daily_life", "abundant_home_environment"], "hint": "일상 즐거움·여유 중시, 가정 풍요"},
+      "hour": {"traits": ["comfortable_retirement", "generous_to_juniors"], "hint": "노년 편안한 복, 후배·자녀에게 베풂"}
     },
     "interactions": {
-      "재성": "식신이 재성을 생하면 식신생재(食神生財) — 재능이 재물로 연결",
-      "편관": "식신이 편관을 제어하면 식신제살(食神制殺) — 창의력으로 압박을 극복",
-      "비겁": "비겁에서 식신으로 이어지면 경쟁심이 표현력으로 승화"
+      "재성": {"effect": "식신생재(食神生財) — 재능이 재물로 연결", "pattern": "sig_sang_saeng_jae"},
+      "편관": {"effect": "식신제살(食神制殺) — 창의력으로 압박 극복", "pattern": "sig_sin_je_sal"},
+      "비겁": {"effect": "비겁에서 식신으로 — 경쟁심이 표현력으로 승화", "pattern": "competitive_to_creative"}
     },
     "consulting_points": {
       "empathy_trigger": "당신의 재능과 감수성을 제대로 표현하지 못하고 억누르며 살아온 시간이 있지 않으신가요?",
       "solution_speech": "당신은 '하고 싶은 것'을 할 때 가장 빛납니다. 재능을 억누르지 말고, 그 즐거움이 곧 당신의 경쟁력임을 믿으세요.",
       "tab_headline": "당신의 재능과 끼가 삶을 풍요롭게 만드는 방식"
     },
-    "tags": ["식상", "창의", "낙천", "예술", "배려"]
+    "engine_tags": ["output_same_polarity", "nurturing_expression", "food_god_energy", "creative_output_driver"],
+    "interpretation_tags": ["content_creator", "talent_monetizer", "nurturing_educator", "feel_good_artist"]
   },
   {
     "id": "tg_sanggwan",
-    "name": "상관", "hanja": "傷官", "category": "식상", "yin_yang": "opposite",
-    "personality": "비판적 사고와 독창성이 뛰어나다. 기존 권위와 규칙에 저항하며 혁신적인 아이디어를 낸다. 언변이 뛰어나고 총명하지만 날카로운 말이 인간관계에 상처를 줄 수 있다.",
-    "career": "작가, 변호사, 평론가, 방송, 컨설턴트, 예술가. 기존 질서를 바꾸는 역할에 적합.",
-    "relationship": "자유로운 연애를 선호. 상대의 단점을 직설적으로 지적하는 경향. 상관패인(傷官佩印)이 되면 지성으로 순화된다.",
-    "excess_warning": "상관 과다는 반골 기질, 직장 상사와의 충돌, 관재수. 특히 남성은 직업 불안정.",
-    "void_meaning": "상관이 없으면 순응적이고 보수적. 창의성 발현의 기회가 적다.",
-    "semantic_context": "기존 방식에 반발하고 '왜 꼭 그래야 해?'라는 의문을 품는 기운. 날카로운 언변과 비판적 사고로 주변을 불편하게 만들기도 하지만, 그 에너지가 혁신을 만든다. 억압적인 환경에서 특히 불꽃처럼 튀어오른다.",
+    "name": "상관",
+    "hanja": "傷官",
+    "category": "식상",
+    "yin_yang": "opposite",
+    "embedding_context": "상관은 일간이 생하는 오행 중 음양이 다른 십성으로, 기존 권위와 규칙에 저항하는 독창적 사고와 날카로운 언변이 특징이다. 상관패인(傷官佩印)이 되면 혁신적 지성으로 승화된다.",
+    "core_nature": "기존 규칙에 의문을 던지는 창의적 저항 — 날카로움과 독창성이 동전의 양면인 십성",
+    "behavior_vector": ["critical_analysis", "creative_rebellion", "sharp_expression", "authority_questioning"],
+    "life_patterns": {
+      "career": ["disruptive_innovation", "critical_commentary", "creative_problem_solving"],
+      "relationship": ["intellectual_sparring_partner", "high_expectations_from_partner", "blunt_communication_style"],
+      "wealth": ["critique_to_income", "unconventional_earnings"]
+    },
+    "decision_style": {
+      "approach": "contrarian_analysis",
+      "strength": "sees_flaws_others_miss",
+      "blind_spot": "burns_bridges_unnecessarily"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["anti_authority_conflict", "job_instability", "relationship_damage_from_bluntness"],
+        "risk": "상사 충돌, 직업 불안정, 직설적 말로 관계 손상"
+      },
+      "void": {
+        "traits": ["overly_conformist", "low_creativity_expression", "conservative_mindset"],
+        "risk": "순응적, 창의 표현 기회 적음, 보수적 사고"
+      }
+    },
     "pillar_nuance": {
-      "year": "어린 시절 권위에 대한 저항 경험. 가정 환경이 억압적이었거나 반대로 너무 자유로웠다.",
-      "month": "직장에서 상사와의 갈등이 잦다. 규칙보다 창의적 접근을 선호하여 마찰.",
-      "day": "배우자에게 날카롭게 대하는 경향. 상관패인(傷官佩印)이 되면 지적 파트너십으로 발전.",
-      "hour": "자녀 교육에 독특한 철학 적용. 노년에 기존 방식을 벗어난 새로운 시도."
+      "year": {"traits": ["resistance_to_authority_from_youth", "non_standard_upbringing"], "hint": "어린 시절 권위 저항, 독특한 가풍"},
+      "month": {"traits": ["workplace_rule_conflict", "creative_approach_causes_friction"], "hint": "직장 규칙 충돌, 창의적 접근으로 마찰"},
+      "day": {"traits": ["sharp_communication_with_spouse", "intellectual_partnership_potential"], "hint": "배우자에게 날카로움, 상관패인이면 지적 파트너십"},
+      "hour": {"traits": ["unconventional_parenting_philosophy", "late_life_new_ventures"], "hint": "독특한 교육 철학, 노년 새로운 시도"}
     },
     "interactions": {
-      "재성": "상관이 재성을 생하면 비판적 능력이 수익으로 연결",
-      "인성": "인성이 상관을 제어하면 상관패인(傷官佩印) — 날카로움이 학식으로 순화",
-      "정관": "상관이 정관을 극하면 조직 갈등 발생 위험"
+      "재성": {"effect": "상관이 재성을 생 — 비판 능력이 수익으로 연결", "pattern": "critical_to_wealth"},
+      "인성": {"effect": "인성이 상관 제어 — 상관패인(傷官佩印) — 날카로움이 학식으로 순화", "pattern": "sang_gwan_pae_in"},
+      "정관": {"effect": "상관이 정관을 극 — 조직 갈등·관재수 위험", "pattern": "anti_authority_clash"}
     },
     "consulting_points": {
       "empathy_trigger": "당신의 날카로운 시각 때문에 오히려 주변에서 오해받거나 외면당한 경험이 있지 않으신가요?",
       "solution_speech": "당신의 비판적 시각은 세상을 바꾸는 힘입니다. 그 날카로움을 '공격'이 아닌 '혁신의 도구'로 사용하는 법을 익히면, 진정한 변화를 만드는 사람이 됩니다.",
       "tab_headline": "당신의 반골 기질이 세상을 바꾸는 방식"
     },
-    "tags": ["식상", "비판적", "혁신", "언변", "반골"]
+    "engine_tags": ["output_opposite_polarity", "authority_clash", "critical_expression", "innovation_driver"],
+    "interpretation_tags": ["disruptive_innovator", "sharp_critic", "outspoken_creator", "rule_breaker_builder"]
   },
   {
     "id": "tg_pyeonjae",
-    "name": "편재", "hanja": "偏財", "category": "재성", "yin_yang": "opposite",
-    "personality": "사교적이고 활동적이며 돈을 버는 능력이 탁월하다. 넓은 인간관계와 사업적 감각. 대중과의 소통에 능하고 승부근성이 있다.",
-    "career": "사업가, 영업, 투자, 무역, 연예, 마케팅. 고정된 월급보다 변동 수입 구조에서 강함.",
-    "relationship": "이성에게 매력적이나 헌신보다 자유를 선호. 불규칙한 연애 패턴.",
-    "excess_warning": "편재 과다는 투기성, 재물 기복, 이성 문제. 한 곳에 집중하지 못함.",
-    "void_meaning": "편재가 없으면 사업적 감각 부족, 대인관계 폭이 좁음. 안정적 수입을 선호하는 구조.",
-    "semantic_context": "사람 만나는 것을 좋아하고 돈 냄새를 잘 맡는 기운. 어디서나 기회를 찾고 여러 일을 동시에 벌이는 타입. 안정보다 스릴을 좋아하고, 고정 월급보다 크게 벌고 크게 쓰는 스타일. '투자', '사업', '기회'라는 단어에 눈이 반짝인다.",
+    "name": "편재",
+    "hanja": "偏財",
+    "category": "재성",
+    "yin_yang": "opposite",
+    "embedding_context": "편재는 일간이 극하는 오행 중 음양이 다른 십성으로, 사교적이고 활동적이며 사업적 감각이 탁월하다. 변동 수입 구조에서 강하며 넓은 인간관계를 통해 기회를 만든다.",
+    "core_nature": "기회를 냄새로 맡는 사업가 기질 — 넓은 인간관계와 대담함이 재물을 만드는 십성",
+    "behavior_vector": ["opportunistic_action", "resource_mobilization", "risk_taking", "social_networking"],
+    "life_patterns": {
+      "career": ["startup_or_business", "sales_or_deals", "network_based_work"],
+      "relationship": ["high_romantic_energy", "charming_social_partner", "multiple_connections"],
+      "wealth": ["variable_income_pattern", "opportunity_driven_earnings", "speculative_ventures"]
+    },
+    "decision_style": {
+      "approach": "opportunity_scanning_first",
+      "strength": "fast_resource_deployment",
+      "blind_spot": "scattered_focus_across_opportunities"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["speculative_tendency", "wealth_volatility", "romantic_complications", "scattered_focus"],
+        "risk": "투기성, 재물 기복, 이성 문제, 한 곳에 집중 못함"
+      },
+      "void": {
+        "traits": ["weak_business_sense", "narrow_social_circle", "preference_for_stable_income"],
+        "risk": "사업 감각 부족, 인간관계 폭 좁음, 안정 수입 선호"
+      }
+    },
     "pillar_nuance": {
-      "year": "아버지 또는 조상과의 재물 인연. 어린 시절 경제적 환경의 영향.",
-      "month": "직업에서 사업적 감각이 발휘됨. 영업, 마케팅, 무역 분야에서 두각.",
-      "day": "배우자가 사교적이거나 사업 능력이 있을 가능성. 이성에게 인기 많음.",
-      "hour": "노년에도 활발한 사업 활동. 자녀가 사업가 기질."
+      "year": {"traits": ["father_wealth_connection", "childhood_economic_influence"], "hint": "부친·조상과 재물 인연, 어린 시절 경제 환경"},
+      "month": {"traits": ["business_talent_in_career", "sales_marketing_strength"], "hint": "직업에서 사업 감각 발휘, 영업·마케팅 두각"},
+      "day": {"traits": ["charming_sociable_spouse", "high_romantic_attractiveness"], "hint": "사교적 배우자, 이성에게 인기 많음"},
+      "hour": {"traits": ["active_business_in_late_life", "entrepreneurial_children"], "hint": "노년 활발한 사업, 사업가 기질 자녀"}
     },
     "interactions": {
-      "식상": "식상이 편재를 생하면 식상생재(食傷生財) — 창의력이 수익으로",
-      "비겁": "비겁이 편재를 극하면 군겁쟁재(群劫爭財) — 재물 분산 위험",
-      "관성": "편재가 관성을 생하면 재물이 사회적 지위로 연결"
+      "식상": {"effect": "식상이 편재를 생 — 식신생재(食傷生財) — 창의력이 수익으로", "pattern": "sig_sang_saeng_jae"},
+      "비겁": {"effect": "비겁이 편재를 극 — 군겁쟁재(群劫爭財) — 재물 분산 위험", "pattern": "gun_gyeop_jaeng_jae"},
+      "관성": {"effect": "편재가 관성을 생 — 재물이 사회적 지위로 연결", "pattern": "wealth_to_status"}
     },
     "consulting_points": {
       "empathy_trigger": "기회는 많이 보이는데 정작 손에 쥐어지는 게 없어서 답답한 적 있으신가요?",
       "solution_speech": "당신의 사업 감각과 대인 능력은 탁월합니다. 지금 필요한 건 여러 판을 벌이는 것보다, 가장 강한 한 판에 에너지를 집중하는 결단입니다.",
       "tab_headline": "당신의 재물 운이 활짝 열리는 구조"
     },
-    "tags": ["재성", "사교", "사업", "돈", "활동적"]
+    "engine_tags": ["controls_opposite_polarity", "variable_resource", "opportunity_seeker", "social_capital_driver"],
+    "interpretation_tags": ["startup_founder", "deal_maker", "social_capital_builder", "high_risk_high_reward"]
   },
   {
     "id": "tg_jeongjae",
-    "name": "정재", "hanja": "正財", "category": "재성", "yin_yang": "same",
-    "personality": "성실하고 근면하며 재물 관리 능력이 뛰어나다. 안정적인 수입을 선호하고 충동적 지출을 피한다. 신뢰감을 주는 인물.",
-    "career": "회계, 금융, 행정, 공무원, 안정적 직장. 꾸준함이 필요한 모든 분야.",
-    "relationship": "배우자에게 헌신적이고 가정을 소중히 여김. 안정적인 결혼 생활 지향.",
-    "excess_warning": "정재 과다는 지나친 소심함, 새로운 도전 회피, 인색함.",
-    "void_meaning": "정재가 없으면 재물 관리 어려움, 지출 통제 힘듦. 불규칙한 수입 패턴.",
-    "semantic_context": "꾸준히 모으고 안정적으로 관리하는 기운. 한 방보다 착실함을 선호하며 '티끌 모아 태산'을 믿는 타입. 계획적이고 신중하여 신뢰를 준다. 즉흥적인 투자나 도박적 결정은 극도로 꺼린다.",
+    "name": "정재",
+    "hanja": "正財",
+    "category": "재성",
+    "yin_yang": "same",
+    "embedding_context": "정재는 일간이 극하는 오행 중 같은 음양의 십성으로, 성실하고 근면하며 재물 관리 능력이 탁월하다. 안정적인 수입을 선호하고 꾸준한 노력으로 재산을 쌓는다.",
+    "core_nature": "꾸준함으로 쌓이는 신뢰의 재물 — 성실과 절제로 가장 오래 남는 것을 만드는 십성",
+    "behavior_vector": ["diligent_accumulation", "financial_discipline", "risk_aversion", "steady_reliability"],
+    "life_patterns": {
+      "career": ["stable_employment", "methodical_career_progression", "financial_management"],
+      "relationship": ["reliable_steady_partner", "financially_responsible_dynamic", "long_term_commitment"],
+      "wealth": ["consistent_savings", "slow_steady_wealth_building", "conservative_investment"]
+    },
+    "decision_style": {
+      "approach": "risk_minimization_first",
+      "strength": "systematic_long_term_planning",
+      "blind_spot": "misses_high_reward_opportunities"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["excessive_caution", "risk_aversion", "miserliness", "stagnation"],
+        "risk": "지나친 소심함, 새로운 도전 회피, 인색함"
+      },
+      "void": {
+        "traits": ["poor_financial_management", "impulse_spending", "irregular_income_pattern"],
+        "risk": "재물 관리 어려움, 지출 통제 힘듦, 불규칙 수입"
+      }
+    },
     "pillar_nuance": {
-      "year": "가정 환경이 안정적이거나 재물 관리를 중시하는 가풍.",
-      "month": "안정적인 직장과 꾸준한 수입 구조. 공무원, 직장인으로 능력 발휘.",
-      "day": "배우자가 경제적으로 믿음직스럽거나 절약 정신이 강하다.",
-      "hour": "노후 준비를 철저히 하는 스타일. 자녀에게 재물 교육을 중시."
+      "year": {"traits": ["financially_stable_upbringing", "wealth_conscious_family_culture"], "hint": "안정적 가정환경, 재물 관리 중시 가풍"},
+      "month": {"traits": ["stable_employment", "consistent_income"], "hint": "안정적 직장, 꾸준한 수입 구조"},
+      "day": {"traits": ["financially_responsible_spouse", "frugal_partnership"], "hint": "믿음직한 배우자, 절약 정신 강한 파트너십"},
+      "hour": {"traits": ["thorough_retirement_planning", "wealth_education_for_children"], "hint": "철저한 노후 준비, 자녀 재물 교육"}
     },
     "interactions": {
-      "비겁": "비겁이 정재를 극하면 재물 손실 위험",
-      "관성": "정재가 관성을 생하면 재물이 사회적 권위로 연결",
-      "식상": "식상이 정재를 생하면 착실한 노력이 재물로 결실"
+      "비겁": {"effect": "비겁이 정재를 극 — 재물 손실·분산 위험", "pattern": "wealth_erosion"},
+      "관성": {"effect": "정재가 관성을 생 — 재물이 사회적 권위로 연결", "pattern": "wealth_to_status"},
+      "식상": {"effect": "식상이 정재를 생 — 착실한 노력이 재물로 결실", "pattern": "effort_to_wealth"}
     },
     "consulting_points": {
       "empathy_trigger": "안정적인 것을 원하다 보니 새로운 기회 앞에서 망설이다 놓친 경험이 있지 않으신가요?",
       "solution_speech": "당신의 꾸준함과 신중함은 진짜 경쟁력입니다. 안정 속에서 한 걸음씩 나아가는 당신의 방식이 결국 가장 오래 남는 재산을 만듭니다.",
       "tab_headline": "착실하게 쌓아온 당신의 재물 기반"
     },
-    "tags": ["재성", "성실", "안정", "저축", "신뢰"]
+    "engine_tags": ["controls_same_polarity", "stable_resource", "accumulation_driver", "discipline_anchor"],
+    "interpretation_tags": ["financial_planner", "steady_saver", "reliable_provider", "long_term_wealth_builder"]
   },
   {
     "id": "tg_pyeongwan",
-    "name": "편관", "hanja": "偏官", "category": "관성", "yin_yang": "opposite",
-    "personality": "칠살(七殺)이라고도 한다. 강한 추진력과 카리스마, 리더십. 압박과 도전 속에서 빛나는 인물. 규칙보다 결과를 중시한다.",
-    "career": "군인, 경찰, 검사, 스포츠, 외과의사, CEO. 압박을 이겨내는 구조에서 강함.",
-    "relationship": "강렬한 매력이 있지만 통제적인 면. 갈등이 생겨도 쉽게 포기하지 않음.",
-    "excess_warning": "편관 과다는 과격함, 건강 문제, 직업 불안정. 식신제살(食神制殺)이 없으면 폭발적 기운이 통제 불능.",
-    "void_meaning": "편관이 없으면(관성 전무) 조직 생활 적응 어려움. 그러나 프리랜서·창업으로 자신만의 시스템을 만들 수 있는 잠재력. 지장간에 무(편관)가 숨어있으면 표면에 드러나지 않을 뿐 에너지는 내재되어 있다.",
-    "semantic_context": "압박과 위기 속에서 오히려 강해지는 기운. 쉬운 길보다 어려운 길을 선택하는 경향. 강한 카리스마로 주변을 이끌지만 가끔 너무 강해서 부러지기도 한다. '관성이 없다'는 것은 조직의 룰을 따르기보다 자신만의 규칙을 만드는 자유인의 기질.",
+    "name": "편관",
+    "hanja": "偏官",
+    "category": "관성",
+    "yin_yang": "opposite",
+    "embedding_context": "편관(칠살)은 일간을 극하는 오행 중 음양이 다른 십성으로, 강한 추진력과 카리스마로 압박과 도전 속에서 빛나는 에너지다. 식신제살(食神制殺)이 없으면 폭발적 기운이 통제 불능이 될 수 있다.",
+    "core_nature": "압박이 클수록 빛나는 투사 기질 — 한계를 돌파하는 불굴의 에너지를 품은 십성",
+    "behavior_vector": ["pressure_activation", "results_at_all_costs", "crisis_leadership", "uncompromising_drive"],
+    "life_patterns": {
+      "career": ["high_pressure_performance", "crisis_management", "competitive_field_excellence"],
+      "relationship": ["intense_high_energy_dynamic", "dominant_or_dominated_polarity", "strong_attraction"],
+      "wealth": ["earned_through_struggle", "career_driven_income"]
+    },
+    "decision_style": {
+      "approach": "pressure_forged_decisiveness",
+      "strength": "performs_best_under_crisis",
+      "blind_spot": "overlooks_sustainable_pace"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["aggression_risk", "health_problems_from_overexertion", "career_instability"],
+        "risk": "과격함, 건강 문제, 직업 불안정. 식신제살 없으면 통제 불능"
+      },
+      "void": {
+        "traits": ["difficulty_in_organizations", "self_directed_path_required", "hidden_in_jijanggan"],
+        "risk": "조직 생활 적응 어려움. 창업·프리랜서 잠재력. 지장간 잠재 에너지"
+      }
+    },
     "pillar_nuance": {
-      "year": "어린 시절 강압적 환경이나 도전적 상황. 부친이 강한 인물.",
-      "month": "직업에서 경쟁과 압박이 많은 환경. 강한 상사나 경쟁자를 만날 가능성.",
-      "day": "배우자가 강한 성격이거나 관계에서 긴장감. 강렬한 연애와 결혼.",
-      "hour": "노년에도 활발하고 도전적인 삶. 자녀가 강인한 기질."
+      "year": {"traits": ["pressure_in_childhood", "dominant_father_figure"], "hint": "어린 시절 강압 환경, 강한 부친"},
+      "month": {"traits": ["competitive_high_pressure_workplace", "intense_boss_or_rival"], "hint": "경쟁 많은 직장, 강한 상사·경쟁자"},
+      "day": {"traits": ["intense_spouse_dynamic", "high_energy_partnership"], "hint": "강한 배우자, 긴장감 있는 관계"},
+      "hour": {"traits": ["active_ambitious_late_life", "strong_willed_children"], "hint": "노년 도전적 삶, 강인한 자녀 기질"}
     },
     "interactions": {
-      "식신": "식신이 편관을 제어하면 식신제살(食神制殺) — 창의력으로 압박 돌파",
-      "인성": "편관이 인성을 생하면 관인상생(官印相生) — 조직의 지원이 역량으로",
-      "비겁": "편관이 비겁을 극하면 경쟁심과 독립심을 제어"
+      "식신": {"effect": "식신이 편관 제어 — 식신제살(食神制殺) — 창의력으로 압박 돌파", "pattern": "sig_sin_je_sal"},
+      "인성": {"effect": "편관이 인성을 생 — 관인상생(官印相生) — 조직 지원이 역량으로", "pattern": "gwan_in_sang_saeng"},
+      "비겁": {"effect": "편관이 비겁을 극 — 경쟁심·독립심 제어", "pattern": "authority_controls_drive"}
     },
     "consulting_points": {
       "empathy_trigger": "당신은 어려울수록 더 강해지는 사람이지만, 그 강함을 유지하느라 혼자 너무 많이 소진되고 있지 않으신가요?",
-      "solution_speech": "관성이 없다는 것은 조직의 틀에 맞추기보다 자신만의 방식으로 세상을 만들어가는 자유인의 운명입니다. 당신만의 규칙을 만드세요.",
-      "tab_headline": "조직보다 자유롭게, 당신만의 시스템을 설계하라"
+      "solution_speech": "당신의 강한 추진력은 위기 상황에서 최대로 빛납니다. 하지만 지속 가능한 페이스를 유지하는 것도 강함입니다. 전략적 회복이 다음 전투를 준비합니다.",
+      "tab_headline": "압박 속에서 오히려 빛나는 당신의 잠재력"
     },
-    "tags": ["관성", "칠살", "카리스마", "리더십", "도전"]
+    "engine_tags": ["controls_me_opposite_polarity", "pressure_activator", "crisis_driver", "authority_challenger"],
+    "interpretation_tags": ["high_pressure_leader", "crisis_manager", "results_obsessed", "comeback_artist"]
   },
   {
     "id": "tg_jeongwan",
-    "name": "정관", "hanja": "正官", "category": "관성", "yin_yang": "same",
-    "personality": "책임감이 강하고 명예를 중시. 규칙과 도덕을 지키며 신뢰받는 인물. 조직 내에서 인정받는 스타일.",
-    "career": "공무원, 판사, 교사, 의사, 관리자. 안정적인 조직 내 승진 구조에 적합.",
-    "relationship": "배우자에게 충실하고 책임감 있음. 전통적인 가정관.",
-    "excess_warning": "정관 과다는 지나친 규칙 집착, 융통성 부족, 스트레스 과잉.",
-    "void_meaning": "정관이 없으면 자유로운 영혼. 규범에서 벗어난 독자적 길을 걷는 경향.",
-    "semantic_context": "책임지는 것을 당연하게 여기고 원칙을 지키는 기운. '그래도 해야 할 건 해야지'라는 마음이 강하다. 사회적으로 신뢰를 쌓고 조직 내에서 인정받는 것에서 보람을 느끼는 유형.",
+    "name": "정관",
+    "hanja": "正官",
+    "category": "관성",
+    "yin_yang": "same",
+    "embedding_context": "정관은 일간을 극하는 오행 중 같은 음양의 십성으로, 책임감과 명예를 중시하며 규칙과 도덕을 지키는 신뢰받는 에너지다. 관인상생(官印相生) 구조에서 최대로 빛난다.",
+    "core_nature": "사회의 규칙 안에서 신뢰를 쌓는 명예로운 힘 — 책임과 원칙이 곧 경쟁력인 십성",
+    "behavior_vector": ["rule_adherence", "responsibility_acceptance", "structure_maintenance", "honor_seeking"],
+    "life_patterns": {
+      "career": ["institutional_advancement", "credential_based_career", "public_service_or_professional"],
+      "relationship": ["principled_reliable_partner", "duty_driven_family_role", "stable_long_term_bond"],
+      "wealth": ["position_based_income", "steady_career_earnings"]
+    },
+    "decision_style": {
+      "approach": "rule_based_analysis",
+      "strength": "trusted_reliable_judgment",
+      "blind_spot": "slow_to_adapt_when_rules_change"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["over_rule_adherence", "rigidity", "excessive_stress_from_responsibility"],
+        "risk": "지나친 규칙 집착, 융통성 부족, 책임감 과부하"
+      },
+      "void": {
+        "traits": ["free_spirited_path", "unconventional_career", "self_directed_rules"],
+        "risk": "자유로운 영혼, 규범 밖의 독자적 길"
+      }
+    },
     "pillar_nuance": {
-      "year": "명예로운 가풍이나 책임감 있는 집안 환경.",
-      "month": "직업이 사회적 신뢰와 명예를 바탕으로 함. 공직이나 전문직에 어울림.",
-      "day": "배우자가 책임감 있고 사회적으로 바른 인물. 안정적인 결혼 생활.",
-      "hour": "자녀가 사회적으로 성공하거나 책임감 있는 인물로 성장."
+      "year": {"traits": ["honorable_family_tradition", "responsibility_oriented_upbringing"], "hint": "명예로운 가풍, 책임감 있는 집안"},
+      "month": {"traits": ["public_trust_career", "professional_credential_path"], "hint": "사회적 신뢰 기반 직업, 공직·전문직"},
+      "day": {"traits": ["principled_responsible_spouse", "stable_marriage_life"], "hint": "책임감 있는 배우자, 안정적 결혼 생활"},
+      "hour": {"traits": ["socially_successful_children", "responsibility_in_legacy"], "hint": "사회적으로 성공한 자녀, 책임감 있는 후계"}
     },
     "interactions": {
-      "인성": "정관이 인성을 생하면 관인상생(官印相生) — 명예가 지식으로",
-      "재성": "재성이 정관을 생하면 재물이 사회적 지위로 연결",
-      "상관": "상관이 정관을 극하면 직업 갈등 및 관재수"
+      "인성": {"effect": "정관이 인성을 생 — 관인상생(官印相生) — 명예가 지식으로 성장", "pattern": "gwan_in_sang_saeng"},
+      "재성": {"effect": "재성이 정관을 생 — 재물이 사회적 지위로 연결", "pattern": "wealth_to_status"},
+      "상관": {"effect": "상관이 정관을 극 — 직업 갈등·관재수 위험", "pattern": "rebel_clashes_authority"}
     },
     "consulting_points": {
       "empathy_trigger": "책임감 때문에 하고 싶지 않아도 해야 하는 일들을 혼자 묵묵히 감당해온 시간이 많지 않으신가요?",
       "solution_speech": "당신의 책임감과 신뢰는 진귀한 가치입니다. 하지만 때로는 '나를 위한 선택'도 책임감만큼 중요합니다.",
       "tab_headline": "사회에서 신뢰받는 당신의 관계와 커리어"
     },
-    "tags": ["관성", "책임감", "명예", "규칙", "안정"]
+    "engine_tags": ["controls_me_same_polarity", "authority_legitimacy", "structure_enforcer", "promotion_driver"],
+    "interpretation_tags": ["reliable_authority_figure", "steady_career_climber", "principled_professional", "institutional_trust_builder"]
   },
   {
     "id": "tg_pyeonin",
-    "name": "편인", "hanja": "偏印", "category": "인성", "yin_yang": "opposite",
-    "personality": "독특한 직관력과 신비로운 감각. 독창적 발상과 특수한 재능. 다소 고독하고 비주류적인 성향. 몰입하면 천재적 능력을 발휘한다.",
-    "career": "연구, 종교, 예술, IT, 점술, 철학. 독창적인 분야의 전문가.",
-    "relationship": "까다로운 이성관계. 상대를 쉽게 믿지 않으며 깊은 신뢰를 형성하는 데 시간이 걸린다.",
-    "excess_warning": "편인 과다는 고독, 식신 억압(도식), 비현실적 공상. 건강 문제.",
-    "void_meaning": "편인이 없으면 직관력 약함. 대신 현실적이고 실용적인 사고가 강하다.",
-    "semantic_context": "남이 보지 못하는 것을 보는 독특한 시선. 주류보다 비주류, 일반적인 것보다 특별한 것에 이끌리는 기운. 혼자 있는 시간을 즐기고 깊이 파고드는 몰입력이 있다. 가끔 '이 사람은 왜 이런 생각을 하지?'라는 말을 듣는 유형.",
+    "name": "편인",
+    "hanja": "偏印",
+    "category": "인성",
+    "yin_yang": "opposite",
+    "embedding_context": "편인은 일간을 생하는 오행 중 음양이 다른 십성으로, 독특한 직관력과 신비로운 감각, 독창적 발상을 지닌다. 식신을 억압하는 도식(倒食) 구조에 주의가 필요하다.",
+    "core_nature": "남이 보지 못하는 세계를 탐색하는 독창적 직관 — 비주류와 신비가 강점인 십성",
+    "behavior_vector": ["unconventional_intuition", "independent_learning", "pattern_recognition", "mystical_depth"],
+    "life_patterns": {
+      "career": ["niche_expertise", "independent_research", "alternative_or_spiritual_work"],
+      "relationship": ["unique_non_standard_connection", "emotional_distance_tendency", "deep_but_rare_bonds"],
+      "wealth": ["irregular_income_from_unique_skills", "niche_monetization"]
+    },
+    "decision_style": {
+      "approach": "intuitive_non_linear",
+      "strength": "sees_hidden_patterns",
+      "blind_spot": "appears_unpredictable_to_others"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["social_isolation", "food_god_suppression_dosik", "unrealistic_fantasy", "health_neglect"],
+        "risk": "고독, 식신 억압(도식), 비현실적 공상, 건강 문제"
+      },
+      "void": {
+        "traits": ["weak_intuition", "more_practical_mindset", "less_mystical_interest"],
+        "risk": "직관력 약함, 현실적·실용적 사고 강화"
+      }
+    },
     "pillar_nuance": {
-      "year": "어린 시절 독특한 환경이나 이색적인 경험. 남다른 가풍.",
-      "month": "직업이 비주류적이거나 전문성이 특별한 분야. 독자적인 방식으로 일한다.",
-      "day": "배우자와 특별하고 독특한 관계. 일반적이지 않은 결혼 패턴.",
-      "hour": "노년에 종교나 철학에 심취. 독창적인 취미나 전문성 개발."
+      "year": {"traits": ["unusual_childhood_environment", "unconventional_family_culture"], "hint": "독특한 어린 시절, 이색적 가풍"},
+      "month": {"traits": ["unconventional_career_path", "independent_work_style"], "hint": "비주류 직업, 독자적 업무 방식"},
+      "day": {"traits": ["unique_relationship_dynamic", "non_traditional_partnership"], "hint": "특별하고 독특한 관계 패턴"},
+      "hour": {"traits": ["late_life_spiritual_pursuit", "unique_hobby_expertise"], "hint": "노년 종교·철학 심취, 독창적 취미 전문성"}
     },
     "interactions": {
-      "식신": "편인이 식신을 억압하면 도식(倒食) — 재능 발현 방해",
-      "편관": "편관이 편인을 생하면 독특한 경험이 직관력을 키움",
-      "비겁": "편인이 비겁을 생하면 독창성이 자존심을 강화"
+      "식신": {"effect": "편인이 식신을 억압 — 도식(倒食) — 재능 발현 방해", "pattern": "dosik_suppression"},
+      "편관": {"effect": "편관이 편인을 생 — 독특한 경험이 직관력을 키움", "pattern": "pressure_builds_intuition"},
+      "비겁": {"effect": "편인이 비겁을 생 — 독창성이 자존심을 강화", "pattern": "unique_to_pride"}
     },
     "consulting_points": {
       "empathy_trigger": "당신의 독특한 생각과 감각이 주변에서 받아들여지지 않아 외롭거나 소외감을 느낀 적 있으신가요?",
       "solution_speech": "당신의 남다른 시각은 희귀한 재능입니다. 주류에서 인정받는 것보다, 자신의 독창성을 믿고 나아갈 때 진정한 빛을 발합니다.",
       "tab_headline": "당신만이 볼 수 있는 세계의 특별한 재능"
     },
-    "tags": ["인성", "직관", "창의", "고독", "특수재능"]
+    "engine_tags": ["supports_me_opposite_polarity", "intuition_driver", "unconventional_resource", "dosik_risk_bearer"],
+    "interpretation_tags": ["independent_researcher", "occult_specialist", "alternative_thinker", "niche_expert"]
   },
   {
     "id": "tg_jeongin",
-    "name": "정인", "hanja": "正印", "category": "인성", "yin_yang": "same",
-    "personality": "학구적이고 사려 깊으며 문서·학문에 강하다. 모성적 보호 본능이 있고 주변을 돌보는 역할을 자처한다. 신중하고 논리적.",
-    "career": "교수, 작가, 연구원, 상담사, 교육자. 지식을 전달하고 보호하는 역할.",
-    "relationship": "헌신적이고 모성·부성애가 강함. 상대를 가르치거나 보살피려는 경향.",
-    "excess_warning": "정인 과다는 지나친 의존성, 독립심 부족, 보수적 사고.",
-    "void_meaning": "정인이 없으면 모성적 지원 부재. 스스로 배우고 성장해야 하는 독학파 구조.",
-    "semantic_context": "배우고 가르치고 보호하는 기운. 책이 좋고 공부가 편하며 지식을 쌓는 것에서 안정감을 얻는다. 어머니 같은 포용력으로 주변을 감싼다. '더 공부해야 해'가 입버릇인 유형.",
+    "name": "정인",
+    "hanja": "正印",
+    "category": "인성",
+    "yin_yang": "same",
+    "embedding_context": "정인은 일간을 생하는 오행 중 같은 음양의 십성으로, 학구적이고 사려 깊으며 문서·학문에 강하다. 모성적 보호 본능과 신중한 논리력을 지니며, 관인상생(官印相生) 구조에서 가장 빛난다.",
+    "core_nature": "지식으로 나를 채우고 배움으로 세상을 품는 모성적 에너지 — 학문과 보호가 삶의 중심인 십성",
+    "behavior_vector": ["scholarly_pursuit", "methodical_learning", "nurturing_protection", "credential_seeking"],
+    "life_patterns": {
+      "career": ["academic_or_education", "knowledge_based_expertise", "mentoring_or_advising"],
+      "relationship": ["caring_protective_partner", "intellectual_home_atmosphere", "loyalty_based_bond"],
+      "wealth": ["credential_as_income_base", "stable_knowledge_worker_income"]
+    },
+    "decision_style": {
+      "approach": "evidence_and_knowledge_first",
+      "strength": "thorough_well_prepared",
+      "blind_spot": "paralysis_by_over_analysis"
+    },
+    "balance": {
+      "excess": {
+        "traits": ["over_dependence", "lack_of_independence", "conservative_closed_mindset", "theory_over_practice"],
+        "risk": "지나친 의존성, 독립심 부족, 보수적 사고, 이론만 앞서고 실천 부족 (인다신강)"
+      },
+      "void": {
+        "traits": ["self_taught_necessity", "maternal_support_absence", "independent_growth_path"],
+        "risk": "모성적 지원 부재, 독학파 구조, 스스로 배우고 성장"
+      }
+    },
     "pillar_nuance": {
-      "year": "어머니의 영향이 크거나 교육적인 가풍. 학습 환경이 좋았다.",
-      "month": "직업이 교육, 연구, 지식 전달과 연결. 자격증이나 학위가 경쟁력.",
-      "day": "배우자가 지적이거나 배려심이 깊다. 학구적인 가정 분위기.",
-      "hour": "자녀 교육에 헌신. 노년에 학문이나 종교에서 위안."
+      "year": {"traits": ["strong_maternal_influence", "education_focused_upbringing"], "hint": "어머니 영향 큼, 교육적 가풍"},
+      "month": {"traits": ["knowledge_based_career", "credential_as_competitive_edge"], "hint": "교육·연구·지식 전달 직업, 자격증·학위가 경쟁력"},
+      "day": {"traits": ["intellectual_caring_spouse", "scholarly_home_atmosphere"], "hint": "지적이고 배려 깊은 배우자, 학구적 가정 분위기"},
+      "hour": {"traits": ["dedicated_parental_education", "late_life_academic_or_spiritual_comfort"], "hint": "자녀 교육 헌신, 노년 학문·종교에서 위안"}
     },
     "interactions": {
-      "편관": "편관이 정인을 생하면 관인상생(官印相生) — 조직 경험이 지식으로",
-      "비겁": "정인이 비겁을 생하면 학식이 자존심의 기반",
-      "재성": "재성이 정인을 극하면 재물 욕심이 학문을 방해"
+      "편관": {"effect": "편관이 정인을 생 — 관인상생(官印相生) — 조직 경험이 역량으로 성장", "pattern": "gwan_in_sang_saeng"},
+      "비겁": {"effect": "정인이 비겁을 생 — 학식이 자존심의 기반", "pattern": "knowledge_fuels_identity"},
+      "재성": {"effect": "재성이 정인을 극 — 재물 욕심이 학문 방해", "pattern": "wealth_disrupts_learning"}
     },
     "consulting_points": {
       "empathy_trigger": "배움과 준비는 충분한데, 정작 나서는 게 두렵거나 미루고 있는 것이 있지 않으신가요?",
       "solution_speech": "당신의 지식과 배려심은 이미 충분합니다. 이제는 '더 완벽해지면'이 아니라 '지금 이대로' 세상에 나갈 시간입니다.",
       "tab_headline": "지식과 배움이 당신의 삶을 어떻게 이끄는가"
     },
-    "tags": ["인성", "학문", "보호", "신중", "교육"]
+    "engine_tags": ["supports_me_same_polarity", "knowledge_accumulator", "protection_driver", "credential_anchor"],
+    "interpretation_tags": ["lifelong_learner", "academic_mentor", "thoughtful_advisor", "credential_collector"]
   }
 ]

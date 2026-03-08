@@ -1,0 +1,261 @@
+[
+  {
+    "id": "dyn_stem_hap_gab_gi",
+    "name": "갑기합",
+    "hanja": "甲己合",
+    "result_element": "토",
+    "trigger": {"type": "stem_hap", "stems": ["갑", "기"]},
+    "pillar_focus": {
+      "year": "가문·배경에서 현실적 지원이 오는 환경",
+      "month": "직장 내 창의와 실행의 협력 구조",
+      "day": "배우자와 아이디어·실행의 상호 보완 관계",
+      "hour": "자녀·미래 계획에서 창의적 비전이 현실화"
+    },
+    "traits": ["현실적 창의", "아이디어의 실체화", "균형 감각", "신뢰 기반 추진력"],
+    "career_vibe": ["아이디어를 사업화하는 능력", "설계(갑)와 실행(기)의 균형", "창업 후 조직을 안정시키는 힘"],
+    "risk": ["현실 안주로 갑의 추진력 약화", "기토 과다 시 창의 에너지 억제"],
+    "pattern_synergy": {
+      "sig_sang_saeng_jae": ["idea_grounded_in_reality", "creative_execution_stable", "concept_to_durable_profit"],
+      "gun_gyeop_jaeng_jae": ["independent_but_anchored", "solo_with_solid_base"]
+    }
+  },
+  {
+    "id": "dyn_stem_hap_eul_gyeong",
+    "name": "을경합",
+    "hanja": "乙庚合",
+    "result_element": "금",
+    "trigger": {"type": "stem_hap", "stems": ["을", "경"]},
+    "pillar_focus": {
+      "year": "가문의 유연함과 원칙이 공존하는 배경",
+      "month": "직업에서 소통력과 정밀함이 결합",
+      "day": "배우자 관계에서 부드러움과 원칙의 균형",
+      "hour": "자녀·미래 계획에서 유연한 완성도 추구"
+    },
+    "traits": ["유연한 결단", "부드러운 원칙", "실용적 완벽주의", "관계 속 정밀함"],
+    "career_vibe": ["설득력 있는 협상가", "디자인+기술의 융합", "부드러운 리더십과 냉철한 판단의 공존"],
+    "risk": ["경금의 완벽주의가 을목 창의를 억눌러 생동감 상실", "협상 지연"],
+    "pattern_synergy": {
+      "sig_sang_saeng_jae": ["precise_creative_income", "quality_driven_monetization"],
+      "sang_gwan_pae_in": ["sharp_yet_diplomatic", "principled_critique"]
+    }
+  },
+  {
+    "id": "dyn_stem_hap_byeong_sin",
+    "name": "병신합",
+    "hanja": "丙辛合",
+    "result_element": "수",
+    "trigger": {"type": "stem_hap", "stems": ["병", "신"]},
+    "pillar_focus": {
+      "year": "화려한 배경 속 숨겨진 전략적 깊이",
+      "month": "직업에서 표현과 분석의 융합",
+      "day": "배우자와 감성·이성의 상호 보완",
+      "hour": "미래 계획에서 비전과 현실 분석의 균형"
+    },
+    "traits": ["열정의 정제", "감성과 이성의 통합", "전략적 표현력", "깊이 있는 직관"],
+    "career_vibe": ["감성 마케팅과 데이터 분석의 융합", "무대 위 카리스마와 무대 뒤 치밀한 전략"],
+    "risk": ["표현 욕구와 완벽주의 충돌로 행동 위축", "과잉 분석으로 실행 지연"],
+    "pattern_synergy": {
+      "sig_sang_saeng_jae": ["strategic_creative_income", "data_backed_expression"],
+      "sig_sin_je_sal": ["analytical_humor_defense", "calculated_resilience"]
+    }
+  },
+  {
+    "id": "dyn_stem_hap_jeong_im",
+    "name": "정임합",
+    "hanja": "丁壬合",
+    "result_element": "목",
+    "trigger": {"type": "stem_hap", "stems": ["정", "임"]},
+    "pillar_focus": {
+      "year": "가문의 감수성과 지혜가 결합된 배경",
+      "month": "직업에서 섬세한 공감과 깊은 통찰이 강점",
+      "day": "배우자와 감성·사고의 깊은 연결",
+      "hour": "자녀·미래 계획에서 인문적 가치 중시"
+    },
+    "traits": ["감성적 지혜", "인문적 성장 에너지", "세밀한 통찰", "관계 중심 성장"],
+    "career_vibe": ["심리 상담·코치형 에너지", "교육 콘텐츠 창작", "사람 이야기를 다루는 작가·저널리스트"],
+    "risk": ["깊은 사색이 실행 욕구를 지연", "감수성 과부하로 소진"],
+    "pattern_synergy": {
+      "gwan_in_sang_saeng": ["empathetic_institutional_growth", "people_centered_career"],
+      "sang_gwan_pae_in": ["heart_sharpened_by_wisdom", "emotional_intellectual_critique"]
+    }
+  },
+  {
+    "id": "dyn_stem_hap_mu_gye",
+    "name": "무계합",
+    "hanja": "戊癸合",
+    "result_element": "화",
+    "trigger": {"type": "stem_hap", "stems": ["무", "계"]},
+    "pillar_focus": {
+      "year": "평범한 배경에서 비범한 영감이 솟아나는 가문",
+      "month": "직업에서 신비로운 분위기가 강점으로 작용",
+      "day": "배우자와 현실과 신비의 독특한 화학반응",
+      "hour": "자녀·미래에서 예상치 못한 창의적 방향 출현"
+    },
+    "traits": ["신비로운 매력", "현실 기반 영감", "독특한 카리스마", "잠재의식적 표현력"],
+    "career_vibe": ["아티스트·뮤지션형 에너지", "무의식을 다루는 심리 분야", "영적·치유 영역 리더십"],
+    "risk": ["현실 집착과 신비주의 충돌로 방향 상실", "표류 가능성"],
+    "pattern_synergy": {
+      "sig_sang_saeng_jae": ["mystical_creative_income", "intuitive_monetization"],
+      "sig_sin_je_sal": ["charismatic_resilience", "presence_vs_pressure"]
+    }
+  },
+  {
+    "id": "dyn_relation_sam_hap",
+    "name": "삼합",
+    "hanja": "三合",
+    "trigger": {"type": "branch_relation", "relation": "sam_hap"},
+    "pillar_focus": {
+      "year_month": "배경과 사회활동이 강하게 연결 — 집안 또는 직업 환경이 극도로 유리",
+      "month_day": "사회적 역할과 자아가 일치 — 직업이 곧 나다움",
+      "day_hour": "자아와 내면이 강하게 연결 — 깊은 자기 일치감"
+    },
+    "traits": ["오행 극강", "일관된 방향성", "강한 집중력", "전문성 극대화"],
+    "career_vibe": ["한 분야 깊이 파고드는 전문가 기질", "명확한 삶의 방향성", "단일 목표 강력 추진"],
+    "risk": ["합화된 오행이 용신과 맞지 않으면 강점이 편향", "다양성 부족"],
+    "pattern_synergy": {
+      "sig_sang_saeng_jae": ["elemental_creative_force", "concentrated_income_stream"],
+      "gwan_in_sang_saeng": ["institutional_powerhouse", "systematic_mastery"]
+    }
+  },
+  {
+    "id": "dyn_relation_yuk_hap",
+    "name": "육합",
+    "hanja": "六合",
+    "trigger": {"type": "branch_relation", "relation": "yuk_hap"},
+    "pillar_focus": {
+      "year_month": "가정과 사회생활이 자연스럽게 조화 — 배경과 직업 시너지",
+      "month_day": "사회적 역할과 자아가 잘 연결됨 — 직업 적합도 높음",
+      "day_hour": "일상과 내면이 조화 — 일과 내면 욕구가 같은 방향"
+    },
+    "traits": ["기둥 간 자연스러운 협조", "조화로운 에너지 흐름", "관계적 매끄러움"],
+    "career_vibe": ["협력 관계가 원활하게 형성", "특정 기둥 조합에서 시너지 발생"],
+    "risk": ["충이 함께 있으면 합의 효력 소멸(합충파)", "형·해는 합 효과 약화"],
+    "pattern_synergy": {
+      "gwan_in_sang_saeng": ["harmonious_institution_fit", "effortless_promotion"],
+      "jae_da_sin_yak": ["opportunity_flows_naturally", "less_struggle_for_wealth"]
+    }
+  },
+  {
+    "id": "dyn_relation_chung",
+    "name": "충",
+    "hanja": "沖",
+    "trigger": {"type": "branch_relation", "relation": "chung"},
+    "pillar_focus": {
+      "year": "조상·원가족 영역 변동 — 어릴 적 환경 불안정",
+      "month": "직업·사회 영역 변화 잦음 — 이직·전업 가능성",
+      "day": "자신 또는 배우자 영역 충돌 — 관계 긴장·건강 주의",
+      "hour": "자녀·미래 영역 변동 — 자녀 문제 또는 말년 계획 변화"
+    },
+    "traits": ["기둥 충돌", "해당 영역 불안정·변동", "갈등과 돌파력 공존"],
+    "career_vibe": ["잦은 변화와 이동을 수반하는 직업", "충돌을 통한 성장", "변화 주도형"],
+    "risk": ["용신 기둥에 충 발생 시 핵심 에너지 불안정", "대운·세운에서 활성화 시 영향 극대화"],
+    "pattern_synergy": {
+      "gun_gyeop_jaeng_jae": ["turbulent_rivalry", "unstable_competition_field"],
+      "sig_sin_je_sal": ["pressure_amplified_crisis", "forced_creative_solution"]
+    }
+  },
+  {
+    "id": "dyn_relation_hyung",
+    "name": "삼형",
+    "hanja": "三刑",
+    "trigger": {"type": "branch_relation", "relation": "hyung"},
+    "pillar_focus": {
+      "year": "조상·가문 영역에서 잠재적 법적·건강 문제",
+      "month": "직업 환경에서 구설·긴장이 내재",
+      "day": "자신·배우자 영역에서 관절·피부 건강 주의",
+      "hour": "자녀·미래에서 예기치 않은 법적·사회적 마찰"
+    },
+    "traits": ["은밀한 긴장", "날카로운 판단력", "외압 속 단련", "구설·소송 주의"],
+    "career_vibe": ["법조·의료·군경 분야 적합", "스트레스 내성이 강한 구조", "역경 속 강해지는 패턴"],
+    "risk": ["건강(관절·피부) 주의", "대인 관계에서 오해와 마찰 반복"],
+    "pattern_synergy": {
+      "sig_sin_je_sal": ["forged_under_pressure", "crisis_mastery_amplified"],
+      "sang_gwan_pae_in": ["battle_hardened_critic", "sharpness_from_adversity"]
+    }
+  },
+  {
+    "id": "dyn_relation_hae",
+    "name": "육해",
+    "hanja": "六害",
+    "trigger": {"type": "branch_relation", "relation": "hae"},
+    "pillar_focus": {
+      "year": "조상·배경 영역에서 의도치 않은 방해",
+      "month": "직업 환경에서 기대 결과가 어긋나는 패턴",
+      "day": "배우자·본인 영역에서 반복적 오해와 마찰",
+      "hour": "자녀·미래 계획에서 협력자의 뜻밖의 저해"
+    },
+    "traits": ["지속적 저해", "배신감", "의도치 않은 방해", "관계 마찰"],
+    "career_vibe": ["기대했던 결과가 어긋나는 패턴", "계약·신용 관련 주의 필요"],
+    "risk": ["계약·신용 관련 사항에 특별한 주의", "가까운 관계에서 오해 반복"],
+    "pattern_synergy": {
+      "jae_da_sin_yak": ["blocked_opportunities", "wealth_access_hindered"],
+      "gun_gyeop_jaeng_jae": ["rivalry_with_betrayal", "sabotaged_competition"]
+    }
+  },
+  {
+    "id": "dyn_rooting_strong",
+    "name": "강통근",
+    "hanja": "强通根",
+    "trigger": {"type": "rooting", "strength_level": ["very_strong", "strong"]},
+    "pillar_focus": {
+      "day": "일간이 지지에 깊이 뿌리를 내려 자아 에너지가 안정적으로 공급됨",
+      "general": "3개 이상 지지에 통근 시 환경 변화에도 본질 에너지를 잃지 않음"
+    },
+    "traits": ["강한 내적 일관성", "높은 자기 확신", "환경 변화에도 흔들리지 않음"],
+    "career_vibe": ["어떤 환경에서도 자신다움을 유지", "압박 속에서 오히려 강해지는 패턴"],
+    "risk": ["지나치게 강하면 타인 조언 무시 경향", "재성(기회)을 감당 못 하는 과강 문제"],
+    "pattern_synergy": {
+      "sig_sang_saeng_jae": ["unstoppable_creative_engine", "self_powered_income"],
+      "gun_gyeop_jaeng_jae": ["dominant_rival", "strongest_in_the_competition"]
+    }
+  },
+  {
+    "id": "dyn_rooting_weak",
+    "name": "부통근",
+    "hanja": "不通根",
+    "trigger": {"type": "rooting", "strength_level": ["none", "moderate"]},
+    "pillar_focus": {
+      "day": "일간이 지지에 뿌리를 내리지 못해 환경과 사람의 영향을 크게 받음",
+      "general": "멘토·협력자·용신 오행 환경이 성패를 좌우하는 구조"
+    },
+    "traits": ["환경 영향을 크게 받음", "유연한 적응력", "에너지 소진 주의"],
+    "career_vibe": ["협력자와 환경이 결과를 좌우", "용신 오행의 적극적 보완이 중요"],
+    "risk": ["재성·관성 과다 시 재다신약·관살 과다로 이어질 위험", "에너지 소진"],
+    "pattern_synergy": {
+      "jae_da_sin_yak": ["overwhelmed_by_opportunity", "critical_energy_crisis"],
+      "gwan_in_sang_saeng": ["dependent_on_institution", "needs_external_support"]
+    }
+  },
+  {
+    "id": "dyn_energy_flow_smooth",
+    "name": "순생 흐름",
+    "hanja": "順生",
+    "trigger": {"type": "energy_flow", "is_smooth": true},
+    "pillar_focus": {
+      "general": "4기둥 오행이 상생 방향으로 흘러 에너지 전환에 마찰이 없음"
+    },
+    "traits": ["막힘 없는 에너지 흐름", "삶의 자연스러운 전개", "오행 간 협조"],
+    "career_vibe": ["하는 일이 서로 연결되고 시너지를 내는 구조", "단계적 성장이 자연스럽게"],
+    "risk": ["흐름이 좋아도 용신 오행이 약하면 실질 힘 부족", "흐름 방향 확인 필요"],
+    "pattern_synergy": {
+      "sig_sang_saeng_jae": ["frictionless_creative_wealth", "smooth_income_generation"],
+      "gwan_in_sang_saeng": ["effortless_institutional_climb", "natural_promotion_flow"]
+    }
+  },
+  {
+    "id": "dyn_energy_flow_conflict",
+    "name": "극충 흐름",
+    "hanja": "剋沖",
+    "trigger": {"type": "energy_flow", "is_smooth": false},
+    "pillar_focus": {
+      "general": "오행 간 극·충 관계가 강해 에너지 흐름에 마찰이 있는 구조"
+    },
+    "traits": ["에너지 마찰", "긴장과 갈등", "압박 속 추진력", "단련형 성장"],
+    "career_vibe": ["도전적 환경에서 오히려 빛나는 구조", "경쟁이 강한 분야에서 강점 발휘"],
+    "risk": ["건강 관리 소홀 시 심신 소진 빠름", "정기적 에너지 충전 필수"],
+    "pattern_synergy": {
+      "sig_sin_je_sal": ["maximum_pressure_maximum_creativity", "crisis_as_fuel"],
+      "gun_gyeop_jaeng_jae": ["fierce_battle_ground", "war_of_attrition"]
+    }
+  }
+]
