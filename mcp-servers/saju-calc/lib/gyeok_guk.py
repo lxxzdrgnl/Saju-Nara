@@ -62,8 +62,10 @@ def determine_gyeok_guk(ten_gods_dist: dict) -> dict:
         {"type": ..., "name": ..., "hanja": ..., "description": ...}
     """
     total = sum(ten_gods_dist.values())
+    derivation: dict
     if total == 0:
         gyeok = "balanced"
+        derivation = {"method": "balanced_distribution"}
     else:
         # 특수 종격 판단
         bigeop = ten_gods_dist.get("비견", 0) + ten_gods_dist.get("겁재", 0)
@@ -72,14 +74,22 @@ def determine_gyeok_guk(ten_gods_dist: dict) -> dict:
 
         if bigeop >= 5 and bigeop / total >= 0.6:
             gyeok = "jong_wang"
+            derivation = {"method": "special_jong", "dominant_group": "비겁", "ratio": round(bigeop / total, 2)}
         elif gwansal >= 5 and gwansal / total >= 0.6:
             gyeok = "jong_sal"
+            derivation = {"method": "special_jong", "dominant_group": "관살", "ratio": round(gwansal / total, 2)}
         elif jaeseong >= 5 and jaeseong / total >= 0.6:
             gyeok = "jong_jae"
+            derivation = {"method": "special_jong", "dominant_group": "재성", "ratio": round(jaeseong / total, 2)}
         else:
             # 가장 많은 십성 → 격국
             dominant = max(ten_gods_dist, key=lambda k: ten_gods_dist[k])
             gyeok = _TEN_GOD_TO_GYEOK.get(dominant, "balanced")
+            derivation = {
+                "method": "dominant_ten_god",
+                "dominant": dominant,
+                "note": "전체 십성 분포 최다값 기준 (월지 지장간 투출 우선 적용 없음)",
+            }
 
     info = GYEOK_GUK_INFO[gyeok]
-    return {"type": gyeok, **info}
+    return {"type": gyeok, **info, "derivation": derivation}

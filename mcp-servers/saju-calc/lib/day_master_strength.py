@@ -39,6 +39,7 @@ def analyze_day_master_strength(saju: dict, ten_gods_dist: dict) -> dict:
     """
     score = 50
     reasons: list[str] = []
+    factors: dict[str, int] = {}
 
     day_element = saju["day_pillar"]["stem_element"]
     month_branch = saju["month_pillar"]["branch"]
@@ -46,43 +47,50 @@ def analyze_day_master_strength(saju: dict, ten_gods_dist: dict) -> dict:
     # 1. 월령 득실 (±40)
     wol_relation = _month_branch_relation(day_element, month_branch)
     if wol_relation == "strong":
-        score += 40
+        score += 40; factors["wol_ryeong"] = 40
         reasons.append("월령을 득하여 강함")
     elif wol_relation == "medium":
-        score += 20
+        score += 20; factors["wol_ryeong"] = 20
         reasons.append("월령 중립")
     else:
-        score -= 20
+        score -= 20; factors["wol_ryeong"] = -20
         reasons.append("월령을 실하여 약함")
 
     # 2. 비겁 (±25)
     bigeop = ten_gods_dist.get("비견", 0) + ten_gods_dist.get("겁재", 0)
     if bigeop >= 4:
-        score += 25; reasons.append("비겁 과다")
+        score += 25; factors["bigeop"] = 25;  reasons.append("비겁 과다")
     elif bigeop >= 2:
-        score += 15; reasons.append("비겁 적절")
+        score += 15; factors["bigeop"] = 15;  reasons.append("비겁 적절")
     elif bigeop >= 1:
-        score += 5;  reasons.append("비겁 소량")
+        score += 5;  factors["bigeop"] = 5;   reasons.append("비겁 소량")
+    elif bigeop > 0:
+        score -= 5;  factors["bigeop"] = -5;  reasons.append("비겁 극소")
     else:
-        score -= 10; reasons.append("비겁 없음")
+        score -= 10; factors["bigeop"] = -10; reasons.append("비겁 없음")
 
     # 3. 인성 (+20)
     inseong = ten_gods_dist.get("정인", 0) + ten_gods_dist.get("편인", 0)
     if inseong >= 3:
-        score += 20; reasons.append("인성 과다")
+        score += 20; factors["inseong"] = 20; reasons.append("인성 과다")
     elif inseong >= 2:
-        score += 15; reasons.append("인성 적절")
+        score += 15; factors["inseong"] = 15; reasons.append("인성 적절")
     elif inseong >= 1:
-        score += 5;  reasons.append("인성 소량")
+        score += 5;  factors["inseong"] = 5;  reasons.append("인성 소량")
+    else:
+        factors["inseong"] = 0
 
     # 4. 재관식상 (설기, −15)
     seolgi = sum(ten_gods_dist.get(g, 0) for g in
                  ["정재", "편재", "정관", "편관", "식신", "상관"])
     if seolgi >= 6:
-        score -= 15; reasons.append("재관식상 과다")
+        score -= 15; factors["seolgi"] = -15; reasons.append("재관식상 과다")
     elif seolgi >= 4:
-        score -= 5;  reasons.append("재관식상 많음")
+        score -= 5;  factors["seolgi"] = -5;  reasons.append("재관식상 많음")
+    else:
+        factors["seolgi"] = 0
 
+    raw_score = score
     score = max(0, min(100, score))
 
     if score >= 80:   level = "very_strong"
@@ -94,6 +102,9 @@ def analyze_day_master_strength(saju: dict, ten_gods_dist: dict) -> dict:
     return {
         "level": level,
         "score": score,
+        "raw_score": raw_score,
+        "score_range": [0, 100],
+        "factors": factors,
         "analysis": ". ".join(reasons),
         "wol_ryeong": wol_relation,
     }

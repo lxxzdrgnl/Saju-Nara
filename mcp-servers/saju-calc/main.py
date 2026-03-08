@@ -30,6 +30,12 @@ def calculate_saju(
         gender:        성별 "male" | "female"
         calendar:      달력 종류 "solar" | "lunar" (기본값: solar)
         is_leap_month: 음력 윤달 여부 (기본값: false)
+
+    Notes:
+        - branch_relations: 키가 없으면 해당 관계가 존재하지 않음을 의미 (계산 실패 아님)
+        - ten_gods_distribution: 퍼센트(%) — 총합 100. 가중치 = 천간 1.0 / 일반 지지 0.5 / 월지 1.5
+        - yong_sin.logic_type: 용신 선정 로직 태그
+          "overpowered_day_master_drain" | "weak_day_master_support" | "balanced_weakest_supplement"
     """
     return handle_calculate_saju(birth_date, birth_time, gender, calendar, is_leap_month)
 

@@ -95,6 +95,7 @@ def _cheon_eul(saju: dict, bs: set[str]) -> dict | None:
         return None
     r = dict(SIN_SAL_INFO["천을귀인"])
     r["reason"] = {"trigger": "day_stem", "day_stem": stem, "matched_branches": matched}
+    r["_location_branches"] = matched
     return r
 
 def _do_hwa(saju: dict, bs: set[str]) -> dict | None:
@@ -102,12 +103,10 @@ def _do_hwa(saju: dict, bs: set[str]) -> dict | None:
     if m is None:
         return None
     group, sal = m
+    group_matched = sorted(group & bs, key=lambda x: _BRANCH_ORDER.index(x))
     r = dict(SIN_SAL_INFO["도화살"])
-    r["reason"] = {
-        "trigger": "branch_group",
-        "group_branches": sorted(group & bs, key=lambda x: _BRANCH_ORDER.index(x)),
-        "도화지": sal,
-    }
+    r["reason"] = {"trigger": "branch_group", "group_branches": group_matched, "도화지": sal}
+    r["_location_branches"] = group_matched + [sal]
     return r
 
 def _yeok_ma(saju: dict, bs: set[str]) -> dict | None:
@@ -115,12 +114,10 @@ def _yeok_ma(saju: dict, bs: set[str]) -> dict | None:
     if m is None:
         return None
     group, sal = m
+    group_matched = sorted(group & bs, key=lambda x: _BRANCH_ORDER.index(x))
     r = dict(SIN_SAL_INFO["역마살"])
-    r["reason"] = {
-        "trigger": "branch_group",
-        "group_branches": sorted(group & bs, key=lambda x: _BRANCH_ORDER.index(x)),
-        "역마지": sal,
-    }
+    r["reason"] = {"trigger": "branch_group", "group_branches": group_matched, "역마지": sal}
+    r["_location_branches"] = group_matched + [sal]
     return r
 
 def _hwa_gae(saju: dict, bs: set[str]) -> dict | None:
@@ -128,12 +125,10 @@ def _hwa_gae(saju: dict, bs: set[str]) -> dict | None:
     if m is None:
         return None
     group, sal = m
+    group_matched = sorted(group & bs, key=lambda x: _BRANCH_ORDER.index(x))
     r = dict(SIN_SAL_INFO["화개살"])
-    r["reason"] = {
-        "trigger": "branch_group",
-        "group_branches": sorted(group & bs, key=lambda x: _BRANCH_ORDER.index(x)),
-        "화개지": sal,
-    }
+    r["reason"] = {"trigger": "branch_group", "group_branches": group_matched, "화개지": sal}
+    r["_location_branches"] = group_matched + [sal]
     return r
 
 def _gong_mang(saju: dict, bs: set[str]) -> dict | None:
@@ -143,12 +138,8 @@ def _gong_mang(saju: dict, bs: set[str]) -> dict | None:
     if not matched:
         return None
     r = dict(SIN_SAL_INFO["공망"])
-    r["reason"] = {
-        "trigger": "day_branch",
-        "day_branch": day_branch,
-        "gong_branches": gong_branches,
-        "matched_branches": matched,
-    }
+    r["reason"] = {"trigger": "day_branch", "day_branch": day_branch, "gong_branches": gong_branches, "matched_branches": matched}
+    r["_location_branches"] = matched
     return r
 
 def _won_jin(saju: dict, bs: set[str]) -> dict | None:
@@ -156,6 +147,7 @@ def _won_jin(saju: dict, bs: set[str]) -> dict | None:
         if a in bs and b in bs:
             r = dict(SIN_SAL_INFO["원진살"])
             r["reason"] = {"trigger": "branch_pair", "pair": [a, b]}
+            r["_location_branches"] = [a, b]
             return r
     return None
 
@@ -163,12 +155,10 @@ def _gwi_mun(saju: dict, bs: set[str]) -> dict | None:
     found = _GWI_MUN_BRANCHES & bs
     if len(found) < 2:
         return None
+    matched = sorted(found, key=lambda x: _BRANCH_ORDER.index(x))
     r = dict(SIN_SAL_INFO["귀문관살"])
-    r["reason"] = {
-        "trigger": "branch_count",
-        "matched_branches": sorted(found, key=lambda x: _BRANCH_ORDER.index(x)),
-        "required_count": 2,
-    }
+    r["reason"] = {"trigger": "branch_count", "matched_branches": matched, "required_count": 2}
+    r["_location_branches"] = matched
     return r
 
 def _yang_in(saju: dict, bs: set[str]) -> dict | None:
@@ -178,6 +168,7 @@ def _yang_in(saju: dict, bs: set[str]) -> dict | None:
         return None
     r = dict(SIN_SAL_INFO["양인살"])
     r["reason"] = {"trigger": "day_stem", "day_stem": stem, "yang_in_branch": yang_in}
+    r["_location_branches"] = [yang_in]
     return r
 
 def _baek_ho(saju: dict, bs: set[str]) -> dict | None:
@@ -186,6 +177,7 @@ def _baek_ho(saju: dict, bs: set[str]) -> dict | None:
         return None
     r = dict(SIN_SAL_INFO["백호대살"])
     r["reason"] = {"trigger": "day_pillar", "day_stem": p["stem"], "day_branch": p["branch"]}
+    r["_location_branches"] = [p["branch"]]
     return r
 
 def _sam_jae(saju: dict, bs: set[str]) -> dict | None:
@@ -199,12 +191,8 @@ def _sam_jae(saju: dict, bs: set[str]) -> dict | None:
                 "name": "삼재", "type": "warning",
                 "desc": "3년 주기 액운 구간",
                 "status": status,
-                "reason": {
-                    "trigger": "year_branch_cycle",
-                    "birth_year_branch": year_branch,
-                    "current_year_branch": current_branch,
-                    "status": status,
-                },
+                "reason": {"trigger": "year_branch_cycle", "birth_year_branch": year_branch, "current_year_branch": current_branch, "status": status},
+                "_location_branches": [year_branch],
             }
     return None
 
@@ -220,8 +208,29 @@ _CHECKERS: list[SinSalChecker] = [
 
 # ─── 공개 API ───────────────────────────────────────────────────
 
+_PILLAR_ORDER = ["year", "month", "day", "hour"]
+
 def find_sin_sals(saju: dict) -> list[dict]:
-    """사주에서 해당하는 신살 목록 반환 [{name, type, desc, ...}]."""
+    """사주에서 해당하는 신살 목록 반환 [{name, type, desc, location, reason, ...}]."""
     branch_set = {saju[k]["branch"] for k in
                   ["year_pillar", "month_pillar", "day_pillar", "hour_pillar"]}
-    return [r for checker in _CHECKERS if (r := checker(saju, branch_set)) is not None]
+
+    # 지지 → 기둥 위치 매핑 (중복 지지 허용)
+    branch_to_pillars: dict[str, list[str]] = {}
+    for short, key in zip(_PILLAR_ORDER, ["year_pillar", "month_pillar", "day_pillar", "hour_pillar"]):
+        b = saju[key]["branch"]
+        branch_to_pillars.setdefault(b, []).append(short)
+
+    results = []
+    for checker in _CHECKERS:
+        r = checker(saju, branch_set)
+        if r is None:
+            continue
+        # 각 체커가 직접 선언한 _location_branches로 위치 계산
+        trigger_branches = r.pop("_location_branches", [])
+        r["location"] = sorted(
+            {p for b in trigger_branches for p in branch_to_pillars.get(b, [])},
+            key=lambda x: _PILLAR_ORDER.index(x),
+        )
+        results.append(r)
+    return results

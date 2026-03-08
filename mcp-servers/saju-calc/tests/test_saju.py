@@ -37,10 +37,10 @@ class TestSajuPillars:
             assert "stem_element" in p
             assert "branch_element" in p
 
-    def test_wuxing_count_sums_to_eight(self):
+    def test_wuxing_count_sums_to_hundred(self):
         result = handle_calculate_saju(**BIRTH)
         total = sum(result["wuxing_count"].values())
-        assert total == 8
+        assert abs(total - 100.0) < 0.1
 
     def test_sin_sals_is_list(self):
         result = handle_calculate_saju(**BIRTH)

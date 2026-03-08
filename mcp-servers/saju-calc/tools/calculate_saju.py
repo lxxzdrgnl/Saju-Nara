@@ -15,6 +15,10 @@ from lib.twelve_wun import get_twelve_wun
 from lib.validation import validate_birth_input
 from data.heavenly_stems import STEMS_BY_KOREAN
 from data.timezone_history import get_solar_correction_minutes, get_historical_note
+from data.wuxing import WUXING_GENERATION, WUXING_DESTRUCTION
+from data.earthly_branches import SAM_HYEONG as _SAM_HYEONG
+from lib.structure_patterns import detect_structure_patterns
+from lib.dynamics import build_dynamics
 
 # sin_sal type → priority
 _SAL_PRIORITY: dict[str, str] = {
@@ -109,16 +113,124 @@ def handle_calculate_saju(
         "timezone_note": get_historical_note(original_dt),
     }
 
+    # 빈 필드 제거: null·빈 리스트 키 제외
+    branch_rel = {k: v for k, v in saju["branch_relations"].items() if v}
+
+    # 육합 is_effective: 충·형·파 간섭 검사 (충이 있으면 합 파괴)
+    _interference_sets: dict[str, set[str]] = {
+        "chung": {b for pair in saju["branch_relations"].get("chung", []) for b in pair},
+        "hyung": {b for name in saju["branch_relations"].get("sam_hyeong", []) for b in _SAM_HYEONG.get(name, [])},
+        "hae":   {b for pair in saju["branch_relations"].get("yuk_hae", []) for b in pair},
+    }
+    if "yuk_hap" in branch_rel:
+        def _yuk_hap_entry(h: dict) -> dict:
+            pair = h["pair"]
+            found = [t for t, s in _interference_sets.items() if any(b in s for b in pair)]
+            broken = "chung" in found  # 충만 합 파괴, 형·파는 약화 참고
+            return {**h, "is_effective": not broken, "interference_factors": found}
+        branch_rel["yuk_hap"] = [_yuk_hap_entry(h) for h in branch_rel["yuk_hap"]]
+
+    # 십성 분포: 0 제거 후 퍼센트 변환 (총합 100%)
+    _dist_nonzero = {k: v for k, v in ten_gods_dist.items() if v > 0}
+    _total = sum(_dist_nonzero.values())
+    ten_gods_dist_filtered = (
+        {k: round(v / _total * 100, 1) for k, v in _dist_nonzero.items()}
+        if _total > 0 else {}
+    )
+    # 결핍 카테고리 → void_info: 표면(0) + 지장간 잠재력 대조
+    _CATEGORIES = {
+        "비겁": ["비견", "겁재"], "식상": ["식신", "상관"],
+        "재성": ["편재", "정재"], "관성": ["편관", "정관"], "인성": ["편인", "정인"],
+    }
+    _ji_pillar_keys = ["year", "month", "day", "hour"]
+    ten_gods_void_info = []
+    for cat, gods in _CATEGORIES.items():
+        if all(ten_gods_dist_filtered.get(g, 0) == 0 for g in gods):
+            hidden: dict[str, list[str]] = {}
+            for pk in _ji_pillar_keys:
+                stems = [s for s in saju["ji_jang_gan"][pk]
+                         if calculate_ten_god(day_stem, s) in gods]
+                if stems:
+                    hidden[pk] = stems
+            ten_gods_void_info.append({"category": cat, "hidden_in_ji_jang_gan": hidden})
+
+    # 오행 분포 퍼센트 변환 (총합 8글자 기준, 0도 포함 — 결핍 오행도 의미 있음)
+    _wuxing_total = sum(saju["wuxing_count"].values())
+    wuxing_pct = (
+        {k: round(v / _wuxing_total * 100, 1) for k, v in saju["wuxing_count"].items()}
+        if _wuxing_total > 0 else saju["wuxing_count"]
+    )
+
+    # 조후(調候) — 월지 기후와 일간의 관계
+    _SEASON_MAP: dict[str, tuple] = {
+        "인": ("spring", "warm",      "humid"),
+        "묘": ("spring", "warm",      "humid"),
+        "진": ("spring", "warm",      "moderate"),
+        "사": ("summer", "hot",       "dry"),
+        "오": ("summer", "scorching", "dry"),
+        "미": ("summer", "hot",       "moderate"),
+        "신": ("autumn", "cool",      "dry"),
+        "유": ("autumn", "cool",      "dry"),
+        "술": ("autumn", "cool",      "moderate"),
+        "해": ("winter", "cold",      "wet"),
+        "자": ("winter", "cold",      "wet"),
+        "축": ("winter", "cold",      "dry"),
+    }
+    month_branch = saju["month_pillar"]["branch"]
+    month_el = saju["month_pillar"]["branch_element"]
+    day_el   = saju["day_pillar"]["stem_element"]
+    season, temperature, humidity = _SEASON_MAP.get(month_branch, ("unknown", "moderate", "moderate"))
+    if WUXING_GENERATION.get(month_el) == day_el:
+        _season_relation = "생(生)"    # 계절이 일간을 생함
+    elif WUXING_GENERATION.get(day_el) == month_el:
+        _season_relation = "설(洩)"    # 일간이 계절을 설기
+    elif WUXING_DESTRUCTION.get(month_el) == day_el:
+        _season_relation = "극(剋)"    # 계절이 일간을 극
+    elif WUXING_DESTRUCTION.get(day_el) == month_el:
+        _season_relation = "재(財)"    # 일간이 계절을 극
+    else:
+        _season_relation = "비(比)"    # 동기
+    climate_vibe = {
+        "season": season, "temperature": temperature, "humidity": humidity,
+        "month_element": month_el, "day_element_relation": _season_relation,
+    }
+
     return {
-        **saju,
-        **pillars_enriched,
-        "ten_gods_distribution": ten_gods_dist,
-        "sin_sals": sin_sals,
-        "yin_yang_ratio": yin_yang_ratio,
+        # ① meta — 계산 기준 먼저
+        "meta": {
+            **meta,
+            "gender": saju["gender"],
+            "birth_date": saju["birth_date"],
+            "birth_time": saju["birth_time"],
+            "calendar": saju["calendar"],
+            "climate_vibe": climate_vibe,
+        },
+        # ② 핵심 결론
         "day_master_strength": strength,
-        "gyeok_guk": gyeok_guk,
         "yong_sin": yong_sin,
+        "gyeok_guk": gyeok_guk,
+        # ③ 4기둥 (십성·12운성 포함)
+        "year_pillar": pillars_enriched["year_pillar"],
+        "month_pillar": pillars_enriched["month_pillar"],
+        "day_pillar": pillars_enriched["day_pillar"],
+        "hour_pillar": pillars_enriched["hour_pillar"],
+        # ④ 오행·음양 분포 (퍼센트, 0 포함 — 결핍 오행도 의미 있음)
+        "wuxing_count": wuxing_pct,
+        "dominant_elements": saju["dominant_elements"],
+        "weak_elements": saju["weak_elements"],
+        "yin_yang_ratio": yin_yang_ratio,
+        # ⑤ 십성 분포 % (총합 ~100) + 결핍 카테고리 (표면 없음 + 지장간 잠재력 대조)
+        "ten_gods_distribution": ten_gods_dist_filtered,
+        "ten_gods_void_info": ten_gods_void_info,
+        "structure_patterns": detect_structure_patterns(ten_gods_dist_filtered, strength["level"]),
+        # ⑥ 특이사항
+        "sin_sals": sin_sals,
+        "branch_relations": branch_rel,
+        "ji_jang_gan": saju["ji_jang_gan"],
+        # ⑦ 대운 (전체 리스트 + 현재 대운)
         "dae_un_start_age": dae_un_list[0]["start_age"],
+        "dae_un_list": dae_un_list,
         "current_dae_un": current_dae_un,
-        "meta": meta,
+        # ⑧ 동역학 — 기둥 간 상호작용 (천간합·통근·지지관계위치·오행흐름)
+        "dynamics": build_dynamics(saju, branch_rel, wuxing_pct),
     }

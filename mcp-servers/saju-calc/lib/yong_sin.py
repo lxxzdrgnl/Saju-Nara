@@ -50,19 +50,13 @@ def select_yong_sin(saju: dict, strength: dict, ten_gods_dist: dict) -> dict:
         secondary = _controls(d_el)     # 재성(극)
         xi_sin = [primary, secondary]
         ji_sin = [d_el, _generates_me(d_el)]
-        reason = (
-            f"일간({d_el})이 강하므로 설기하는 "
-            f"{primary}(식상)·{secondary}(재성)을 용신으로 삼음"
-        )
+        logic_type = "overpowered_day_master_drain"
     elif level in ("very_weak", "weak"):
         primary = _generates_me(d_el)   # 인성(생)
         secondary = d_el                # 비겁(돕기)
         xi_sin = [primary, secondary]
         ji_sin = [_controls(d_el), _controls_me(d_el)]
-        reason = (
-            f"일간({d_el})이 약하므로 생하는 "
-            f"{primary}(인성)·{d_el}(비겁)을 용신으로 삼음"
-        )
+        logic_type = "weak_day_master_support"
     else:
         # 중화 → 가장 약한 오행 보충
         wuxing = saju["wuxing_count"]
@@ -70,12 +64,13 @@ def select_yong_sin(saju: dict, strength: dict, ten_gods_dist: dict) -> dict:
         secondary = None
         xi_sin = [primary, _generates(primary)]
         ji_sin = [_controls(primary)]
-        reason = f"중화된 사주에서 가장 약한 {primary}를 보충하여 균형을 맞춤"
+        logic_type = "balanced_weakest_supplement"
 
     return {
         "primary": primary,
         "secondary": secondary,
         "xi_sin": xi_sin,
         "ji_sin": ji_sin,
-        "reasoning": reason,
+        "logic_type": logic_type,
+        "reasoning_priority": "억부",  # 강약 기준 우선 (조후는 meta.climate_vibe 참조)
     }
