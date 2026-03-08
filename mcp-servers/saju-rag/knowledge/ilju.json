@@ -1294,5 +1294,1941 @@
       "tab_headline": "겨울 강물 위에 피어난 연꽃 — 지혜와 감성이 만드는 아름다운 성장"
     },
     "tags": ["총명함", "감수성", "지적탐구", "예술성", "팔방미인", "겨울강물의연꽃", "지혜와감성의결합"]
+  },
+  {
+    "id": "ij_byungja",
+    "ilju": "병자",
+    "hanja": "丙子",
+    "stem": "병",
+    "branch": "자",
+    "yin_yang": "양",
+    "archetype": "fire_over_deep_water_type",
+    "common_expression": ["카리스마", "긴장감", "열정", "통제", "균형", "빛과어둠", "매력"],
+    "variance_note": "금기가 강하면 재물·성과 지향형, 목기가 풍부하면 창의적 리더형, 토기가 두꺼우면 안정 추구형으로 변용",
+    "element_concentration": "丙火(양화) + 子水(정관) — 화수미제(火水未濟), 상반된 오행의 긴장 속 역동적 균형",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "fire_water_tension",
+      "dynamics": "controlled_charisma"
+    },
+    "core_keywords": ["丙子", "화수미제", "정관제어", "火克水역설", "내면긴장구조", "카리스마억제균형"],
+    "embedding_context": "丙子는 강렬한 양화(丙)가 깊은 수기(子)와 맞닿는 화수미제 구조로, 강한 카리스마와 내면의 통제력이 공존한다. 겉으로는 빛나지만 내면에는 긴장과 깊이가 흐른다.",
+    "psychological_traits": ["charismatic_exterior", "inner_tension_driven", "strong_willpower", "disciplined_ambition", "duality_of_warmth_and_control", "magnetic_but_guarded"],
+    "social_pattern": ["natural_leader_presence", "commands_attention_easily", "selective_trust", "prefers_structured_relationships"],
+    "relationship_style": ["attracts_strongly", "needs_mutual_respect", "competitive_dynamic_if_threatened", "depth_revealed_slowly"],
+    "career_affinity": {
+      "domains": ["leadership", "politics", "media", "entertainment", "finance", "law", "strategy"],
+      "examples": ["정치인", "CEO", "방송인", "전략기획가", "금융전문가", "변호사", "홍보 전문가", "스포츠 감독"],
+      "note": "子는 밤 11시~새벽 1시의 깊은 수기 시간대로, 겉의 화려함 아래 치밀한 전략과 깊은 내면이 공존하는 직업군에서 두각을 나타냄"
+    },
+    "strength": ["압도적_카리스마", "강한_의지력", "전략적_사고", "자기_통제력"],
+    "vulnerability": {
+      "trait": "화수 충돌로 인한 내적 소진, 타인의 시선과 기대에 대한 부담, 감정 기복",
+      "safeguard": "규칙적인 휴식과 혼자만의 회복 시간 확보, 감정 표현 창구(일기·대화) 마련",
+      "type": "lifestyle_suggestion",
+      "care_level": "high"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병신", "reason": "申子 반합 — 금수 흐름으로 병자의 긴장을 부드럽게 해소, 상호 실용적 보완", "tag": "sam_hap" },
+        { "ilju": "임진", "reason": "申子辰 삼합 수국 연대 — 수기가 풍부해져 병자의 화수 긴장이 완화되는 구조", "tag": "sam_hap" },
+        { "ilju": "정축", "reason": "子丑 육합 — 상반된 오행이 합을 이루며 안정감 있는 상호 보완 구조", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "병오", "reason": "子午 충 — 수화 직충, 丙丙 동일 천간까지 겹쳐 에너지 충돌 극대화", "tag": "chung" },
+        { "ilju": "임오", "reason": "子午 충 — 수기끼리 공명하다 午火와 정면 충돌, 관계의 긴장이 쉽게 고조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丙子)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "빛나야 한다는 압박과 진짜 내 모습 사이에서 지쳐갑니다.",
+      "solution_speech": "丙子의 화수미제는 해결되지 않은 긴장이 아니라, 끊임없이 불꽃을 유지하게 하는 원동력입니다. 정관의 子水가 당신의 카리스마를 통제하는 것은 더 오래 빛나기 위한 구조입니다. 균형을 찾는 과정 자체가 당신의 강점입니다.",
+      "tab_headline": "깊은 수면 위에 타오르는 불꽃 — 긴장 속에서 완성되는 카리스마"
+    },
+    "tags": ["카리스마", "긴장감", "매력", "통제력", "빛과어둠의공존", "수면위의불꽃", "내면깊이"]
+  },
+  {
+    "id": "ij_byungin",
+    "ilju": "병인",
+    "hanja": "丙寅",
+    "stem": "병",
+    "branch": "인",
+    "yin_yang": "양",
+    "archetype": "rising_sun_pioneer_type",
+    "common_expression": ["개척", "열정", "리더십", "도전", "생명력", "떠오르는태양", "추진력"],
+    "variance_note": "화기가 더 강해지면 폭발적 실행력형, 수기가 있으면 전략을 갖춘 리더형, 금기가 있으면 결단력 있는 성취형으로 변용",
+    "element_concentration": "丙火(양화) + 寅木(편인) — 木生火 상생, 새벽 3~5시의 寅木이 태양 丙火를 힘차게 밀어올리는 구조",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "wood_fuels_fire",
+      "dynamics": "explosive_growth_momentum"
+    },
+    "core_keywords": ["丙寅", "木生火상생", "편인지원", "寅午戌삼합화국", "새벽태양구조", "폭발적추진력"],
+    "embedding_context": "丙寅은 寅木이 丙火를 힘차게 생하는 목생화 상생 구조로, 새벽 태양이 지평선을 박차고 솟아오르는 강렬한 개척 에너지를 지닌다. 도전과 시작에서 빛을 발하는 선구자형 일주다.",
+    "psychological_traits": ["fearless_pioneer", "high_energy_initiator", "naturally_inspiring", "action_before_planning", "idealistic_optimism", "rapid_growth_orientation"],
+    "social_pattern": ["leads_by_example", "galvanizes_others_into_action", "wide_network_but_selective_depth", "inspires_through_passion"],
+    "relationship_style": ["direct_and_enthusiastic", "generous_partner", "may_overwhelm_quieter_types", "needs_partner_who_matches_energy"],
+    "career_affinity": {
+      "domains": ["entrepreneurship", "sports", "military", "creative_direction", "social_movement", "emergency_medicine", "performance"],
+      "examples": ["창업가", "스포츠 선수·감독", "소방관", "프로젝트 매니저", "사회운동가", "응급의학과 의사", "공연 기획자"],
+      "note": "寅은 새벽 3~5시의 시간대로, 남들이 깨어나기 전 먼저 움직여 판을 짜는 선발 주자 에너지. 경쟁보다 개척, 2등보다 최초를 지향하는 직업에서 두각"
+    },
+    "strength": ["폭발적_추진력", "타고난_리더십", "높은_열정과_긍정성", "새로운것을_두려워하지_않는_담력"],
+    "vulnerability": {
+      "trait": "시작은 강하지만 마무리가 약할 수 있음, 과도한 에너지 소진으로 번아웃 위험",
+      "safeguard": "완주 파트너 혹은 후속 관리 시스템과의 협업, 에너지 리듬 조절을 위한 주기적 휴식",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병오", "reason": "寅午 반합 화국 — 화기 공명, 두 태양이 서로의 열정을 증폭시키는 구조", "tag": "sam_hap" },
+        { "ilju": "갑술", "reason": "寅午戌 삼합 화국 완성 — 목화토의 자연스러운 상생과 삼합 에너지 결집", "tag": "sam_hap" },
+        { "ilju": "을해", "reason": "寅亥 육합 — 목기 공명, 수생목생화의 자연스러운 상생 흐름", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "병신", "reason": "寅申 충 — 목금 직충, 丙丙 동일 천간으로 에너지 충돌이 증폭", "tag": "chung" },
+        { "ilju": "임신", "reason": "寅申 충 — 수기·금기가 합세하여 병인의 목화 에너지와 정면 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丙寅)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "시작하면 누구보다 열심히 하는데, 끝까지 해내는 게 힘듭니다.",
+      "solution_speech": "丙寅의 寅木은 태양을 밀어올리는 역할입니다. 당신의 에너지는 시작하는 데 최적화되어 있습니다. 마무리는 팀과 시스템에 맡기고, 당신은 다음 시작을 준비하세요. 개척가는 마무리보다 새 길을 여는 것이 사명입니다.",
+      "tab_headline": "새벽을 가르며 솟구치는 태양 — 두려움 없는 개척자의 팔자"
+    },
+    "tags": ["개척자", "열정", "도전", "리더십", "떠오르는태양", "새벽의선발주자", "폭발적에너지"]
+  },
+  {
+    "id": "ij_byungjin",
+    "ilju": "병진",
+    "hanja": "丙辰",
+    "stem": "병",
+    "branch": "진",
+    "yin_yang": "양",
+    "archetype": "creative_visionary_builder_type",
+    "common_expression": ["창의성", "실용성", "비전", "깊이", "표현력", "설계자", "통합력"],
+    "variance_note": "목기가 강하면 창의적 예술가형, 금기가 있으면 정밀한 설계자형, 수기가 풍부하면 통찰력 있는 전략가형으로 변용",
+    "element_concentration": "丙火(양화) + 辰土(식신, 水庫) — 火生土 상생, 辰에 壬水 여기로 창의(식신)와 깊이(水庫)가 공존",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "fire_generates_earth_with_water_depth",
+      "dynamics": "creative_output_with_strategic_reserve"
+    },
+    "core_keywords": ["丙辰", "火生土식신", "辰중壬水庫", "창의적실용구조", "申子辰삼합수국잠재", "표현력깊이공존"],
+    "embedding_context": "丙辰은 丙火의 창의적 표현력(식신)이 辰土라는 든든한 토대에 결실을 맺는 구조다. 辰 내부의 水庫는 화려한 표면 아래 전략적 깊이를 숨겨두어, 겉보기보다 훨씬 치밀하고 실용적인 면모를 지닌다.",
+    "psychological_traits": ["creative_and_expressive", "strategically_grounded", "visionary_with_practical_execution", "enjoys_building_systems", "deeper_than_appears", "long_term_planner"],
+    "social_pattern": ["well_rounded_collaborator", "ideas_backed_by_plans", "builds_lasting_structures", "respected_for_substance"],
+    "relationship_style": ["communicates_creatively", "looks_for_depth_in_partner", "steady_reliable_commitment", "expressive_but_thoughtful"],
+    "career_affinity": {
+      "domains": ["architecture", "design", "urban_planning", "content_creation", "product_management", "consulting", "education"],
+      "examples": ["건축가", "UX 디자이너", "콘텐츠 기획자", "도시 계획가", "프로덕트 매니저", "교육 콘텐츠 개발자", "컨설턴트"],
+      "note": "辰은 새벽 7~9시의 시간대로 아이디어가 구체적 계획으로 전환되는 시간. 창의성을 실물로 만들어내는 기획·설계 직군에서 두각을 나타냄"
+    },
+    "strength": ["창의력과_실행력의_결합", "비전을_구체적_계획으로_전환하는_능력", "깊이_있는_사고", "다재다능한_표현력"],
+    "vulnerability": {
+      "trait": "완벽한 설계를 추구하다 실행 타이밍을 놓치는 경향, 辰戌 충 운에서 계획 전면 수정 압박",
+      "safeguard": "MVP(최소 기능 제품) 먼저 출시하는 습관, 완성보다 완료를 우선하는 마인드셋 훈련",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병자", "reason": "申子辰 삼합 수국 연대 — 수기 기반이 강화되어 丙辰의 전략적 깊이가 배가", "tag": "sam_hap" },
+        { "ilju": "정유", "reason": "辰酉 육합 — 화금 보완, 丙辰의 창의성과 정유의 정밀함이 이상적으로 결합", "tag": "yuk_hap" },
+        { "ilju": "갑인", "reason": "寅卯辰 방합 목국 — 목기 공명으로 丙辰의 창의 에너지 기반이 풍부해짐", "tag": "bang_hap" }
+      ],
+      "conflict": [
+        { "ilju": "병술", "reason": "辰戌 충 — 토기 직충, 丙丙 동일 천간으로 안정 기반이 흔들리는 충돌", "tag": "chung" },
+        { "ilju": "임술", "reason": "辰戌 충 — 수기가 가세하며 토기 충돌이 더욱 불안정한 구조로 확대", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丙辰)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "아이디어는 넘치는데 막상 실행하면 완성까지 가는 게 어렵습니다.",
+      "solution_speech": "丙辰의 식신은 당신의 창의적 표현이 반드시 결실을 맺는 구조임을 보장합니다. 辰 속의 수기는 당신에게 깊이를 주지만, 때로는 그 깊이가 행동을 망설이게 합니다. 설계를 70%만 하고 실행하세요. 나머지 30%는 현장에서 완성됩니다.",
+      "tab_headline": "설계도를 손에 쥔 창조자 — 아이디어가 현실이 되는 팔자"
+    },
+    "tags": ["창의성", "설계자", "실용적비전", "표현력", "깊이있는기획자", "아이디어를현실로", "치밀함"]
+  },
+  {
+    "id": "ij_byungo",
+    "ilju": "병오",
+    "hanja": "丙午",
+    "stem": "병",
+    "branch": "오",
+    "yin_yang": "양",
+    "archetype": "blazing_charisma_type",
+    "common_expression": ["카리스마", "열정", "존재감", "화려함", "무대", "정오의태양", "강렬함"],
+    "variance_note": "수기가 있으면 카리스마에 깊이가 더해진 지도자형, 금기가 있으면 성과 지향형 스타형, 목기가 풍부하면 창조적 예술가형으로 변용",
+    "element_concentration": "丙火(양화) + 午火(겁재, 羊刃) — 화기 극집중, 양인(羊刃) 구조로 강렬한 에너지의 양날의 검",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "fire_self_reinforcing_with_blade",
+      "dynamics": "peak_intensity_charisma"
+    },
+    "core_keywords": ["丙午", "화기극집중", "양인羊刃", "겁재동주", "寅午戌삼합화국", "정오태양구조"],
+    "embedding_context": "丙午는 천간과 지지 모두 화기로 가득한 최강 화기 일주다. 양인(午)이 있어 극도로 강렬하며, 빛날 때는 누구도 따라올 수 없지만 과열되면 스스로를 태우는 양날의 검 구조를 지닌다.",
+    "psychological_traits": ["maximum_charisma", "high_intensity_presence", "passionate_and_direct", "natural_performer", "competitive_drive", "all_or_nothing_mentality"],
+    "social_pattern": ["center_of_attention_naturally", "commands_rooms", "loyalty_and_generosity_when_aligned", "can_be_overwhelming"],
+    "relationship_style": ["intensely_devoted", "expects_reciprocal_passion", "jealousy_possible_if_insecure", "generous_but_demanding"],
+    "career_affinity": {
+      "domains": ["entertainment", "sports", "politics", "military_leadership", "sales", "motivational_speaking", "emergency_services"],
+      "examples": ["연예인", "스포츠 스타", "정치 지도자", "동기부여 강사", "영업 1위", "소방서장", "군 지휘관"],
+      "note": "午는 낮 11시~오후 1시의 태양이 가장 높은 시간대. 가장 빛나는 순간에 무대 중앙에 서는 직업, 주목받는 위치에서 진가를 발휘함"
+    },
+    "strength": ["압도적_존재감과_카리스마", "불굴의_열정과_추진력", "위기_상황에서_더욱_강해지는_담력", "타인을_이끄는_자연스러운_리더십"],
+    "vulnerability": {
+      "trait": "과열로 인한 번아웃, 충동적 결정, 자기 조절 실패 시 주변과의 마찰 극대화",
+      "safeguard": "의도적인 냉각 시간 확보, 신뢰하는 브레이크 역할의 파트너 또는 멘토",
+      "type": "lifestyle_suggestion",
+      "care_level": "high"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병인", "reason": "寅午 반합 화국 — 화기 공명, 서로의 열정이 더욱 빛나는 상호 증폭 구조", "tag": "sam_hap" },
+        { "ilju": "갑술", "reason": "寅午戌 삼합 화국 완성 — 가장 강력한 화기 삼합, 함께라면 세상을 바꾸는 에너지", "tag": "sam_hap" },
+        { "ilju": "정미", "reason": "午未 육합 — 화토 합으로 강한 화기가 안정적인 토대를 만나 지속 가능한 구조", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "병자", "reason": "子午 충 — 수화 직충, 丙丙 동일 천간으로 극단적인 에너지 충돌", "tag": "chung" },
+        { "ilju": "임자", "reason": "子午 충 — 壬水의 차가운 수기가 최강 화기와 정면 충돌하는 가장 격렬한 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丙午)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "매번 전력을 다하는데, 번번이 탈진하거나 갈등이 생깁니다.",
+      "solution_speech": "丙午의 양인(羊刃)은 칼입니다. 잘 쓰면 세상을 가르는 도구가 되고, 잘못 쓰면 자신을 벱니다. 당신의 에너지를 조절하는 법을 배우는 것이 이 팔자의 핵심 과제입니다. 100%를 태우는 것보다 80%로 오래 빛나는 것이 더 강합니다.",
+      "tab_headline": "정오의 태양처럼 강렬하게 — 세상을 빛으로 가득 채우는 팔자"
+    },
+    "tags": ["카리스마", "강렬함", "정오의태양", "열정", "무대의중심", "양날의검", "압도적존재감"]
+  },
+  {
+    "id": "ij_byungsin",
+    "ilju": "병신",
+    "hanja": "丙申",
+    "stem": "병",
+    "branch": "신",
+    "yin_yang": "양",
+    "archetype": "forge_master_achiever_type",
+    "common_expression": ["결단력", "도전", "성취", "제련", "의지", "불굴", "실행력"],
+    "variance_note": "목기가 강하면 창의적 혁신가형, 수기가 있으면 전략적 성취형, 토기가 두꺼우면 안정적 건설형으로 변용",
+    "element_concentration": "丙火(양화) + 申金(편재) — 火克金, 丙火가 申金을 단련하는 제련 구조. 긴장 속에서 가치를 생산",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "fire_refines_metal",
+      "dynamics": "forceful_achievement_through_tension"
+    },
+    "core_keywords": ["丙申", "火克金편재", "제련구조", "寅申충잠재", "申子辰삼합수국잠재", "긴장속성취"],
+    "embedding_context": "丙申은 丙火가 申金을 강하게 단련하는 제련 구조로, 갈등과 긴장 속에서 오히려 실력이 연마되고 성취로 이어지는 강인한 일주다. 재물과 성과를 향한 뚜렷한 목표 의식과 탁월한 실행력을 지닌다.",
+    "psychological_traits": ["goal_driven_achiever", "resilient_under_pressure", "competitive_and_decisive", "resourceful_problem_solver", "tough_exterior_pragmatic_core", "values_tangible_results"],
+    "social_pattern": ["earns_respect_through_performance", "direct_and_efficient_communication", "builds_alliances_strategically", "competitive_but_fair"],
+    "relationship_style": ["practical_and_action_oriented", "shows_love_through_provision", "may_struggle_with_emotional_expression", "loyal_when_committed"],
+    "career_affinity": {
+      "domains": ["finance", "investment", "manufacturing", "engineering", "surgery", "athletics", "real_estate"],
+      "examples": ["투자전문가", "금융 트레이더", "제조업 CEO", "외과의사", "운동선수", "부동산 개발업자", "기계 엔지니어"],
+      "note": "申은 오후 3~5시의 결실과 마무리 시간대. 재물을 만들고 실질적 성과를 구체화하는 실행 직군, 경쟁 환경에서 두각을 나타내는 분야에 높은 적성"
+    },
+    "strength": ["탁월한_실행력과_결단력", "압박_속에서_강해지는_불굴의_의지", "재물_성취_능력", "목표_달성까지_포기하지_않는_지속력"],
+    "vulnerability": {
+      "trait": "지나친 경쟁심으로 인한 관계 마찰, 목표 달성 후 공허감, 寅申 충 운에서 갈등 급증",
+      "safeguard": "경쟁이 아닌 협력 모델 연습, 성과 너머의 관계·의미 탐색 시간 마련",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병자", "reason": "申子 반합 — 수기 흐름 형성, 긴장 구조에 유연성이 더해져 균형 있는 파트너십", "tag": "sam_hap" },
+        { "ilju": "임진", "reason": "申子辰 삼합 수국 완성 — 강한 금수 흐름으로 병신의 화극금 긴장이 해소", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "병인", "reason": "寅申 충 — 목금 직충, 丙丙 동일 천간으로 에너지 충돌이 증폭되는 격렬한 구조", "tag": "chung" },
+        { "ilju": "갑인", "reason": "寅申 충 — 갑목의 강한 목기가 신금과 정면 충돌, 합의보다 경쟁이 앞서는 관계", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丙申)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "열심히 하는데도 주변과 마찰이 잦고, 원하는 결과를 얻기까지 항상 힘겹습니다.",
+      "solution_speech": "丙申의 화극금 구조는 쇳덩이를 불꽃으로 녹여 명검을 만드는 과정입니다. 마찰과 긴장은 당신을 단련하는 필수 과정입니다. 경쟁자를 적이 아닌 숫돌로 보세요. 당신이 더 날카로워지는 것이 목표입니다.",
+      "tab_headline": "불꽃으로 쇠를 제련하듯 — 긴장 속에서 빛나는 불굴의 성취자"
+    },
+    "tags": ["결단력", "불굴", "제련", "성취", "경쟁속강자", "불꽃과쇠의만남", "실행력"]
+  },
+  {
+    "id": "ij_byungsul",
+    "ilju": "병술",
+    "hanja": "丙戌",
+    "stem": "병",
+    "branch": "술",
+    "yin_yang": "양",
+    "archetype": "principled_fire_builder_type",
+    "common_expression": ["신념", "뚝심", "원칙", "실행력", "헌신", "저녁노을", "완성자"],
+    "variance_note": "목기가 강하면 창의적 원칙주의자형, 수기가 있으면 지략을 갖춘 완성형, 금기가 있으면 냉철한 결단형으로 변용",
+    "element_concentration": "丙火(양화) + 戌土(식신, 火庫) — 火生土 상생, 戌에 丁火 여기로 화기 저장·누적 구조",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "fire_stored_in_earth",
+      "dynamics": "sustained_principled_achievement"
+    },
+    "core_keywords": ["丙戌", "火生土식신", "戌중丁火庫", "寅午戌삼합화국", "신념실행구조", "辰戌충잠재"],
+    "embedding_context": "丙戌은 丙火의 강한 신념과 실행력이 戌土라는 단단한 토대에 저장되는 구조다. 화기가 토 안에 축적되어 꺼지지 않는 열정과 뚝심으로 표현되며, 원칙과 신념으로 끝까지 완주하는 완성자형 일주다.",
+    "psychological_traits": ["principled_and_determined", "strong_inner_conviction", "reliable_finisher", "traditional_values_with_fire", "slow_to_commit_but_unwavering_once_decided", "deep_loyalty"],
+    "social_pattern": ["earns_long_term_trust", "principled_even_when_unpopular", "small_tight_circle", "reliable_pillar_of_community"],
+    "relationship_style": ["committed_and_protective", "shows_love_through_actions", "needs_respect_of_values", "long_courtship_deep_bond"],
+    "career_affinity": {
+      "domains": ["law", "education", "public_service", "non_profit", "construction", "fire_service", "traditional_arts"],
+      "examples": ["법조인", "교육자", "공무원", "NGO 대표", "건축가", "소방관", "전통 장인"],
+      "note": "戌은 저녁 7~9시의 마무리와 수확 시간대. 꾸준히 쌓아온 결실을 거두는 직업, 사회적 신뢰와 원칙이 자산이 되는 분야에서 두각을 나타냄"
+    },
+    "strength": ["흔들리지_않는_원칙과_신념", "끝까지_완주하는_뚝심", "오랜_신뢰_관계_구축_능력", "결정_후_흔들리지_않는_일관성"],
+    "vulnerability": {
+      "trait": "융통성 부족, 변화에 저항, 辰戌 충 운에서 기반 흔들림과 신념 갈등",
+      "safeguard": "의도적으로 다른 관점에 노출되는 경험 쌓기, 원칙과 유연성의 균형 훈련",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병인", "reason": "寅午戌 삼합 화국 연대 — 화기 공명, 병인의 개척력과 병술의 완성력이 최강 시너지", "tag": "sam_hap" },
+        { "ilju": "병오", "reason": "寅午戌 삼합 화국 완성 — 화기 삼합으로 함께할 때 강력한 성취 에너지 결집", "tag": "sam_hap" },
+        { "ilju": "을묘", "reason": "卯戌 육합 — 목화 상생 흐름, 을묘의 유연성이 병술의 강직함을 부드럽게 보완", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "병진", "reason": "辰戌 충 — 토기 직충, 丙丙 동일 천간으로 신념과 비전이 정면 충돌하는 구조", "tag": "chung" },
+        { "ilju": "임진", "reason": "辰戌 충 — 壬水의 수기가 더해져 화토 기반이 흔들리는 불안정한 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丙戌)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "제 방식이 틀리지 않다고 생각하는데, 왜 이렇게 혼자인 느낌이 들까요.",
+      "solution_speech": "丙戌의 신념은 저녁노을처럼 오래 타오르는 불꽃입니다. 맞는 방향이지만 속도를 강요하지 마세요. 당신의 원칙은 빠른 변화보다 오래 지속되는 진짜 가치를 만들고 있습니다. 시간이 당신 편입니다.",
+      "tab_headline": "저녁노을처럼 오래 타오르는 신념 — 원칙으로 세상을 완성하는 팔자"
+    },
+    "tags": ["신념", "뚝심", "원칙주의자", "완성자", "저녁노을", "흔들리지않는중심", "오래타오르는불꽃"]
+  },
+  {
+    "id": "ij_jeongchuk",
+    "ilju": "정축",
+    "hanja": "丁丑",
+    "stem": "정",
+    "branch": "축",
+    "yin_yang": "음",
+    "archetype": "steady_artisan_creator_type",
+    "common_expression": ["섬세함", "꾸준함", "장인정신", "실용성", "온기", "촛불", "인내"],
+    "variance_note": "목기가 강하면 예술적 창작자형, 수기가 있으면 지적 장인형, 금기가 풍부하면 정밀 기술자형으로 변용",
+    "element_concentration": "丁火(음화) + 丑土(식신, 金庫) — 火生土 상생, 丑에 辛金 여기로 섬세한 창의가 정밀한 결실로 연결",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "yin_fire_generates_earth_with_metal_depth",
+      "dynamics": "patient_craft_to_refined_output"
+    },
+    "core_keywords": ["丁丑", "火生土식신", "丑중辛金庫", "巳酉丑삼합금국잠재", "섬세한창의실용구조", "子丑육합"],
+    "embedding_context": "丁丑은 丁火의 섬세한 창의성이 丑土에 차곡차곡 쌓이는 장인형 구조다. 丑 안의 辛金은 촛불 같은 정화의 빛이 정밀하고 아름다운 결과물로 이어짐을 암시하며, 인내와 꾸준함이 최고의 무기다.",
+    "psychological_traits": ["meticulous_and_patient", "steady_creative_output", "practical_warmth", "long_term_commitment", "detail_oriented", "finds_beauty_in_ordinary"],
+    "social_pattern": ["reliable_and_consistent", "small_trusted_circle", "deep_over_wide_connections", "quietly_influential"],
+    "relationship_style": ["slow_to_commit_but_deeply_loyal", "shows_love_through_consistent_care", "comfortable_in_long_term_stable_bonds", "values_emotional_security"],
+    "career_affinity": {
+      "domains": ["craft", "design", "finance", "counseling", "traditional_arts", "culinary", "early_childhood_education"],
+      "examples": ["장인", "보석 디자이너", "재무 설계사", "심리상담사", "전통 공예가", "파티시에", "유아 교사"],
+      "note": "丑은 새벽 1~3시의 시간대로 차가운 대지가 봄을 준비하는 때. 겉으로 드러나지 않지만 꾸준히 쌓아가는 실력과 인내가 빛나는 직업군에서 진가를 발휘"
+    },
+    "strength": ["뛰어난_섬세함과_정밀성", "꾸준한_실행으로_결과를_만드는_인내력", "깊은_신뢰_관계_형성_능력", "일상에서_아름다움을_발견하는_감수성"],
+    "vulnerability": {
+      "trait": "변화에 대한 저항, 새로운 환경 적응 속도가 느림, 丑未 충 운에서 기반 흔들림",
+      "safeguard": "작은 변화를 의도적으로 시도하는 루틴, 편안한 공간에서의 점진적 확장 연습",
+      "type": "lifestyle_suggestion",
+      "care_level": "low"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병자", "reason": "子丑 육합 — 수화 보완, 병자의 카리스마와 정축의 꾸준함이 상호 균형", "tag": "yuk_hap" },
+        { "ilju": "정유", "reason": "巳酉丑 삼합 금국 연대 — 금기 공명, 정밀함과 섬세함이 시너지를 이루는 구조", "tag": "sam_hap" },
+        { "ilju": "정사", "reason": "巳酉丑 삼합 금국 완성 — 음화끼리 금국 삼합으로 결실 에너지가 극대화", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "정미", "reason": "丑未 충 — 토기 직충, 丁丁 동일 천간으로 안정 기반이 정면 흔들리는 구조", "tag": "chung" },
+        { "ilju": "기미", "reason": "丑未 충 — 기토 일간의 미토와 충돌, 안정 추구형끼리 기반 갈등이 증폭", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丁丑)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "남들처럼 화려하지 않아도, 저는 제 방식대로 꾸준히 하고 있는데 인정받지 못하는 것 같습니다.",
+      "solution_speech": "丁丑의 촛불은 빠르게 타오르지 않습니다. 하지만 꺼지지도 않습니다. 丑 속에 차곡차곡 쌓인 辛金처럼, 당신이 쌓아온 것들은 사라지지 않습니다. 인내의 시간이 끝나면, 화려함이 아닌 진짜 가치가 드러납니다.",
+      "tab_headline": "꺼지지 않는 촛불처럼 — 꾸준함으로 빛나는 장인의 팔자"
+    },
+    "tags": ["섬세함", "꾸준함", "장인정신", "촛불", "인내", "꺼지지않는불꽃", "조용한강자"]
+  },
+  {
+    "id": "ij_jeongmyo",
+    "ilju": "정묘",
+    "hanja": "丁卯",
+    "stem": "정",
+    "branch": "묘",
+    "yin_yang": "음",
+    "archetype": "artistic_sensitive_flame_type",
+    "common_expression": ["예술성", "감수성", "창의력", "섬세함", "봄촛불", "직관", "표현력"],
+    "variance_note": "화기가 더 강해지면 화려한 표현자형, 수기가 있으면 지적 감수성형, 금기가 있으면 원칙을 갖춘 예술가형으로 변용",
+    "element_concentration": "丁火(음화) + 卯木(편인) — 木生火 상생, 봄의 어린 목기가 음화를 부드럽게 키워주는 감수성 구조",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "wood_nurtures_yin_fire",
+      "dynamics": "sensitive_creative_expression"
+    },
+    "core_keywords": ["丁卯", "木生火편인지원", "亥卯未삼합목국잠재", "卯戌육합", "봄촛불구조", "감수성창의통합"],
+    "embedding_context": "丁卯는 卯木이 丁火를 부드럽게 생하는 목생화 상생으로, 봄날 촛불처럼 섬세하고 아름다운 감수성과 창의력을 지닌다. 직관적으로 아름다운 것을 감지하고 표현하는 능력이 탁월한 예술가형 일주다.",
+    "psychological_traits": ["highly_intuitive", "artistic_and_expressive", "emotionally_perceptive", "gentle_but_resilient", "naturally_creative", "absorbs_environment_deeply"],
+    "social_pattern": ["warm_and_approachable", "inspires_through_gentle_influence", "empathic_listener", "creates_beautiful_spaces_around_them"],
+    "relationship_style": ["romantically_imaginative", "deeply_empathic_partner", "needs_emotional_safety", "expresses_love_through_creativity"],
+    "career_affinity": {
+      "domains": ["fine_arts", "music", "writing", "design", "counseling", "education", "fashion", "beauty"],
+      "examples": ["화가", "작곡가", "소설가", "인테리어 디자이너", "심리상담사", "미술 교사", "패션 디자이너", "플로리스트"],
+      "note": "卯는 새벽 5~7시 봄의 새싹 시간대. 새로운 아름다움을 싹 틔우고 섬세하게 가꾸는 창작·교육·미용 계열에서 두각을 나타냄"
+    },
+    "strength": ["탁월한_예술적_감수성과_창의력", "공감_능력과_섬세한_감지력", "아름다운_것을_만들어내는_표현력", "부드럽지만_흔들리지_않는_내면"],
+    "vulnerability": {
+      "trait": "감수성이 지나치면 주변의 에너지에 과도하게 영향받음, 卯酉 충 운에서 정체성 혼란",
+      "safeguard": "창작 활동을 통한 감정 승화, 경계 설정 훈련, 정기적인 자기만의 시간 확보",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병술", "reason": "卯戌 육합 — 목화 상생 흐름, 병술의 신념과 정묘의 감수성이 이상적으로 결합", "tag": "yuk_hap" },
+        { "ilju": "계해", "reason": "亥卯未 삼합 목국 연대 — 수목 공명으로 정묘의 감수성 기반이 더욱 풍부해짐", "tag": "sam_hap" },
+        { "ilju": "정미", "reason": "亥卯未 삼합 목국 연대 — 목기 삼합으로 창의 에너지가 증폭되는 상생 구조", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "정유", "reason": "卯酉 충 — 목금 직충, 丁丁 동일 천간으로 감수성과 냉철함의 정면 충돌", "tag": "chung" },
+        { "ilju": "신유", "reason": "卯酉 충 — 강한 금기가 정묘의 섬세한 목화 구조를 압박하는 긴장 관계", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丁卯)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "너무 많은 것을 느끼고 흡수해서 가끔 제 감정인지 남의 감정인지 모르겠습니다.",
+      "solution_speech": "丁卯의 섬세함은 약점이 아니라 가장 강력한 안테나입니다. 봄날 촛불은 바람에 흔들리지만 꺼지지 않습니다. 당신의 감수성이 흡수한 것들을 창작으로 내보내세요. 만들어낼 때마다 당신은 정화됩니다.",
+      "tab_headline": "봄날 촛불처럼 섬세하게 — 감수성이 예술이 되는 팔자"
+    },
+    "tags": ["예술성", "감수성", "봄촛불", "직관", "창의력", "섬세한빛", "아름다움을만드는사람"]
+  },
+  {
+    "id": "ij_jeongsa",
+    "ilju": "정사",
+    "hanja": "丁巳",
+    "stem": "정",
+    "branch": "사",
+    "yin_yang": "음",
+    "archetype": "radiant_expression_powerhouse_type",
+    "common_expression": ["표현력", "카리스마", "열정", "화려함", "무대", "여름불꽃", "강렬함"],
+    "variance_note": "수기가 있으면 지략을 갖춘 표현자형, 금기가 있으면 성과 지향형 스타형, 목기가 풍부하면 창의적 예술가형으로 변용",
+    "element_concentration": "丁火(음화) + 巳火(겁재, 丙火 주기) — 음화+양화의 화기 집중, 巳 안의 庚金이 묘한 긴장감을 더함",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "yin_yang_fire_combined",
+      "dynamics": "intense_radiant_expression"
+    },
+    "core_keywords": ["丁巳", "음양화기집중", "겁재동주", "巳酉丑삼합금국잠재", "巳亥충잠재", "강렬표현구조"],
+    "embedding_context": "丁巳는 음화(丁)와 양화(巳)가 결합된 강렬한 화기 일주로, 내면의 섬세함과 외향적 카리스마가 동시에 폭발하는 구조다. 무대 위에서 빛나는 표현력과 강한 존재감을 타고났으나, 화기 과열에 대한 조절이 핵심 과제다.",
+    "psychological_traits": ["intensely_expressive", "magnetic_charisma", "emotionally_intelligent", "performance_oriented", "competitive_pride", "deep_passion_with_sensitivity"],
+    "social_pattern": ["naturally_captivating", "emotionally_reads_crowds", "leads_through_inspiration", "needs_stage_to_thrive"],
+    "relationship_style": ["passionate_and_devoted", "high_expectations_of_intimacy", "expressive_with_emotion", "can_be_possessive_when_insecure"],
+    "career_affinity": {
+      "domains": ["entertainment", "broadcasting", "performing_arts", "marketing", "public_speaking", "coaching", "fashion"],
+      "examples": ["배우", "방송인", "뮤지컬 배우", "마케터", "퍼포먼스 코치", "패션 디자이너", "소셜미디어 인플루언서"],
+      "note": "巳는 오전 9~11시 여름 태양이 빠르게 달아오르는 시간대. 존재감을 발산하고 사람들의 마음을 움직이는 표현·공연·미디어 직군에서 타고난 재능을 발휘"
+    },
+    "strength": ["타고난_무대_카리스마와_표현력", "감성과_열정의_결합으로_타인을_감동시키는_능력", "상황을_읽는_감성_지능", "불꽃같은_헌신과_집중력"],
+    "vulnerability": {
+      "trait": "화기 과열로 인한 감정 기복, 巳亥 충 운에서 갑작스러운 역전과 관계 단절",
+      "safeguard": "정기적인 냉각 시간과 혼자만의 공간 확보, 감정 조절 루틴(명상·운동) 구축",
+      "type": "lifestyle_suggestion",
+      "care_level": "high"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "정축", "reason": "巳酉丑 삼합 금국 연대 — 금기 흐름이 화기를 정련하여 안정적 성취 구조 완성", "tag": "sam_hap" },
+        { "ilju": "정유", "reason": "巳酉 반합 — 금기 공명으로 표현력에 정밀함과 절제가 더해지는 보완 구조", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "정해", "reason": "巳亥 충 — 수화 직충, 丁丁 동일 천간으로 표현 에너지와 내면 통제가 정면 충돌", "tag": "chung" },
+        { "ilju": "계해", "reason": "巳亥 충 — 강한 수기가 정사의 화기를 강하게 압박하는 격렬한 충돌 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丁巳)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "무대에 서면 빛나는데, 무대 밖에서는 왜 이렇게 지치는지 모르겠습니다.",
+      "solution_speech": "丁巳의 음양화기는 무대 위와 밖의 온도 차이가 클 수밖에 없는 구조입니다. 불꽃이 밝게 타오르려면 산소가 필요하듯, 당신에게는 충전의 시간이 반드시 필요합니다. 무대 밖의 고요함이 더 화려한 무대를 만드는 연료입니다.",
+      "tab_headline": "여름 불꽃처럼 화려하게 — 무대 위에서 완성되는 표현의 팔자"
+    },
+    "tags": ["표현력", "카리스마", "여름불꽃", "무대", "강렬함", "감성과열정의결합", "빛나는존재"]
+  },
+  {
+    "id": "ij_jeongmi",
+    "ilju": "정미",
+    "hanja": "丁未",
+    "stem": "정",
+    "branch": "미",
+    "yin_yang": "음",
+    "archetype": "warm_nurturer_creator_type",
+    "common_expression": ["온화함", "포용력", "창의성", "안정", "섬세한리더", "여름오후", "돌봄"],
+    "variance_note": "목기가 강하면 창의적 교육자형, 수기가 있으면 깊이 있는 상담자형, 금기가 있으면 실용적 성취자형으로 변용",
+    "element_concentration": "丁火(음화) + 未土(식신, 火庫) — 火生土 상생, 未 안의 丁火 여기로 화기가 더욱 안정적으로 축적",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "yin_fire_stored_and_nurtured",
+      "dynamics": "gentle_sustained_creativity"
+    },
+    "core_keywords": ["丁未", "火生土식신", "未중丁火庫", "亥卯未삼합목국잠재", "午未육합", "온화한창의구조"],
+    "embedding_context": "丁未는 丁火의 온화한 빛이 未土에 안정적으로 저장되는 가장 편안한 화기 구조다. 화기가 차갑지 않게 지속되어 주변을 따뜻하게 감싸는 돌봄과 창의성을 발휘하며, 사람을 키우고 성장시키는 데서 보람을 찾는다.",
+    "psychological_traits": ["naturally_warm_and_nurturing", "creative_in_quiet_ways", "emotionally_stable", "encourages_others_growth", "patient_and_accepting", "finds_joy_in_small_things"],
+    "social_pattern": ["everyone_feels_comfortable_around", "builds_community_organically", "gentle_leadership", "goes_last_but_remembered_longest"],
+    "relationship_style": ["caring_and_attentive", "creates_warm_home_environment", "may_over_give_to_detriment", "deeply_committed_and_faithful"],
+    "career_affinity": {
+      "domains": ["education", "social_work", "counseling", "food", "childcare", "community_management", "creative_arts"],
+      "examples": ["교사", "사회복지사", "영양사", "보육교사", "지역사회 코디네이터", "요리사", "아트 테라피스트"],
+      "note": "未는 오후 1~3시 여름 오후의 따뜻한 시간대. 사람을 돌보고 성장시키며 따뜻한 환경을 만드는 직업군, 공동체와 교육 분야에서 가장 두각을 나타냄"
+    },
+    "strength": ["깊은_포용력과_공감_능력", "주변을_성장시키는_따뜻한_리더십", "꾸준하고_안정적인_창의적_출력", "관계에서_신뢰와_안정감을_주는_능력"],
+    "vulnerability": {
+      "trait": "지나친 배려로 자기 에너지 소진, 경계 설정 어려움, 丑未 충 운에서 기반 혼란",
+      "safeguard": "자기 돌봄을 루틴화하기, 'No'라고 말하는 연습, 받는 것에 죄책감 갖지 않기",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병오", "reason": "午未 육합 — 화토 합으로 온화한 시너지, 병오의 열정이 정미의 포용력과 완벽 결합", "tag": "yuk_hap" },
+        { "ilju": "정묘", "reason": "亥卯未 삼합 목국 연대 — 목기 공명으로 창의적 상생 에너지가 풍부해지는 구조", "tag": "sam_hap" },
+        { "ilju": "계해", "reason": "亥卯未 삼합 목국 완성 — 수목 흐름이 정미의 온화한 화기를 지속적으로 지원", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "정축", "reason": "丑未 충 — 토기 직충, 丁丁 동일 천간으로 안정 기반 간의 정면 충돌", "tag": "chung" },
+        { "ilju": "기축", "reason": "丑未 충 — 토기끼리의 충돌로 안정과 성장의 기반이 흔들리는 불안정한 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丁未)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "남을 돌보느라 제 자신을 잃어가는 것 같습니다.",
+      "solution_speech": "丁未의 온기는 무한하지 않습니다. 촛불도 기름이 있어야 타오릅니다. 당신의 포용력은 먼저 자신을 채워야 더 오래, 더 따뜻하게 빛날 수 있습니다. 자신을 돌보는 것은 이기심이 아니라 더 잘 돌보기 위한 준비입니다.",
+      "tab_headline": "여름 오후 햇살처럼 따뜻하게 — 돌봄으로 세상을 밝히는 팔자"
+    },
+    "tags": ["온화함", "포용력", "돌봄", "창의적교육자", "여름오후햇살", "섬세한리더", "조용한따뜻함"]
+  },
+  {
+    "id": "ij_jeongyu",
+    "ilju": "정유",
+    "hanja": "丁酉",
+    "stem": "정",
+    "branch": "유",
+    "yin_yang": "음",
+    "archetype": "precise_refiner_artisan_type",
+    "common_expression": ["정밀함", "완벽주의", "예리함", "세련됨", "장인", "가을촛불", "원칙"],
+    "variance_note": "목기가 있으면 예술적 완벽주의자형, 수기가 강하면 지적 정밀가형, 화기가 더 강해지면 강렬한 카리스마형으로 변용",
+    "element_concentration": "丁火(음화) + 酉金(편재) — 火克金, 丁火의 섬세한 빛이 辛金을 정련하는 보석 세공사 구조",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "yin_fire_refines_metal",
+      "dynamics": "precision_through_delicate_tension"
+    },
+    "core_keywords": ["丁酉", "火克金편재", "辛金정련구조", "巳酉丑삼합금국잠재", "辰酉육합", "卯酉충잠재"],
+    "embedding_context": "丁酉는 丁火의 섬세한 촛불 빛이 酉金(辛金)을 정밀하게 다듬는 보석 세공사 구조다. 날카로운 심미안과 완벽주의적 기준이 결합하여 아름답고 정밀한 결과물을 만들어내며, 재물 감각도 탁월하다.",
+    "psychological_traits": ["perfectionist_and_precise", "sharp_aesthetic_sense", "principled_and_exacting", "detail_focused", "quietly_competitive", "high_internal_standards"],
+    "social_pattern": ["respected_for_expertise", "selective_relationships", "sets_high_bar_for_others", "elegant_and_composed_presence"],
+    "relationship_style": ["high_standards_in_partner", "shows_love_through_perfection_of_care", "slow_to_open_emotionally", "loyal_to_those_who_meet_standards"],
+    "career_affinity": {
+      "domains": ["jewelry", "precision_engineering", "finance", "law", "fashion", "criticism", "surgery"],
+      "examples": ["보석 디자이너", "정밀 기계 엔지니어", "금융 애널리스트", "법조인", "패션 에디터", "음식 평론가", "외과의사"],
+      "note": "酉는 저녁 5~7시 가을 추수 마무리 시간대. 정밀한 기준으로 가치 있는 것을 선별하고 완성하는 직업, 심미적 완성도가 요구되는 분야에서 최고의 성과를 냄"
+    },
+    "strength": ["탁월한_심미안과_완성도", "정밀하고_예리한_판단력", "재물_감각과_가치_선별_능력", "높은_기준으로_최고를_만들어내는_장인정신"],
+    "vulnerability": {
+      "trait": "완벽주의로 인한 자기 검열과 출력 지연, 기준이 높아 타인과의 마찰, 卯酉 충 운에서 관계 균열",
+      "safeguard": "완성보다 완료를 우선하는 연습, 80점 기준으로 출력 후 개선하는 반복 사이클 구축",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병진", "reason": "辰酉 육합 — 토금 합으로 丙辰의 창의성과 丁酉의 정밀함이 이상적으로 결합", "tag": "yuk_hap" },
+        { "ilju": "정사", "reason": "巳酉 반합 금국 — 금기 공명, 두 음화의 섬세함이 금기 결실로 자연스럽게 연결", "tag": "sam_hap" },
+        { "ilju": "정축", "reason": "巳酉丑 삼합 금국 완성 — 최강 금기 삼합으로 정밀함과 성취가 극대화되는 구조", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "정묘", "reason": "卯酉 충 — 목금 직충, 丁丁 동일 천간으로 감수성과 원칙이 정면 충돌", "tag": "chung" },
+        { "ilju": "을묘", "reason": "卯酉 충 — 乙木의 유연한 감수성이 丁酉의 엄격한 기준과 계속 마찰하는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丁酉)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "완벽하게 하려다 보니 시작 자체가 두렵고, 남들의 부족한 점이 눈에 너무 잘 띕니다.",
+      "solution_speech": "丁酉의 정련 구조는 보석을 만드는 과정입니다. 다이아몬드도 처음엔 날것의 돌입니다. 먼저 꺼내놓고, 그다음 다듬으세요. 완벽은 출발 조건이 아니라 과정의 목표입니다. 당신의 기준은 세상에서 가장 믿을 수 있는 품질 보증입니다.",
+      "tab_headline": "가을 촛불로 보석을 다듬듯 — 정밀함으로 빛나는 장인의 팔자"
+    },
+    "tags": ["정밀함", "완벽주의", "장인", "가을촛불", "보석세공사", "예리한심미안", "원칙의강자"]
+  },
+  {
+    "id": "ij_jeonghae",
+    "ilju": "정해",
+    "hanja": "丁亥",
+    "stem": "정",
+    "branch": "해",
+    "yin_yang": "음",
+    "archetype": "inner_flame_disciplined_wisdom_type",
+    "common_expression": ["내면깊이", "지혜", "통제된열정", "철학", "겨울촛불", "성찰", "절제"],
+    "variance_note": "목기가 풍부하면 창의적 사색가형, 금기가 있으면 원칙을 갖춘 지혜형, 화기가 더 강해지면 역동적 철학자형으로 변용",
+    "element_concentration": "丁火(음화) + 亥水(정관, 壬水 주기) — 水克火 긴장, 화수미제(火水未濟), 내면의 열정과 외부 통제가 공존",
+    "energy_profile": {
+      "dominant": "fire",
+      "structure": "water_controls_yin_fire",
+      "dynamics": "disciplined_inner_wisdom"
+    },
+    "core_keywords": ["丁亥", "화수미제음화버전", "정관제어", "水克火긴장", "寅亥육합잠재", "亥卯未삼합목국잠재"],
+    "embedding_context": "丁亥는 내면의 섬세한 불꽃(丁)이 깊은 겨울 수기(亥)에 의해 통제되는 화수미제 구조로, 뜨거운 열정을 내면 깊이 간직한 채 외부에는 절제와 지혜로 표현하는 철학자형 일주다. 겨울 밤 혼자 타오르는 촛불처럼 고독하지만 깊다.",
+    "psychological_traits": ["deep_inner_world", "controlled_passion", "philosophical_mindset", "patient_and_observant", "wisdom_through_restraint", "appears_calm_burns_inside"],
+    "social_pattern": ["quietly_profound_presence", "trusted_advisor_figure", "small_meaningful_circle", "influence_through_depth_not_volume"],
+    "relationship_style": ["slow_and_careful_to_open", "intense_when_committed", "needs_intellectual_and_emotional_depth", "may_suppress_feelings_too_long"],
+    "career_affinity": {
+      "domains": ["philosophy", "research", "writing", "counseling", "religion", "strategy", "education"],
+      "examples": ["철학자", "연구자", "소설가", "심리상담사", "종교인", "전략 컨설턴트", "교육학자"],
+      "note": "亥는 밤 9~11시 깊어가는 겨울 강물의 시간대. 내면의 깊이와 절제된 지혜가 요구되는 직업, 표면보다 본질을 다루는 연구·상담·철학 분야에서 두각을 나타냄"
+    },
+    "strength": ["깊은_철학적_통찰과_지혜", "절제된_내면에서_나오는_신뢰감", "본질을_꿰뚫는_직관력", "고독을_창의로_승화하는_능력"],
+    "vulnerability": {
+      "trait": "화수미제로 인한 내면 갈등, 감정 억압으로 관계에서 거리감 발생, 巳亥 충 운에서 급격한 변화",
+      "safeguard": "감정 표현 창구(글쓰기·예술) 확보, 신뢰하는 한 사람에게 정기적으로 속마음 나누기",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "갑인", "reason": "寅亥 육합 — 목기 상생으로 丁亥의 깊은 수기가 따뜻하게 전환되는 이상적 구조", "tag": "yuk_hap" },
+        { "ilju": "정묘", "reason": "亥卯未 삼합 목국 연대 — 수목 공명으로 丁亥의 철학적 깊이에 창의 에너지가 더해짐", "tag": "sam_hap" },
+        { "ilju": "정미", "reason": "亥卯未 삼합 목국 완성 — 목기 삼합으로 丁亥의 내면 불꽃이 따뜻하게 지속 성장", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "정사", "reason": "巳亥 충 — 수화 직충, 丁丁 동일 천간으로 내면 열정과 외적 표현이 극단적으로 충돌", "tag": "chung" },
+        { "ilju": "계사", "reason": "巳亥 충 — 강한 수기가 가세하여 화수 충돌이 더욱 격렬해지는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(丁亥)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "내면에서는 뜨겁게 느끼는데, 왜 주변 사람들은 저를 차갑다고 할까요.",
+      "solution_speech": "丁亥의 촛불은 겨울 강물 속에서도 꺼지지 않습니다. 亥水가 당신의 열정을 억누르는 게 아니라, 더 오래 타오르도록 조절하고 있는 것입니다. 내면의 불꽃을 글이나 대화로 조금씩 내보내세요. 절제된 열정이 가장 오래 남습니다.",
+      "tab_headline": "겨울 밤 혼자 타오르는 촛불 — 깊이와 지혜로 빛나는 철학자의 팔자"
+    },
+    "tags": ["내면깊이", "지혜", "겨울촛불", "절제된열정", "철학자", "고독한깊이", "본질을꿰뚫는통찰"]
+  },
+  {
+    "id": "ij_muja",
+    "ilju": "무자",
+    "hanja": "戊子",
+    "stem": "무",
+    "branch": "자",
+    "yin_yang": "양",
+    "archetype": "pragmatic_earth_wealth_seeker_type",
+    "common_expression": ["현실감각", "재물", "실용성", "뚝심", "안정", "대지와물", "성취"],
+    "variance_note": "금기가 강하면 재물 축적형 성취자, 목기가 있으면 도전적 사업가형, 화기가 풍부하면 영향력 있는 리더형으로 변용",
+    "element_concentration": "戊土(양토) + 子水(편재) — 土克水, 강한 양토가 자수를 제어하며 재물을 다루는 실용적 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "earth_controls_water_wealth",
+      "dynamics": "pragmatic_wealth_accumulation"
+    },
+    "core_keywords": ["戊子", "土克水편재", "申子辰삼합수국잠재", "子丑육합", "재물통제구조", "실용적성취기반"],
+    "embedding_context": "戊子는 강한 양토(戊)가 자수(편재)를 안정적으로 통제하는 재물 운용 구조다. 현실적 감각이 뛰어나고 재물을 다루는 능력이 탁월하며, 표면의 안정감 아래 날카로운 이익 판단이 흐른다.",
+    "psychological_traits": ["highly_pragmatic", "wealth_conscious", "grounded_and_stable", "patient_accumulator", "calculates_before_moving", "reliable_under_pressure"],
+    "social_pattern": ["earns_trust_through_consistency", "prefers_substance_over_show", "long_term_relationship_builder", "respected_for_reliability"],
+    "relationship_style": ["provides_stability_and_security", "shows_love_through_material_care", "slow_to_express_emotions_verbally", "deeply_loyal_when_committed"],
+    "career_affinity": {
+      "domains": ["finance", "real_estate", "investment", "accounting", "logistics", "agriculture", "food_industry"],
+      "examples": ["금융 전문가", "부동산 투자자", "회계사", "물류 관리자", "농업 경영인", "식품 유통업자", "자산 관리사"],
+      "note": "子는 밤 11시~새벽 1시의 깊은 수기 시간대. 눈에 보이지 않는 흐름을 읽고 재물을 움직이는 재무·투자·부동산 분야에서 탁월한 감각을 발휘"
+    },
+    "strength": ["뛰어난_현실_감각과_재물_운용_능력", "흔들리지_않는_안정감과_뚝심", "장기적_관점에서_자원을_축적하는_인내", "신뢰를_쌓아가는_일관성"],
+    "vulnerability": {
+      "trait": "지나친 현실주의로 이상이나 감정 경시, 子午 충 운에서 재물 기반 흔들림",
+      "safeguard": "감성적 관계에 의도적으로 투자하기, 숫자 너머의 관계 가치 인식 훈련",
+      "type": "lifestyle_suggestion",
+      "care_level": "low"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무신", "reason": "申子 반합 수국 — 수기 흐름 강화, 두 토기가 재물 운용에서 시너지를 이루는 구조", "tag": "sam_hap" },
+        { "ilju": "기축", "reason": "子丑 육합 — 수토 합으로 안정적인 재물·기반 구조 완성, 상호 보완적 파트너십", "tag": "yuk_hap" },
+        { "ilju": "정축", "reason": "子丑 육합 — 화토 보완, 정축의 섬세함이 무자의 실용성과 균형을 이루는 구조", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "무오", "reason": "子午 충 — 수화 직충, 戊戊 동일 천간으로 재물 기반과 열정이 정면 충돌", "tag": "chung" },
+        { "ilju": "임오", "reason": "子午 충 — 강한 수기끼리 공명하다 午火와 충돌, 재물 변동이 급격해지는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(戊子)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "열심히 버는데도 재물이 손에 잘 안 남는 것 같습니다.",
+      "solution_speech": "戊子의 토극수는 재물을 흘려보내는 것이 아니라 관리하고 통제하라는 구조입니다. 벌어들이는 것보다 지키는 시스템이 먼저입니다. 대지가 물을 가두듯, 구조를 만들면 재물은 자연스럽게 쌓입니다.",
+      "tab_headline": "대지 위에 흐르는 물을 다스리듯 — 현실 감각으로 재물을 쌓는 팔자"
+    },
+    "tags": ["현실감각", "재물", "실용주의자", "대지와물", "뚝심있는성취", "안정적축적", "믿음직함"]
+  },
+  {
+    "id": "ij_muin",
+    "ilju": "무인",
+    "hanja": "戊寅",
+    "stem": "무",
+    "branch": "인",
+    "yin_yang": "양",
+    "archetype": "resilient_authority_challenger_type",
+    "common_expression": ["도전", "인내", "강인함", "성장", "긴장", "험산의나무", "불굴"],
+    "variance_note": "화기가 강하면 카리스마 있는 지도자형, 금기가 있으면 결단력 있는 전략가형, 수기가 풍부하면 깊이 있는 사색 성취형으로 변용",
+    "element_concentration": "戊土(양토) + 寅木(편관/칠살) — 木克土, 강한 목기가 토기를 압박하는 칠살 구조. 긴장 속에서 강해지는 형태",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "wood_challenges_earth",
+      "dynamics": "growth_through_persistent_tension"
+    },
+    "core_keywords": ["戊寅", "木克土칠살", "편관압박구조", "寅午戌삼합화국잠재", "寅亥육합잠재", "긴장속불굴"],
+    "embedding_context": "戊寅은 甲木 칠살이 강한 戊土를 끊임없이 압박하는 구조로, 외부의 도전과 압박이 오히려 인물을 단련시키는 고강도 성장형 일주다. 험한 산에 뿌리내린 나무처럼, 역경 속에서 더욱 강해진다.",
+    "psychological_traits": ["thrives_under_pressure", "determined_against_adversity", "physically_and_mentally_tough", "earns_authority_through_hardship", "persistent_and_unyielding", "respects_strength_in_others"],
+    "social_pattern": ["commands_respect_through_actions", "natural_protector_role", "reliable_in_crisis", "may_seem_intimidating_but_deeply_caring"],
+    "relationship_style": ["protective_and_loyal", "expresses_affection_through_action", "needs_partner_who_respects_independence", "slow_to_show_vulnerability"],
+    "career_affinity": {
+      "domains": ["military", "law_enforcement", "sports", "construction", "entrepreneurship", "emergency_services", "social_reform"],
+      "examples": ["군인", "경찰관", "소방관", "건설업 CEO", "프로 스포츠 선수", "창업가", "사회개혁가"],
+      "note": "寅은 새벽 3~5시 어둠을 뚫고 일어서는 시간대. 역경과 압박을 딛고 성과를 내는 직업, 신체적·정신적 강인함이 요구되는 분야에서 진가를 발휘"
+    },
+    "strength": ["역경_속에서_강해지는_불굴의_의지", "압박을_성장_동력으로_전환하는_능력", "신체적·정신적_강인함", "위기_상황에서의_탁월한_대응력"],
+    "vulnerability": {
+      "trait": "지나친 투쟁 심리로 불필요한 갈등 유발, 寅申 충 운에서 갈등 극대화, 피로 누적에 따른 건강 주의",
+      "safeguard": "불필요한 싸움 선별하는 지혜 훈련, 회복을 위한 정기적 휴식과 이완 루틴",
+      "type": "lifestyle_suggestion",
+      "care_level": "high"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무오", "reason": "寅午 반합 화국 — 화기 공명, 두 토기가 화기 지원을 받아 더욱 강해지는 상생 구조", "tag": "sam_hap" },
+        { "ilju": "갑술", "reason": "寅午戌 삼합 화국 연대 — 화기 삼합으로 칠살의 압박이 화기로 전환되며 강한 시너지", "tag": "sam_hap" },
+        { "ilju": "을해", "reason": "寅亥 육합 — 목기 공명, 을해의 수생목이 무인의 칠살 압박을 부드럽게 완화", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "무신", "reason": "寅申 충 — 목금 직충, 戊戊 동일 천간으로 칠살 압박이 더욱 격화되는 구조", "tag": "chung" },
+        { "ilju": "병신", "reason": "寅申 충 — 병화의 강한 화기와 금기 충돌이 겹쳐 더욱 복잡한 갈등 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(戊寅)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "항상 뭔가에 맞서 싸우는 것 같고, 쉬운 길이 없습니다.",
+      "solution_speech": "戊寅의 칠살은 당신을 파괴하려는 것이 아니라 단련하는 힘입니다. 역경이 없었다면 지금의 강인함도 없었을 것입니다. 모든 싸움에 에너지를 쓰지 말고, 진짜 중요한 전쟁만 선택하세요. 당신은 반드시 이깁니다.",
+      "tab_headline": "험한 산에 뿌리내린 나무처럼 — 역경이 만들어낸 불굴의 강인함"
+    },
+    "tags": ["불굴", "도전", "강인함", "험산의나무", "역경속성장", "인내의강자", "압박이단련하는힘"]
+  },
+  {
+    "id": "ij_mujin",
+    "ilju": "무진",
+    "hanja": "戊辰",
+    "stem": "무",
+    "branch": "진",
+    "yin_yang": "양",
+    "archetype": "solid_mountain_foundation_type",
+    "common_expression": ["안정", "신뢰", "중후함", "기반", "포용력", "태산", "묵직함"],
+    "variance_note": "금기가 강하면 성과 지향적 기반형, 목기가 있으면 도전을 허용하는 유연형, 수기가 풍부하면 지략을 갖춘 전략 기반형으로 변용",
+    "element_concentration": "戊土(양토) + 辰土(비견, 水庫) — 토기 극집중, 辰 안의 壬水 여기로 단단한 기반 아래 깊은 전략이 숨겨진 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "earth_self_reinforcing_with_water_depth",
+      "dynamics": "immovable_strategic_foundation"
+    },
+    "core_keywords": ["戊辰", "토기극집중", "비견동주", "辰중壬水庫", "申子辰삼합수국잠재", "태산기반구조"],
+    "embedding_context": "戊辰은 양토가 겹쳐 쌓인 태산 같은 기반형 일주다. 辰 안의 水庫는 단단한 외면 아래 깊은 전략적 사고가 흐름을 시사하며, 세상에서 가장 믿음직한 기반이 되는 존재형 에너지를 지닌다.",
+    "psychological_traits": ["immovably_stable", "deeply_trustworthy", "strategic_beneath_solid_exterior", "patient_long_game_player", "anchors_others_emotionally", "resistant_to_external_pressure"],
+    "social_pattern": ["the_rock_everyone_leans_on", "earns_long_term_deep_trust", "slow_to_change_but_reliable", "community_anchor_figure"],
+    "relationship_style": ["steady_and_dependable_partner", "creates_secure_environment", "may_struggle_with_emotional_flexibility", "once_committed_never_wavers"],
+    "career_affinity": {
+      "domains": ["real_estate", "construction", "banking", "government", "agriculture", "infrastructure", "law"],
+      "examples": ["부동산 개발업자", "건설 회사 대표", "은행원", "공무원", "농장 경영인", "인프라 엔지니어", "검사"],
+      "note": "辰은 새벽 7~9시 대지가 완전히 깨어나는 시간대. 오랫동안 쌓아온 기반 위에 결실을 맺는 직업, 안정과 신뢰가 핵심 자산이 되는 분야에서 두각을 나타냄"
+    },
+    "strength": ["세상에서_가장_믿음직한_안정감과_신뢰", "흔들리지_않는_중심_잡기_능력", "장기적_관점으로_기반을_쌓는_인내력", "위기에서_타인을_지탱하는_포용력"],
+    "vulnerability": {
+      "trait": "지나친 안정 추구로 변화와 혁신을 거부, 辰戌 충 운에서 기반 전면 교체 압박",
+      "safeguard": "안전지대 밖 작은 변화를 의도적으로 시도하기, 혁신을 위협이 아닌 기반 강화로 재해석",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무자", "reason": "申子辰 삼합 수국 연대 — 수기 흐름 완성, 두 토기가 수기를 함께 제어하는 강력한 파트너십", "tag": "sam_hap" },
+        { "ilju": "정유", "reason": "辰酉 육합 — 토금 합으로 무진의 기반이 정유의 정밀함과 결합하는 이상적 구조", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "무술", "reason": "辰戌 충 — 토기 직충, 戊戊 동일 천간으로 기반끼리 정면 충돌하는 가장 불안정한 구조", "tag": "chung" },
+        { "ilju": "병술", "reason": "辰戌 충 — 화기가 더해져 토기 충돌이 더욱 격화되는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(戊辰)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "변화가 두렵고, 지금 있는 것을 잃을까 봐 항상 불안합니다.",
+      "solution_speech": "戊辰의 태산은 폭풍에도 흔들리지 않습니다. 당신의 기반은 이미 충분히 단단합니다. 변화는 기반을 무너뜨리는 것이 아니라 더 넓게 확장하는 것입니다. 태산도 한 번씩 지진을 겪으며 더 단단해집니다.",
+      "tab_headline": "태산처럼 묵직하고 단단하게 — 세상의 기반이 되는 팔자"
+    },
+    "tags": ["안정", "신뢰", "태산", "중후함", "묵직한기반", "세상의버팀목", "흔들리지않는중심"]
+  },
+  {
+    "id": "ij_muо",
+    "ilju": "무오",
+    "hanja": "戊午",
+    "stem": "무",
+    "branch": "오",
+    "yin_yang": "양",
+    "archetype": "inspired_grounded_leader_type",
+    "common_expression": ["열정", "안정", "리더십", "신뢰", "따뜻함", "여름대지", "영향력"],
+    "variance_note": "목기가 있으면 창의적 리더형, 금기가 강하면 성과 지향적 지도자형, 수기가 있으면 지략을 갖춘 균형형으로 변용",
+    "element_concentration": "戊土(양토) + 午火(정인) — 火生土 상생, 午火의 강한 에너지가 토기를 따뜻하게 지원하는 가장 이상적인 상생 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "fire_nourishes_earth",
+      "dynamics": "inspired_stable_leadership"
+    },
+    "core_keywords": ["戊午", "火生土정인지원", "寅午戌삼합화국잠재", "午未육합잠재", "子午충잠재", "이상적상생구조"],
+    "embedding_context": "戊午는 午火(정인)가 戊土를 따뜻하게 생해주는 명리상 가장 안정적인 상생 구조 중 하나다. 열정과 안정이 공존하며, 자신이 믿는 가치와 원칙 위에서 사람들을 이끄는 따뜻한 리더형 일주다.",
+    "psychological_traits": ["naturally_inspiring_leader", "warm_and_principled", "stable_confident_presence", "motivates_through_genuine_care", "grounded_optimism", "values_driven"],
+    "social_pattern": ["builds_communities_around_shared_values", "trusted_authority_figure", "leads_with_warmth_not_fear", "brings_people_together"],
+    "relationship_style": ["warm_and_generous_partner", "creates_safe_stable_bonds", "expects_mutual_respect_and_growth", "committed_and_encouraging"],
+    "career_affinity": {
+      "domains": ["education", "public_leadership", "nonprofit", "counseling", "hospitality", "community_development", "spiritual_guidance"],
+      "examples": ["교장·교수", "시장·국회의원", "NGO 대표", "상담사", "호텔리어", "종교 지도자", "커뮤니티 빌더"],
+      "note": "午는 낮 11시~오후 1시 태양이 가장 높은 시간대. 사람들에게 영향을 미치고 따뜻한 방향을 제시하는 리더십·교육·공공 서비스 분야에서 타고난 적성 발휘"
+    },
+    "strength": ["따뜻함과_안정감이_결합된_자연스러운_리더십", "열정과_원칙을_함께_가진_균형잡힌_영향력", "사람을_성장시키는_포용력", "믿음직한_중심_역할"],
+    "vulnerability": {
+      "trait": "지나친 책임감으로 인한 번아웃, 子午 충 운에서 에너지 기반 흔들림",
+      "safeguard": "리더로서 위임하는 연습, 모든 것을 혼자 안고 가지 않는 시스템 구축",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무인", "reason": "寅午 반합 화국 — 화기 공명으로 두 토기의 리더십이 시너지를 발휘하는 구조", "tag": "sam_hap" },
+        { "ilju": "갑술", "reason": "寅午戌 삼합 화국 완성 — 가장 강력한 화기 삼합으로 리더십 에너지가 집결", "tag": "sam_hap" },
+        { "ilju": "정미", "reason": "午未 육합 — 화토 합, 정미의 온화함과 무오의 따뜻한 리더십이 이상적으로 결합", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "무자", "reason": "子午 충 — 수화 직충, 戊戊 동일 천간으로 실용성과 열정이 정면 충돌", "tag": "chung" },
+        { "ilju": "임자", "reason": "子午 충 — 강한 수기가 무오의 화토 상생 구조를 강하게 압박하는 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(戊午)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "모두를 이끌어야 한다는 부담이 너무 큽니다.",
+      "solution_speech": "戊午의 화생토는 불이 대지를 따뜻하게 만드는 가장 자연스러운 구조입니다. 당신은 이끌도록 태어났지만, 모든 것을 혼자 할 필요는 없습니다. 태양도 혼자 빛나지만, 그 빛은 땅에 닿아야 의미가 생깁니다. 함께하는 사람들이 당신의 힘입니다.",
+      "tab_headline": "여름 대지처럼 따뜻하고 든든하게 — 열정과 신뢰로 이끄는 리더의 팔자"
+    },
+    "tags": ["따뜻한리더십", "열정", "안정", "여름대지", "신뢰받는중심", "포용적영향력", "사람을성장시키는힘"]
+  },
+  {
+    "id": "ij_musin",
+    "ilju": "무신",
+    "hanja": "戊申",
+    "stem": "무",
+    "branch": "신",
+    "yin_yang": "양",
+    "archetype": "creative_output_builder_type",
+    "common_expression": ["실행력", "창의성", "생산성", "결과물", "조직력", "가을대지", "체계"],
+    "variance_note": "화기가 강하면 열정적 창조자형, 수기가 있으면 전략적 기획자형, 목기가 있으면 다양한 결과물을 내는 다작형으로 변용",
+    "element_concentration": "戊土(양토) + 申金(식신) — 土生金 상생, 토기의 에너지가 금기로 전환되는 생산적 출력 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "earth_generates_metal_output",
+      "dynamics": "systematic_creative_production"
+    },
+    "core_keywords": ["戊申", "土生金식신", "申子辰삼합수국잠재", "寅申충잠재", "생산적출력구조", "체계적창의"],
+    "embedding_context": "戊申은 戊土의 안정적 기반이 申金이라는 구체적 결과물로 전환되는 식신 구조다. 체계적으로 아이디어를 실행하고 조직화하여 지속적인 성과를 만들어내는 생산적 실행가형 일주다.",
+    "psychological_traits": ["systematic_executor", "builds_structures_and_systems", "productive_and_organized", "practical_creativity", "reliable_output_machine", "efficient_problem_solver"],
+    "social_pattern": ["gets_things_done", "builds_reliable_teams_and_processes", "valued_for_competence", "creates_order_from_chaos"],
+    "relationship_style": ["practical_and_supportive", "provides_structure_in_relationships", "shows_care_through_reliability", "needs_appreciation_for_contributions"],
+    "career_affinity": {
+      "domains": ["engineering", "manufacturing", "project_management", "architecture", "it_infrastructure", "operations", "logistics"],
+      "examples": ["토목 엔지니어", "제조 공장 관리자", "프로젝트 매니저", "건축 설계사", "IT 인프라 전문가", "운영 관리자", "공급망 관리자"],
+      "note": "申은 오후 3~5시 수확과 결실의 시간대. 기획과 아이디어를 실물 결과로 전환하고, 체계와 시스템을 구축하는 분야에서 탁월한 능력 발휘"
+    },
+    "strength": ["체계적_실행력과_조직화_능력", "아이디어를_실물_결과로_전환하는_생산성", "안정적이고_지속적인_성과_창출", "복잡한_것을_단순하게_만드는_구조화_능력"],
+    "vulnerability": {
+      "trait": "지나친 시스템 의존으로 유연성 부족, 寅申 충 운에서 계획 전면 붕괴 위험",
+      "safeguard": "계획에 여유 버퍼 두기, 예상치 못한 변화를 시스템 개선 기회로 보는 관점 전환",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무자", "reason": "申子 반합 수국 — 수기 흐름 형성, 두 토기가 협력해 생산적 시스템을 구축하는 구조", "tag": "sam_hap" },
+        { "ilju": "무진", "reason": "申子辰 삼합 수국 연대 — 강력한 생산 기반이 완성되는 최강 협력 구조", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "무인", "reason": "寅申 충 — 목금 직충, 戊戊 동일 천간으로 계획과 돌발 상황이 정면 충돌", "tag": "chung" },
+        { "ilju": "갑인", "reason": "寅申 충 — 강한 목기가 무신의 금기 출력 구조를 격하게 방해하는 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(戊申)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "계획대로 안 되면 크게 흔들리고, 변수가 생기면 전부 망한 것 같습니다.",
+      "solution_speech": "戊申의 식신은 끊임없이 결과물을 만들어내는 구조입니다. 계획이 어긋났다면 시스템이 개선되는 것입니다. 가을 수확은 봄의 계획과 항상 다르지만, 그것이 더 좋은 수확이 됩니다. 유연한 계획이 더 강한 시스템을 만듭니다.",
+      "tab_headline": "가을 대지가 결실을 맺듯 — 체계와 실행력으로 성과를 만드는 팔자"
+    },
+    "tags": ["실행력", "체계", "생산성", "조직력", "가을대지의결실", "아이디어를현실로", "믿음직한성과자"]
+  },
+  {
+    "id": "ij_musul",
+    "ilju": "무술",
+    "hanja": "戊戌",
+    "stem": "무",
+    "branch": "술",
+    "yin_yang": "양",
+    "archetype": "immovable_conviction_mountain_type",
+    "common_expression": ["신념", "고집", "의지", "원칙", "고산", "완고함", "불멸"],
+    "variance_note": "목기가 있으면 신념을 행동으로 옮기는 리더형, 수기가 강하면 전략적 신념가형, 화기가 더 강해지면 카리스마 있는 개혁가형으로 변용",
+    "element_concentration": "戊土(양토) + 戌土(비견, 火庫) — 토기 극집중, 戌 안의 丁火 여기로 화기가 토 안에 저장된 불굴의 에너지 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "earth_doubled_with_fire_reserve",
+      "dynamics": "unshakeable_principled_conviction"
+    },
+    "core_keywords": ["戊戌", "토기극집중", "비견동주", "戌중丁火庫", "寅午戌삼합화국잠재", "辰戌충잠재"],
+    "embedding_context": "戊戌은 두 토기가 겹쳐진 가장 고집스럽고 불굴인 일주다. 戌 안의 불씨(丁火)는 외부에 드러나지 않지만 절대 꺼지지 않는 신념의 에너지로, 어떤 외부 압박에도 자신의 원칙과 방향을 바꾸지 않는 태산 중의 태산이다.",
+    "psychological_traits": ["immovably_principled", "self_reliant_to_extreme", "conviction_over_consensus", "slow_to_decide_but_never_reverses", "formidable_when_committed", "inner_fire_never_extinguished"],
+    "social_pattern": ["inspires_through_example_not_words", "earns_deepest_trust_through_time", "intimidating_in_disagreement", "few_but_lifelong_relationships"],
+    "relationship_style": ["once_decided_completely_devoted", "struggles_with_compromise", "shows_love_through_protection_and_provision", "partner_must_respect_principles"],
+    "career_affinity": {
+      "domains": ["law", "military_leadership", "politics", "philosophy", "religious_leadership", "construction", "land_development"],
+      "examples": ["법조인", "장군", "정치 지도자", "철학자", "종교 지도자", "토지 개발업자", "산림 관리자"],
+      "note": "戌은 저녁 7~9시 하루의 마무리 시간대로 오랜 수행과 수련의 결실이 드러나는 시간. 오랜 시간 쌓아온 신념과 원칙이 진가를 발휘하는 분야에서 최고의 성과"
+    },
+    "strength": ["어떤_외부_압박에도_흔들리지_않는_불굴의_신념", "타협_없는_원칙으로_쌓아가는_절대적_신뢰", "고독해도_자신의_길을_가는_강인한_자립심", "시간이_지날수록_진가가_드러나는_묵직한_존재감"],
+    "vulnerability": {
+      "trait": "극도의 고집으로 팀워크·관계 손상, 변화 시기를 놓치는 경직성, 辰戌 충 운에서 기반 충격",
+      "safeguard": "가장 신뢰하는 한 사람의 피드백을 정기적으로 구하기, '다름'을 '틀림'으로 보지 않는 연습",
+      "type": "lifestyle_suggestion",
+      "care_level": "high"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무오", "reason": "寅午戌 삼합 화국 연대 — 화기 공명으로 두 토기의 신념이 강력한 화기를 함께 공유", "tag": "sam_hap" },
+        { "ilju": "병인", "reason": "寅午戌 삼합 화국 완성 — 화기 삼합 완성, 병인의 개척력과 무술의 불굴이 최강 시너지", "tag": "sam_hap" },
+        { "ilju": "을묘", "reason": "卯戌 육합 — 목토 합으로 을묘의 유연성이 무술의 강직함을 부드럽게 보완", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "무진", "reason": "辰戌 충 — 토기 직충, 戊戊 동일 천간으로 두 신념이 정면 충돌하는 가장 강한 토기 충", "tag": "chung" },
+        { "ilju": "임진", "reason": "辰戌 충 — 수기가 가세하며 토기 기반이 근본부터 흔들리는 충돌 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(戊戌)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "제 방식이 맞다고 믿는데, 왜 주변에서는 고집이라고 할까요.",
+      "solution_speech": "戊戌의 토기는 태산입니다. 태산은 움직이지 않아도 모든 것의 기준이 됩니다. 고집이 아니라 기준입니다. 다만, 태산도 계절에 따라 옷을 바꿉니다. 원칙은 유지하되, 표현 방식을 유연하게 하면 당신의 신념은 더 많은 사람에게 닿습니다.",
+      "tab_headline": "태산처럼 고집스럽게, 불씨처럼 꺼지지 않게 — 신념으로 완성되는 팔자"
+    },
+    "tags": ["신념", "불굴", "고집", "태산", "원칙주의자", "꺼지지않는불씨", "시간이증명하는강자"]
+  },
+  {
+    "id": "ij_gichuk",
+    "ilju": "기축",
+    "hanja": "己丑",
+    "stem": "기",
+    "branch": "축",
+    "yin_yang": "음",
+    "archetype": "quiet_steady_accumulator_type",
+    "common_expression": ["꾸준함", "성실", "축적", "겸손", "인내", "겨울대지", "저력"],
+    "variance_note": "금기가 강하면 정밀한 성취자형, 화기가 있으면 따뜻한 실용형, 목기가 있으면 도전을 통해 성장하는 균형형으로 변용",
+    "element_concentration": "己土(음토) + 丑土(비견, 金庫) — 음토 집중, 丑 안의 辛金 여기로 차분한 토기가 정밀한 결실로 이어지는 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "yin_earth_self_reinforcing_with_metal_depth",
+      "dynamics": "patient_quiet_accumulation"
+    },
+    "core_keywords": ["己丑", "음토집중", "비견동주", "丑중辛金庫", "巳酉丑삼합금국잠재", "子丑육합"],
+    "embedding_context": "己丑은 음토가 겹쳐 차곡차곡 쌓이는 가장 겸손하고 성실한 축적형 일주다. 丑 안의 辛金은 꾸준한 노력이 반드시 정밀한 결실로 이어짐을 보여주며, 눈에 띄지 않아도 마지막에 가장 많이 남아있는 진짜 강자다.",
+    "psychological_traits": ["diligent_and_humble", "quiet_strength", "long_game_strategist", "detail_oriented_accumulator", "reliable_without_fanfare", "reserves_strength_for_when_needed"],
+    "social_pattern": ["trusted_for_consistency", "never_shows_off", "the_one_who_shows_up_every_time", "gains_respect_through_time"],
+    "relationship_style": ["stable_and_predictable_in_good_ways", "provides_quiet_but_deep_security", "slow_to_open_but_deeply_loyal", "committed_without_drama"],
+    "career_affinity": {
+      "domains": ["accounting", "agriculture", "archives", "traditional_crafts", "food_preservation", "quality_control", "archaeology"],
+      "examples": ["공인 회계사", "농업 전문가", "기록 보관사", "전통 장인", "발효 식품 전문가", "품질 관리자", "고고학자"],
+      "note": "丑은 새벽 1~3시 대지가 가장 차갑고 조용하게 내일을 준비하는 시간. 보이지 않는 곳에서 꾸준히 쌓아가는 직업, 정밀한 기록과 축적이 가치가 되는 분야에서 두각"
+    },
+    "strength": ["눈에_띄지_않지만_마지막에_남는_진짜_저력", "성실하고_꾸준한_축적으로_만들어낸_신뢰", "세심하고_정밀한_업무_처리_능력", "흔들림_없는_안정적_기반"],
+    "vulnerability": {
+      "trait": "과도한 겸손으로 자기 주장 부족, 기회를 앞에서도 내세우지 않아 놓치는 경향, 丑未 충 운에서 기반 흔들림",
+      "safeguard": "자신의 성과를 적극적으로 표현하는 연습, 기회 앞에서 먼저 손 드는 훈련",
+      "type": "lifestyle_suggestion",
+      "care_level": "low"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무자", "reason": "子丑 육합 — 수토 합으로 무자의 실용성과 기축의 성실함이 상호 완벽 보완", "tag": "yuk_hap" },
+        { "ilju": "기유", "reason": "巳酉丑 삼합 금국 연대 — 금기 공명, 두 음토의 정밀한 결실 에너지가 시너지 발휘", "tag": "sam_hap" },
+        { "ilju": "기사", "reason": "巳酉丑 삼합 금국 완성 — 음토끼리 최강 금기 삼합으로 정밀한 성취 구조 완성", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "기미", "reason": "丑未 충 — 음토 직충, 己己 동일 천간으로 성실한 기반끼리 정면 충돌", "tag": "chung" },
+        { "ilju": "정미", "reason": "丑未 충 — 화기가 더해져 토기 기반 충돌이 감정적으로 더욱 격화되는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(己丑)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "열심히 하는데 남들 눈에 잘 안 띄고, 제 노력을 몰라주는 것 같습니다.",
+      "solution_speech": "己丑의 축적 에너지는 겨울 대지와 같습니다. 봄이 오면 가장 먼저 싹을 틔우는 것은 겨울 내내 준비한 대지입니다. 당신의 꾸준함은 반드시 드러날 때가 옵니다. 다만, 준비된 것을 보여주는 용기가 하나 더 필요합니다.",
+      "tab_headline": "겨울 대지가 봄을 준비하듯 — 성실한 축적이 완성하는 저력의 팔자"
+    },
+    "tags": ["성실", "꾸준함", "겸손한저력", "겨울대지", "조용한강자", "마지막에남는사람", "정밀한축적"]
+  },
+  {
+    "id": "ij_gimyo",
+    "ilju": "기묘",
+    "hanja": "己卯",
+    "stem": "기",
+    "branch": "묘",
+    "yin_yang": "음",
+    "archetype": "creative_tension_growth_type",
+    "common_expression": ["유연성", "적응력", "창의", "성장", "봄들판", "내면강인함", "도전"],
+    "variance_note": "화기가 강하면 열정적 창의가형, 금기가 있으면 원칙을 갖춘 균형형, 수기가 풍부하면 지적 적응가형으로 변용",
+    "element_concentration": "己土(음토) + 卯木(편관/칠살) — 木克土, 부드러운 음목 칠살이 음토를 은근히 압박하는 유연한 긴장 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "wood_gently_challenges_yin_earth",
+      "dynamics": "adaptive_growth_under_soft_pressure"
+    },
+    "core_keywords": ["己卯", "木克土칠살음화버전", "卯戌육합잠재", "亥卯未삼합목국잠재", "卯酉충잠재", "유연한압박성장"],
+    "embedding_context": "己卯는 乙木 칠살이 己土를 부드럽게 압박하는 유연한 긴장 구조다. 무인의 강한 충격과 달리 봄 들판에 새싹이 돋아나듯 서서히 토기를 변화시키며, 외부 도전에 유연하게 적응하면서 꾸준히 성장하는 창의적 생존형 일주다.",
+    "psychological_traits": ["highly_adaptable", "creative_under_pressure", "soft_resilience", "finds_new_paths_when_blocked", "growth_mindset", "emotionally_intelligent_survivor"],
+    "social_pattern": ["connects_across_different_groups", "bridges_conflicting_parties", "warm_and_approachable", "flexible_but_has_quiet_principles"],
+    "relationship_style": ["gentle_and_empathic", "adapts_to_partner_rhythm", "needs_room_to_grow_together", "emotionally_generous"],
+    "career_affinity": {
+      "domains": ["counseling", "education", "creative_arts", "mediation", "social_work", "organic_farming", "alternative_medicine"],
+      "examples": ["심리상담사", "미술 치료사", "중재인", "창의 교육자", "유기농 농부", "대안 치료사", "소셜 앙트레프레너"],
+      "note": "卯는 새벽 5~7시 봄의 싹이 가장 빠르게 자라는 시간대. 유연한 창의성과 적응력이 요구되는 분야, 사람과 사람 사이를 연결하고 치유하는 직업에서 타고난 강점 발휘"
+    },
+    "strength": ["어떤_환경에도_뿌리내리는_유연한_적응력", "부드러운_방식으로_도전을_기회로_전환하는_능력", "공감과_연결로_사람을_모으는_능력", "창의적_문제_해결_능력"],
+    "vulnerability": {
+      "trait": "칠살 압박이 누적되면 정체성 흔들림, 卯酉 충 운에서 관계와 방향성 혼란",
+      "safeguard": "자신의 핵심 가치를 기록하고 정기적으로 점검하기, 지나친 적응으로 자기를 잃지 않는 경계 설정",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무술", "reason": "卯戌 육합 — 목토 합으로 무술의 강직함과 기묘의 유연함이 완벽히 보완", "tag": "yuk_hap" },
+        { "ilju": "계해", "reason": "亥卯未 삼합 목국 연대 — 수목 공명으로 기묘의 창의 성장 에너지 기반이 더욱 강화", "tag": "sam_hap" },
+        { "ilju": "기미", "reason": "亥卯未 삼합 목국 연대 — 목기 공명으로 두 음토의 창의적 성장 시너지 발휘", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "기유", "reason": "卯酉 충 — 목금 직충, 己己 동일 천간으로 적응력과 원칙이 정면 충돌", "tag": "chung" },
+        { "ilju": "신유", "reason": "卯酉 충 — 강한 금기가 기묘의 유연한 목기를 강하게 압박하는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(己卯)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "계속 적응하다 보니, 제가 어떤 사람인지 모르겠습니다.",
+      "solution_speech": "己卯의 봄 들판은 어떤 씨앗도 받아들이지만, 그 자신은 항상 대지입니다. 당신이 유연하게 적응하는 것은 자신을 잃는 것이 아니라, 더 많은 것을 품는 것입니다. 핵심 가치 하나를 굳게 잡고 나머지를 유연하게 두세요. 그것이 기묘의 진짜 강점입니다.",
+      "tab_headline": "봄 들판처럼 유연하게, 대지처럼 굳건하게 — 적응력으로 꽃피우는 팔자"
+    },
+    "tags": ["유연성", "적응력", "봄들판", "창의성장", "부드러운강인함", "연결자", "어디서든뿌리내리는힘"]
+  },
+  {
+    "id": "ij_gisa",
+    "ilju": "기사",
+    "hanja": "己巳",
+    "stem": "기",
+    "branch": "사",
+    "yin_yang": "음",
+    "archetype": "warm_steady_wisdom_nurturer_type",
+    "common_expression": ["온기", "지혜", "안정", "돌봄", "실용", "여름대지", "깊은따뜻함"],
+    "variance_note": "목기가 있으면 창의적 교육자형, 금기가 강하면 지적 실용가형, 수기가 있으면 깊이 있는 상담형으로 변용",
+    "element_concentration": "己土(음토) + 巳火(정인, 丙火 주기) — 火生土 상생, 여름의 따뜻한 화기가 음토를 부드럽게 지원하는 이상적 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "fire_nourishes_yin_earth",
+      "dynamics": "warm_wise_stable_nurturing"
+    },
+    "core_keywords": ["己巳", "火生土정인지원", "巳酉丑삼합금국잠재", "巳亥충잠재", "이상적음화생토구조", "온기지혜통합"],
+    "embedding_context": "己巳는 巳火(정인)의 따뜻한 지혜가 己土를 안정적으로 지원하는 이상적인 상생 구조다. 배우고 익힌 것을 자연스럽게 주변을 돌보는 데 쓰는 따뜻한 실용주의자형 일주로, 지식과 온기가 균형 있게 공존한다.",
+    "psychological_traits": ["wisely_nurturing", "practical_warmth", "learns_to_serve", "emotionally_intelligent", "stable_and_reassuring", "knowledge_applied_to_care"],
+    "social_pattern": ["everyone_feels_safe_around", "goes_to_person_for_advice", "builds_harmony_in_groups", "quiet_wisdom_earns_deep_trust"],
+    "relationship_style": ["steady_and_nurturing_partner", "deep_emotional_intelligence_in_bonds", "creates_warm_home_and_life", "patient_and_forgiving"],
+    "career_affinity": {
+      "domains": ["education", "medicine", "counseling", "social_welfare", "culinary_arts", "childcare", "traditional_medicine"],
+      "examples": ["교사·교육 전문가", "한의사·간호사", "심리상담사", "사회복지사", "요리 연구가", "보육 교사", "가족 치료사"],
+      "note": "巳는 오전 9~11시 여름 태양이 완전히 깨어나는 시간대. 배운 것을 사람을 위해 쓰는 교육·돌봄·의료 분야에서 정인의 지혜와 기토의 안정감이 완벽히 발휘"
+    },
+    "strength": ["배움을_돌봄으로_연결하는_따뜻한_실용_지혜", "감성_지능과_안정적_중심의_결합", "어떤_상황에서도_사람을_편안하게_하는_능력", "지속적인_학습과_성장 의지"],
+    "vulnerability": {
+      "trait": "지나친 돌봄으로 자기 에너지 소진, 巳亥 충 운에서 안정 기반 급격히 흔들림",
+      "safeguard": "받는 연습과 자기 돌봄 루틴화, 도움의 경계 설정하기",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "기축", "reason": "巳酉丑 삼합 금국 연대 — 금기 공명, 두 음토의 정밀한 결실과 지혜 에너지가 시너지", "tag": "sam_hap" },
+        { "ilju": "기유", "reason": "巳酉 반합 금국 — 두 음토가 금기로 연결되며 지혜와 정밀함이 결합하는 구조", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "기해", "reason": "巳亥 충 — 수화 직충, 己己 동일 천간으로 온기와 유동성이 정면 충돌", "tag": "chung" },
+        { "ilju": "계해", "reason": "巳亥 충 — 강한 수기가 기사의 화토 상생 구조를 격하게 압박하는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(己巳)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "남을 도우면서 보람을 느끼지만, 저 자신은 점점 지쳐갑니다.",
+      "solution_speech": "己巳의 정인은 당신에게 지혜를 주기 위한 구조입니다. 지혜로운 사람은 자신을 먼저 채웁니다. 비어있는 그릇으로는 아무것도 나눌 수 없습니다. 자신을 돌보는 것이 가장 많은 사람을 돌보는 방법입니다.",
+      "tab_headline": "여름 대지의 따뜻한 지혜 — 배움과 온기로 세상을 돌보는 팔자"
+    },
+    "tags": ["온기", "지혜", "돌봄", "여름대지", "따뜻한실용주의자", "배움을나누는힘", "조용한헌신"]
+  },
+  {
+    "id": "ij_gimi",
+    "ilju": "기미",
+    "hanja": "己未",
+    "stem": "기",
+    "branch": "미",
+    "yin_yang": "음",
+    "archetype": "fertile_earth_abundance_type",
+    "common_expression": ["풍요", "포용", "성장", "안정", "돌봄", "여름들판", "넉넉함"],
+    "variance_note": "목기가 강하면 성장 지향적 개방형, 수기가 있으면 지혜로운 풍요형, 금기가 있으면 체계적 관리형으로 변용",
+    "element_concentration": "己土(음토) + 未土(비견, 火庫) — 음토 집중, 未 안의 丁火 여기로 따뜻한 화기가 토기 안에 저장된 풍요의 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "yin_earth_doubled_with_warm_reserve",
+      "dynamics": "gentle_abundant_nurturing_growth"
+    },
+    "core_keywords": ["己未", "음토집중", "비견동주", "未중丁火庫", "亥卯未삼합목국잠재", "午未육합잠재"],
+    "embedding_context": "己未는 음토가 겹쳐 가장 풍요롭고 포용적인 토기 일주다. 未 안에 따뜻한 불씨(丁火)가 저장되어 있어 타인을 자연스럽게 품어주는 넉넉함이 특징이며, 봄과 여름의 에너지가 결실을 앞두고 무르익는 풍요로운 들판 같은 일주다.",
+    "psychological_traits": ["abundantly_generous", "naturally_inclusive", "warm_and_non_judgmental", "creates_space_for_others", "finds_fulfillment_in_nurturing", "steady_gentle_strength"],
+    "social_pattern": ["everyone_feels_welcome", "community_builder_and_connector", "diplomatic_and_harmonizing", "gives_more_than_takes"],
+    "relationship_style": ["unconditionally_supportive", "creates_safe_loving_space", "may_neglect_own_needs_for_others", "deeply_committed_and_warm"],
+    "career_affinity": {
+      "domains": ["education", "social_welfare", "community_development", "food_industry", "agriculture", "counseling", "human_resources"],
+      "examples": ["교육자", "사회복지사", "지역 활동가", "농업 전문가", "음식 나눔 기관", "상담사", "HR 전문가"],
+      "note": "未는 오후 1~3시 여름 오후의 무르익는 시간대. 사람과 자원을 키우고 연결하는 직업, 풍요로운 환경을 만들어 나누는 분야에서 타고난 적성 발휘"
+    },
+    "strength": ["자연스러운_포용력과_넉넉한_온기", "타인을_성장시키는_비옥한_환경_조성_능력", "갈등을_중재하고_화합을_이끄는_덕", "꾸준하고_무조건적인_지지 에너지"],
+    "vulnerability": {
+      "trait": "지나친 배려로 자기 소진, 경계 없는 포용이 착취로 이어질 위험, 丑未 충 운에서 기반 흔들림",
+      "safeguard": "'아니오'라고 말하는 연습, 에너지 레벨 관찰하고 회복 시간 의도적으로 확보하기",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병오", "reason": "午未 육합 — 화토 합으로 병오의 열정과 기미의 풍요가 만나는 따뜻한 시너지", "tag": "yuk_hap" },
+        { "ilju": "기묘", "reason": "亥卯未 삼합 목국 연대 — 목기 공명으로 창의적 성장 에너지가 풍요롭게 증폭", "tag": "sam_hap" },
+        { "ilju": "계해", "reason": "亥卯未 삼합 목국 완성 — 수목 흐름이 기미의 따뜻한 토기를 지속적으로 지원", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "기축", "reason": "丑未 충 — 음토 직충, 己己 동일 천간으로 풍요와 축적 방식이 정면 충돌", "tag": "chung" },
+        { "ilju": "정축", "reason": "丑未 충 — 화기가 더해져 토기 기반 충돌이 감정적으로 증폭되는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(己未)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "모두를 품어주다 보니, 제 자신을 위한 것은 아무것도 없습니다.",
+      "solution_speech": "己未의 풍요는 비옥한 대지에서 나옵니다. 대지도 가끔 휴경이 필요합니다. 당신이 비어있으면 아무것도 자랄 수 없습니다. 먼저 자신의 땅을 풍요롭게 만드세요. 그 위에서 자라는 것들이 더 건강하고 아름답습니다.",
+      "tab_headline": "비옥한 여름 들판처럼 — 풍요와 포용으로 모두를 키우는 팔자"
+    },
+    "tags": ["풍요", "포용", "비옥한대지", "넉넉함", "여름들판", "모두를품는온기", "성장시키는힘"]
+  },
+  {
+    "id": "ij_giyu",
+    "ilju": "기유",
+    "hanja": "己酉",
+    "stem": "기",
+    "branch": "유",
+    "yin_yang": "음",
+    "archetype": "refined_precision_output_type",
+    "common_expression": ["정밀함", "섬세함", "완성도", "식신", "표현력", "가을들판", "세련됨"],
+    "variance_note": "화기가 강하면 따뜻한 창의 표현형, 목기가 있으면 다채로운 결과물 생산형, 수기가 풍부하면 지적 정밀가형으로 변용",
+    "element_concentration": "己土(음토) + 酉金(식신, 辛金 주기) — 土生金 상생, 음토의 부드러운 에너지가 辛金으로 세련되게 전환되는 정밀 표현 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "yin_earth_generates_refined_metal",
+      "dynamics": "elegant_precise_creative_output"
+    },
+    "core_keywords": ["己酉", "土生金식신", "辛金정밀표현", "巳酉丑삼합금국잠재", "辰酉육합잠재", "卯酉충잠재"],
+    "embedding_context": "己酉는 己土의 섬세한 에너지가 辛金이라는 날카롭고 세련된 결과물로 전환되는 식신 구조다. 아름다운 것에 대한 날카로운 감각과 정밀한 표현 능력이 결합하여, 일상에서 탁월한 완성도를 만들어내는 섬세한 창작자형 일주다.",
+    "psychological_traits": ["aesthetically_precise", "elegant_expressive", "meticulous_creator", "finds_beauty_in_detail", "quietly_confident_in_craft", "high_personal_standards"],
+    "social_pattern": ["respected_for_taste_and_craft", "selective_but_warm_connections", "influence_through_quality_of_output", "quietly_sets_standards_for_others"],
+    "relationship_style": ["attentive_to_partner_details", "expresses_love_through_thoughtful_gestures", "needs_appreciation_of_refinement", "graceful_and_considerate"],
+    "career_affinity": {
+      "domains": ["fashion", "jewelry", "editorial", "fine_arts", "cosmetology", "precision_crafts", "food_styling", "interior_design"],
+      "examples": ["패션 디자이너", "보석 세공사", "잡지 에디터", "화가", "메이크업 아티스트", "정밀 공예가", "푸드 스타일리스트", "인테리어 디자이너"],
+      "note": "酉는 저녁 5~7시 가을의 결실을 수확하는 마무리 시간대. 섬세한 심미안과 정밀한 손끝이 가치를 만드는 직업, 아름다운 것을 세상에 내놓는 창작 분야에서 진가 발휘"
+    },
+    "strength": ["탁월한_심미안과_섬세한_완성도", "평범한_것에서_아름다움을_발견하는_감각", "정밀하고_우아한_결과물_창출_능력", "일상을_예술로_승화하는_감성"],
+    "vulnerability": {
+      "trait": "완벽주의로 인한 출력 지연, 기준이 높아 타인의 결과물에 실망하는 경향, 卯酉 충 운에서 창작 방향 혼란",
+      "safeguard": "완성보다 표현 자체에 집중하기, 불완전한 아름다움을 인정하는 연습",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무진", "reason": "辰酉 육합 — 토금 합으로 무진의 든든한 기반이 기유의 정밀한 표현력을 완벽히 지원", "tag": "yuk_hap" },
+        { "ilju": "기사", "reason": "巳酉 반합 금국 — 두 음토가 금기로 연결되며 따뜻한 지혜와 정밀함이 결합", "tag": "sam_hap" },
+        { "ilju": "기축", "reason": "巳酉丑 삼합 금국 완성 — 최강 금기 삼합으로 섬세한 완성도가 극대화되는 구조", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "기묘", "reason": "卯酉 충 — 목금 직충, 己己 동일 천간으로 유연성과 정밀함이 정면 충돌", "tag": "chung" },
+        { "ilju": "갑묘", "reason": "卯酉 충 — 강한 목기가 기유의 섬세한 금기 표현 구조를 격하게 방해하는 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(己酉)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "제 기준이 너무 높은지, 제 작업도 남의 것도 만족스럽지 않습니다.",
+      "solution_speech": "己酉의 정밀함은 세상에서 가장 아름다운 것을 만드는 도구입니다. 하지만 가장 아름다운 꽃도 완전히 피기 전에 꺾이지 않습니다. 과정의 불완전함을 허용하세요. 당신의 기준이 높다는 것은 당신이 이미 얼마나 섬세한지를 증명합니다.",
+      "tab_headline": "가을 들판의 정밀한 수확처럼 — 섬세함과 완성도로 빛나는 창작자의 팔자"
+    },
+    "tags": ["정밀함", "섬세함", "가을들판", "완성도", "세련된창작자", "아름다움을만드는손끝", "조용한예술가"]
+  },
+  {
+    "id": "ij_gihae",
+    "ilju": "기해",
+    "hanja": "己亥",
+    "stem": "기",
+    "branch": "해",
+    "yin_yang": "음",
+    "archetype": "gentle_wealth_wisdom_seeker_type",
+    "common_expression": ["유연성", "지혜", "재물감각", "통찰", "적응력", "겨울들판", "깊이"],
+    "variance_note": "목기가 강하면 창의적 재물 운용형, 화기가 있으면 따뜻한 지략형, 금기가 풍부하면 정밀한 재물 관리형으로 변용",
+    "element_concentration": "己土(음토) + 亥水(정재, 壬水 주기) — 土克水, 부드러운 음토가 수기를 통제하는 섬세한 재물 운용 구조",
+    "energy_profile": {
+      "dominant": "earth",
+      "structure": "yin_earth_gently_controls_water_wealth",
+      "dynamics": "intuitive_wealth_management_with_depth"
+    },
+    "core_keywords": ["己亥", "土克水정재", "亥卯未삼합목국잠재", "寅亥육합잠재", "巳亥충잠재", "섬세한재물통제"],
+    "embedding_context": "己亥는 부드러운 음토(己)가 깊은 수기(亥, 정재)를 섬세하게 통제하는 재물 운용 구조다. 강압적이지 않고 자연스럽게 흐르는 물처럼 재물을 다루며, 亥의 깊은 지혜가 더해져 직관적으로 가치 있는 것을 알아보는 능력이 탁월하다.",
+    "psychological_traits": ["intuitively_perceptive", "gentle_wealth_sense", "wise_and_adaptive", "reads_hidden_value", "patient_with_resources", "deeply_thoughtful"],
+    "social_pattern": ["approachable_and_empathic", "reads_people_and_situations_accurately", "builds_trust_through_genuine_interest", "wide_varied_network"],
+    "relationship_style": ["gentle_and_understanding_partner", "deeply_intuitive_about_partner_needs", "creates_flowing_easy_bonds", "may_struggle_with_firm_boundaries"],
+    "career_affinity": {
+      "domains": ["investment", "art_dealing", "consulting", "research", "psychology", "international_trade", "media"],
+      "examples": ["투자 분석가", "아트 딜러", "경영 컨설턴트", "연구원", "심리 치료사", "무역 전문가", "미디어 기획자"],
+      "note": "亥는 밤 9~11시 깊어가는 겨울 강물의 시간대. 표면 아래 숨겨진 가치를 감지하고 활용하는 직업, 직관과 깊은 통찰이 재물로 연결되는 분야에서 두각을 나타냄"
+    },
+    "strength": ["직관적으로_가치를_알아보는_탁월한_감각", "부드럽게_재물과_자원을_다루는_능력", "깊은_통찰력과_유연한_적응력", "자연스럽게_신뢰를_쌓는_따뜻한_존재감"],
+    "vulnerability": {
+      "trait": "지나친 유연성으로 경계 설정 어려움, 巳亥 충 운에서 재물 기반 급격히 흔들림",
+      "safeguard": "재정 원칙과 경계를 명확히 문서화하기, 감정과 재물 판단을 분리하는 훈련",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "갑인", "reason": "寅亥 육합 — 목기 상생으로 기해의 수기가 따뜻하게 목기로 전환되는 이상적 구조", "tag": "yuk_hap" },
+        { "ilju": "기묘", "reason": "亥卯未 삼합 목국 연대 — 수목 공명으로 기해의 깊은 직관이 창의 에너지로 발현", "tag": "sam_hap" },
+        { "ilju": "기미", "reason": "亥卯未 삼합 목국 완성 — 목기 삼합으로 두 음토의 풍요로운 성장 에너지가 극대화", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "기사", "reason": "巳亥 충 — 수화 직충, 己己 동일 천간으로 따뜻한 지혜와 깊은 직관이 정면 충돌", "tag": "chung" },
+        { "ilju": "정사", "reason": "巳亥 충 — 화기가 더해져 기해의 수기 기반이 강하게 압박받는 충돌 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(己亥)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "좋은 기회인지 아닌지 느낌은 오는데, 확신을 갖고 결정하기가 어렵습니다.",
+      "solution_speech": "己亥의 직관은 가장 정직한 나침반입니다. 느낌이 온다면 그것은 이미 당신의 깊은 지혜가 판단을 마친 것입니다. 분석을 더하는 것보다 그 직관을 믿고 한 발 내딛는 것이 기해의 재물을 여는 열쇠입니다. 물은 흘러야 강해집니다.",
+      "tab_headline": "겨울 강물의 깊은 직관처럼 — 지혜로운 감각이 재물을 여는 팔자"
+    },
+    "tags": ["직관", "재물감각", "유연성", "겨울들판", "깊은통찰", "부드러운강자", "흐르는물처럼자연스럽게"]
+  },
+  {
+    "id": "ij_gyeongja",
+    "ilju": "경자",
+    "hanja": "庚子",
+    "stem": "경",
+    "branch": "자",
+    "yin_yang": "양",
+    "archetype": "sharp_intellectual_output_type",
+    "common_expression": ["지성", "분석력", "표현력", "예리함", "탐구", "겨울칼날", "통찰"],
+    "variance_note": "수기가 강해지면 깊은 사색·철학형, 화기가 있으면 원칙을 갖춘 분석형, 목기가 있으면 재물 감각을 갖춘 실용 지성형으로 변용",
+    "element_concentration": "庚金(양금) + 子水(식신, 壬水 주기) — 金生水 상생, 날카로운 금기가 식신(子水)으로 흘러 지적 탐구와 표현이 결실로 이어지는 구조",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "metal_generates_water_expression",
+      "dynamics": "sharp_intellectual_creative_flow"
+    },
+    "core_keywords": ["庚子", "金生水식신", "申子辰삼합수국잠재", "子丑육합잠재", "지적탐구표현구조", "날카로운분석출력"],
+    "embedding_context": "庚子는 庚金의 날카로운 분석력이 子水 식신으로 흘러 지적 탐구와 표현 능력으로 발현되는 구조다. 생각의 날이 예리하고 표현이 정확하며, 깊은 밤처럼 고독하지만 그 속에서 탁월한 통찰을 건져내는 지성인형 일주다.",
+    "psychological_traits": ["analytically_sharp", "intellectually_restless", "precise_communicator", "independent_thinker", "deep_night_creativity", "values_truth_over_comfort"],
+    "social_pattern": ["respected_for_intellectual_depth", "direct_and_precise_in_speech", "small_quality_circle", "influence_through_ideas"],
+    "relationship_style": ["intellectually_compatible_partner_needed", "honest_to_point_of_bluntness", "deep_once_trust_established", "needs_mental_stimulation"],
+    "career_affinity": {
+      "domains": ["research", "writing", "law", "data_science", "philosophy", "journalism", "strategy"],
+      "examples": ["연구원", "작가·칼럼니스트", "법조인", "데이터 과학자", "철학자", "저널리스트", "전략 컨설턴트"],
+      "note": "子는 밤 11시~새벽 1시의 깊은 수기 시간대. 남들이 잠든 시간에 혼자 파고드는 깊이 있는 지적 작업, 날카로운 분석이 결과물이 되는 직업에서 두각을 나타냄"
+    },
+    "strength": ["예리하고_정확한_분석력과_논리력", "독립적이고_깊이_있는_지적_탐구_능력", "진실을_향해_타협하지_않는_날카로움", "아이디어를_명확하게_표현하는_능력"],
+    "vulnerability": {
+      "trait": "지나친 냉철함으로 감정 소통 약화, 독립심 과잉으로 협업 어려움, 子午 충 운에서 방향 혼란",
+      "safeguard": "감성적 언어를 의도적으로 사용하는 연습, 분석 결과를 따뜻하게 전달하는 소통 훈련",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "경신", "reason": "申子 반합 수국 — 금수 흐름으로 두 금기의 지적 에너지가 시너지를 발휘", "tag": "sam_hap" },
+        { "ilju": "무진", "reason": "申子辰 삼합 수국 연대 — 수기 흐름 강화로 경자의 지적 탐구 에너지가 더욱 깊어짐", "tag": "sam_hap" },
+        { "ilju": "기축", "reason": "子丑 육합 — 수토 합으로 경자의 지성이 기축의 안정적 기반 위에서 더욱 빛남", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "경오", "reason": "子午 충 — 수화 직충, 庚庚 동일 천간으로 지성과 원칙의 에너지가 정면 충돌", "tag": "chung" },
+        { "ilju": "병오", "reason": "子午 충 — 강한 화기가 경자의 금수 지성 구조를 격하게 압박하는 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(庚子)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "머릿속에서는 다 보이는데, 사람들이 제 말을 차갑다고 합니다.",
+      "solution_speech": "庚子의 날카로움은 세상에서 가장 정확한 도구입니다. 하지만 칼도 칼집이 있어야 진가가 드러납니다. 당신의 통찰을 전달할 때 상대의 감정을 먼저 인정해보세요. 날카로운 진실이 따뜻하게 포장될 때 가장 큰 힘을 발휘합니다.",
+      "tab_headline": "겨울 밤을 가르는 칼날처럼 — 예리한 지성이 빛을 만드는 팔자"
+    },
+    "tags": ["지성", "예리함", "분석력", "겨울칼날", "독립적탐구자", "날카로운통찰", "진실을향해타협없음"]
+  },
+  {
+    "id": "ij_gyeongin",
+    "ilju": "경인",
+    "hanja": "庚寅",
+    "stem": "경",
+    "branch": "인",
+    "yin_yang": "양",
+    "archetype": "decisive_wealth_pioneer_type",
+    "common_expression": ["결단력", "도전", "재물", "추진력", "개척", "쇠와나무", "승부사"],
+    "variance_note": "화기가 강하면 카리스마 있는 성취형, 수기가 있으면 전략적 재물 운용형, 토기가 두꺼우면 안정적 재물 축적형으로 변용",
+    "element_concentration": "庚金(양금) + 寅木(편재, 甲木 주기) — 金克木, 庚金이 寅木 편재를 강하게 통제하며 재물을 만들어내는 역동적 구조",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "metal_conquers_wood_wealth",
+      "dynamics": "decisive_wealth_pursuit"
+    },
+    "core_keywords": ["庚寅", "金克木편재", "寅午戌삼합화국잠재", "寅申충잠재", "寅亥육합잠재", "승부사재물구조"],
+    "embedding_context": "庚寅은 庚金이 寅木 편재를 강하게 쳐내며 재물을 획득하는 역동적 구조다. 도전을 두려워하지 않고 먼저 치고 나가는 승부사 기질로, 새로운 재물과 기회를 향한 결단력과 실행 속도가 탁월하다.",
+    "psychological_traits": ["bold_and_decisive", "wealth_oriented_pioneer", "competitive_achiever", "takes_calculated_risks", "commands_through_confidence", "action_over_analysis"],
+    "social_pattern": ["earns_respect_through_decisiveness", "natural_competitive_edge", "builds_alliances_for_advancement", "direct_and_unapologetic"],
+    "relationship_style": ["confident_and_initiating", "provides_materially", "direct_about_feelings", "needs_partner_who_matches_ambition"],
+    "career_affinity": {
+      "domains": ["trading", "finance", "real_estate", "sports_management", "manufacturing", "venture_capital", "sales_leadership"],
+      "examples": ["트레이더", "부동산 투자가", "스포츠 에이전트", "제조 사업가", "벤처 캐피털리스트", "영업 총괄", "원자재 거래상"],
+      "note": "寅은 새벽 3~5시 어둠을 뚫고 일어서는 시간대. 남들보다 먼저 움직여 재물을 선점하는 직업, 경쟁이 치열한 시장에서 결단력으로 앞서가는 분야에서 두각"
+    },
+    "strength": ["탁월한_결단력과_실행_속도", "재물과_기회를_향한_두려움_없는_도전_정신", "경쟁_환경에서_발휘되는_승부사_기질", "새로운_시장을_개척하는_능력"],
+    "vulnerability": {
+      "trait": "충동적 결정으로 인한 재물 손실, 寅申 충 운에서 기반이 흔들리는 급격한 변화",
+      "safeguard": "결단 전 최소 24시간 숙고 루틴, 리스크 관리 파트너 또는 자문 시스템 구축",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "경오", "reason": "寅午 반합 화국 — 화기 공명, 두 금기의 에너지가 화기를 통해 더욱 강해지는 구조", "tag": "sam_hap" },
+        { "ilju": "갑술", "reason": "寅午戌 삼합 화국 완성 — 화기 삼합으로 경인의 재물 개척 에너지가 극대화", "tag": "sam_hap" },
+        { "ilju": "기해", "reason": "寅亥 육합 — 목기 공명, 기해의 깊은 직관이 경인의 결단력을 지원하는 구조", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "경신", "reason": "寅申 충 — 목금 직충, 庚庚 동일 천간으로 재물 추구 방향이 정면 충돌", "tag": "chung" },
+        { "ilju": "무신", "reason": "寅申 충 — 토기가 더해져 경인의 목화 재물 에너지가 더욱 격하게 압박받는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(庚寅)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "기회다 싶으면 바로 달려드는데, 가끔 너무 빨리 움직여서 실수합니다.",
+      "solution_speech": "庚寅의 금극목 구조는 도끼가 나무를 치는 것입니다. 도끼의 힘이 강할수록 정확히 쳐야 합니다. 당신의 결단력은 최고의 무기이지만, 방향을 한 번 더 확인하는 것이 더 많은 재물을 만듭니다. 빠른 실행에 정확한 조준을 더하세요.",
+      "tab_headline": "도끼처럼 결단하고 치고 나가듯 — 재물을 향해 달리는 승부사의 팔자"
+    },
+    "tags": ["결단력", "승부사", "재물개척", "쇠와나무", "두려움없는도전", "빠른실행력", "경쟁속강자"]
+  },
+  {
+    "id": "ij_gyeongjin",
+    "ilju": "경진",
+    "hanja": "庚辰",
+    "stem": "경",
+    "branch": "진",
+    "yin_yang": "양",
+    "archetype": "analytical_independent_strategist_type",
+    "common_expression": ["독립성", "분석력", "전략", "자립", "깊이", "쇠와대지", "냉철함"],
+    "variance_note": "목기가 있으면 재물 감각을 갖춘 전략가형, 수기가 강하면 깊은 지성형, 화기가 있으면 원칙 있는 지도자형으로 변용",
+    "element_concentration": "庚金(양금) + 辰土(편인, 水庫) — 土生金 상생, 辰 안의 水庫로 분석적 독립심과 깊은 전략이 공존하는 구조",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "earth_nourishes_metal_with_water_depth",
+      "dynamics": "independent_analytical_strategy"
+    },
+    "core_keywords": ["庚辰", "土生金편인", "辰중壬水庫", "申子辰삼합수국잠재", "辰酉육합잠재", "독립적분석전략"],
+    "embedding_context": "庚辰은 庚金이 편인(辰土)의 지적 지원을 받으면서도 독립적으로 자신의 기준을 세워나가는 자립형 지성 구조다. 辰 안의 Water庫는 화려한 표면 아래 치밀한 전략과 깊은 사고가 흐름을 시사하며, 자기 주도적 분석가형 일주다.",
+    "psychological_traits": ["fiercely_independent", "strategic_thinker", "analytical_to_core", "self_directed_learner", "trusts_own_judgment", "depth_beneath_composed_exterior"],
+    "social_pattern": ["earns_respect_through_competence", "prefers_intellectual_peers", "self_sufficient_but_loyal_when_chosen", "doesn't_follow_trends"],
+    "relationship_style": ["selective_and_principled", "needs_intellectual_equality", "independent_within_relationship", "reliable_once_committed"],
+    "career_affinity": {
+      "domains": ["independent_consulting", "research_and_development", "engineering", "law", "finance", "systems_architecture", "academia"],
+      "examples": ["독립 컨설턴트", "R&D 연구원", "시스템 아키텍트", "법조인", "퀀트 애널리스트", "학자", "정밀 엔지니어"],
+      "note": "辰은 새벽 7~9시 아이디어가 구체적 계획으로 전환되는 시간대. 독립적으로 깊이 파고들어 원리를 파악하고 시스템화하는 직업에서 탁월한 능력 발휘"
+    },
+    "strength": ["깊고_독립적인_분석과_전략_수립_능력", "타인의_영향_없이_자신만의_기준을_세우는_자립심", "복잡한_시스템을_이해하고_설계하는_능력", "냉철한_판단력"],
+    "vulnerability": {
+      "trait": "독립심 과잉으로 협업 어려움, 辰戌 충 운에서 기반 전면 재설계 압박",
+      "safeguard": "정기적으로 신뢰하는 외부 시각을 구하기, 자신의 blind spot 파악하는 연습",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "경자", "reason": "申子辰 삼합 수국 연대 — 수기 흐름으로 두 금기의 지적 분석 에너지가 시너지 발휘", "tag": "sam_hap" },
+        { "ilju": "신유", "reason": "辰酉 육합 — 토금 합으로 경진의 분석력과 신유의 정밀함이 이상적으로 결합", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "경술", "reason": "辰戌 충 — 토기 직충, 庚庚 동일 천간으로 전략과 신념의 기반이 정면 충돌", "tag": "chung" },
+        { "ilju": "무술", "reason": "辰戌 충 — 토기 충돌에 강한 토기 에너지가 더해져 기반 불안정이 증폭", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(庚辰)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "혼자 하는 게 편하고 더 잘되는데, 팀에서는 답답함을 느낍니다.",
+      "solution_speech": "庚辰의 독립심은 가장 강력한 자산입니다. 하지만 어떤 거대한 시스템도 홀로 만들어지지 않았습니다. 당신의 분석이 타인의 실행과 만날 때 더 큰 결과가 납니다. 독립을 포기하지 않되, 전략적으로 협력하는 방법을 배우세요.",
+      "tab_headline": "쇠와 대지처럼 단단하게 — 독립적 분석으로 세상을 설계하는 팔자"
+    },
+    "tags": ["독립성", "분석력", "전략가", "냉철함", "쇠와대지", "자립하는지성인", "깊이있는설계자"]
+  },
+  {
+    "id": "ij_gyeongo",
+    "ilju": "경오",
+    "hanja": "庚午",
+    "stem": "경",
+    "branch": "오",
+    "yin_yang": "양",
+    "archetype": "principled_authority_driven_type",
+    "common_expression": ["원칙", "권위", "질주", "의지", "정오의쇠", "카리스마", "강인함"],
+    "variance_note": "수기가 있으면 전략을 갖춘 원칙형, 목기가 있으면 재물 지향적 성취형, 토기가 두꺼우면 안정 위의 권위형으로 변용",
+    "element_concentration": "庚金(양금) + 午火(정관, 丁火 주기) — 火克金, 午火 정관이 庚金을 단련하는 긴장 구조. 백마처럼 질주하는 에너지",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "fire_tempers_metal",
+      "dynamics": "authority_refined_through_pressure"
+    },
+    "core_keywords": ["庚午", "火克金정관", "寅午戌삼합화국잠재", "午未육합잠재", "子午충잠재", "백마질주구조"],
+    "embedding_context": "庚午는 丁火 정관이 庚金을 강하게 단련하는 구조로, 강압적 환경에서 오히려 더욱 빛나는 원칙주의자형 일주다. 백마처럼 질주하는 강렬한 에너지로 유명한 일주이며, 사회적 권위와 나의 원칙이 만나 마찰을 만들어내면서 성장한다.",
+    "psychological_traits": ["fiercely_principled", "commands_authority_through_integrity", "intensely_driven", "won't_compromise_on_values", "earns_respect_through_character", "performs_best_under_pressure"],
+    "social_pattern": ["naturally_authoritative_presence", "admired_for_consistency", "won't_bow_to_pressure", "inspiring_through_example"],
+    "relationship_style": ["high_standards_in_partner", "respects_those_who_hold_ground", "direct_and_honest_to_fault", "protective_and_devoted_when_committed"],
+    "career_affinity": {
+      "domains": ["law", "military_officer", "athletics", "politics", "executive_leadership", "reform_movements", "judiciary"],
+      "examples": ["법조인", "군 장교", "운동선수", "정치인", "기업 대표", "사회 개혁가", "검사"],
+      "note": "午는 낮 11시~오후 1시 태양이 가장 높은 시간대. 원칙과 권위가 인정받는 무대에서 강하게 빛나는 직업, 사회적 기준을 세우고 지키는 분야에서 탁월한 성과"
+    },
+    "strength": ["어떤_압박에도_흔들리지_않는_원칙과_의지", "사회적_권위와_신뢰를_자연스럽게_구축하는_능력", "탁월한_리더십과_강인한_존재감", "불의에_맞서는_담력"],
+    "vulnerability": {
+      "trait": "지나친 원칙주의로 타인과 마찰, 유연성 부족, 子午 충 운에서 권위 기반 흔들림",
+      "safeguard": "원칙과 유연성의 균형 훈련, '예외'를 인정하는 관용 연습",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "경인", "reason": "寅午 반합 화국 — 화기 공명으로 두 금기의 원칙과 추진력이 강하게 시너지 발휘", "tag": "sam_hap" },
+        { "ilju": "갑술", "reason": "寅午戌 삼합 화국 완성 — 화기 삼합으로 경오의 원칙적 에너지가 최대로 빛남", "tag": "sam_hap" },
+        { "ilju": "정미", "reason": "午未 육합 — 화토 합으로 경오의 강한 원칙이 정미의 온화함과 균형을 이루는 구조", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "경자", "reason": "子午 충 — 수화 직충, 庚庚 동일 천간으로 지성과 원칙의 방향이 정면 충돌", "tag": "chung" },
+        { "ilju": "임자", "reason": "子午 충 — 강한 수기가 경오의 화금 원칙 구조를 강하게 흔드는 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(庚午)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "제 원칙이 맞는데도 왜 이렇게 마찰이 많은 걸까요.",
+      "solution_speech": "庚午의 백마는 앞만 보고 달립니다. 그것이 가장 강한 모습이지만, 가끔은 옆을 봐야 동행할 수 있습니다. 원칙을 잃지 않되, 사람들이 함께 달릴 수 있도록 속도를 조절해보세요. 당신의 방향이 맞다면 함께 가는 사람이 늘어날 것입니다.",
+      "tab_headline": "백마처럼 질주하며 원칙을 세우듯 — 강인한 의지로 권위를 만드는 팔자"
+    },
+    "tags": ["원칙", "백마질주", "권위", "강인함", "정오의쇠", "불의에맞서는담력", "압박속빛나는강자"]
+  },
+  {
+    "id": "ij_gyeongsin",
+    "ilju": "경신",
+    "hanja": "庚申",
+    "stem": "경",
+    "branch": "신",
+    "yin_yang": "양",
+    "archetype": "iron_will_maximalist_type",
+    "common_expression": ["강인함", "의지력", "원칙", "냉철함", "쇠 중의 쇠", "결단", "불굴"],
+    "variance_note": "화기가 있으면 칠살 제어로 더 날카로워지는 실전형, 수기가 강하면 지적 탐구로 전환되는 분석형, 목기가 있으면 재물 지향 성취형으로 변용",
+    "element_concentration": "庚金(양금) + 申金(비견, 庚金 주기) — 금기 극집중, 가장 강하고 냉철한 금기 구조. 극한의 의지력",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "metal_self_reinforcing_maximum",
+      "dynamics": "extreme_willpower_and_resolve"
+    },
+    "core_keywords": ["庚申", "금기극집중", "비견동주", "申子辰삼합수국잠재", "寅申충잠재", "최강금기구조"],
+    "embedding_context": "庚申은 양금이 천간과 지지 모두에 자리한 금기 최강 구조다. 어떤 압박에도 구부러지지 않는 극한의 의지력과 냉철함을 지니며, 잘 단련되면 세상에서 가장 날카롭고 신뢰할 수 있는 도구가 되고, 과잉이 되면 스스로를 꺾을 수 있는 양날의 검이다.",
+    "psychological_traits": ["maximum_willpower", "unbreakable_resolve", "coldly_logical", "zero_compromise_on_principles", "formidable_competitor", "endures_extreme_pressure"],
+    "social_pattern": ["respected_and_slightly_feared", "the_standard_setter", "few_deep_relationships", "earns_lifelong_loyalty_from_chosen_few"],
+    "relationship_style": ["demanding_but_deeply_loyal", "tests_before_trusting", "shows_love_through_protection", "needs_partner_who_respects_strength"],
+    "career_affinity": {
+      "domains": ["military_special_forces", "surgery", "high_level_athletics", "law_enforcement_leadership", "financial_trading", "architecture", "materials_engineering"],
+      "examples": ["특수부대", "외과의사", "프로 격투기 선수", "경찰 수사팀장", "금융 트레이더", "건축 구조 설계사", "재료 공학자"],
+      "note": "申은 오후 3~5시 가을 수확과 결단의 시간대. 극한의 집중력과 강인함이 요구되는 분야, 타협 없는 원칙이 자산이 되는 직업에서 타고난 강점 발휘"
+    },
+    "strength": ["세상_어떤_압박에도_굴하지_않는_극한의_의지력", "냉철한_판단으로_감정에_흔들리지_않는_결정력", "원칙을_절대_포기하지_않는_불굴의_일관성", "위기_상황에서_가장_믿을_수_있는_존재"],
+    "vulnerability": {
+      "trait": "지나친 강경함으로 관계·협력 손상, 자기 자신에게도 혹독해 소진, 寅申 충 운에서 갈등 극대화",
+      "safeguard": "의도적으로 부드러운 표현 연습, 자기 자신에게 허용의 공간 만들기",
+      "type": "lifestyle_suggestion",
+      "care_level": "high"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "경자", "reason": "申子 반합 수국 — 금수 흐름으로 최강 금기가 지적 표현으로 자연스럽게 전환", "tag": "sam_hap" },
+        { "ilju": "무진", "reason": "申子辰 삼합 수국 완성 — 수기 흐름 완성으로 경신의 금기가 전략적 깊이를 획득", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "경인", "reason": "寅申 충 — 목금 직충, 庚庚 동일 천간으로 최강 금기 간의 가장 격렬한 충돌", "tag": "chung" },
+        { "ilju": "갑인", "reason": "寅申 충 — 강한 목기와 최강 금기의 정면 충돌, 에너지 소진이 매우 큰 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(庚申)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "타협하고 싶지 않은데, 그게 왜 문제가 되는지 모르겠습니다.",
+      "solution_speech": "庚申의 쇠는 세상에서 가장 강합니다. 하지만 강한 쇠도 열을 만나면 모양을 바꿀 수 있어야 진짜 쓸모가 생깁니다. 당신의 원칙은 절대 포기하지 마세요. 다만, 그것을 표현하는 방식에 유연성을 더하면 더 많은 사람이 당신의 편이 됩니다.",
+      "tab_headline": "쇠 중의 쇠처럼 단단하게 — 극한의 의지력으로 완성되는 불굴의 팔자"
+    },
+    "tags": ["강인함", "불굴", "쇠중의쇠", "원칙", "냉철함", "타협없는의지", "극한에서빛나는강자"]
+  },
+  {
+    "id": "ij_gyeongsul",
+    "ilju": "경술",
+    "hanja": "庚戌",
+    "stem": "경",
+    "branch": "술",
+    "yin_yang": "양",
+    "archetype": "deep_principled_philosopher_type",
+    "common_expression": ["신념", "깊이", "철학", "원칙", "가을저녁", "냉철한지혜", "불씨"],
+    "variance_note": "목기가 있으면 재물 지향적 원칙가형, 수기가 강하면 깊은 철학자형, 화기가 있으면 카리스마 있는 신념가형으로 변용",
+    "element_concentration": "庚金(양금) + 戌土(편인, 火庫) — 土生金 상생, 戌 안의 丁火 여기로 금기의 날카로움에 깊은 철학과 숨겨진 열정이 더해지는 구조",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "earth_nourishes_metal_with_fire_reserve",
+      "dynamics": "principled_depth_with_hidden_passion"
+    },
+    "core_keywords": ["庚戌", "土生金편인", "戌중丁火庫", "寅午戌삼합화국잠재", "辰戌충잠재", "냉철함속깊은신념"],
+    "embedding_context": "庚戌은 庚金의 냉철한 원칙이 편인(戌土)의 깊은 철학으로 뒷받침되는 구조다. 戌 안의 불씨(丁火)는 표면의 냉철함 아래 결코 꺼지지 않는 신념의 열정을 품고 있어, 오랜 시간 단련을 통해 완성되는 깊이 있는 지도자형 일주다.",
+    "psychological_traits": ["philosophically_principled", "cold_exterior_deep_passion_inside", "learns_from_experience", "patient_wisdom_accumulator", "principles_backed_by_deep_thought", "formidable_over_time"],
+    "social_pattern": ["respected_for_depth_of_principle", "speaks_less_but_says_more", "earns_trust_over_years", "principled_even_when_lonely"],
+    "relationship_style": ["deep_standards_in_partner", "committed_after_long_evaluation", "shows_care_through_philosophical_depth", "needs_partner_who_appreciates_complexity"],
+    "career_affinity": {
+      "domains": ["philosophy", "law", "military_strategy", "academia", "literature", "long_term_investment", "religious_leadership"],
+      "examples": ["철학자", "대법관", "전략 연구원", "소설가", "장기 투자가", "종교 지도자", "역사학자"],
+      "note": "戌은 저녁 7~9시 오랜 수련과 깊이가 결실로 드러나는 시간대. 긴 시간 쌓아온 원칙과 철학이 자산이 되는 직업, 깊이가 권위가 되는 분야에서 진가를 발휘"
+    },
+    "strength": ["시간이_지날수록_깊어지는_원칙과_철학", "냉철한_외면_아래_꺼지지_않는_신념의_열정", "경험에서_지혜를_축적하는_통찰력", "원칙으로_쌓아가는_진정한_권위"],
+    "vulnerability": {
+      "trait": "느린 결단으로 기회 지연, 辰戌 충 운에서 철학적 기반 전면 재검토 압박",
+      "safeguard": "원칙 안에서도 속도 설정 연습, 완벽한 준비보다 충분한 준비로 결단하기",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "경인", "reason": "寅午戌 삼합 화국 연대 — 화기 공명으로 경술의 깊은 신념이 강한 추진력을 얻는 구조", "tag": "sam_hap" },
+        { "ilju": "경오", "reason": "寅午戌 삼합 화국 완성 — 화기 삼합으로 금기의 원칙과 신념이 최고로 결집", "tag": "sam_hap" },
+        { "ilju": "기묘", "reason": "卯戌 육합 — 목토 합으로 기묘의 유연성이 경술의 강직함을 부드럽게 보완", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "경진", "reason": "辰戌 충 — 토기 직충, 庚庚 동일 천간으로 두 원칙의 기반이 정면 충돌", "tag": "chung" },
+        { "ilju": "무진", "reason": "辰戌 충 — 강한 토기가 더해져 기반 충돌이 더욱 광범위하게 확대되는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(庚戌)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "제 원칙과 생각의 깊이를 아무도 이해하지 못하는 것 같습니다.",
+      "solution_speech": "庚戌의 깊이는 처음에 이해받기 어렵습니다. 가을 저녁의 불씨는 처음엔 보이지 않지만, 오래 타오릅니다. 시간이 당신의 가장 강력한 편입니다. 지금 이해받지 못해도 당신의 원칙은 반드시 역사에 남을 것입니다.",
+      "tab_headline": "가을 저녁의 꺼지지 않는 불씨처럼 — 깊은 철학과 원칙으로 완성되는 팔자"
+    },
+    "tags": ["신념", "철학", "가을저녁불씨", "냉철한지혜", "깊이있는원칙", "시간이증명하는강자", "꺼지지않는열정"]
+  },
+  {
+    "id": "ij_sinchuk",
+    "ilju": "신축",
+    "hanja": "辛丑",
+    "stem": "신",
+    "branch": "축",
+    "yin_yang": "음",
+    "archetype": "scholarly_precision_jewel_type",
+    "common_expression": ["정밀함", "학문", "축적", "섬세함", "진주", "겨울보석", "인내"],
+    "variance_note": "화기가 있으면 따뜻한 지성형, 목기가 있으면 다재다능한 학자형, 수기가 강하면 깊이 있는 연구자형으로 변용",
+    "element_concentration": "辛金(음금) + 丑土(편인, 金庫) — 土生金 상생, 丑 안의 辛金 여기로 편인의 지적 지원이 금기 자신을 더욱 정밀하게 강화하는 구조",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "earth_nurtures_yin_metal_with_metal_reserve",
+      "dynamics": "scholarly_precision_accumulation"
+    },
+    "core_keywords": ["辛丑", "土生金편인", "丑중辛金庫", "巳酉丑삼합금국잠재", "子丑육합잠재", "학문적정밀축적"],
+    "embedding_context": "辛丑은 편인(丑土)의 학문적 지원이 辛金의 정밀함을 더욱 깊게 연마하는 구조로, 진주조개처럼 시간이 지날수록 더 아름다운 결과물을 만들어내는 학자형 일주다. 꾸준한 배움과 정밀한 완성도가 핵심 강점이다.",
+    "psychological_traits": ["diligent_scholar", "meticulous_precision", "long_term_knowledge_accumulator", "intellectually_humble", "patient_perfectionist", "values_depth_over_speed"],
+    "social_pattern": ["earns_respect_through_expertise", "selective_and_quality_focused", "trusted_for_accuracy", "quietly_influential_in_domain"],
+    "relationship_style": ["thoughtful_and_considerate", "needs_intellectual_stimulation", "slow_to_open_deeply_committed", "appreciates_partner_who_grows_together"],
+    "career_affinity": {
+      "domains": ["academia", "research", "archival_work", "precision_engineering", "gemology", "medicine", "accounting"],
+      "examples": ["교수·연구원", "기록 보관 전문가", "보석 감정사", "정밀 의공학자", "임상병리사", "공인 회계사", "고문서 전문가"],
+      "note": "丑은 새벽 1~3시 가장 조용하고 차가운 대지가 봄을 준비하는 시간대. 눈에 띄지 않게 쌓아가는 정밀한 학문과 기술이 빛을 발하는 직업에서 진가 발휘"
+    },
+    "strength": ["깊이_있는_학문과_정밀한_지식_축적_능력", "인내로_만들어내는_탁월한_완성도", "전문성으로_구축한_신뢰", "시간이_지날수록_빛나는_장기_성장 잠재력"],
+    "vulnerability": {
+      "trait": "지나친 완벽주의로 출력 지연, 학문에 매몰되어 현실 감각 약화, 丑未 충 운에서 기반 흔들림",
+      "safeguard": "이론을 실전으로 연결하는 소규모 프로젝트 경험, 완성보다 출력 리듬 유지 훈련",
+      "type": "lifestyle_suggestion",
+      "care_level": "low"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "신유", "reason": "巳酉丑 삼합 금국 연대 — 금기 공명으로 두 음금의 정밀한 학문 에너지가 시너지 발휘", "tag": "sam_hap" },
+        { "ilju": "신사", "reason": "巳酉丑 삼합 금국 완성 — 최강 금기 삼합으로 신축의 학문적 정밀함이 극대화", "tag": "sam_hap" },
+        { "ilju": "무자", "reason": "子丑 육합 — 수토 합으로 무자의 실용성이 신축의 학문 기반을 탄탄하게 지원", "tag": "yuk_hap" }
+      ],
+      "conflict": [
+        { "ilju": "신미", "reason": "丑未 충 — 음토 직충, 辛辛 동일 천간으로 학문 기반과 창의 기반이 정면 충돌", "tag": "chung" },
+        { "ilju": "기미", "reason": "丑未 충 — 토기 충돌에 음토 에너지가 더해져 기반 불안정이 증폭되는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(辛丑)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "공부하고 준비하는 건 잘하는데, 막상 세상에 내보이는 게 두렵습니다.",
+      "solution_speech": "辛丑의 진주는 조개 안에서 완성되지만, 세상에 나와야 진짜 가치를 인정받습니다. 당신의 준비는 이미 충분합니다. 완벽한 순간은 없습니다. 지금 꺼내 놓으세요. 세상과 만나면서 더 빛나게 됩니다.",
+      "tab_headline": "겨울 조개 속에서 만들어지는 진주처럼 — 학문과 정밀함으로 완성되는 팔자"
+    },
+    "tags": ["정밀함", "학문", "진주", "겨울보석", "인내하는완성자", "깊이있는전문가", "조용히쌓아가는강자"]
+  },
+  {
+    "id": "ij_sinmyo",
+    "ilju": "신묘",
+    "hanja": "辛卯",
+    "stem": "신",
+    "branch": "묘",
+    "yin_yang": "음",
+    "archetype": "agile_wealth_change_pursuer_type",
+    "common_expression": ["변화", "재물감각", "민첩함", "다재다능", "봄칼날", "적응력", "도전"],
+    "variance_note": "화기가 있으면 표현력을 갖춘 재물형, 수기가 강하면 지적 변화 추구형, 토기가 두꺼우면 안정 위의 재물 관리형으로 변용",
+    "element_concentration": "辛金(음금) + 卯木(편재, 乙木 주기) — 金克木, 辛金이 乙木 편재를 섬세하게 다루는 재물 운용 구조. 봄 들판의 날카로운 칼날",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "yin_metal_controls_wood_wealth",
+      "dynamics": "agile_precise_wealth_management"
+    },
+    "core_keywords": ["辛卯", "金克木편재", "亥卯未삼합목국잠재", "卯戌육합잠재", "卯酉충잠재", "섬세한재물운용"],
+    "embedding_context": "辛卯는 辛金의 섬세한 날이 乙木 편재를 정밀하게 다루는 구조로, 봄 들판의 칼날처럼 변화 속에서 재물을 유연하게 운용하는 능력이 탁월하다. 환경 변화에 빠르게 적응하면서 새로운 재물 기회를 포착하는 민첩한 실행가형 일주다.",
+    "psychological_traits": ["highly_adaptable_and_quick", "sharp_eye_for_opportunity", "versatile_and_creative", "handles_change_gracefully", "resourceful_in_new_environments", "precise_in_execution"],
+    "social_pattern": ["networks_across_diverse_groups", "creates_opportunities_through_connections", "fresh_energy_in_any_room", "trusted_for_versatility"],
+    "relationship_style": ["curious_and_engaging_partner", "brings_variety_and_freshness", "needs_space_for_personal_growth", "charming_and_responsive"],
+    "career_affinity": {
+      "domains": ["trading", "media", "entertainment", "fashion_industry", "real_estate_brokerage", "venture", "digital_content"],
+      "examples": ["무역 전문가", "미디어 플래너", "패션 바이어", "부동산 중개인", "벤처 투자자", "디지털 콘텐츠 크리에이터", "이벤트 기획자"],
+      "note": "卯는 새벽 5~7시 봄의 새싹처럼 빠르게 자라는 시간대. 변화하는 시장에서 민첩하게 기회를 잡고 재물로 연결하는 직업, 다양한 분야를 넘나드는 역할에서 두각"
+    },
+    "strength": ["변화_속에서_기회를_먼저_포착하는_민첩함", "섬세하고_정밀한_재물_운용_능력", "다양한_환경에_유연하게_적응하는_능력", "창의적인_문제_해결과_새로운_접근"],
+    "vulnerability": {
+      "trait": "잦은 변화로 깊이 있는 전문성 구축 어려움, 卯酉 충 운에서 재물과 관계 변동 급증",
+      "safeguard": "다재다능함을 하나의 전문 축으로 통합하는 전략, 변화 속에서 유지할 핵심 원칙 설정",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "무술", "reason": "卯戌 육합 — 목토 합으로 신묘의 민첩한 재물 감각이 무술의 안정 기반 위에서 더욱 빛남", "tag": "yuk_hap" },
+        { "ilju": "계해", "reason": "亥卯未 삼합 목국 연대 — 수목 공명으로 신묘의 재물 기회 감지 능력이 증폭", "tag": "sam_hap" },
+        { "ilju": "기미", "reason": "亥卯未 삼합 목국 연대 — 목기 공명으로 신묘의 창의적 재물 에너지가 기미의 풍요와 결합", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "신유", "reason": "卯酉 충 — 목금 직충, 辛辛 동일 천간으로 재물 추구와 원칙 사이에 정면 충돌", "tag": "chung" },
+        { "ilju": "정유", "reason": "卯酉 충 — 화기가 더해져 신묘의 목기 재물 구조가 더욱 강하게 압박받는 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(辛卯)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "이것저것 잘하는데, 뭐 하나를 오래 하기가 어렵습니다.",
+      "solution_speech": "辛卯의 칼날은 다양한 곳을 빠르게 움직이며 재물을 만드는 것이 본능입니다. 그것은 재능입니다. 다만, 가장 자주 돌아오는 곳이 어디인지 보세요. 그 자리가 당신의 주축입니다. 다재다능함에 하나의 중심 축을 더하면 더 강력해집니다.",
+      "tab_headline": "봄 들판을 누비는 날카로운 칼날처럼 — 민첩한 재물 감각으로 기회를 잡는 팔자"
+    },
+    "tags": ["변화", "민첩함", "재물감각", "봄칼날", "다재다능", "기회포착의달인", "유연한강자"]
+  },
+  {
+    "id": "ij_sinsa",
+    "ilju": "신사",
+    "hanja": "辛巳",
+    "stem": "신",
+    "branch": "사",
+    "yin_yang": "음",
+    "archetype": "refined_authority_expressive_type",
+    "common_expression": ["우아함", "원칙", "표현력", "세련됨", "화중금", "존재감", "품격"],
+    "variance_note": "수기가 있으면 지적 표현가형, 목기가 있으면 재물 감각을 갖춘 우아한 실용가형, 토기가 두꺼우면 학문 기반의 권위형으로 변용",
+    "element_concentration": "辛金(음금) + 巳火(정관, 丙火 주기) — 火克金, 丙火 정관이 辛金을 단련하는 구조. 불 속에서 완성되는 최고급 금속",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "fire_refines_yin_metal",
+      "dynamics": "elegant_authority_through_refinement"
+    },
+    "core_keywords": ["辛巳", "火克金정관", "화중금구조", "巳酉丑삼합금국잠재", "巳亥충잠재", "우아한권위"],
+    "embedding_context": "辛巳는 丙火 정관이 辛金을 단련하는 화중금(火中金) 구조로, 불 속에서 완성되는 최고급 금속의 이미지를 지닌다. 사회적 기준과 나의 정밀함이 만나 우아하고 권위 있는 존재감을 만들어내며, 격조 있는 표현력이 탁월하다.",
+    "psychological_traits": ["elegantly_principled", "refined_and_composed", "values_dignity_and_grace", "high_standards_with_warmth", "authority_through_excellence", "socially_intelligent"],
+    "social_pattern": ["commands_respect_through_presence", "sets_elegant_standards", "builds_quality_relationships", "trusted_advisor_in_refined_circles"],
+    "relationship_style": ["seeks_quality_over_quantity", "graceful_in_expression_of_love", "needs_partner_who_appreciates_depth", "loyal_and_devoted_when_matched"],
+    "career_affinity": {
+      "domains": ["luxury_industry", "law", "diplomacy", "fine_arts_management", "high_end_hospitality", "brand_management", "media_anchor"],
+      "examples": ["럭셔리 브랜드 매니저", "외교관", "법조인", "갤러리 디렉터", "호텔 총지배인", "앵커·아나운서", "고급 패션 에디터"],
+      "note": "巳는 오전 9~11시 여름 태양이 완전히 깨어나는 시간대. 격조 있는 환경에서 최고의 기준을 설정하고 그것을 우아하게 표현하는 직업에서 두각을 나타냄"
+    },
+    "strength": ["우아하고_격조_있는_존재감과_표현력", "사회적_기준을_자연스럽게_설정하는_능력", "불_속에서_더_빛나는_역경_속_완성도", "품격_있는_권위_구축_능력"],
+    "vulnerability": {
+      "trait": "완벽한 격조 추구로 자기 검열 과잉, 巳亥 충 운에서 권위 기반 급격히 흔들림",
+      "safeguard": "격조와 자연스러움의 균형 훈련, 불완전함도 품격의 일부임을 인정하기",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "신축", "reason": "巳酉丑 삼합 금국 완성 — 최강 금기 삼합으로 신사의 우아한 권위가 극대화", "tag": "sam_hap" },
+        { "ilju": "신유", "reason": "巳酉 반합 금국 — 두 음금이 금기로 연결되며 정밀함과 우아함이 완벽히 공명", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "신해", "reason": "巳亥 충 — 수화 직충, 辛辛 동일 천간으로 우아한 권위와 창의적 반골이 정면 충돌", "tag": "chung" },
+        { "ilju": "계해", "reason": "巳亥 충 — 강한 수기가 신사의 화금 권위 구조를 격하게 압박하는 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(辛巳)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "항상 품격 있게 보여야 한다는 압박이 있고, 완벽하지 않으면 보여주기 싫습니다.",
+      "solution_speech": "辛巳의 화중금은 불 속에서 탄생하는 최고의 금속입니다. 완성되기 전의 과정도 그 금속의 일부입니다. 당신의 불완전한 모습이 더 진정성 있고 매력적입니다. 격조는 완벽함이 아니라 자신을 자연스럽게 표현하는 것에서 옵니다.",
+      "tab_headline": "불 속에서 완성되는 최고의 금처럼 — 우아함과 원칙으로 빛나는 품격의 팔자"
+    },
+    "tags": ["우아함", "품격", "화중금", "원칙", "세련된존재감", "불속에서완성되는금", "격조있는권위"]
+  },
+  {
+    "id": "ij_sinmi",
+    "ilju": "신미",
+    "hanja": "辛未",
+    "stem": "신",
+    "branch": "미",
+    "yin_yang": "음",
+    "archetype": "creative_intellectual_warmth_type",
+    "common_expression": ["창의성", "지성", "따뜻함", "예술성", "여름보석", "섬세한빛", "학문"],
+    "variance_note": "목기가 강하면 창의적 재물 추구형, 수기가 있으면 깊이 있는 지성형, 화기가 더 강해지면 화려한 표현자형으로 변용",
+    "element_concentration": "辛金(음금) + 未土(편인, 火庫) — 土生金 상생, 未 안의 丁火 여기로 학문적 지원에 따뜻한 창의성이 더해진 구조",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "earth_nourishes_yin_metal_with_warm_creativity",
+      "dynamics": "creative_intellectual_warmth"
+    },
+    "core_keywords": ["辛未", "土生金편인", "未중丁火庫", "亥卯未삼합목국잠재", "午未육합잠재", "따뜻한지성창의"],
+    "embedding_context": "辛未는 편인(未土)의 학문적 지원에 따뜻한 화기(丁火여기)가 더해진 구조로, 차가운 금기에 온기가 더해진 가장 창의적이고 따뜻한 음금 일주다. 예술성과 지성이 자연스럽게 결합하여 섬세하고 아름다운 결과물을 만들어낸다.",
+    "psychological_traits": ["creatively_intelligent", "warm_and_artistic", "gentle_precision", "inspired_learner", "expressive_depth", "finds_art_in_knowledge"],
+    "social_pattern": ["creates_warm_intellectual_atmosphere", "appreciated_for_depth_and_warmth", "bridges_art_and_intellect", "quietly_inspiring"],
+    "relationship_style": ["warm_and_intellectually_engaging", "creates_beautiful_moments", "needs_emotional_and_intellectual_depth", "affectionate_in_gentle_ways"],
+    "career_affinity": {
+      "domains": ["art_education", "design", "cultural_curation", "writing", "music", "museum_work", "luxury_lifestyle_content"],
+      "examples": ["예술 교육가", "문화 기획자", "작가", "음악가", "큐레이터", "라이프스타일 콘텐츠 크리에이터", "아트 디렉터"],
+      "note": "未는 오후 1~3시 여름 오후의 무르익는 시간대. 따뜻한 지성과 창의성이 결합하여 아름다운 것을 만들고 나누는 직업, 예술과 학문의 경계를 넘나드는 분야에서 두각"
+    },
+    "strength": ["창의성과_지성이_자연스럽게_결합된_탁월한_표현력", "따뜻함과_섬세함으로_만들어내는_아름다운_결과물", "예술과_학문을_연결하는_능력", "온기를_담은_정밀한_감수성"],
+    "vulnerability": {
+      "trait": "완벽한 표현 추구로 자기 검열 과잉, 丑未 충 운에서 창의 방향 혼란",
+      "safeguard": "표현의 속도를 높이는 연습, 완성도보다 지속적 표현 리듬 유지하기",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "병오", "reason": "午未 육합 — 화토 합으로 병오의 열정이 신미의 따뜻한 창의성과 이상적으로 결합", "tag": "yuk_hap" },
+        { "ilju": "신묘", "reason": "亥卯未 삼합 목국 연대 — 목기 공명으로 두 음금의 창의 에너지가 풍부하게 증폭", "tag": "sam_hap" },
+        { "ilju": "계해", "reason": "亥卯未 삼합 목국 완성 — 수목 흐름이 신미의 따뜻한 창의성을 지속적으로 지원", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "신축", "reason": "丑未 충 — 음토 직충, 辛辛 동일 천간으로 학문 축적과 창의 표현이 정면 충돌", "tag": "chung" },
+        { "ilju": "기축", "reason": "丑未 충 — 토기 충돌로 신미의 창의 기반이 안정 지향과 갈등을 빚는 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(辛未)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "예술도 하고 싶고 공부도 하고 싶은데, 어느 쪽도 제대로 못하는 것 같습니다.",
+      "solution_speech": "辛未의 따뜻한 금기는 예술과 지성이 분리된 것이 아니라 하나의 것입니다. 당신의 창의성은 학문에서 나오고, 학문은 창의로 꽃을 피웁니다. 둘 중 하나를 선택하지 마세요. 두 가지를 연결하는 것이 당신만의 독창적인 언어가 됩니다.",
+      "tab_headline": "여름 보석처럼 따뜻하게 빛나듯 — 창의와 지성이 만드는 섬세한 아름다움의 팔자"
+    },
+    "tags": ["창의성", "지성", "따뜻함", "여름보석", "예술과학문의연결", "섬세한빛", "온기담은정밀함"]
+  },
+  {
+    "id": "ij_sinyu",
+    "ilju": "신유",
+    "hanja": "辛酉",
+    "stem": "신",
+    "branch": "유",
+    "yin_yang": "음",
+    "archetype": "razor_sharp_precision_master_type",
+    "common_expression": ["예리함", "정밀함", "완벽주의", "세련됨", "보석", "가을칼날", "원칙"],
+    "variance_note": "화기가 있으면 원칙을 갖춘 표현자형, 목기가 있으면 재물 감각을 갖춘 전문가형, 수기가 강하면 깊은 지성형으로 변용",
+    "element_concentration": "辛金(음금) + 酉金(비견, 辛金 주기) — 음금 극집중, 가장 정밀하고 예리한 금기 구조. 보석 중의 보석",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "yin_metal_self_reinforcing_maximum",
+      "dynamics": "ultimate_precision_and_refinement"
+    },
+    "core_keywords": ["辛酉", "음금극집중", "비견동주", "巳酉丑삼합금국잠재", "辰酉육합잠재", "卯酉충잠재"],
+    "embedding_context": "辛酉는 음금이 천간과 지지 모두에 자리한 금기 최강 구조로, 세상에서 가장 예리하고 정밀한 감각을 지닌 보석 중의 보석 일주다. 완벽한 기준과 섬세한 심미안으로 모든 것을 정확하게 판단하며, 그 자체로 가장 높은 가치 기준이 된다.",
+    "psychological_traits": ["ultimate_precision", "razor_sharp_aesthetic", "uncompromising_standards", "sees_flaws_others_miss", "quietly_authoritative", "deeply_refined"],
+    "social_pattern": ["sets_the_highest_standard", "respected_and_slightly_intimidating", "few_connections_all_quality", "trusted_as_final_arbiter"],
+    "relationship_style": ["extremely_selective", "high_maintenance_of_standards", "deeply_devoted_to_chosen_few", "appreciates_beauty_in_partner"],
+    "career_affinity": {
+      "domains": ["gemology", "fine_arts_criticism", "precision_medicine", "high_fashion", "auditing", "watchmaking", "haute_cuisine"],
+      "examples": ["보석 감정사", "미술 평론가", "정밀 외과의사", "오트 쿠튀르 디자이너", "공인 감사인", "시계 장인", "스타 셰프"],
+      "note": "酉는 저녁 5~7시 가장 완숙한 결실의 시간대. 세상에서 가장 높은 수준의 완성도를 요구하는 직업, 미적 기준이 곧 가치가 되는 분야에서 타고난 진가를 발휘"
+    },
+    "strength": ["세상_어디서도_따라오기_어려운_극도의_정밀함과_심미안", "불완전함을_찾아내고_완성으로_이끄는_능력", "가장_높은_기준으로_최고의_가치를_만들어내는_장인정신", "아름다운_것에_대한_타고난_감각"],
+    "vulnerability": {
+      "trait": "극도의 완벽주의로 자기 소진·출력 마비, 기준이 너무 높아 관계 마찰, 卯酉 충 운에서 가치 기준 혼란",
+      "safeguard": "80점 완성 후 출시 법칙, '충분히 좋은 것'에 대한 내적 기준 재설정",
+      "type": "lifestyle_suggestion",
+      "care_level": "high"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "경진", "reason": "辰酉 육합 — 토금 합으로 경진의 독립적 분석력이 신유의 정밀함을 완벽히 지원", "tag": "yuk_hap" },
+        { "ilju": "신사", "reason": "巳酉 반합 금국 — 두 음금이 금기로 공명하며 우아함과 정밀함이 최고로 결합", "tag": "sam_hap" },
+        { "ilju": "신축", "reason": "巳酉丑 삼합 금국 완성 — 최강 금기 삼합으로 모든 정밀함과 완성도가 극대화", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "신묘", "reason": "卯酉 충 — 목금 직충, 辛辛 동일 천간으로 정밀함과 변화·재물 추구가 정면 충돌", "tag": "chung" },
+        { "ilju": "기묘", "reason": "卯酉 충 — 목기가 신유의 금기 정밀 구조를 강하게 방해하는 충돌 구조", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(辛酉)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "제 기준에 맞는 것이 없어서, 아무것도 완성되지 않고 아무것도 만족스럽지 않습니다.",
+      "solution_speech": "辛酉의 기준은 세상에서 가장 높습니다. 그것이 당신이 만드는 모든 것을 특별하게 만드는 이유입니다. 하지만 보석도 팔리지 않으면 의미가 없습니다. 기준을 낮추는 것이 아니라, 세상과 연결하는 통로를 만드세요. 당신의 완성도는 이미 충분히 빛납니다.",
+      "tab_headline": "가을의 가장 예리한 칼날처럼 — 극도의 정밀함으로 빛나는 보석의 팔자"
+    },
+    "tags": ["예리함", "정밀함", "보석중의보석", "가을칼날", "완벽주의장인", "세상에서가장높은기준", "아름다움의절정"]
+  },
+  {
+    "id": "ij_sinhae",
+    "ilju": "신해",
+    "hanja": "辛亥",
+    "stem": "신",
+    "branch": "해",
+    "yin_yang": "음",
+    "archetype": "creative_rebel_expression_type",
+    "common_expression": ["독창성", "표현력", "반골", "자유", "겨울보석", "직관", "혁신"],
+    "variance_note": "목기가 강하면 창의적 재물 추구형, 화기가 있으면 원칙 있는 표현자형, 토기가 두꺼우면 지식 기반의 혁신가형으로 변용",
+    "element_concentration": "辛金(음금) + 亥水(상관, 壬水 주기) — 金生水 상생, 辛金이 상관(亥水)으로 흘러 독창적 표현과 창의적 반골 기질이 자연스럽게 발현",
+    "energy_profile": {
+      "dominant": "metal",
+      "structure": "yin_metal_generates_expressive_water",
+      "dynamics": "innovative_rebel_creative_output"
+    },
+    "core_keywords": ["辛亥", "金生水상관", "亥卯未삼합목국잠재", "寅亥육합잠재", "巳亥충잠재", "독창적반골표현"],
+    "embedding_context": "辛亥는 辛金의 예리한 감각이 亥水 상관으로 흘러 독창적이고 혁신적인 표현력으로 발현되는 구조다. 기존의 틀을 비판적으로 보면서도 그것을 아름다운 언어로 표현하는 창의적 반골형 일주로, 겨울 강물 위의 보석처럼 빛난다.",
+    "psychological_traits": ["creatively_unconventional", "sharp_critical_thinker", "expressive_innovator", "challenges_established_norms", "unique_voice_and_style", "intellectually_independent"],
+    "social_pattern": ["stands_out_through_originality", "builds_niche_but_devoted_following", "respected_for_unique_perspective", "may_clash_with_conservative_environments"],
+    "relationship_style": ["needs_intellectual_and_creative_freedom", "uniquely_expressive_of_affection", "attracted_to_unconventional_depth", "needs_partner_who_appreciates_originality"],
+    "career_affinity": {
+      "domains": ["creative_writing", "music_composition", "independent_media", "product_innovation", "art_direction", "philosophy", "stand_up_comedy"],
+      "examples": ["독립 작가", "작곡가", "미디어 혁신가", "제품 혁신 기획자", "아트 디렉터", "철학자", "스탠드업 코미디언"],
+      "note": "亥는 밤 9~11시 깊어가는 겨울 강물의 시간대. 기존 틀에 도전하며 새로운 언어와 형식을 만들어내는 창의 혁신 직업, 독창적 표현이 가치가 되는 분야에서 두각"
+    },
+    "strength": ["기존_틀을_뛰어넘는_독창적인_아이디어와_표현력", "예리한_비판적_사고와_혁신적_관점", "자신만의_독특한_언어와_스타일_구축_능력", "겨울_강물처럼_깊고_자유로운_창의성"],
+    "vulnerability": {
+      "trait": "반골 기질 과잉으로 불필요한 마찰, 巳亥 충 운에서 표현 방향 급격한 전환",
+      "safeguard": "비판과 대안을 함께 제시하는 건설적 표현 훈련, 독창성을 협력 안에서 발휘하는 방법 모색",
+      "type": "lifestyle_suggestion",
+      "care_level": "medium"
+    },
+    "compatibility": {
+      "harmonious": [
+        { "ilju": "갑인", "reason": "寅亥 육합 — 목기 상생으로 신해의 창의 에너지가 갑인의 개척력과 이상적으로 결합", "tag": "yuk_hap" },
+        { "ilju": "신묘", "reason": "亥卯未 삼합 목국 연대 — 수목 공명으로 두 음금의 독창적 창의 에너지가 증폭", "tag": "sam_hap" },
+        { "ilju": "기미", "reason": "亥卯未 삼합 목국 완성 — 목기 삼합으로 신해의 혁신적 표현이 기미의 풍요로운 토대 위에서 더욱 빛남", "tag": "sam_hap" }
+      ],
+      "conflict": [
+        { "ilju": "신사", "reason": "巳亥 충 — 수화 직충, 辛辛 동일 천간으로 독창적 반골과 우아한 권위가 정면 충돌", "tag": "chung" },
+        { "ilju": "정사", "reason": "巳亥 충 — 화기가 더해져 신해의 수기 창의 구조를 더욱 강하게 압박하는 충돌", "tag": "chung" }
+      ],
+      "complex": [],
+      "neutral": []
+    },
+    "interpretation_scope": "이 데이터는 일주(辛亥)라는 한 간지 조합에 대한 아키타입 경향성입니다. 월지(환경), 일간강약(용신), 대운·세운의 흐름에 따라 실제 발현 양상은 180도 달라질 수 있습니다. Writer Agent는 반드시 월지 기운과 용신을 함께 참조하여 복합 해석을 제시해야 합니다.",
+    "consulting_points": {
+      "empathy_trigger": "제 방식이 너무 독특한 건지, 어디에도 딱 맞는 곳이 없습니다.",
+      "solution_speech": "辛亥의 보석은 어떤 틀에도 맞지 않습니다. 왜냐하면 그 자체가 새로운 기준이기 때문입니다. 맞는 곳을 찾는 것이 아니라, 당신이 있는 곳을 당신답게 바꾸는 것이 이 일주의 사명입니다. 겨울 강물 위의 보석은 강물이 어디로 흐르든 빛납니다.",
+      "tab_headline": "겨울 강물 위의 보석처럼 독창적으로 — 창의적 반골이 만드는 혁신의 팔자"
+    },
+    "tags": ["독창성", "반골", "혁신", "겨울강물의보석", "창의적자유인", "기존틀을깨는힘", "독특한빛"]
   }
 ]
