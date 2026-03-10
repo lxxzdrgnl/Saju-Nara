@@ -6,7 +6,7 @@ from __future__ import annotations
 from datetime import datetime, timedelta
 from engine.calc.saju import calculate_saju as _calc
 from engine.calc.ten_gods import generate_ten_gods_list, calculate_ten_gods_distribution, calculate_ten_god, get_branch_ten_god
-from engine.calc.sin_sal import find_sin_sals
+from engine.calc.sin_sal import find_sin_sals, find_twelve_sin_sals_per_pillar
 from engine.calc.day_master_strength import analyze_day_master_strength
 from engine.calc.gyeok_guk import determine_gyeok_guk
 from engine.calc.yong_sin import select_yong_sin
@@ -16,7 +16,7 @@ from engine.calc.validation import validate_birth_input
 from engine.data.heavenly_stems import STEMS_BY_KOREAN
 from engine.data.timezone_history import get_solar_correction_minutes, get_historical_note
 from engine.data.wuxing import WUXING_GENERATION, WUXING_DESTRUCTION
-from engine.data.earthly_branches import SAM_HYEONG as _SAM_HYEONG
+from engine.data.earthly_branches import SAM_HYEONG as _SAM_HYEONG, GONG_MANG_TABLE
 from engine.analysis.structure_patterns import detect_structure_patterns
 from engine.analysis.dynamics import build_dynamics
 from engine.analysis.synergy import compute_synergy_tags
@@ -52,17 +52,29 @@ def handle_calculate_saju(
 
     # 2. 각 기둥에 십성 + 12운성 추가
     ten_gods_list = generate_ten_gods_list(saju)
+    twelve_sin_sal = find_twelve_sin_sals_per_pillar(saju)
     pillars_enriched = {}
     for i, key in enumerate(["year_pillar", "month_pillar", "day_pillar", "hour_pillar"]):
         p = saju[key]
+        short = ["year", "month", "day", "hour"][i]
         pillars_enriched[key] = {
             **p,
             "stem_ten_god": ten_gods_list[i],
             "branch_ten_god": get_branch_ten_god(day_stem, p["branch"]),
             "twelve_wun": get_twelve_wun(p["stem"], p["branch"]),
+            "twelve_sin_sal": twelve_sin_sal.get(short, ""),
         }
 
     ten_gods_dist = calculate_ten_gods_distribution(saju)
+
+    # 공망(空亡) — 일주(일지) 기준 공망 지지 2개 + 해당 기둥
+    _gm_vacant = GONG_MANG_TABLE.get(saju["day_pillar"]["branch"], [])
+    _gm_affected = [
+        short
+        for short, key in [("year","year_pillar"),("month","month_pillar"),("day","day_pillar"),("hour","hour_pillar")]
+        if saju[key]["branch"] in _gm_vacant
+    ]
+    gong_mang = {"vacant_branches": _gm_vacant, "affected_pillars": _gm_affected}
 
     # 3. 신살 + priority 태그
     sin_sals = [
@@ -241,6 +253,7 @@ def handle_calculate_saju(
         "ten_gods_void_info": ten_gods_void_info,
         "structure_patterns": _structure_patterns,
         # ⑥ 특이사항
+        "gong_mang": gong_mang,
         "sin_sals": sin_sals,
         "branch_relations": branch_rel,
         "ji_jang_gan": saju["ji_jang_gan"],

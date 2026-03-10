@@ -83,6 +83,46 @@
 
 ---
 
+## 사용된 오픈소스 라이브러리
+
+### Backend (Python)
+
+| 패키지 | 버전 | 라이선스 | 용도 |
+|---|---|---|---|
+| [FastAPI](https://github.com/tiangolo/fastapi) | ≥0.111 | MIT | REST API 프레임워크 |
+| [uvicorn](https://github.com/encode/uvicorn) | ≥0.29 | BSD-3-Clause | ASGI 서버 |
+| [Pydantic](https://github.com/pydantic/pydantic) | ≥2.0 | MIT | 데이터 모델·입력 검증 |
+| [pydantic-settings](https://github.com/pydantic/pydantic-settings) | ≥2.0 | MIT | 환경변수 설정 관리 |
+| [python-dotenv](https://github.com/theskumar/python-dotenv) | ≥1.0 | BSD-3-Clause | .env 파일 로딩 |
+| [LangChain](https://github.com/langchain-ai/langchain) | ≥0.2 | MIT | LLM 파이프라인 (LCEL) |
+| [langchain-google-genai](https://github.com/langchain-ai/langchain-google-genai) | ≥1.0 | MIT | Gemini LLM 연동 |
+| [langchain-openai](https://github.com/langchain-ai/langchain-openai) | ≥0.1 | MIT | OpenAI LLM 연동 |
+| [langchain-anthropic](https://github.com/langchain-ai/langchain-anthropic) | ≥0.1 | MIT | Claude LLM 연동 |
+| [google-genai](https://github.com/googleapis/python-genai) | ≥1.0 | Apache-2.0 | Gemini Embedding API |
+| [ChromaDB](https://github.com/chroma-core/chroma) | ≥0.5 | Apache-2.0 | 벡터 DB (명리 지식 RAG) |
+| [SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy) | ≥2.0 | MIT | 비동기 ORM |
+| [asyncpg](https://github.com/MagicStack/asyncpg) | ≥0.29 | Apache-2.0 | PostgreSQL 비동기 드라이버 |
+| [Alembic](https://github.com/sqlalchemy/alembic) | ≥1.13 | MIT | DB 마이그레이션 |
+| [ephem](https://github.com/brandon-rhodes/pyephem) | ≥4.1 | MIT | 24절기 천문 계산 (절기·월주) |
+| [korean-lunar-calendar](https://github.com/usingsky/korean_lunar_calendar_py) | ≥0.3.1 | MIT | 음력 ↔ 양력 변환 |
+| [pytz](https://github.com/stub42/pytz) | ≥2024.1 | MIT | 표준시·시간대 처리 |
+| [pytest](https://github.com/pytest-dev/pytest) | ≥8.0 | MIT | 단위 테스트 (dev) |
+| [httpx](https://github.com/encode/httpx) | ≥0.27 | BSD-3-Clause | API 테스트 클라이언트 (dev) |
+| [uv](https://github.com/astral-sh/uv) | — | MIT / Apache-2.0 | Python 패키지 매니저 |
+
+### Frontend (TypeScript — 구현 예정)
+
+| 패키지 | 라이선스 | 용도 |
+|---|---|---|
+| [Vue.js 3](https://github.com/vuejs/core) | MIT | UI 프레임워크 |
+| [Nuxt.js 3](https://github.com/nuxt/nuxt) | MIT | SSR/SSG 프레임워크 |
+| [Pinia](https://github.com/vuejs/pinia) | MIT | 상태 관리 |
+| [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) | MIT | CSS 유틸리티 프레임워크 |
+| [Chart.js](https://github.com/chartjs/Chart.js) | MIT | 오행·십성 도넛 차트 |
+| [pnpm](https://github.com/pnpm/pnpm) | MIT | Node.js 패키지 매니저 |
+
+---
+
 ## 빠른 시작
 
 ```bash

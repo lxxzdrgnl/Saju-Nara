@@ -1,11 +1,13 @@
 """사주팔자 계산 API 라우터."""
 
 from __future__ import annotations
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 from schemas.saju import SajuCalcRequest, SajuCalcResponse
 from core.errors import SWAGGER_ERRORS
 from core.exceptions import CalcFailedException, InvalidDateFormatException
 from engine.handlers.calculate_saju import handle_calculate_saju
+from engine.handlers.get_wol_un import handle_get_wol_un
+from engine.handlers.get_il_jin import handle_get_il_jin
 
 router = APIRouter(prefix="/api/saju", tags=["사주 계산"])
 
@@ -64,5 +66,41 @@ async def calculate_saju(req: SajuCalcRequest) -> SajuCalcResponse:
         if "날짜" in msg or "date" in msg.lower():
             raise InvalidDateFormatException(req.birth_date)
         raise CalcFailedException(msg)
+    except Exception as e:
+        raise CalcFailedException(str(e))
+
+
+@router.get(
+    "/wol-un",
+    summary="월운 조회",
+    description="특정 연도의 월운 간지 12개를 반환합니다. `day_stem`은 사주 계산 결과의 일간 천간입니다.",
+    responses={**{k: v for k, v in SWAGGER_ERRORS.items() if k in (400, 422, 500)}},
+)
+async def get_wol_un(
+    year:      int = Query(..., ge=1900, le=2100, description="대상 연도"),
+    day_stem:  str = Query(..., description="일간 천간 (갑/을/병/정/무/기/경/신/임/계)"),
+):
+    try:
+        return handle_get_wol_un(year=year, day_stem=day_stem)
+    except ValueError as e:
+        raise CalcFailedException(str(e))
+    except Exception as e:
+        raise CalcFailedException(str(e))
+
+
+@router.get(
+    "/il-jin",
+    summary="일진 달력 조회",
+    description="특정 년·월의 일별 일진(간지)과 음력 날짜를 반환합니다.",
+    responses={**{k: v for k, v in SWAGGER_ERRORS.items() if k in (400, 422, 500)}},
+)
+async def get_il_jin(
+    year:  int = Query(..., ge=1900, le=2100, description="연도"),
+    month: int = Query(..., ge=1,    le=12,   description="월"),
+):
+    try:
+        return handle_get_il_jin(year=year, month=month)
+    except ValueError as e:
+        raise CalcFailedException(str(e))
     except Exception as e:
         raise CalcFailedException(str(e))

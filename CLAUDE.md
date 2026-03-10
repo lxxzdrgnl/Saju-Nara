@@ -152,7 +152,65 @@ SajuBon/
 
 ---
 
-## 9. 핵심 계산 공식
+## 9. 구현 TODO (포스텔러 수준 만세력 리포트)
+
+목표: 포스텔러 만세력 2.2와 동등한 사주 리포트 + AI 탭 리포트
+
+### Phase 1 — 백엔드 엔진 보완
+
+- [x] **12신살 (기둥별)** — 지살·겁살·망신살·육해살·재살·천살·년살·월살·일살·시살 per-pillar 추가
+- [x] **신살 종류 확장** — 현침살·태극귀인·문곡귀인·관귀학관·홍염살·고신살·월덕귀인·황은대사 (+8종)
+  > **주의**: 신살 확장은 프론트 표시용. RAG 검색·Writer 입력은 기존 context_ranking(priority high/medium 기준) 그대로 유지.
+- [x] **공망(空亡) 계산** — 일주 기준 공망 지지 2개 + 해당 기둥 반환 (`gong_mang` 최상위 필드)
+- [x] **득령/득지/득시/득세 boolean 4개** — day_master_strength 출력에 추가
+- [x] **신강/신약 8단계** — 극약·태약·신약·중화신약·중화신강·신강·태강·극왕 + 백분율
+- [x] **합충 위치 정보** — dynamics.active_relations에 기둥 위치 태그 이미 포함
+- [x] **월운 API** — `GET /api/saju/wol-un?year=&day_stem=`
+- [x] **일진 달력 API** — `GET /api/saju/il-jin?year=&month=`
+- [x] **용신 표기** — `yong_sin_label` 필드 추가 (억부용신/통관용신)
+
+### Phase 2 — 프론트엔드 세팅
+
+- [x] **Nuxt.js 3 프로젝트 초기화** — frontend/ 디렉토리, Tailwind CSS, Pinia
+- [x] **입력 폼** — 생년월일시·음양력·윤달·성별 선택 (components/saju/InputForm.vue)
+- [x] **Pinia store** — saju 계산 결과 상태 관리 (stores/saju.ts)
+- [x] **API 클라이언트** — backend `/api/saju/calc` 호출 래퍼 (composables/useSajuApi.ts)
+
+### Phase 3 — 만세력 리포트 컴포넌트
+
+- [ ] **SajuTable** — 4기둥 그리드 (천간·십성·지지·십성·지장간·12운성·12신살, 음양 색상)
+- [ ] **HapChungPanel** — 합충 탭 버튼 (천간합·지지육합·삼합·방합·충·공망·형·파·해·원진) + 해당 기둥 하이라이트
+- [ ] **WuxingPentagram** — 오행 오각형 SVG (상생 파란 화살표·상극 빨간 별, 원 비율 채우기)
+- [ ] **WuxingDonutChart** — 오행 도넛 차트 (Chart.js)
+- [ ] **SipseongDonutChart** — 십성 도넛 차트
+- [ ] **StrengthChart** — 신강/신약 8단계 분포 라인 차트 + 득령/득지/득시/득세 뱃지
+- [ ] **YongSinBadge** — 용신·희신·기신 표시
+- [ ] **DaeUnSlider** — 대운 수평 스크롤 (천간/지지 칩, 십성·12운성 레이블)
+- [ ] **YeonUnSlider** — 연운 수평 스크롤
+- [ ] **WolUnSlider** — 월운 수평 스크롤
+- [ ] **IlJinCalendar** — 일진 달력 (월 네비게이션, 일별 간지·음력 날짜)
+
+### Phase 4 — AI 탭 리포트 (Headline-Driven Insights)
+
+- [ ] **Writer LLM 세팅** — llm/providers.py Gemini 연결
+- [ ] **프롬프트 작성** — 사주 calc 결과 + 고민 → 10개 결론형 헤드라인
+- [ ] **PydanticOutputParser** — ReportOutput(tabs: list[TabContent]) 스키마
+- [ ] **사주 분석 파이프라인** — Engine → RAG → Context Filter → Writer
+- [ ] **AI 리포트 탭 UI** — 헤드라인 탭 클릭 → 상세 내용 즉시 전환
+- [ ] **궁합 파이프라인** (Phase 4 후반)
+- [ ] **오늘의 운세 파이프라인** (Phase 4 후반)
+- [ ] **한줄 상담 파이프라인** (Phase 4 후반)
+
+### Phase 5 — DB·공유·인증
+
+- [ ] **PostgreSQL 연결** — SQLAlchemy async 세션
+- [ ] **Report 저장** — 계산 결과 + AI 출력 저장
+- [ ] **공유 링크** — `GET /r/{share_token}`
+- [ ] **JWT 인증** (선택)
+
+---
+
+## 10. 핵심 계산 공식
 
 - **진태양시 보정**: -30분 (동경 127° 보정, 역사적 표준시 자동 적용)
 - **연주 기준**: 1984년 = 갑자년, `(year-4)%10` = 천간, `(year-4)%12` = 지지

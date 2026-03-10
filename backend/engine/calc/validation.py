@@ -50,3 +50,10 @@ def validate_birth_input(
     # 달력 종류
     if calendar not in ("solar", "lunar"):
         raise ValidationError(f"달력은 'solar' 또는 'lunar': {calendar}")
+
+
+def validate_year_month(year: int, month: int) -> None:
+    if not (1900 <= year <= 2100):
+        raise ValidationError(f"연도 범위 초과 (1900-2100): {year}")
+    if not (1 <= month <= 12):
+        raise ValidationError(f"월 범위 오류 (1-12): {month}")

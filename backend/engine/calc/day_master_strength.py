@@ -12,6 +12,20 @@ from __future__ import annotations
 from engine.data.earthly_branches import BRANCHES_BY_KOREAN
 from engine.data.wuxing import WUXING_GENERATION
 
+_SUPPORT_GODS: set[str] = {"비견", "겁재", "정인", "편인"}
+
+_LEVEL_8_THRESHOLDS = [
+    (90, "극왕"), (76, "태강"), (63, "신강"), (52, "중화신강"),
+    (42, "중화신약"), (30, "신약"), (18, "태약"),
+]
+
+
+def _get_level_8(score: int) -> str:
+    for threshold, label in _LEVEL_8_THRESHOLDS:
+        if score >= threshold:
+            return label
+    return "극약"
+
 
 # 월지(月支)와 일간(日干) 오행의 관계 → 월령 득실
 def _month_branch_relation(day_element: str, month_branch: str) -> str:
@@ -26,6 +40,12 @@ def _month_branch_relation(day_element: str, month_branch: str) -> str:
     if branch_el == day_element:
         return "strong"
     return "medium"
+
+
+def _branch_ten_god_category(day_stem: str, branch: str) -> str:
+    """지지 정기(正氣) 기준 십성 반환."""
+    from engine.calc.ten_gods import get_branch_ten_god
+    return get_branch_ten_god(day_stem, branch)
 
 
 def analyze_day_master_strength(saju: dict, ten_gods_dist: dict) -> dict:
@@ -99,12 +119,30 @@ def analyze_day_master_strength(saju: dict, ten_gods_dist: dict) -> dict:
     elif score >= 25: level = "weak"
     else:             level = "very_weak"
 
+    # ── 득령/득지/득시/득세 ──────────────────────────────────────
+    day_stem   = saju["day_pillar"]["stem"]
+    day_branch = saju["day_pillar"]["branch"]
+    hour_branch = saju["hour_pillar"]["branch"]
+
+    deuk_ryeong = wol_relation == "strong"
+    deuk_ji  = _branch_ten_god_category(day_stem, day_branch)  in _SUPPORT_GODS
+    deuk_si  = _branch_ten_god_category(day_stem, hour_branch) in _SUPPORT_GODS
+
+    supporting = bigeop + inseong
+    opposing   = seolgi
+    deuk_se    = supporting > opposing
+
     return {
         "level": level,
+        "level_8": _get_level_8(score),
         "score": score,
         "raw_score": raw_score,
         "score_range": [0, 100],
         "factors": factors,
         "analysis": ". ".join(reasons),
         "wol_ryeong": wol_relation,
+        "deuk_ryeong": deuk_ryeong,
+        "deuk_ji":     deuk_ji,
+        "deuk_si":     deuk_si,
+        "deuk_se":     deuk_se,
     }

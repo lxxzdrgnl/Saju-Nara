@@ -51,6 +51,64 @@ _BAEK_HO_PAIRS: set[tuple[str, str]] = {
     ("임", "진"), ("계", "미"),
 }
 
+# ── 추가 8종 정적 데이터 ─────────────────────────────────────────
+
+_HYEON_CHIM_STEMS: set[str] = {"갑", "신", "임"}
+_HYEON_CHIM_BRANCHES: set[str] = {"오", "묘", "신"}
+
+_TAE_GEUK_TABLE: dict[str, list[str]] = {
+    "갑": ["자", "오"], "을": ["자", "오"],
+    "병": ["묘", "유"], "정": ["묘", "유"],
+    "무": ["진", "술", "축", "미"], "기": ["진", "술", "축", "미"],
+    "경": ["인", "오"], "신": ["인", "오"],
+    "임": ["사", "신"], "계": ["사", "신"],
+}
+
+_MUN_GOK_TABLE: dict[str, str] = {
+    "갑": "해", "을": "자", "병": "인", "정": "묘",
+    "무": "진", "기": "사", "경": "오", "신": "미",
+    "임": "신", "계": "유",
+}
+
+_GWAN_GWI_TABLE: dict[str, str] = {
+    "갑": "해", "을": "오", "병": "인", "정": "유",
+    "무": "인", "기": "유", "경": "사", "신": "자",
+    "임": "신", "계": "묘",
+}
+
+_HONG_YEOM_TABLE: dict[str, str] = {
+    "갑": "오", "을": "오", "병": "인", "정": "미",
+    "무": "진", "기": "진", "경": "술", "신": "유",
+    "임": "자", "계": "신",
+}
+
+_GO_SIN_TABLE: dict[str, str] = {
+    "자": "인", "축": "인", "인": "사",
+    "묘": "사", "진": "사", "사": "신",
+    "오": "신", "미": "신", "신": "해",
+    "유": "해", "술": "해", "해": "인",
+}
+
+_WOL_DEOK_TABLE: dict[str, str] = {
+    "인": "병", "오": "병", "술": "병",
+    "사": "경", "유": "경", "축": "경",
+    "신": "임", "자": "임", "진": "임",
+    "해": "갑", "묘": "갑", "미": "갑",
+}
+
+_HWANG_EUN_PILLARS: set[tuple[str, str]] = {
+    ("갑", "자"), ("갑", "술"), ("갑", "진"),
+    ("을", "해"), ("을", "묘"),
+    ("병", "자"), ("병", "오"), ("병", "인"),
+    ("정", "묘"),
+    ("무", "자"), ("무", "오"),
+    ("기", "사"), ("기", "해"),
+    ("경", "자"), ("경", "오"), ("경", "신"),
+    ("신", "유"),
+    ("임", "자"), ("임", "신"),
+    ("계", "사"), ("계", "해"),
+}
+
 _SAM_JAE_TABLE: list[tuple[frozenset[str], list[str]]] = [
     (frozenset({"인", "오", "술"}), ["해", "자", "축"]),
     (frozenset({"사", "유", "축"}), ["인", "묘", "진"]),
@@ -70,6 +128,15 @@ SIN_SAL_INFO: dict[str, dict] = {
     "귀문관살": {"name": "귀문관살", "type": "unlucky", "desc": "예민한 직관력과 창의적 영감, 신경과민 주의"},
     "양인살":   {"name": "양인살",   "type": "unlucky", "desc": "강한 추진력과 승부욕, 다혈질적 기질"},
     "백호대살": {"name": "백호대살", "type": "unlucky", "desc": "급작스러운 사고·변화, 강한 기운의 양날의 검"},
+    # ── 추가 8종 ─────────────────────────────────────────────────
+    "현침살":   {"name": "현침살",   "type": "neutral", "desc": "날카로운 직관과 비판력, 언변·문장에 재주가 있음"},
+    "태극귀인": {"name": "태극귀인", "type": "lucky",   "desc": "역경에서 회복력이 강하고 반전의 기운이 있음"},
+    "문곡귀인": {"name": "문곡귀인", "type": "lucky",   "desc": "학문과 문서 운이 좋고 글재주가 뛰어남"},
+    "관귀학관": {"name": "관귀학관", "type": "lucky",   "desc": "학문·관직 운이 강하고 시험·승진에 유리함"},
+    "홍염살":   {"name": "홍염살",   "type": "neutral", "desc": "이성에게 매력적이고 예술·연예 감각이 풍부함"},
+    "고신살":   {"name": "고신살",   "type": "unlucky", "desc": "고독하고 독립적인 기질, 혼자 있는 시간이 많음"},
+    "월덕귀인": {"name": "월덕귀인", "type": "lucky",   "desc": "공적 업무·관공서 운이 좋고 사회적 덕망이 있음"},
+    "황은대사": {"name": "황은대사", "type": "lucky",   "desc": "귀한 은혜를 받고 특별한 인연이나 기회가 찾아옴"},
 }
 
 
@@ -197,12 +264,110 @@ def _sam_jae(saju: dict, bs: set[str]) -> dict | None:
     return None
 
 
+def _hyeon_chim(saju: dict, bs: set[str]) -> dict | None:
+    trigger_pillars = []
+    for short, key in zip(_PILLAR_ORDER, ["year_pillar", "month_pillar", "day_pillar", "hour_pillar"]):
+        if saju[key]["stem"] in _HYEON_CHIM_STEMS or saju[key]["branch"] in _HYEON_CHIM_BRANCHES:
+            trigger_pillars.append(short)
+    if not trigger_pillars:
+        return None
+    r = dict(SIN_SAL_INFO["현침살"])
+    r["reason"] = {"trigger": "stem_or_branch",
+                   "stems": list(_HYEON_CHIM_STEMS), "branches": list(_HYEON_CHIM_BRANCHES)}
+    r["_location_pillars"] = trigger_pillars
+    r["_location_branches"] = []
+    return r
+
+
+def _tae_geuk(saju: dict, bs: set[str]) -> dict | None:
+    stem = saju["day_pillar"]["stem"]
+    matched = [b for b in _TAE_GEUK_TABLE.get(stem, []) if b in bs]
+    if not matched:
+        return None
+    r = dict(SIN_SAL_INFO["태극귀인"])
+    r["reason"] = {"trigger": "day_stem", "day_stem": stem, "matched_branches": matched}
+    r["_location_branches"] = matched
+    return r
+
+
+def _mun_gok(saju: dict, bs: set[str]) -> dict | None:
+    stem = saju["day_pillar"]["stem"]
+    target = _MUN_GOK_TABLE.get(stem)
+    if not target or target not in bs:
+        return None
+    r = dict(SIN_SAL_INFO["문곡귀인"])
+    r["reason"] = {"trigger": "day_stem", "day_stem": stem, "target_branch": target}
+    r["_location_branches"] = [target]
+    return r
+
+
+def _gwan_gwi(saju: dict, bs: set[str]) -> dict | None:
+    stem = saju["day_pillar"]["stem"]
+    target = _GWAN_GWI_TABLE.get(stem)
+    if not target or target not in bs:
+        return None
+    r = dict(SIN_SAL_INFO["관귀학관"])
+    r["reason"] = {"trigger": "day_stem", "day_stem": stem, "target_branch": target}
+    r["_location_branches"] = [target]
+    return r
+
+
+def _hong_yeom(saju: dict, bs: set[str]) -> dict | None:
+    stem = saju["day_pillar"]["stem"]
+    target = _HONG_YEOM_TABLE.get(stem)
+    if not target or target not in bs:
+        return None
+    r = dict(SIN_SAL_INFO["홍염살"])
+    r["reason"] = {"trigger": "day_stem", "day_stem": stem, "target_branch": target}
+    r["_location_branches"] = [target]
+    return r
+
+
+def _go_sin(saju: dict, bs: set[str]) -> dict | None:
+    year_branch = saju["year_pillar"]["branch"]
+    target = _GO_SIN_TABLE.get(year_branch)
+    if not target or target not in bs:
+        return None
+    r = dict(SIN_SAL_INFO["고신살"])
+    r["reason"] = {"trigger": "year_branch", "year_branch": year_branch, "target_branch": target}
+    r["_location_branches"] = [target]
+    return r
+
+
+def _wol_deok(saju: dict, bs: set[str]) -> dict | None:
+    month_branch = saju["month_pillar"]["branch"]
+    deok_stem = _WOL_DEOK_TABLE.get(month_branch)
+    if not deok_stem or saju["day_pillar"]["stem"] != deok_stem:
+        return None
+    r = dict(SIN_SAL_INFO["월덕귀인"])
+    r["reason"] = {"trigger": "month_branch_day_stem",
+                   "month_branch": month_branch, "deok_stem": deok_stem}
+    r["_location_pillars"] = ["day"]
+    r["_location_branches"] = []
+    return r
+
+
+def _hwang_eun(saju: dict, bs: set[str]) -> dict | None:
+    day = saju["day_pillar"]
+    if (day["stem"], day["branch"]) not in _HWANG_EUN_PILLARS:
+        return None
+    r = dict(SIN_SAL_INFO["황은대사"])
+    r["reason"] = {"trigger": "day_pillar",
+                   "day_stem": day["stem"], "day_branch": day["branch"]}
+    r["_location_pillars"] = ["day"]
+    r["_location_branches"] = []
+    return r
+
+
 # ─── 레지스트리 ─────────────────────────────────────────────────
 
 _CHECKERS: list[SinSalChecker] = [
     _cheon_eul, _do_hwa, _yeok_ma, _hwa_gae,
     _gong_mang, _won_jin, _gwi_mun,
     _yang_in, _baek_ho, _sam_jae,
+    # 추가 8종
+    _hyeon_chim, _tae_geuk, _mun_gok, _gwan_gwi,
+    _hong_yeom, _go_sin, _wol_deok, _hwang_eun,
 ]
 
 
@@ -228,9 +393,64 @@ def find_sin_sals(saju: dict) -> list[dict]:
             continue
         # 각 체커가 직접 선언한 _location_branches로 위치 계산
         trigger_branches = r.pop("_location_branches", [])
+        trigger_pillars  = r.pop("_location_pillars", [])
+        branch_pillars = {p for b in trigger_branches for p in branch_to_pillars.get(b, [])}
         r["location"] = sorted(
-            {p for b in trigger_branches for p in branch_to_pillars.get(b, [])},
+            branch_pillars | set(trigger_pillars),
             key=lambda x: _PILLAR_ORDER.index(x),
         )
         results.append(r)
     return results
+
+
+# ─── 12신살 (기둥별) ─────────────────────────────────────────────
+
+_TWELVE_SIN_SAL_GROUPS: dict[str, dict[str, str]] = {
+    "인오술": {
+        "해": "겁살", "자": "재살", "축": "천살", "인": "지살",
+        "묘": "년살", "진": "월살", "사": "망신살", "오": "장성살",
+        "미": "반안살", "신": "역마살", "유": "육해살", "술": "화개살",
+    },
+    "사유축": {
+        "인": "겁살", "묘": "재살", "진": "천살", "사": "지살",
+        "오": "년살", "미": "월살", "신": "망신살", "유": "장성살",
+        "술": "반안살", "해": "역마살", "자": "육해살", "축": "화개살",
+    },
+    "신자진": {
+        "사": "겁살", "오": "재살", "미": "천살", "신": "지살",
+        "유": "년살", "술": "월살", "해": "망신살", "자": "장성살",
+        "축": "반안살", "인": "역마살", "묘": "육해살", "진": "화개살",
+    },
+    "해묘미": {
+        "신": "겁살", "유": "재살", "술": "천살", "해": "지살",
+        "자": "년살", "축": "월살", "인": "망신살", "묘": "장성살",
+        "진": "반안살", "사": "역마살", "오": "육해살", "미": "화개살",
+    },
+}
+
+_YEAR_BRANCH_TO_GROUP: dict[str, str] = {
+    "인": "인오술", "오": "인오술", "술": "인오술",
+    "사": "사유축", "유": "사유축", "축": "사유축",
+    "신": "신자진", "자": "신자진", "진": "신자진",
+    "해": "해묘미", "묘": "해묘미", "미": "해묘미",
+}
+
+
+def find_twelve_sin_sals_per_pillar(saju: dict) -> dict[str, str]:
+    """연지(年支) 기준 삼합국으로 각 기둥의 12신살 이름 반환.
+
+    Returns:
+        {"year": "지살", "month": "망신살", "day": "육해살", "hour": "지살"}
+    """
+    year_branch = saju["year_pillar"]["branch"]
+    group_key = _YEAR_BRANCH_TO_GROUP.get(year_branch)
+    if not group_key:
+        return {}
+    group = _TWELVE_SIN_SAL_GROUPS[group_key]
+    return {
+        short: group.get(saju[key]["branch"], "")
+        for short, key in zip(
+            _PILLAR_ORDER,
+            ["year_pillar", "month_pillar", "day_pillar", "hour_pillar"],
+        )
+    }

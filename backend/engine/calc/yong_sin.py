@@ -66,11 +66,17 @@ def select_yong_sin(saju: dict, strength: dict, ten_gods_dist: dict) -> dict:
         ji_sin = [_controls(primary)]
         logic_type = "balanced_weakest_supplement"
 
+    _LABEL = {
+        "overpowered_day_master_drain": "억부용신",
+        "weak_day_master_support":      "억부용신",
+        "balanced_weakest_supplement":  "통관용신",
+    }
     return {
         "primary": primary,
         "secondary": secondary,
         "xi_sin": xi_sin,
         "ji_sin": ji_sin,
         "logic_type": logic_type,
+        "yong_sin_label": _LABEL[logic_type],
         "reasoning_priority": "억부",  # 강약 기준 우선 (조후는 meta.climate_vibe 참조)
     }
