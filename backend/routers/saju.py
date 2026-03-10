@@ -1,0 +1,71 @@
+"""사주팔자 계산 API 라우터."""
+
+from __future__ import annotations
+from fastapi import APIRouter, HTTPException
+from schemas.saju import SajuCalcRequest, SajuCalcResponse
+from engine.handlers.calculate_saju import handle_calculate_saju
+
+router = APIRouter(prefix="/api/saju", tags=["사주 계산"])
+
+
+@router.post(
+    "/calc",
+    response_model=SajuCalcResponse,
+    summary="사주팔자 계산",
+    description="""
+생년월일시와 성별을 입력하면 사주팔자 전체를 계산합니다.
+
+**계산 내용**:
+- 4기둥 (연·월·일·시주) — 천간·지지·십성·12운성
+- 오행·음양 분포 비율
+- 일간 강약 (신강/중화/신약)
+- 격국 (정관격·식신격·재격 등 13종)
+- 용신·보신·기신 선정
+- 신살 (역마살·도화살·귀인 등)
+- 지장간·지지 관계 (충·합·형·해·파)
+- 대운 10구간 + 현재 대운
+- 행동 프로파일·생활 도메인 (Writer Agent용 RAG seed)
+
+**시각 보정**:
+한국 경도(동경 127°) 기준으로 동경 135° 표준시를 보정합니다 (통상 -30분).
+역사적 표준시 변경(일제강점기·해방 후 변경)도 자동 적용됩니다.
+
+**음력 입력**:
+`calendar: "lunar"` 설정 시 음력 날짜로 처리합니다.
+윤달은 `is_leap_month: true`로 구분합니다.
+""",
+    responses={
+        200: {
+            "description": "사주팔자 계산 성공",
+            "content": {
+                "application/json": {
+                    "example": SajuCalcResponse.model_config["json_schema_extra"]["example"]
+                }
+            },
+        },
+        422: {
+            "description": "입력값 검증 실패 (날짜 형식 오류, 지원 범위 초과 등)",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "detail": "birth_date 형식 오류: 1800-01-01 — 지원 범위: 1900–2100"
+                    }
+                }
+            },
+        },
+    },
+)
+async def calculate_saju(req: SajuCalcRequest) -> SajuCalcResponse:
+    try:
+        result = handle_calculate_saju(
+            birth_date=req.birth_date,
+            birth_time=req.birth_time,
+            gender=req.gender,
+            calendar=req.calendar,
+            is_leap_month=req.is_leap_month,
+        )
+        return result
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"계산 오류: {e}")

@@ -1,97 +1,164 @@
-# SajuNara - AI 사주 상담 서비스
+# SajuBon - AI 사주 상담 서비스
 
 ## 1. 프로젝트 핵심 컨셉: "Headline-Driven Insights"
 
-기존의 정적인 운세 서비스와 달리, AI가 사용자의 사주와 현재 고민을 분석하여 맞춤형 목차(헤드라인)를 생성하고 이를 탭 형식으로 제공하는 지능형 상담 리포트 서비스입니다.
+AI가 사용자의 사주와 현재 고민을 분석하여 **오직 그 사람만을 위한 결론형 탭 리포트**를 생성합니다.
 
-> 예시: "재물운" (X) → "30대 중반, 바위 틈에서 물이 솟구치듯 재물이 터질 팔자" (O)
-
----
-
-## 2. 전체 시스템 아키텍처 (MCP 기반 에이전틱 구조)
-
-이 프로젝트는 **Model Context Protocol(MCP)**을 사용하여 로직과 데이터를 철저히 분리한 3-Tier 에이전트 아키텍처를 따릅니다.
-
-### Layer 1: Frontend (Vue.js 3 / Nuxt.js)
-- **역할**: 사용자 입력 수신 및 완성된 리포트를 탭 UI로 렌더링.
-- **UX 원칙**: 탭 클릭 시 추가 API 호출 없음. 이미 완성된 데이터를 즉시 전환 (일반 웹사이트처럼).
-- **핵심 컴포넌트**:
-  - **Dynamic Input Form**: 사주 계산에 필요한 정보(생년월일시, 음양력) 및 고민 내용 수집.
-  - **Loading State**: 리포트 생성 중 로딩 표시.
-  - **Headline Tab UI**: AI가 생성한 10개의 결론형 탭. 클릭 시 이미 완성된 내용으로 즉시 전환.
-
-### Layer 2: Backend (FastAPI - AI Agent Brain)
-- **역할**: 전체 워크플로우 제어 및 AI 에이전트 오케스트레이션.
-- **처리 방식**: 10개 탭의 헤드라인과 상세 내용을 **한 번에 모두 생성**하여 완성된 JSON 반환.
-- **에이전트 구성**:
-  - **Planner Agent**: Saju-Calc MCP 결과 + 고민 → 10개 헤드라인 기획.
-  - **Writer Agent**: Saju-RAG MCP에서 지식 조회 → 10개 탭 상세 내용 일괄 집필.
-- **기술**: LangGraph 또는 LangChain을 활용한 에이전트 제어.
-
-### Layer 3: MCP Servers (Tools & Data)
-- **Saju-Calc MCP**: 수학적 계산 엔진. 입춘 시각, 절기, 동경 135도 보정 등을 적용하여 정확한 8글자 및 신살 산출.
-- **Saju-RAG MCP**: 지식 베이스. 60갑자 일주론, 십성 해석, 신살 의미 등을 저장하고 Agent의 요청에 따라 관련 텍스트 검색.
+> "재물운" (X) → "30대 중반, 바위 틈에서 물이 솟구치듯 재물이 터질 팔자" (O)
 
 ---
 
-## 3. 데이터 설계 (RAG Knowledge Base)
+## 2. 전체 시스템 아키텍처
 
-AI가 근거 있는 답변을 하기 위해 **Vector DB(ChromaDB)**에 저장될 데이터 구조입니다.
+Engine(계산)과 RAG(지식)를 **Python 라이브러리로 직접 임포트**하는 2-Tier 구조입니다.
+MCP 프로토콜은 사용하지 않습니다.
 
-| 카테고리 | 데이터 항목 | 활용 예시 |
+```
+Frontend (Vue.js 3 / Nuxt.js)
+    │  생년월일시 + 성별 + 고민
+    ▼
+Backend (FastAPI)
+    ├─→ engine/        만세력 계산 (4기둥·십성·격국·용신·대운·분석)
+    ├─→ rag/           ChromaDB 명리 지식 검색
+    ├─→ pipelines/     기능별 파이프라인 조합
+    └─→ llm/           Writer Agent (LangChain + PydanticOutputParser)
+    ▼
+Frontend
+    완성된 JSON 1회 반환 → 탭 클릭 = 단순 뷰 전환
+```
+
+---
+
+## 3. 4가지 기능 및 파이프라인
+
+### 사주 정밀 분석 `POST /api/saju/calc`
+```
+Engine.calculate_saju()
+  → context_ranking + life_domains
+  → RAG 검색 (도메인별 청크)
+  → Context Filter (primary 우선 + concern 시맨틱 merge)
+  → Writer → 10개 결론형 탭
+```
+
+### 궁합 `POST /api/compatibility`
+```
+Engine.calculate_saju(person1) + Engine.calculate_saju(person2)
+  → Synastry Engine (천간합·월지삼합충·용신보완·십성패턴)
+  → RAG 검색 (interaction_tags)
+  → Writer → 궁합 리포트 (총점 + 항목별 분석)
+```
+
+### 오늘의 운세 `POST /api/daily`
+```
+Engine.calculate_saju() + Engine.get_un_flow(today)
+  → Daily Flow (오늘 천간 × 일간 십성, 오늘 지지 × 월지 충합)
+  → RAG 검색 (daily_tags)
+  → Writer → 오늘 운세 (1탭, 간결)
+```
+
+### 한줄 상담 `POST /api/question`
+```
+Engine.calculate_saju() → behavior_profile + core_keywords
+  → 가중 RAG 검색 (question 시맨틱 + saju keywords boost)
+  → Writer → 단답형 상담 (1탭, 500자)
+```
+
+---
+
+## 4. Engine 12단계 파이프라인
+
+`calculate_saju()` 한 번 호출로 순차 실행:
+
+```
+① 4기둥          연·월·일·시주 (진태양시 -30분 보정)
+② 십성·12운성    기둥별 태그
+③ 신살           역마·도화·화개·귀문관살 등 10종
+④ 일간 강약      점수화 (strong/medium/weak)
+⑤ 격국           13종
+⑥ 용신           억부/조후/통관
+⑦ 대운           3일=1년 공식 (10구간)
+⑧ 음양 비율      8글자 기준
+⑨ 구조패턴       15종 + 동역학(천간합·통근·오행흐름) + 시너지(30규칙)
+⑩ 행동프로파일   십성분포 → behavior_vector
+⑪ 컨텍스트랭킹   primary 3 + secondary 2
+⑫ 생활도메인     career·relationship·wealth·personality
+```
+
+---
+
+## 5. RAG 지식 베이스 (ChromaDB)
+
+| 컬렉션 | 문서 수 | 내용 |
 |---|---|---|
-| 일주론 | 60갑자별 성격, 직업, 연애 특징 | "경오일주: 목표를 향해 질주하는 백마" |
-| 십성(十星) | 비견, 겁재, 식신 등 10가지 관계론 | "비견이 많아 동료와의 경쟁이 치열한 상황" |
-| 신살(神殺) | 역마살, 도화살, 화개살, 귀인 등 | "도화살의 매력을 유튜브로 발산할 운명" |
-| 상황별 조언 | 이직, 재회, 금전 고민에 대한 현대적 해석 | "이별 후 재회 시 주의해야 할 사주적 특징" |
+| ilju | 60 | 60갑자 일주론 (성격·직업·연애) |
+| ten_gods | 10 | 십성 해석 (비견~정인) |
+| sin_sal | 가변 | 신살 의미 (역마·도화·귀문관살 등) |
+| structure_patterns | 가변 | 구조 패턴 해석 |
+| dynamics | 가변 | 동역학 해석 |
+| wuxing | 가변 | 오행 상생·상극 해석 |
+
+Embedding: Gemini embedding-001
 
 ---
 
-## 4. 상세 워크플로우 (Data Flow)
+## 6. 프로젝트 구조
 
-1. **입력 단계**: 사용자가 생년월일시와 "현재 회사 상사와 갈등이 심해 이직하고 싶다"는 고민 입력.
-2. **분석 단계**:
-   - Saju-Calc MCP 호출 → 사용자의 일주가 '경오(庚午)'임을 파악.
-   - Planner Agent가 경오일주 특징과 직장 갈등 상황을 분석.
-3. **기획 단계**: AI가 10개의 헤드라인 생성.
-   - 탭 1: 본인의 강한 주관이 상사의 권위와 충돌하는 형국입니다.
-   - 탭 2: 올해는 역마의 기운이 강해 이직을 하기에 최적의 타이밍...
-4. **일괄 생성 단계**: Writer Agent가 Saju-RAG MCP에서 지식을 조회하여 **10개 탭 내용을 모두 한 번에 생성**.
-5. **표시 단계**: 완성된 전체 리포트를 Frontend로 반환 → 사용자는 일반 웹사이트처럼 탭을 즉시 클릭해 전환.
-
-> **UX 원칙**: 탭 클릭은 단순 뷰 전환. 추가 API 호출 없음. 실시간 스트리밍 불필요.
+```
+SajuBon/
+├── CLAUDE.md
+├── README.md
+├── frontend/           # Vue.js 3 + Nuxt.js (구현 예정)
+└── backend/
+    ├── engine/
+    │   ├── calc/       # 순수 계산 (15개 모듈)
+    │   ├── analysis/   # 후처리 분석 (6개 모듈)
+    │   ├── handlers/   # 기능별 핸들러
+    │   └── data/       # 정적 명리학 데이터
+    ├── rag/            # ChromaDB 검색 + knowledge JSON
+    ├── llm/            # Writer LLM (구현 예정)
+    ├── pipelines/      # 기능별 파이프라인 (구현 예정)
+    ├── routers/        # FastAPI 라우터
+    ├── schemas/        # Pydantic 스키마
+    ├── db/             # SQLAlchemy 모델·세션
+    ├── core/           # pydantic-settings 설정
+    └── dependencies/   # FastAPI 의존성
+```
 
 ---
 
-## 5. 최종 기술 스택
+## 7. 기술 스택
 
-| 구분 | 기술 스택 |
+| 구분 | 기술 |
 |---|---|
 | Language | Python 3.10+ (Main), TypeScript (Frontend) |
 | Frontend | Vue.js 3, Pinia, Nuxt.js, Tailwind CSS |
-| Backend | FastAPI, LangChain/LangGraph, MCP SDK |
-| AI / LLM | GPT-4o (Planner + Writer) |
-| Database | ChromaDB (Vector), PostgreSQL (User History) |
-| DevOps | Docker, MCP Inspector, Monorepo (Git) |
+| Backend | FastAPI, LangChain (LCEL) |
+| AI / LLM | Gemini 2.0 Flash (기본) — Strategy Pattern (OpenAI·Claude 교체 가능) |
+| Output Parser | PydanticOutputParser + OutputFixingParser |
+| Vector DB | ChromaDB (Gemini embedding-001) |
+| Relational DB | PostgreSQL + SQLAlchemy 2.0 (async) |
+| Package Manager | uv (Python), pnpm (Node.js) |
+| DevOps | Docker, Docker Compose |
 
 ---
 
-## 6. 프로젝트 구조 (Monorepo)
+## 8. 개발 원칙
 
-```
-saju-ai-service/
-├── /frontend      # Vue.js 웹앱 (Nuxt.js)
-├── /backend       # FastAPI 에이전트 서버
-└── /mcp-servers   # 독립된 MCP 서버들
-    ├── /saju-calc     # 사주 계산 엔진
-    └── /saju-rag      # RAG 지식 베이스
-```
-
----
-
-## 7. 개발 원칙
-
-- MCP를 통해 로직(Backend)과 데이터(MCP Servers)를 철저히 분리한다.
-- 스트리밍 응답을 기본으로 설계하여 사용자 체감 속도를 높인다.
-- 헤드라인은 반드시 결론형 문장으로 생성한다 (단순 카테고리명 금지).
+- Engine과 RAG는 Python 라이브러리로 직접 임포트한다 (MCP 없음).
+- 모든 탭 내용은 **한 번에 생성**하여 완성된 JSON을 반환한다 (탭 클릭 = 뷰 전환만).
+- 헤드라인은 반드시 **결론형 문장**으로 생성한다 (단순 카테고리명 금지).
 - 모든 명리 해석은 RAG 지식 베이스에 근거하여 생성한다.
+- LLM은 Strategy Pattern으로 교체 가능하게 설계한다.
+
+---
+
+## 9. 핵심 계산 공식
+
+- **진태양시 보정**: -30분 (동경 127° 보정, 역사적 표준시 자동 적용)
+- **연주 기준**: 1984년 = 갑자년, `(year-4)%10` = 천간, `(year-4)%12` = 지지
+- **일주 기준일**: 1900-01-01 = 갑술일 (stemIdx=0, branchIdx=10)
+- **월주 천간**: 갑·기년→병인월, 을·경년→무인월, 병·신년→경인월, 정·임년→임인월, 무·계년→갑인월
+- **시주 천간**: `(일간index*2 + 시지index) % 10`
+- **대운 공식**: 3일=1년, 1일=4개월, 1시진(2h)=10일, 최대 10세
+- **24절기**: ephem 라이브러리 실시간 천문 계산
+- **음력 변환**: korean-lunar-calendar 패키지

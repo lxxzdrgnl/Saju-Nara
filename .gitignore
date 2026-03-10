@@ -76,3 +76,4 @@ logs/
 # =========================
 .mcp_cache/
 mcp_inspector/
+.claude/
