@@ -3,22 +3,92 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-from fastapi import FastAPI
+import logging
+import traceback
+from datetime import datetime, timezone
+
+from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+
+from core.errors import ErrorCode, ErrorResponse, http_status
+from core.exceptions import AppException
+from middleware.logging import AccessLogMiddleware
 from routers import saju
+
+# ─── 로깅 설정 ───────────────────────────────────────────────────────────────
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s — %(message)s",
+    datefmt="%Y-%m-%dT%H:%M:%S",
+)
+logger = logging.getLogger("sajubon")
+
+# ─── FastAPI 앱 ──────────────────────────────────────────────────────────────
 
 app = FastAPI(
     title="SajuBon API",
     version="0.1.0",
     description="AI 사주 상담 서비스 — 사주팔자 계산·궁합·오늘의 운세·한줄 상담",
+    docs_url="/docs",
+    redoc_url="/redoc",
 )
 
+# ─── 미들웨어 ────────────────────────────────────────────────────────────────
+
+app.add_middleware(AccessLogMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# ─── 예외 핸들러 ─────────────────────────────────────────────────────────────
+
+def _error_json(req: Request, code: ErrorCode, message: str, details: dict | None = None) -> JSONResponse:
+    body = ErrorResponse.make(code=code, message=message, path=req.url.path, details=details)
+    return JSONResponse(status_code=http_status(code), content=body.model_dump())
+
+
+@app.exception_handler(AppException)
+async def app_exception_handler(req: Request, exc: AppException) -> JSONResponse:
+    return _error_json(req, exc.code, exc.message, exc.details)
+
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(req: Request, exc: RequestValidationError) -> JSONResponse:
+    details = {}
+    for err in exc.errors():
+        field = ".".join(str(loc) for loc in err["loc"] if loc != "body")
+        details[field] = err["msg"]
+    return _error_json(
+        req,
+        ErrorCode.VALIDATION_FAILED,
+        "입력값 검증에 실패했습니다.",
+        details,
+    )
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(req: Request, exc: Exception) -> JSONResponse:
+    logger.error(
+        "Unhandled exception: %s %s\n%s",
+        req.method,
+        req.url.path,
+        traceback.format_exc(),
+    )
+    return _error_json(
+        req,
+        ErrorCode.INTERNAL_SERVER_ERROR,
+        "서버 내부 오류가 발생했습니다. 잠시 후 다시 시도해주세요.",
+    )
+
+
+# ─── 라우터 ──────────────────────────────────────────────────────────────────
 
 app.include_router(saju.router)
 # app.include_router(compatibility.router)   # 구현 예정
