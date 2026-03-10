@@ -12,7 +12,18 @@
 
 > "재물운" (X)
 > "30대 중반, 바위 틈에서 물이 솟구치듯 재물이 터질 팔자" (O)
+---
 
+## 사주팔자(四柱八字)란?
+
+태어난 **연·월·일·시** 네 기둥(四柱), 여덟 글자(八字)로 이루어진 동양 명리학의 핵심입니다.
+
+| 기둥 | 의미 |
+|---|---|
+| 연주(年柱) | 조상·초년운 |
+| 월주(月柱) | 부모·청장년운 |
+| 일주(日柱) | 본인·배우자·중년운 |
+| 시주(時柱) | 자녀·노년운 |
 ---
 
 ## 프로젝트 개요
@@ -27,8 +38,6 @@
 | 2 | 궁합 | `POST /api/compatibility` | Engine×2 → Synastry → RAG → Writer |
 | 3 | 오늘의 운세 | `POST /api/daily` | Engine + 오늘간지 → Daily Tags → RAG → Writer |
 | 4 | 한줄 상담 | `POST /api/question` | Engine → 가중 RAG 검색 → Writer |
-
-> **UX 원칙**: 모든 탭 내용은 한 번에 생성됩니다. 탭 클릭은 단순 뷰 전환 — 추가 API 호출 없음.
 
 ---
 
@@ -49,6 +58,14 @@
 
 ---
 
+## 레이어별 상세 문서
+
+| 레이어 | 경로 | 문서 |
+|---|---|---|
+| Frontend | [frontend/](./frontend) | [frontend/README.md](./frontend/README.md) |
+| Backend | [backend/](./backend) | [backend/README.md](./backend/README.md) |
+
+---
 
 ## 기술 스택
 
@@ -136,8 +153,6 @@ Frontend
     완성된 리포트 전체 수신 → 탭 클릭 시 즉시 전환
 ```
 
-Engine과 RAG는 **Python 라이브러리로 직접 임포트** — 네트워크 오버헤드 없음.
-
 ---
 
 ## 코드 구조
@@ -163,56 +178,6 @@ SajuBon/
     ├── db/                 # SQLAlchemy 모델·세션
     └── dependencies/       # FastAPI 의존성
 ```
-
----
-
-## 레이어별 상세 문서
-
-| 레이어 | 경로 | 문서 |
-|---|---|---|
-| Frontend | [frontend/](./frontend) | [frontend/README.md](./frontend/README.md) |
-| Backend | [backend/](./backend) | [backend/README.md](./backend/README.md) |
-
----
-
-## 엔드포인트 요약
-
-| 메서드 | URL | 설명 | 인증 |
-|---|---|---|---|
-| POST | `/api/saju/calc` | 사주팔자 12단계 계산 | 불필요 |
-| POST | `/api/compatibility` | 궁합 분석 (구현 예정) | 불필요 |
-| POST | `/api/daily` | 오늘의 운세 (구현 예정) | 불필요 |
-| POST | `/api/question` | 한줄 상담 (구현 예정) | 불필요 |
-| GET | `/r/{token}` | 리포트 공유 링크 (구현 예정) | 불필요 |
-| GET | `/health` | 서버 상태 확인 | 불필요 |
-| GET | `/docs` | Swagger UI | 불필요 |
-| GET | `/redoc` | ReDoc | 불필요 |
-
----
-
-## 인증 플로우
-
-현재 모든 API는 인증 없이 공개 접근 가능합니다 (MVP 단계).
-향후 JWT 기반 인증이 추가될 예정입니다.
-
-```
-[클라이언트]
-    │  Authorization: Bearer <JWT>
-    ▼
-[FastAPI 의존성 — dependencies/auth.py]
-    │  토큰 검증 실패 → 401 UNAUTHORIZED
-    │  권한 부족     → 403 FORBIDDEN
-    ▼
-[라우터 핸들러]
-```
-
-### 역할/권한표
-
-| 역할 | 접근 가능 API | 설명 |
-|---|---|---|
-| 비로그인 (anonymous) | 모든 계산 API, `/health`, `/docs` | 리포트 저장 없이 계산만 가능 |
-| ROLE_USER | 비로그인 + 리포트 저장·조회·공유 | JWT 발급 후 이용 |
-| ROLE_ADMIN | 전체 + 사용자 관리·지식베이스 재인덱싱 | 내부 운영 전용 |
 
 ---
 
@@ -254,36 +219,3 @@ SajuBon/
 ⑪ 컨텍스트 랭킹       패턴·신살 우선순위화 → primary 3 + secondary 2
 ⑫ 생활 도메인 매핑    career · relationship · wealth · personality 분류
 ```
-
----
-
-## 에러 응답 포맷
-
-모든 API 에러는 일관된 JSON 구조로 반환됩니다.
-
-```json
-{
-  "timestamp": "2025-08-17T11:00:00Z",
-  "path": "/api/saju/calc",
-  "status": 422,
-  "code": "VALIDATION_FAILED",
-  "message": "입력값 검증에 실패했습니다.",
-  "details": {
-    "birth_date": "지원 연도 범위: 1900~2100, 입력값: 1800-01-01",
-    "gender": "허용값: male | female, 입력값: 'M'"
-  }
-}
-```
-
----
-
-## 사주팔자(四柱八字)란?
-
-태어난 **연·월·일·시** 네 기둥(四柱), 여덟 글자(八字)로 이루어진 동양 명리학의 핵심입니다.
-
-| 기둥 | 의미 |
-|---|---|
-| 연주(年柱) | 조상·초년운 |
-| 월주(月柱) | 부모·청장년운 |
-| 일주(日柱) | 본인·배우자·중년운 |
-| 시주(時柱) | 자녀·노년운 |
