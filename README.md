@@ -259,3 +259,9 @@ SajuBon/
 ⑪ 컨텍스트 랭킹       패턴·신살 우선순위화 → primary 3 + secondary 2
 ⑫ 생활 도메인 매핑    career · relationship · wealth · personality 분류
 ```
+
+---
+
+## 스크린샷
+
+![스크린샷](./screenshot/screenshot_260311.png)

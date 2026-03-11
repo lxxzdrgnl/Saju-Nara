@@ -15,7 +15,7 @@ from fastapi.responses import JSONResponse
 from core.errors import ErrorCode, ErrorResponse, http_status
 from core.exceptions import AppException
 from middleware.logging import AccessLogMiddleware
-from routers import saju
+from routers import saju, cities
 
 # ─── 로깅 설정 ───────────────────────────────────────────────────────────────
 
@@ -91,6 +91,7 @@ async def unhandled_exception_handler(req: Request, exc: Exception) -> JSONRespo
 # ─── 라우터 ──────────────────────────────────────────────────────────────────
 
 app.include_router(saju.router)
+app.include_router(cities.router)
 # app.include_router(compatibility.router)   # 구현 예정
 # app.include_router(daily.router)           # 구현 예정
 # app.include_router(question.router)        # 구현 예정

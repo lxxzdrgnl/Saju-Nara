@@ -32,6 +32,8 @@ async def run_saju_report(
     calendar: str = "solar",
     is_leap_month: bool = False,
     concern: str | None = None,
+    birth_longitude: float | None = None,
+    birth_utc_offset: int | None = None,
     llm_provider: str | None = None,
 ) -> tuple[dict, WriterOutput]:
     """
@@ -60,6 +62,8 @@ async def run_saju_report(
         gender=gender,
         calendar=calendar,
         is_leap_month=is_leap_month,
+        birth_longitude=birth_longitude,
+        birth_utc_offset=birth_utc_offset,
     )
     saju: dict = await loop.run_in_executor(_executor, calc_fn)
     logger.info("사주 계산 완료: 일주=%s%s",

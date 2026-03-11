@@ -64,12 +64,12 @@ const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-  <div class="flex flex-col py-10 px-4">
+  <div class="flex flex-col pt-3 pb-6 px-4">
 
     <!-- ── 헤더 ── -->
     <header
       class="text-center transition-all duration-500"
-      :class="store.result ? 'mb-6' : 'mb-12'"
+      :class="store.result ? 'mb-4' : 'mb-6'"
     >
       <div class="inline-block">
         <h1
@@ -92,16 +92,21 @@ const currentYear = new Date().getFullYear()
         class="mt-4 text-sm"
         style="color: #888888;"
       >
-        오직 그 사람만을 위한 결론형 사주 리포트
+        오직 당신을 위한 사주
       </p>
     </header>
 
     <!-- ── 입력 폼 ── -->
     <div
       class="w-full mx-auto transition-all duration-500"
-      :class="store.result ? 'max-w-3xl' : 'max-w-md'"
+      :class="store.result ? 'max-w-3xl' : 'max-w-lg'"
     >
-      <SajuInputForm @submit="onSubmit" />
+      <ClientOnly>
+        <SajuInputForm @submit="onSubmit" />
+        <template #fallback>
+          <div class="rounded-2xl px-8 py-8" style="background:#ffffff; border:1px solid #e8e2db; min-height: 420px;" />
+        </template>
+      </ClientOnly>
     </div>
 
     <!-- ── 로딩 ── -->

@@ -62,6 +62,8 @@ async def calculate_saju(req: SajuCalcRequest) -> SajuCalcResponse:
             gender=req.gender,
             calendar=req.calendar,
             is_leap_month=req.is_leap_month,
+            birth_longitude=req.birth_longitude,
+            birth_utc_offset=req.birth_utc_offset,
         )
         return result
     except ValueError as e:
@@ -99,6 +101,8 @@ async def generate_saju_report(req: SajuReportRequest) -> SajuReportResponse:
             calendar=req.calendar,
             is_leap_month=req.is_leap_month,
             concern=req.concern,
+            birth_longitude=req.birth_longitude,
+            birth_utc_offset=req.birth_utc_offset,
         )
         saju_response = SajuCalcResponse(**saju_dict)
         return SajuReportResponse(

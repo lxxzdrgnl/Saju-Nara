@@ -146,6 +146,56 @@
     color: #aaaaaa;
   }
 
+  /* ── 날짜 분리 입력 세그먼트 ── */
+  .date-seg {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 4px 0;
+    font-size: 22px;
+    color: #1a1a1a;
+    text-align: center;
+    transition: border-bottom-color 0.2s ease;
+    min-width: 0;
+  }
+  .date-seg:focus { outline: none; }
+  .date-seg::placeholder { color: #cccccc; font-size: 15px; }
+  .date-sep { font-size: 13px; color: #cccccc; padding: 0 2px; }
+
+  /* ── 도시 검색 ── */
+  .city-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 6px 0;
+    font-size: 14px;
+    color: #1a1a1a;
+  }
+  .city-input::placeholder { color: #bbbbbb; }
+  .city-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0; right: 0;
+    background: #ffffff;
+    border: 1px solid #e8e2db;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    z-index: 50;
+    overflow: hidden;
+  }
+  .city-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 14px;
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  .city-item:hover { background: #f7f4f1; }
+  .city-item-label { font-size: 14px; color: #1a1a1a; }
+  .city-item-sub   { font-size: 12px; color: #aaaaaa; }
+
   /* ── Select underline style ── */
   .select-underline {
     background: transparent;

@@ -7,7 +7,7 @@ Writer LLM — PydanticOutputParser 기반 사주 리포트 생성기.
 
 from __future__ import annotations
 import logging
-from langchain.output_parsers import PydanticOutputParser, OutputFixingParser
+from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.messages import SystemMessage, HumanMessage
 
 from schemas.report import WriterOutput
@@ -58,17 +58,24 @@ async def generate_report(
         logger.error("Writer LLM 호출 실패: %s", exc)
         raise
 
-    # ── 4. 파싱 (실패 시 OutputFixingParser로 재시도) ──
+    # ── 4. 파싱 (실패 시 JSON 수정 프롬프트로 재시도) ──
     try:
         return parser.parse(raw)
     except Exception as parse_exc:
-        logger.warning("1차 파싱 실패, OutputFixingParser 재시도: %s", parse_exc)
+        logger.warning("1차 파싱 실패, 재시도: %s", parse_exc)
         try:
-            fixing_parser = OutputFixingParser.from_llm(
-                parser=parser,
-                llm=get_llm(provider),
-            )
-            return fixing_parser.parse(raw)
+            fix_messages = [
+                SystemMessage(content="You are a JSON fixer. Return only valid JSON."),
+                HumanMessage(content=(
+                    f"Fix the following output to match this schema:\n"
+                    f"{format_instructions}\n\n"
+                    f"Original output:\n{raw}\n\n"
+                    f"Return ONLY the fixed JSON, no explanation."
+                )),
+            ]
+            fix_response = await get_llm(provider).ainvoke(fix_messages)
+            fix_raw = fix_response.content if hasattr(fix_response, "content") else str(fix_response)
+            return parser.parse(fix_raw)
         except Exception as fix_exc:
-            logger.error("OutputFixingParser도 실패: %s", fix_exc)
+            logger.error("2차 파싱도 실패: %s", fix_exc)
             raise RuntimeError(f"Writer 출력 파싱 최종 실패: {fix_exc}") from fix_exc

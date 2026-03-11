@@ -14,7 +14,10 @@ from engine.calc.dae_un import calculate_dae_un
 from engine.calc.twelve_wun import get_twelve_wun
 from engine.calc.validation import validate_birth_input
 from engine.data.heavenly_stems import STEMS_BY_KOREAN
-from engine.data.timezone_history import get_solar_correction_minutes, get_historical_note
+from engine.data.timezone_history import (
+    get_solar_correction_minutes, get_historical_note,
+    get_solar_correction_for_location,
+)
 from engine.data.wuxing import WUXING_GENERATION, WUXING_DESTRUCTION
 from engine.data.earthly_branches import SAM_HYEONG as _SAM_HYEONG, GONG_MANG_TABLE
 from engine.analysis.structure_patterns import detect_structure_patterns
@@ -39,6 +42,8 @@ def handle_calculate_saju(
     gender: str,
     calendar: str = "solar",
     is_leap_month: bool = False,
+    birth_longitude: float | None = None,
+    birth_utc_offset: int | None = None,
 ) -> dict:
     """
     사주팔자 전체 계산 — Pipeline 패턴.
@@ -125,7 +130,7 @@ def handle_calculate_saju(
     # 9. meta
     hh, mm = map(int, birth_time.split(":"))
     original_dt = datetime(birth_year, *map(int, birth_date.split("-")[1:]), hh, mm)
-    correction = get_solar_correction_minutes(original_dt)
+    correction = get_solar_correction_for_location(original_dt, birth_longitude, birth_utc_offset)
     applied_dt = original_dt + timedelta(minutes=correction)
     meta = {
         "time_correction_minutes": correction,

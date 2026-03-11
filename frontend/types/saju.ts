@@ -1,10 +1,13 @@
 /** 사주 계산 요청 */
 export interface SajuCalcRequest {
+  name?: string             // 이름 (표시용)
   birth_date: string        // 'YYYY-MM-DD'
   birth_time: string        // 'HH:MM'
   gender: 'male' | 'female'
   calendar?: 'solar' | 'lunar'
   is_leap_month?: boolean
+  birth_longitude?: number  // 출생지 경도 (진태양시 보정용)
+  birth_utc_offset?: number // UTC 오프셋(분) — 해외 도시 전용, 한국은 생략
 }
 
 /** 기둥 하나 */

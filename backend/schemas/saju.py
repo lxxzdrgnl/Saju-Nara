@@ -34,6 +34,16 @@ class SajuCalcRequest(BaseModel):
         description="음력 입력 시 윤달 여부. 양력 입력 시 무시됨",
         examples=[False],
     )
+    birth_longitude: float | None = Field(
+        default=None,
+        description="출생지 경도 (도 단위). 입력 시 진태양시 보정에 사용. 미입력 시 서울(126.97°) 적용",
+        examples=[126.97],
+    )
+    birth_utc_offset: int | None = Field(
+        default=None,
+        description="출생지 UTC 오프셋 (분 단위). 해외 출생 시 필수. 한국 출생 시 생략 (역사적 KST 자동 적용)",
+        examples=[None],
+    )
 
     model_config = {
         "json_schema_extra": {

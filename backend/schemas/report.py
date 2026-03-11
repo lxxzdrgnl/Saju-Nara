@@ -53,6 +53,12 @@ class SajuReportRequest(BaseModel):
         pattern="^(solar|lunar)$",
     )
     is_leap_month: bool = Field(default=False, description="음력 윤달 여부")
+    birth_longitude: float | None = Field(
+        default=None, description="출생지 경도. 미입력 시 서울(126.97°) 적용", examples=[126.97],
+    )
+    birth_utc_offset: int | None = Field(
+        default=None, description="UTC 오프셋(분) — 해외 출생 시 필수", examples=[None],
+    )
     concern: str | None = Field(
         default=None,
         description="사용자 고민 원문. 입력하면 고민 맞춤 탭이 생성됩니다.",
