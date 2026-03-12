@@ -23,12 +23,13 @@ jobs:
           ssh-keyscan -H ${{ secrets.PC_SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Write backend.env
+        env:
+          BACKEND_ENV: ${{ secrets.BACKEND_ENV }}
         run: |
-          ssh -i ~/.ssh/pc_key \
-            ${{ secrets.PC_SSH_USER }}@${{ secrets.PC_SSH_HOST }} \
-            "cat > ~/servers/sajuguri/backend.env << 'ENVEOF'
-${{ secrets.BACKEND_ENV }}
-ENVEOF"
+          echo "$BACKEND_ENV" > backend.env
+          scp -i ~/.ssh/pc_key backend.env \
+            ${{ secrets.PC_SSH_USER }}@${{ secrets.PC_SSH_HOST }}:~/servers/sajuguri/backend.env
+          rm -f backend.env
 
       - name: Deploy to server
         run: |
