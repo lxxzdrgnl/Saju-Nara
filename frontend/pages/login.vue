@@ -10,7 +10,7 @@ watchEffect(() => {
 function handleGoogleLogin() {
   // Nuxt 서버 라우트 사용 — routeRules 프록시 우회
   // 브라우저가 Google OAuth 페이지로 직접 이동해야 계정 선택창이 표시됨
-  window.location.href = '/auth/google'
+  window.location.href = '/api/auth/google'
 }
 </script>
 
