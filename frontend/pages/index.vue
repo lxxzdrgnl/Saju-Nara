@@ -311,7 +311,7 @@ const currentYear = new Date().getFullYear()
       <section class="animate-fade-up animate-delay-600 space-y-2">
         <div class="flex items-center gap-1.5 pl-1">
           <span class="label-section">대운 (大運)</span>
-          <UiInfoTooltip text="10년 단위로 바뀌는 운의 큰 흐름. 절기 기준 3일이 1년에 해당하며, 태어난 성별과 연주 음양에 따라 순행·역행이 결정됩니다." />
+          <UiInfoTooltip :text="`10년 단위로 바뀌는 운의 큰 흐름입니다. 절기 기준 3일이 1년에 해당하며, 태어난 성별과 연주 음양에 따라 순행·역행이 결정됩니다. 이 사주는 ${store.result.dae_un_start_age}세에 시작하여 ${store.result.dae_un_start_age + 10}세, ${store.result.dae_un_start_age + 20}세… 10년 간격으로 바뀝니다.`" />
         </div>
         <SajuDaeUnSlider
           :dae-un-list="store.result.dae_un_list"
