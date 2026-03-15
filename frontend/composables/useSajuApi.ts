@@ -1,4 +1,4 @@
-import type { SajuCalcRequest, SajuCalcResponse, WolUnEntry, YeonUnEntry, IlJinEntry } from '~/types/saju'
+import type { SajuCalcRequest, SajuCalcResponse, WolUnEntry, YeonUnEntry, IlJinEntry, DailyFortuneRequest, DailyFortuneResponse } from '~/types/saju'
 
 export function useSajuApi() {
   const config = useRuntimeConfig()
@@ -30,5 +30,23 @@ export function useSajuApi() {
     })
   }
 
-  return { calcSaju, getWolUn, getYeonUn, getIlJin }
+  async function getDailyFortune(req: DailyFortuneRequest): Promise<DailyFortuneResponse> {
+    return $fetch<DailyFortuneResponse>(`${base}/api/saju/daily`, {
+      method: 'POST',
+      body: req,
+    })
+  }
+
+  async function createDailyShare(birthInput: Record<string, unknown>): Promise<{ share_token: string; share_url: string }> {
+    return $fetch(`${base}/api/share/daily`, {
+      method: 'POST',
+      body: { birth_input: birthInput },
+    })
+  }
+
+  async function getDailyShareInput(token: string): Promise<{ birth_input: Record<string, unknown> }> {
+    return $fetch(`${base}/api/share/daily/${token}`)
+  }
+
+  return { calcSaju, getWolUn, getYeonUn, getIlJin, getDailyFortune, createDailyShare, getDailyShareInput }
 }
