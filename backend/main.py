@@ -62,12 +62,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(
-    SessionMiddleware,
-    secret_key=settings.jwt_secret,
-    https_only=settings.https_only,  # set HTTPS_ONLY=true in production
-    same_site="lax",
-)
+app.add_middleware(SessionMiddleware, secret_key=settings.jwt_secret)
 
 # ─── 예외 핸들러 ─────────────────────────────────────────────────────────────
 
