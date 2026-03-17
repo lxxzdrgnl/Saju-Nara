@@ -244,7 +244,7 @@ function goToMyProfile() {
 
           <NuxtLink to="/question" class="service-card service-card-question">
             <div class="service-card-img-wrap">
-              <img src="/question-illust.webp" alt="한줄 상담" class="service-card-img" />
+              <img src="/question-illust.webp" alt="한줄 상담" class="service-card-img service-card-img--question" />
             </div>
             <div class="service-card-footer">
               <div>
@@ -490,6 +490,11 @@ function goToMyProfile() {
   height: 100%;
   object-fit: cover;
 }
+.service-card-img--question {
+  transform: scale(1.06);
+  transform-origin: 32% center;
+  object-position: 32% center;
+}
 .service-card-footer {
   display: flex;
   align-items: center;
@@ -638,6 +643,11 @@ function goToMyProfile() {
   }
   .service-card-img-wrap {
     aspect-ratio: 16 / 9;
+  }
+  .service-card-img--question {
+    transform: scale(1.06);
+    transform-origin: 32% center;
+    object-position: 32% center;
   }
 }
 /* ── 한줄 운세 ── */

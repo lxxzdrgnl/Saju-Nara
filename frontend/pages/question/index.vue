@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useAuthStore } from '~/stores/auth'
 import type { SajuCalcRequest, ConsultationResponse, QuestionCategory } from '~/types/saju'
-// QuestionCategory는 결과 표시용으로만 사용
+import { STORAGE_KEYS } from '~/utils/storageKeys'
 
 const auth   = useAuthStore()
 const config = useRuntimeConfig()
@@ -26,17 +26,19 @@ const CATEGORY_LABELS: Record<QuestionCategory, string> = {
   general: '기타',
 }
 
-const step             = ref<Step>('select')
-const loading          = ref(false)
-const error            = ref('')
-const result           = ref<ConsultationResponse | null>(null)
-const profiles         = ref<ProfileItem[]>([])
-const profLoad         = ref(false)
-const showLoginDialog  = ref(false)
+const step              = ref<Step>('select')
+const loading           = ref(false)
+const error             = ref('')
+const result            = ref<ConsultationResponse | null>(null)
+const profiles          = ref<ProfileItem[]>([])
+const profLoad          = ref(false)
+const showLoginDialog   = ref(false)
 const pendingBirthInput = ref<SajuCalcRequest | null>(null)
-const pendingName      = ref('')
-const shareLoading     = ref(false)
-const shareCopied      = ref(false)
+const pendingName       = ref('')
+const shareLoading         = ref(false)
+const shareCopied          = ref(false)
+const fromDirectInput      = ref(false)
+const showLoginPromoDialog = ref(false)
 
 // 고민 입력
 const question   = ref('')
@@ -44,6 +46,47 @@ const CHAR_MIN   = 10
 const CHAR_MAX   = 100
 const questionValid = computed(
   () => question.value.length >= CHAR_MIN && question.value.length <= CHAR_MAX
+)
+
+// ── 프로필 저장 ───────────────────────────────────────────────────────────────
+const { saveState: saveProfileState, saveProfile: _saveProfile, saveLabel: saveProfileLabel, saveDisabled: saveProfileDisabled } = useProfileSave()
+
+async function saveProfile() {
+  if (!auth.isLoggedIn) { showLoginDialog.value = true; return }
+  if (!pendingBirthInput.value) return
+  const b = pendingBirthInput.value
+  await _saveProfile({
+    name:          (b.name as string)?.trim() || pendingName.value || '내 사주',
+    birth_date:    b.birth_date,
+    birth_time:    b.birth_time ?? null,
+    calendar:      b.calendar ?? 'solar',
+    gender:        b.gender,
+    is_leap_month: b.is_leap_month ?? false,
+    city:          b.city ?? null,
+    longitude:     b.birth_longitude ?? null,
+  })
+}
+
+// ── 로그인 이동 시 자동 저장 → 복귀 시 자동 복원 ──────────────────────────────
+useLoginStatePersist(
+  STORAGE_KEYS.QUESTION_PENDING_INPUT,
+  () => pendingBirthInput.value
+    ? { birthInput: pendingBirthInput.value, result: result.value, name: pendingName.value, question: question.value, fromDirect: fromDirectInput.value }
+    : null,
+  ({ birthInput, result: savedResult, name, question: savedQuestion, fromDirect }) => {
+    pendingBirthInput.value = birthInput
+    pendingName.value       = name || ''
+    question.value          = savedQuestion || ''
+    fromDirectInput.value   = fromDirect ?? true
+    if (savedResult) {
+      result.value = savedResult
+      step.value   = 'result'
+    } else if (savedQuestion && birthInput) {
+      submitQuestion()
+    } else {
+      step.value = 'question'
+    }
+  },
 )
 
 // ── 프로필 로드 ───────────────────────────────────────────────────────────────
@@ -64,12 +107,14 @@ function goProfile() {
 
 // ── 생년월일 확보 후 고민 입력 스텝으로 ──────────────────────────────────────
 function onFormSubmit(req: SajuCalcRequest) {
+  fromDirectInput.value   = true
   pendingBirthInput.value = req
-  pendingName.value = req.name ?? ''
-  step.value = 'question'
+  pendingName.value       = req.name ?? ''
+  step.value              = 'question'
 }
 
 function onProfileSelect(p: ProfileItem) {
+  fromDirectInput.value   = false
   pendingBirthInput.value = {
     birth_date:    p.birth_date,
     birth_time:    p.birth_time ?? undefined,
@@ -78,7 +123,7 @@ function onProfileSelect(p: ProfileItem) {
     is_leap_month: p.is_leap_month,
   }
   pendingName.value = p.name
-  step.value = 'question'
+  step.value        = 'question'
 }
 
 // ── 상담 실행 ──────────────────────────────────────────────────────────────
@@ -92,6 +137,7 @@ async function submitQuestion() {
       question: question.value,
     }, auth.token)
     step.value = 'result'
+    if (!auth.isLoggedIn) showLoginPromoDialog.value = true
   } catch {
     error.value = '상담을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.'
   } finally {
@@ -100,14 +146,16 @@ async function submitQuestion() {
 }
 
 function reset() {
-  result.value           = null
-  error.value            = ''
-  question.value         = ''
+  result.value            = null
+  error.value             = ''
+  question.value          = ''
   pendingBirthInput.value = null
-  pendingName.value      = ''
-  shareLoading.value     = false
-  shareCopied.value      = false
-  step.value             = 'select'
+  pendingName.value       = ''
+  shareLoading.value      = false
+  shareCopied.value       = false
+  fromDirectInput.value   = false
+  saveProfileState.value  = 'idle'
+  step.value              = 'select'
 }
 
 async function shareResult() {
@@ -262,16 +310,20 @@ async function shareResult() {
           <span v-else-if="shareLoading">생성 중…</span>
           <span v-else>공유하기</span>
         </button>
-        <NuxtLink v-if="auth.isLoggedIn" to="/question/history" class="btn-history-link fs-label">
-          내 상담 기록 보기
-        </NuxtLink>
       </div>
+      <button
+        v-if="fromDirectInput"
+        class="btn-save-profile"
+        :class="{ 'is-done': saveProfileState === 'done' }"
+        :disabled="saveProfileDisabled"
+        @click="saveProfile"
+      >{{ saveProfileLabel }}</button>
       <button class="btn-secondary" @click="reset">다른 고민 상담하기</button>
     </div>
 
   </div>
 
-  <!-- 로그인 유도 -->
+  <!-- 로그인 유도 (프로필 접근 시) -->
   <AppDialog
     v-model:show="showLoginDialog"
     title="로그인이 필요해요"
@@ -279,6 +331,16 @@ async function shareResult() {
     cancel-text="취소"
   >
     <button class="btn-primary" style="width:100%" @click="goToLogin()">로그인하러 가기</button>
+  </AppDialog>
+
+  <!-- 로그인 프로모 (결과 확인 후 비로그인) -->
+  <AppDialog
+    v-model:show="showLoginPromoDialog"
+    title="매번 입력하기 번거로우시죠?"
+    desc="로그인하면 만세력을 저장해두고 바로 불러올 수 있어요."
+    cancel-text="괜찮아요"
+  >
+    <button class="btn-primary" style="width:100%" @click="goToLogin()">로그인하고 만세력 저장하기</button>
   </AppDialog>
 </template>
 
@@ -403,21 +465,13 @@ async function shareResult() {
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 }
 .btn-share {
-  flex: 1; padding: 11px 18px; border-radius: 10px;
-  border: 1px solid var(--accent); background: transparent;
-  color: var(--accent); font-size: var(--fs-label); font-weight: 700;
-  cursor: pointer; transition: background 0.15s;
+  flex: 1; padding: 13px 18px; border-radius: 10px;
+  border: none; background: var(--accent);
+  color: #fff; font-size: var(--fs-body); font-weight: 700;
+  cursor: pointer; transition: opacity 0.15s;
 }
-.btn-share:hover:not(:disabled) { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.btn-share:hover:not(:disabled) { opacity: 0.88; }
 .btn-share:disabled { opacity: 0.6; cursor: not-allowed; }
-.btn-history-link {
-  padding: 11px 16px; border-radius: 10px;
-  border: 1px solid var(--border-default);
-  background: var(--surface-1); color: var(--text-secondary);
-  font-weight: 600; text-decoration: none; white-space: nowrap;
-  transition: background 0.15s;
-}
-.btn-history-link:hover { background: var(--surface-2); }
 .result-card { padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; }
 .result-category {
   color: var(--accent); font-weight: 700; text-transform: uppercase;
@@ -439,6 +493,15 @@ async function shareResult() {
   transition: background 0.15s;
 }
 .btn-secondary:hover { background: var(--surface-2); }
+.btn-save-profile {
+  width: 100%; padding: 13px; border-radius: 10px;
+  border: none; background: var(--accent);
+  color: #fff; font-size: var(--fs-body); font-weight: 700;
+  cursor: pointer; transition: opacity 0.15s;
+}
+.btn-save-profile:hover:not(:disabled) { opacity: 0.88; }
+.btn-save-profile:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-save-profile.is-done { background: var(--surface-2); color: var(--accent); border: 1px solid var(--accent); }
 
 @media (min-width: 768px) {
   .question-wrap { max-width: 960px; padding: 32px 40px 60px; }
