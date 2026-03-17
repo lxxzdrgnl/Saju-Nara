@@ -1,16 +1,9 @@
 <script setup lang="ts">
 const props = defineProps<{
-  error: { statusCode: number; message?: string; url?: string }
+  error: { statusCode: number; statusMessage?: string }
 }>()
 
-const is404 = computed(() => props.error.statusCode === 404)
-
-const title    = computed(() => is404.value ? '페이지를 찾을 수 없어요' : '일시적인 오류가 발생했어요')
-const subtitle = computed(() =>
-  is404.value
-    ? '존재하지 않거나 삭제된 페이지입니다.'
-    : '잠시 후 다시 시도해 주세요.',
-)
+const is500 = computed(() => props.error.statusCode >= 500)
 
 function goHome() {
   clearError({ redirect: '/' })
@@ -29,8 +22,8 @@ function goHome() {
       <p class="error-code">{{ error.statusCode }}</p>
 
       <!-- 메시지 -->
-      <h1 class="error-title">{{ title }}</h1>
-      <p class="error-sub">{{ subtitle }}</p>
+      <h1 class="error-title">{{ is500 ? '일시적인 오류가 발생했어요' : '페이지를 찾을 수 없어요' }}</h1>
+      <p class="error-sub">{{ is500 ? '잠시 후 다시 시도해 주세요.' : '존재하지 않거나 삭제된 페이지입니다.' }}</p>
 
       <!-- 홈 버튼 -->
       <button class="btn-primary error-btn" @click="goHome">
@@ -40,9 +33,9 @@ function goHome() {
   </div>
 </template>
 
-<style>
-/* CSS 변수 fallback — app.vue 레이아웃 없이 렌더되므로 직접 선언 */
-:root {
+<style scoped>
+.error-root {
+  /* CSS 변수 fallback — app.vue 레이아웃 없이 렌더되므로 여기서 선언 (전역 :root 오염 방지) */
   --bg-base:        #0f0e0d;
   --surface-1:      #1a1916;
   --border-default: rgba(255,255,255,0.1);
@@ -52,11 +45,6 @@ function goHome() {
   --font-ganji:     'Joseon100Years', 'Noto Serif KR', Georgia, serif;
   --fs-body:        0.9375rem;
   --fs-sub:         0.8125rem;
-}
-</style>
-
-<style scoped>
-.error-root {
   min-height: 100dvh;
   background: var(--bg-base);
   display: flex;
