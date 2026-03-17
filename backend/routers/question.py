@@ -63,7 +63,7 @@ async def ask_question(
         raise CalcFailedException(str(exc)) from exc
 
     # 자동 저장 (로그인 시 user_id 연결, 비로그인은 null)
-    birth_input = {
+    birth_input: dict = {
         "birth_date": req.birth_date,
         "birth_time": req.birth_time,
         "gender": req.gender,
@@ -72,6 +72,8 @@ async def ask_question(
         "birth_longitude": req.birth_longitude,
         "birth_utc_offset": req.birth_utc_offset,
     }
+    if req.name:
+        birth_input["name"] = req.name
     row = Consultation(
         user_id=user.id if user else None,
         birth_input=birth_input,
@@ -190,12 +192,12 @@ async def get_shared_consultation(
     row = result.scalar_one_or_none()
     if not row:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="상담 기록을 찾을 수 없습니다.")
-    name = None
-    if row.birth_input and isinstance(row.birth_input, dict):
-        name = row.birth_input.get("name") or None
+    bi = row.birth_input if isinstance(row.birth_input, dict) else None
+    name = bi.get("name") or None if bi else None
     return ConsultationDetail(
         id=row.id,
         name=name,
+        birth_input=bi,
         question=row.question,
         category=row.category,
         headline=row.headline,

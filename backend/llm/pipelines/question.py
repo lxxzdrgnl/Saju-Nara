@@ -213,7 +213,8 @@ _GUARD_PROMPT = """사용자의 고민을 보고 아래 네 가지 중 하나로
 [INSTANT] 아래 둘 중 하나에만 해당하면 INSTANT:
 - 즉각 행동이 답인 생리적 상황 (배고픔, 졸림, 화장실 등)
 - 전제 자체가 물리적으로 불가능한 황당한 질문 (예: "팔을 자를까", "화성에 이민 갈까")
-→ 짧고 유쾌하게, 사주 특유의 말투로 한 문장 답변. 전제가 틀렸으면 먼저 짚어줄 것.
+→ 질문에 딱 맞는 위트 있는 헤드라인(15자 이내)과 사주 느낌의 짧은 본문을 작성.
+  헤드라인은 질문의 핵심을 유쾌하게 비틀거나 직접 결론 짓는 문장.
 
 [OK] 그 외 **모든** 질문. 게임·오락·재미·음식·쇼핑·일상 고민도 모두 OK. 카테고리 분류:
 career(직업·이직·사업·시험) / love(연애·결혼·인간관계) / money(재물·투자) / health(건강·체력) / general(기타)
@@ -223,7 +224,7 @@ OK|<카테고리>
 또는
 BLOCK: <사주 관점의 한 줄 경고문>
 또는
-INSTANT: <한 문장 직접 답변>
+INSTANT|<헤드라인>|<본문>
 또는
 MEDICAL"""
 
@@ -252,9 +253,11 @@ async def _guard_and_classify(question: str, provider: str | None = None) -> tup
     if raw.strip() == "MEDICAL":
         return "MEDICAL", "health", False
 
-    if raw.startswith("INSTANT:"):
-        msg = raw[len("INSTANT:"):].strip()
-        return msg, "general", True
+    if raw.startswith("INSTANT|"):
+        parts = raw.split("|", 2)
+        headline = parts[1].strip() if len(parts) > 1 else "잠깐만요"
+        content  = parts[2].strip() if len(parts) > 2 else headline
+        return f"{headline}|||{content}", "general", True
 
     # OK|career 형식 파싱
     category = "general"
@@ -294,7 +297,11 @@ async def run_question_consultation(
     guard_msg, category, is_instant = await _guard_and_classify(question, llm_provider)
     if is_instant:
         logger.info("Instant answer: %s", question[:30])
-        return {"headline": "지금 바로 해결하세요", "content": guard_msg, "category": category}
+        if guard_msg and "|||" in guard_msg:
+            headline, content = guard_msg.split("|||", 1)
+        else:
+            headline, content = "잠깐만요", guard_msg or ""
+        return {"headline": headline, "content": content, "category": category}
 
     is_medical = (guard_msg == "MEDICAL")
     if is_medical:

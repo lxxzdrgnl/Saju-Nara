@@ -232,6 +232,7 @@ export interface ConsultationHistoryItem {
 export interface ConsultationDetail {
   id: number
   name?: string | null
+  birth_input?: Record<string, unknown> | null
   question: string
   category: string
   headline: string
