@@ -13,6 +13,7 @@ CATEGORIES = Literal['career', 'love', 'money', 'health', 'general']
 class QuestionRequest(BaseModel):
     """한줄 상담 요청."""
 
+    name: str | None = Field(default=None, description="이름 (표시용)", examples=["홍길동"])
     birth_date: str = Field(description="생년월일 (YYYY-MM-DD)", examples=["1990-03-15"])
     birth_time: str | None = Field(default=None, description="출생 시각 (HH:MM). 모를 경우 null", examples=["14:30"])
     gender: str = Field(description="성별", examples=["male"], pattern="^(male|female)$")
@@ -84,7 +85,8 @@ class ConsultationHistoryItem(BaseModel):
 class ConsultationDetail(BaseModel):
     """상담 상세 (공유 링크용 포함)."""
     id:          int
-    name:        str | None = None  # birth_input.name (표시용)
+    name:        str | None = None
+    birth_input: dict | None = None
     question:    str
     category:    str
     headline:    str

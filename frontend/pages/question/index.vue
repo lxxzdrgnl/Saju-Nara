@@ -37,8 +37,10 @@ const pendingBirthInput = ref<SajuCalcRequest | null>(null)
 const pendingName       = ref('')
 const shareLoading         = ref(false)
 const shareCopied          = ref(false)
+const shareUrl             = ref('')
 const fromDirectInput      = ref(false)
 const showLoginPromoDialog = ref(false)
+const showShareDialog      = ref(false)
 
 // 고민 입력
 const question   = ref('')
@@ -134,6 +136,7 @@ async function submitQuestion() {
   try {
     result.value = await askQuestion({
       ...pendingBirthInput.value,
+      name: pendingBirthInput.value.name?.trim() || pendingName.value?.trim() || undefined,
       question: question.value,
     }, auth.token)
     step.value = 'result'
@@ -153,6 +156,7 @@ function reset() {
   pendingName.value       = ''
   shareLoading.value      = false
   shareCopied.value       = false
+  shareUrl.value          = ''
   fromDirectInput.value   = false
   saveProfileState.value  = 'idle'
   step.value              = 'select'
@@ -160,16 +164,33 @@ function reset() {
 
 async function shareResult() {
   if (!result.value) return
+
+  // 이미 URL 있으면 API 재호출 없이 바로 복사/다이얼로그
+  if (shareUrl.value) {
+    try {
+      await navigator.clipboard.writeText(shareUrl.value)
+      shareCopied.value = true
+      setTimeout(() => { shareCopied.value = false }, 3000)
+    } catch {
+      showShareDialog.value = true
+    }
+    return
+  }
+
   shareLoading.value = true
-  shareCopied.value  = false
   try {
     const { share_token } = await createConsultationShare(result.value.id, auth.token)
     const url = `${window.location.origin}/question/share/${share_token}`
-    await navigator.clipboard.writeText(url)
-    shareCopied.value = true
-    setTimeout(() => { shareCopied.value = false }, 3000)
+    shareUrl.value = url
+    try {
+      await navigator.clipboard.writeText(url)
+      shareCopied.value = true
+      setTimeout(() => { shareCopied.value = false }, 3000)
+    } catch {
+      showShareDialog.value = true
+    }
   } catch {
-    // 공유 실패 시 조용히 무시
+    shareUrl.value = ''
   } finally {
     shareLoading.value = false
   }
@@ -291,15 +312,16 @@ async function shareResult() {
 
     <!-- ── Step 4: 결과 ── -->
     <div v-else-if="step === 'result' && result" class="result-wrap animate-fade-up">
-      <div class="result-card card">
-        <p class="result-category fs-tiny">{{ CATEGORY_LABELS[result.category as QuestionCategory] ?? result.category }}</p>
-        <h2 class="result-headline">{{ result.headline }}</h2>
-        <p class="result-content">{{ result.content }}</p>
-      </div>
-      <div class="result-question-echo card" style="padding:14px 18px;">
-        <p class="fs-tiny" style="color:var(--text-muted);">입력한 고민</p>
-        <p class="fs-sub" style="color:var(--text-secondary);margin-top:4px;">{{ question }}</p>
-      </div>
+      <QuestionConsultationResult
+        :question="question"
+        :headline="result.headline"
+        :content="result.content"
+        :category="result.category"
+        :name="pendingName || null"
+        :birth-date="pendingBirthInput?.birth_date ?? null"
+        :birth-time="pendingBirthInput?.birth_time ?? null"
+        :gender="pendingBirthInput?.gender ?? null"
+      />
       <div class="result-actions">
         <button
           class="btn-share"
@@ -310,15 +332,17 @@ async function shareResult() {
           <span v-else-if="shareLoading">생성 중…</span>
           <span v-else>공유하기</span>
         </button>
+        <button class="btn-secondary" @click="reset">다른 고민 상담하기</button>
       </div>
-      <button
-        v-if="fromDirectInput"
-        class="btn-save-profile"
-        :class="{ 'is-done': saveProfileState === 'done' }"
-        :disabled="saveProfileDisabled"
-        @click="saveProfile"
-      >{{ saveProfileLabel }}</button>
-      <button class="btn-secondary" @click="reset">다른 고민 상담하기</button>
+      <template v-if="!auth.isLoggedIn || fromDirectInput">
+        <p class="save-profile-hint fs-tiny">다음에도 이 프로필로 상담하고 싶다면?</p>
+        <button
+          class="btn-save-profile"
+          :class="{ 'is-done': saveProfileState === 'done' }"
+          :disabled="saveProfileDisabled"
+          @click="saveProfile"
+        >{{ saveProfileLabel }}</button>
+      </template>
     </div>
 
   </div>
@@ -331,6 +355,20 @@ async function shareResult() {
     cancel-text="취소"
   >
     <button class="btn-primary" style="width:100%" @click="goToLogin()">로그인하러 가기</button>
+  </AppDialog>
+
+  <!-- 공유 URL 다이얼로그 (clipboard 권한 없을 때) -->
+  <AppDialog
+    v-model:show="showShareDialog"
+    title="링크를 복사해 주세요"
+    cancel-text="닫기"
+  >
+    <input
+      class="share-url-input"
+      :value="shareUrl"
+      readonly
+      @click="($event.target as HTMLInputElement).select()"
+    />
   </AppDialog>
 
   <!-- 로그인 프로모 (결과 확인 후 비로그인) -->
@@ -462,7 +500,7 @@ async function shareResult() {
 /* Step4 — 결과 */
 .result-wrap { display: flex; flex-direction: column; gap: 12px; }
 .result-actions {
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  display: flex; flex-direction: column; gap: 10px;
 }
 .btn-share {
   flex: 1; padding: 13px 18px; border-radius: 10px;
@@ -472,19 +510,6 @@ async function shareResult() {
 }
 .btn-share:hover:not(:disabled) { opacity: 0.88; }
 .btn-share:disabled { opacity: 0.6; cursor: not-allowed; }
-.result-card { padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; }
-.result-category {
-  color: var(--accent); font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-.result-headline {
-  font-size: 20px; font-weight: 800; color: var(--text-primary);
-  line-height: 1.4; letter-spacing: -0.02em;
-}
-.result-content {
-  font-size: var(--fs-body); color: var(--text-secondary);
-  line-height: 1.75; white-space: pre-wrap;
-}
 .btn-secondary {
   width: 100%; padding: 12px; border-radius: 10px;
   border: 1px solid var(--border-default);
@@ -493,15 +518,25 @@ async function shareResult() {
   transition: background 0.15s;
 }
 .btn-secondary:hover { background: var(--surface-2); }
-.btn-save-profile {
-  width: 100%; padding: 13px; border-radius: 10px;
-  border: none; background: var(--accent);
-  color: #fff; font-size: var(--fs-body); font-weight: 700;
-  cursor: pointer; transition: opacity 0.15s;
+.save-profile-hint {
+  color: var(--text-muted); text-align: left; font-size: 13px; margin-bottom: -4px;
 }
-.btn-save-profile:hover:not(:disabled) { opacity: 0.88; }
+.share-url-input {
+  width: 100%; padding: 10px 12px; border-radius: 8px;
+  border: 1px solid var(--border-default);
+  background: var(--surface-2); color: var(--text-primary);
+  font-size: var(--fs-label); cursor: text;
+}
+.btn-save-profile {
+  width: 100%; padding: 12px; border-radius: 10px;
+  border: 1px solid var(--border-default);
+  background: var(--surface-1); color: var(--text-secondary);
+  font-size: var(--fs-body); font-weight: 600;
+  cursor: pointer; transition: background 0.15s;
+}
+.btn-save-profile:hover:not(:disabled) { background: var(--surface-2); }
 .btn-save-profile:disabled { opacity: 0.5; cursor: not-allowed; }
-.btn-save-profile.is-done { background: var(--surface-2); color: var(--accent); border: 1px solid var(--accent); }
+.btn-save-profile.is-done { color: var(--accent); border-color: var(--accent); }
 
 @media (min-width: 768px) {
   .question-wrap { max-width: 960px; padding: 32px 40px 60px; }

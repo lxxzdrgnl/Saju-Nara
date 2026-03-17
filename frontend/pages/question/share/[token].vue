@@ -20,6 +20,7 @@ const { data: item, error: fetchError } = await useAsyncData<ConsultationDetail>
 )
 
 const personName = computed(() => item.value?.name || null)
+const bi = computed(() => item.value?.birth_input as Record<string, unknown> | null | undefined)
 const ogTitle = computed(() =>
   personName.value ? `${personName.value}님의 한줄상담 결과보기` : '한줄상담 결과보기'
 )
@@ -34,11 +35,6 @@ useSeoMeta({
 })
 
 const error = computed(() => !!fetchError.value)
-
-function formatDate(iso: string) {
-  const d = new Date(iso)
-  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`
-}
 </script>
 
 <template>
@@ -61,19 +57,17 @@ function formatDate(iso: string) {
     </div>
 
     <template v-else-if="item">
-      <div class="result-card card">
-        <div class="result-top">
-          <span class="result-category fs-tiny">{{ CATEGORY_LABELS[item.category] ?? item.category }}</span>
-          <span class="result-date fs-tiny">{{ formatDate(item.created_at) }}</span>
-        </div>
-        <h2 class="result-headline">{{ item.headline }}</h2>
-        <p class="result-content">{{ item.content }}</p>
-      </div>
-
-      <div class="echo-card card" style="padding:14px 18px;">
-        <p class="fs-tiny" style="color:var(--text-muted);">상담 고민</p>
-        <p class="fs-sub" style="color:var(--text-secondary);margin-top:4px;">{{ item.question }}</p>
-      </div>
+      <QuestionConsultationResult
+        :question="item.question"
+        :headline="item.headline"
+        :content="item.content"
+        :category="item.category"
+        :name="personName"
+        :birth-date="bi?.birth_date as string | null ?? null"
+        :birth-time="bi?.birth_time as string | null ?? null"
+        :gender="bi?.gender as string | null ?? null"
+        :created-at="item.created_at"
+      />
 
       <NuxtLink to="/question" class="btn-primary cta-btn">
         나도 한줄 상담 받기
@@ -97,12 +91,7 @@ function formatDate(iso: string) {
 .s-sub { color: var(--text-muted); margin-top: 4px; }
 .center-state { min-height: 200px; display: flex; align-items: center; justify-content: center; }
 .error-card { padding: 32px; text-align: center; display: flex; flex-direction: column; align-items: center; }
-.result-card { padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; }
-.result-top { display: flex; justify-content: space-between; align-items: center; }
-.result-category { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
-.result-date { color: var(--text-muted); }
-.result-headline { font-size: 20px; font-weight: 800; color: var(--text-primary); line-height: 1.4; letter-spacing: -0.02em; }
-.result-content { font-size: var(--fs-body); color: var(--text-secondary); line-height: 1.75; white-space: pre-wrap; }
+/* 고민 카드 */
 .cta-btn { display: block; text-align: center; text-decoration: none; padding: 15px; border-radius: 12px; font-weight: 700; }
 
 @media (min-width: 768px) {
