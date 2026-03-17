@@ -6,4 +6,5 @@ export const STORAGE_KEYS = {
   SAJU_PENDING_SAVE: 'saju_pending_save',
   SAJU_LOGIN_REDIRECT: 'saju_login_redirect',
   DAILY_PENDING_INPUT: 'daily_pending_input',
+  QUESTION_PENDING_INPUT: 'question_pending_input',
 } as const

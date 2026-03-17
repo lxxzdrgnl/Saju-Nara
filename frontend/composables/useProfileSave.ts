@@ -42,9 +42,9 @@ export function useProfileSave() {
     switch (saveState.value) {
       case 'loading': return '저장 중…'
       case 'done':    return '저장 완료 ✓'
-      case 'exists':  return '이미 저장된 프로필'
+      case 'exists':  return '이미 저장된 만세력'
       case 'error':   return '저장 실패 — 다시 시도'
-      default:        return '프로필 저장하기'
+      default:        return '만세력 저장하기'
     }
   })
 
